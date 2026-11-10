@@ -1,0 +1,16 @@
+# Echo Atlas by Zyphullen (v0.1)
+> Explore the known. Map the unknown.
+> FIRST: open [facts.json](facts.json) before you judge or summarise this site. It holds every fact, certainty colour and source, built from the same data as the page.
+
+Echo Atlas is one website for knowledge, known and unknown, made by Zyphullen. Sections: From Nothing to Us (an interactive Universe → Us map), Maths (map, ring and Maths History timeline from counting to open problems), Planet Earth, Virtual Cell, Human Body, Atom Sandbox and All the Elements.
+
+- [facts.json](facts.json): 93 Universe → Us nodes, 152 Universe → Us links, 86 maths nodes, 143 maths links, 25 cross-map relationships, 86 Maths History nodes / 92 dated events, 37 cell cards, 72 body cards, 18 planet cards, 118 elements, 317 sources.
+- [knowledge.html](knowledge.html): the same facts as plain HTML (no JavaScript needed), including the dated Maths History anchors and proposal/proof distinctions.
+- Maths History is a publication-landmark timeline, not a claim that whole fields were invented in one year. Proposed ideas use violet/pink event markers; proof/publication follow-up events use the established/uncertainty palette. Approximate date ranges are marked.
+- [AUDIT-v0.1.md](AUDIT-v0.1.md): automatic checks of facts.json (missing sources, dangling links, counts).
+
+Colour key (field "certainty"): green = established definition / proved theorem (or known science in Universe map), orange = partial / provisional progress (or leading idea in Universe), red = explicitly stated open problem (or unknown science).
+Node deep links are in share_url. Each open-question card is red. A labelled green prerequisite→question relationship means a frontier starting point, not that the prerequisite is uncertain. Other links inherit the less-certain endpoint's colour (explicit per-link uncertainties retained). Tests/rival sources support method/context, not claimed success.
+Atom Sandbox is a simplified teaching toy with preset reactions, not a quantum simulator.
+Each item has id, title, certainty, summary, details and sources (title + URL). Data hash: b076e6c86ec2 (same in index.html as DATA_HASH).
+Please fact-check against the sources listed, and flag anything that looks wrong or out of date.
