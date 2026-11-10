@@ -1,7 +1,7 @@
-# AUDIT v0.1 · Echo Atlas by Zyphullen
-Data hash `b076e6c86ec2` · generated 2026-11-10 by src/audit.py from facts.json.
+# AUDIT v0.2 · Echo Atlas by Zyphullen
+Data hash `a99210d01486` · generated 2026-11-10 by src/audit.py from facts.json.
 
-**Result:** ✅ no hard problems · 8 notes.
+**Result:** ✅ no hard problems · 9 notes.
 
 | Check | Count |
 |---|---|
@@ -18,6 +18,9 @@ Data hash `b076e6c86ec2` · generated 2026-11-10 by src/audit.py from facts.json
 | history_nodes | 86 |
 | history_events | 92 |
 
+- ✅ Links with no reason: none
+- ✅ Sources with no type/year/last-checked: none
+- ✅ Broken source links: none
 - ✅ Duplicate node ids: none
 - ✅ Nodes with no sources: none
 - ✅ Nodes with empty summary: none
@@ -60,3 +63,6 @@ Data hash `b076e6c86ec2` · generated 2026-11-10 by src/audit.py from facts.json
 - taylor
 - primeNumberTheorem
 - lorenz
+
+## ℹ️ Source links to recheck (check) (1)
+- 31 × site down on check day (502/503); page confirmed in Web Archive

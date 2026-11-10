@@ -1,4 +1,4 @@
-# Echo Atlas by Zyphullen (v0.1)
+# Echo Atlas by Zyphullen (v0.2)
 > Explore the known. Map the unknown.
 > FIRST: open [facts.json](facts.json) before you judge or summarise this site. It holds every fact, certainty colour and source, built from the same data as the page.
 
@@ -7,10 +7,13 @@ Echo Atlas is one website for knowledge, known and unknown, made by Zyphullen. S
 - [facts.json](facts.json): 93 Universe → Us nodes, 152 Universe → Us links, 86 maths nodes, 143 maths links, 25 cross-map relationships, 86 Maths History nodes / 92 dated events, 37 cell cards, 72 body cards, 18 planet cards, 118 elements, 317 sources.
 - [knowledge.html](knowledge.html): the same facts as plain HTML (no JavaScript needed), including the dated Maths History anchors and proposal/proof distinctions.
 - Maths History is a publication-landmark timeline, not a claim that whole fields were invented in one year. Proposed ideas use violet/pink event markers; proof/publication follow-up events use the established/uncertainty palette. Approximate date ranges are marked.
-- [AUDIT-v0.1.md](AUDIT-v0.1.md): automatic checks of facts.json (missing sources, dangling links, counts).
+- [AUDIT-v0.2.md](AUDIT-v0.2.md): automatic checks of facts.json (missing sources, dangling links, link reasons, source details, counts).
 
 Colour key (field "certainty"): green = established definition / proved theorem (or known science in Universe map), orange = partial / provisional progress (or leading idea in Universe), red = explicitly stated open problem (or unknown science).
 Node deep links are in share_url. Each open-question card is red. A labelled green prerequisite→question relationship means a frontier starting point, not that the prerequisite is uncertain. Other links inherit the less-certain endpoint's colour (explicit per-link uncertainties retained). Tests/rival sources support method/context, not claimed success.
+v0.2 link reasons: every link (field "links", maths "links", "crosslinks") has "reason" (why the two ideas are linked, built only from the link label and certainty already on the cards), "reason_certainty_note" and "reason_sources". Link colour = the less-certain end, the same as the line on the map, except a labelled maths frontier start (green).
+v0.2 source details: every source object has "type" (paper, preprint, review, textbook, encyclopedia, agency / lab, …), "year" (publication year where known, else null with "year_note"), "last_checked" and "link_status" from a real link check on 2026-11-10 (457 source URLs). Summary: 6 ok (site blocks automatic checks; page confirmed in Web Archive); 380 ok; 30 ok (DOI registered; publisher blocks automatic checks); 9 ok (rechecked: page read from a second network); 31 site down on check day (502/503); page confirmed in Web Archive; 1 ok (fixed: link pointed to the wrong record). Failed links were rechecked the same evening; where a site was down or blocks automatic checks, "archived_copy" gives a Web Archive snapshot that confirms the page.
+Suggest a fix: every card has a button that e-mails zyphullen@gmail.com with the subject "Echo Atlas fix: <card name> (<card id>)".
 Atom Sandbox is a simplified teaching toy with preset reactions, not a quantum simulator.
-Each item has id, title, certainty, summary, details and sources (title + URL). Data hash: b076e6c86ec2 (same in index.html as DATA_HASH).
+Each item has id, title, certainty, summary, details and sources (title + URL). Data hash: a99210d01486 (same in index.html as DATA_HASH).
 Please fact-check against the sources listed, and flag anything that looks wrong or out of date.
