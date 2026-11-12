@@ -5,7 +5,34 @@
 
 Live: https://zyphullen.github.io/echoatlas/
 
-## Current version: v0.3 (11 Nov 2026)
+## Current version: v0.4 (12 Nov 2026)
+
+1. 📂 One AI data file per section in `ai/`, so an AI can load just the part it needs
+2. 🔘 **AI info** at the top right: a read-me of what the site holds, with sizes and token counts for each section file. **All site data** (`facts.json`) sits inside that panel, after the section files
+3. 🔍 Search on Home: jump to any page, card, element or dated event (type `/` to start)
+4. 📄 Official papers and textbooks next to Wikipedia: every Cell, Body and Earth card now has one
+5. 🖼️ More pictures, less text: source badges, a size ruler on map cards, a depth strip on Earth layers, shorter Home text
+6. ⚡ Faster start: Home is ready in about half the time on phones; the map wakes only when you open it
+7. 🔧 Small fixes (below)
+
+### Bugs found and fixed before release (v0.4)
+1. 🖱️ Clicking the Home search box sent focus back to the first tile
+2. 🖼️ Home tile pictures were out of date (old map labels): re-captured
+3. 🏷️ A map line named a person instead of the idea: now just "one candidate start"
+4. 🔗 One new paper had a wrong DOI and one NASA page timed out: both caught by the link check and replaced
+5. ⌨️ Esc did not close AI info after scrolling it
+6. 🔍 Search missed plurals ("mitochondria") and a clicked result could close the card it opened
+7. 📚 Card sources ran together in one line; badges were misaligned
+8. 📏 Size ruler labels overlapped on small cards
+9. 🐢 The first speed change made opening the map slower: the map now warms up while you are on Home
+10. 🟨 The gold tagline was off-centre: now centred
+11. 🏷️ The title repeated BY ZYPHULLEN: removed (credit already sits top left)
+12. ⬆️ Home was nudged up a little to cut the gap under the top bar
+13. 🤖 All data was a second button: now only AI info sits at the top right, and All site data is in the panel
+
+## Version history
+
+### v0.3 (11 Nov 2026)
 
 - Home menu with real screenshots of every section
 - From Nothing to Us: the universe map and ring, from nothing to life
@@ -17,11 +44,9 @@ Live: https://zyphullen.github.io/echoatlas/
 - Adding facts? Read `FACTS-GUIDE.md`
 - Spot a mistake? Use **Suggest a fix** on any card, or email zyphullen@gmail.com
 
-### Bugs found and fixed before release (v0.3)
+**Bugs found and fixed before release (v0.3)**
 Found by Zyphullen while testing: phone Ring squashed into an oval (now a circle) · a Chain Theory Ring segment pulled the touching ends apart (moved back off the ring) · Chain Theory labels repeated words (now "Chain Theory") · Maths Map zoomed to the screen centre, not the cursor · Maths nodes outside their panels could not be reached · messy Maths Ring lines · Elements page could not be scrolled down or dragged (now wheel, drag, touch and keys all work) · the Chain Theory arc line and label came back on the Ring (removed) · the Key was not open on the first visit · the Maths Ring was much thinner than the From Nothing to Us Ring (now the same size).
 Found during checks: shared Earth layer and heart links did not open their card · Copy link button wrapped and looked greyed out · "Link copied" note hidden behind cards · shared line links did not centre on the line · a syntax slip in a planet code comment.
-
-## Version history
 
 ### v0.2 (10 Nov 2026)
 - Tap any line: a card says why two cards are linked, how sure we are, and its sources

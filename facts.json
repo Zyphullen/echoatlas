@@ -2,7 +2,7 @@
  "name": "Echo Atlas",
  "full_name": "Echo Atlas by Zyphullen",
  "tagline": "Explore the known. Map the unknown.",
- "version": "0.3",
+ "version": "0.4",
  "sections": [
   "From Nothing to Us",
   "Maths",
@@ -14,8 +14,8 @@
   "All the Elements"
  ],
  "author": "Zyphullen",
- "data_hash": "b6e5afccf7e5",
- "generated": "2026-11-11",
+ "data_hash": "3ca624a114cc",
+ "generated": "2026-11-12",
  "key": {
   "green": "known",
   "orange": "we think (leading idea / hypothesis)",
@@ -35,7 +35,7 @@
   "elements": 118,
   "sources": 367,
   "link_reasons": 313,
-  "source_urls": 506
+  "source_urls": 592
  },
  "nodes": [
   {
@@ -6984,6 +6984,16 @@
    ],
    "sources": [
     {
+     "key": "osys",
+     "title": "OpenStax Anatomy & Physiology 2e: 1.2 — eleven organ systems",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "key": "organlist",
      "title": "Wikipedia: list of organs of the human body (\"widely believed … 78 organs\")",
      "url": "https://en.wikipedia.org/wiki/List_of_organs_of_the_human_body",
@@ -7099,8 +7109,8 @@
      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
      "type": "textbook",
      "year": 2022,
-     "year_note": "2nd edition, citation date 20 Apr 2022 (page metadata)",
-     "last_checked": "2026-11-11",
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ],
@@ -7681,9 +7691,9 @@
   {
    "from": "nothing",
    "to": "axiom",
-   "label": "one candidate start (Alex)",
+   "label": "one candidate start",
    "certainty": "red",
-   "reason": "Chain Theory comes from Before the Big Bang?: one candidate start (Alex)",
+   "reason": "Chain Theory comes from Before the Big Bang?: one candidate start.",
    "reason_certainty_note": "Unknown: at least one side of this link is still an open question.",
    "reason_sources": [
     {
@@ -12590,8 +12600,8 @@
      "type": "paper",
      "year": 2001,
      "year_note": "Crossref",
-     "last_checked": "2026-11-11",
-     "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
     }
    ],
    "sources_note": ""
@@ -14481,6 +14491,16 @@
    "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
    "reason_sources": [
     {
+     "key": "osys",
+     "title": "OpenStax Anatomy & Physiology 2e: 1.2 — eleven organ systems",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "key": "organlist",
      "title": "Wikipedia: list of organs of the human body (\"widely believed … 78 organs\")",
      "url": "https://en.wikipedia.org/wiki/List_of_organs_of_the_human_body",
@@ -14582,8 +14602,8 @@
      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
      "type": "textbook",
      "year": 2022,
-     "year_note": "2nd edition, citation date 20 Apr 2022 (page metadata)",
-     "last_checked": "2026-11-11",
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ],
@@ -14594,8 +14614,8 @@
      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
      "type": "textbook",
      "year": 2022,
-     "year_note": "2nd edition, citation date 20 Apr 2022 (page metadata)",
-     "last_checked": "2026-11-11",
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ],
@@ -14680,8 +14700,8 @@
      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
      "type": "textbook",
      "year": 2022,
-     "year_note": "2nd edition, citation date 20 Apr 2022 (page metadata)",
-     "last_checked": "2026-11-11",
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ],
@@ -28828,6 +28848,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Biology 2e, 4.3 Eukaryotic Cells",
+     "url": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Cell (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Cell_(biology)",
      "type": "encyclopedia",
@@ -28864,6 +28893,24 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Singer & Nicolson 1972: The Fluid Mosaic Model of the Structure of Cell Membranes (Science)",
+     "url": "https://doi.org/10.1126/science.175.4023.720",
+     "type": "paper",
+     "year": 1972,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 3.1 The Cell Membrane",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/3-1-the-cell-membrane",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Cell membrane (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Cell_membrane",
@@ -28902,6 +28949,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "International Human Genome Sequencing Consortium 2001: Initial sequencing and analysis of the human genome (Nature)",
+     "url": "https://doi.org/10.1038/35057062",
+     "type": "paper",
+     "year": 2001,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 3.3 The Nucleus and DNA Replication",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/3-3-the-nucleus-and-dna-replication",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Cell nucleus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Cell_nucleus",
      "type": "encyclopedia",
@@ -28939,6 +29004,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Ou et al. 2017: ChromEMT: Visualizing 3D chromatin structure and compaction in interphase and mitotic cells (Science)",
+     "url": "https://doi.org/10.1126/science.aag0025",
+     "type": "paper",
+     "year": 2017,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Biology 2e, 14.2 DNA Structure and Sequencing",
+     "url": "https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Nucleosome (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nucleosome",
      "type": "encyclopedia",
@@ -28967,6 +29050,24 @@
    "map_node": "nucleotides",
    "sources": [
     {
+     "title": "Luger et al. 1997: Crystal structure of the nucleosome core particle at 2.8 Å resolution (Nature)",
+     "url": "https://doi.org/10.1038/38444",
+     "type": "paper",
+     "year": 1997,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "Ou et al. 2017: ChromEMT: Visualizing 3D chromatin structure and compaction in interphase and mitotic cells (Science)",
+     "url": "https://doi.org/10.1126/science.aag0025",
+     "type": "paper",
+     "year": 2017,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
      "title": "Nucleosome (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nucleosome",
      "type": "encyclopedia",
@@ -28994,6 +29095,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Boisvert et al. 2007: The multifunctional nucleolus (Nat Rev Mol Cell Biol)",
+     "url": "https://doi.org/10.1038/nrm2184",
+     "type": "review",
+     "year": 2007,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Nucleolus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nucleolus",
      "type": "encyclopedia",
@@ -29020,6 +29130,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Kim et al. 2018: Integrative structure and functional anatomy of a nuclear pore complex (Nature)",
+     "url": "https://doi.org/10.1038/nature26003",
+     "type": "paper",
+     "year": 2018,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Nuclear pore (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nuclear_pore",
@@ -29085,6 +29204,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Palade 1975: Intracellular Aspects of the Process of Protein Synthesis (Science)",
+     "url": "https://doi.org/10.1126/science.1096303",
+     "type": "paper",
+     "year": 1975,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.4 The Endomembrane System and Proteins",
+     "url": "https://openstax.org/books/biology-2e/pages/4-4-the-endomembrane-system-and-proteins",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Endoplasmic reticulum (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Endoplasmic_reticulum",
      "type": "encyclopedia",
@@ -29113,6 +29250,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Palade 1975: Intracellular Aspects of the Process of Protein Synthesis (Science)",
+     "url": "https://doi.org/10.1126/science.1096303",
+     "type": "paper",
+     "year": 1975,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.4 The Endomembrane System and Proteins",
+     "url": "https://openstax.org/books/biology-2e/pages/4-4-the-endomembrane-system-and-proteins",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Golgi apparatus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Golgi_apparatus",
      "type": "encyclopedia",
@@ -29139,6 +29294,24 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Novick et al. 1980: Identification of 23 complementation groups required for post-translational events in the yeast secretory pathway (Cell)",
+     "url": "https://doi.org/10.1016/0092-8674(80)90128-2",
+     "type": "paper",
+     "year": 1980,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.4 The Endomembrane System and Proteins",
+     "url": "https://openstax.org/books/biology-2e/pages/4-4-the-endomembrane-system-and-proteins",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Vesicle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vesicle_(biology_and_chemistry)",
@@ -29177,6 +29350,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Mitchell 1961: Coupling of Phosphorylation to Electron and Hydrogen Transfer by a Chemi-Osmotic type of Mechanism (Nature)",
+     "url": "https://doi.org/10.1038/191144a0",
+     "type": "paper",
+     "year": 1961,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 7.4 Oxidative Phosphorylation",
+     "url": "https://openstax.org/books/biology-2e/pages/7-4-oxidative-phosphorylation",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Mitochondrion (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Mitochondrion",
      "type": "encyclopedia",
@@ -29204,6 +29395,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Abrahams et al. 1994: Structure at 2.8 Å resolution of F1-ATPase from bovine heart mitochondria (Nature)",
+     "url": "https://doi.org/10.1038/370621a0",
+     "type": "paper",
+     "year": 1994,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "Noji et al. 1997: Direct observation of the rotation of F1-ATPase (Nature)",
+     "url": "https://doi.org/10.1038/386299a0",
+     "type": "paper",
+     "year": 1997,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "ATP synthase (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/ATP_synthase",
      "type": "encyclopedia",
@@ -29229,6 +29438,15 @@
    "drawing_note": null,
    "map_node": "molecules",
    "sources": [
+    {
+     "title": "OpenStax Biology 2e, 6.4 ATP: Adenosine Triphosphate",
+     "url": "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Adenosine triphosphate (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Adenosine_triphosphate",
@@ -29257,6 +29475,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "de Duve et al. 1955: Tissue fractionation studies. 6. Intracellular distribution patterns of enzymes in rat-liver tissue (Biochemical Journal)",
+     "url": "https://doi.org/10.1042/bj0600604",
+     "type": "paper",
+     "year": 1955,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.4 The Endomembrane System and Proteins",
+     "url": "https://openstax.org/books/biology-2e/pages/4-4-the-endomembrane-system-and-proteins",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Lysosome (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Lysosome",
      "type": "encyclopedia",
@@ -29284,6 +29520,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "De Duve & Baudhuin 1966: Peroxisomes (microbodies and related particles). (Physiological Reviews)",
+     "url": "https://doi.org/10.1152/physrev.1966.46.2.323",
+     "type": "review",
+     "year": 1966,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
      "title": "Peroxisome (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Peroxisome",
      "type": "encyclopedia",
@@ -29309,6 +29554,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Walther & Farese 2012: Lipid Droplets and Cellular Lipid Metabolism (Annu. Rev. Biochem.)",
+     "url": "https://doi.org/10.1146/annurev-biochem-061009-102430",
+     "type": "review",
+     "year": 2012,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
     {
      "title": "Lipid droplet (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Lipid_droplet",
@@ -29338,6 +29592,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Biology 2e, 4.5 The Cytoskeleton",
+     "url": "https://openstax.org/books/biology-2e/pages/4-5-the-cytoskeleton",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Centrosome (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Centrosome",
      "type": "encyclopedia",
@@ -29365,6 +29628,24 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Nogales et al. 1998: Structure of the αβ tubulin dimer by electron crystallography (Nature)",
+     "url": "https://doi.org/10.1038/34465",
+     "type": "paper",
+     "year": 1998,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.5 The Cytoskeleton",
+     "url": "https://openstax.org/books/biology-2e/pages/4-5-the-cytoskeleton",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Microtubule (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Microtubule",
@@ -29402,6 +29683,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Kabsch et al. 1990: Atomic structure of the actin: DNase I complex (Nature)",
+     "url": "https://doi.org/10.1038/347037a0",
+     "type": "paper",
+     "year": 1990,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.5 The Cytoskeleton",
+     "url": "https://openstax.org/books/biology-2e/pages/4-5-the-cytoskeleton",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Stress fiber (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Stress_fiber",
      "type": "encyclopedia",
@@ -29438,6 +29737,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Geiger et al. 2001: Transmembrane crosstalk between the extracellular matrix and the cytoskeleton (Nat Rev Mol Cell Biol)",
+     "url": "https://doi.org/10.1038/35099066",
+     "type": "review",
+     "year": 2001,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Focal adhesion (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Focal_adhesion",
      "type": "encyclopedia",
@@ -29463,6 +29771,24 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Herrmann et al. 2007: Intermediate filaments: from cell architecture to nanomechanics (Nat Rev Mol Cell Biol)",
+     "url": "https://doi.org/10.1038/nrm2197",
+     "type": "review",
+     "year": 2007,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 4.5 The Cytoskeleton",
+     "url": "https://openstax.org/books/biology-2e/pages/4-5-the-cytoskeleton",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Vimentin (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vimentin",
@@ -29490,6 +29816,24 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "Kedersha & Rome 1986: Isolation and characterization of a novel ribonucleoprotein particle: large structures contain a single species of small RNA. (The Journal of cell biology)",
+     "url": "https://doi.org/10.1083/jcb.103.3.699",
+     "type": "paper",
+     "year": 1986,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "Tanaka et al. 2009: The Structure of Rat Liver Vault at 3.5 Angstrom Resolution (Science)",
+     "url": "https://doi.org/10.1126/science.1164975",
+     "type": "paper",
+     "year": 2009,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
     {
      "title": "Vault (organelle) (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vault_(organelle)",
@@ -29554,6 +29898,15 @@
    "map_node": "water",
    "sources": [
     {
+     "title": "OpenStax Biology 2e, 2.2 Water",
+     "url": "https://openstax.org/books/biology-2e/pages/2-2-water",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Properties of water (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Properties_of_water",
      "type": "encyclopedia",
@@ -29579,6 +29932,24 @@
    "drawing_note": null,
    "map_node": "molecules",
    "sources": [
+    {
+     "title": "OpenStax Biology 2e, 7.2 Glycolysis",
+     "url": "https://openstax.org/books/biology-2e/pages/7-2-glycolysis",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 3.2 Carbohydrates",
+     "url": "https://openstax.org/books/biology-2e/pages/3-2-carbohydrates",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Glucose (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Glucose",
@@ -29607,6 +29978,24 @@
    "map_node": "lipids",
    "sources": [
     {
+     "title": "OpenStax Biology 2e, 3.3 Lipids",
+     "url": "https://openstax.org/books/biology-2e/pages/3-3-lipids",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "Singer & Nicolson 1972: The Fluid Mosaic Model of the Structure of Cell Membranes (Science)",
+     "url": "https://doi.org/10.1126/science.175.4023.720",
+     "type": "paper",
+     "year": 1972,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
      "title": "Phospholipid (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Phospholipid",
      "type": "encyclopedia",
@@ -29633,6 +30022,24 @@
    "drawing_note": null,
    "map_node": "nucleotides",
    "sources": [
+    {
+     "title": "Watson & Crick 1953: Molecular Structure of Nucleic Acids: A Structure for Deoxyribose Nucleic Acid (Nature)",
+     "url": "https://doi.org/10.1038/171737a0",
+     "type": "paper",
+     "year": 1953,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Biology 2e, 14.2 DNA Structure and Sequencing",
+     "url": "https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Base pair (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Base_pair",
@@ -29661,6 +30068,24 @@
    "map_node": "amino",
    "sources": [
     {
+     "title": "Pauling et al. 1951: The structure of proteins: Two hydrogen-bonded helical configurations of the polypeptide chain (Proc. Natl. Acad. Sci. U.S.A.)",
+     "url": "https://doi.org/10.1073/pnas.37.4.205",
+     "type": "paper",
+     "year": 1951,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Biology 2e, 3.4 Proteins",
+     "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Peptide (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Peptide",
      "type": "encyclopedia",
@@ -29688,6 +30113,24 @@
    "map_node": "proteins",
    "sources": [
     {
+     "title": "Milo 2013: What is the total number of protein molecules per cell volume? A call to rethink some published values (BioEssays)",
+     "url": "https://doi.org/10.1002/bies.201300066",
+     "type": "paper",
+     "year": 2013,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Biology 2e, 3.4 Proteins",
+     "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Protein (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Protein",
      "type": "encyclopedia",
@@ -29713,6 +30156,15 @@
    "drawing_note": null,
    "map_node": "atoms",
    "sources": [
+    {
+     "title": "OpenStax Chemistry 2e, 2.3 Atomic Structure and Symbolism",
+     "url": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism",
+     "type": "textbook",
+     "year": 2019,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Hydrogen (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Hydrogen",
@@ -29740,6 +30192,15 @@
    "map_node": "atoms",
    "sources": [
     {
+     "title": "OpenStax Biology 2e, 2.3 Carbon",
+     "url": "https://openstax.org/books/biology-2e/pages/2-3-carbon",
+     "type": "textbook",
+     "year": 2018,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Carbon (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Carbon",
      "type": "encyclopedia",
@@ -29765,6 +30226,15 @@
    "drawing_note": null,
    "map_node": "atoms",
    "sources": [
+    {
+     "title": "OpenStax Chemistry 2e, 2.3 Atomic Structure and Symbolism",
+     "url": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism",
+     "type": "textbook",
+     "year": 2019,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Nitrogen (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nitrogen",
@@ -29792,6 +30262,15 @@
    "map_node": "atoms",
    "sources": [
     {
+     "title": "OpenStax Chemistry 2e, 2.3 Atomic Structure and Symbolism",
+     "url": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism",
+     "type": "textbook",
+     "year": 2019,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Oxygen (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Oxygen",
      "type": "encyclopedia",
@@ -29817,6 +30296,15 @@
    "drawing_note": null,
    "map_node": "atoms",
    "sources": [
+    {
+     "title": "OpenStax Chemistry 2e, 2.3 Atomic Structure and Symbolism",
+     "url": "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism",
+     "type": "textbook",
+     "year": 2019,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Phosphorus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Phosphorus",
@@ -29845,6 +30333,24 @@
    "map_node": "electrons",
    "sources": [
     {
+     "title": "Schrödinger 1926: An Undulatory Theory of the Mechanics of Atoms and Molecules (Phys. Rev.)",
+     "url": "https://doi.org/10.1103/PhysRev.28.1049",
+     "type": "paper",
+     "year": 1926,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Chemistry 2e, 6.3 Development of Quantum Theory",
+     "url": "https://openstax.org/books/chemistry-2e/pages/6-3-development-of-quantum-theory",
+     "type": "textbook",
+     "year": 2019,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Atomic orbital (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Atomic_orbital",
      "type": "encyclopedia",
@@ -29871,6 +30377,24 @@
    "drawing_note": null,
    "map_node": "hadrons",
    "sources": [
+    {
+     "title": "Rutherford 1911: The scattering of α and β particles by matter and the structure of the atom (Philosophical Magazine)",
+     "url": "https://doi.org/10.1080/14786440508637080",
+     "type": "paper",
+     "year": 1911,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Chemistry 2e, 21.1 Nuclear Structure and Stability",
+     "url": "https://openstax.org/books/chemistry-2e/pages/21-1-nuclear-structure-and-stability",
+     "type": "textbook",
+     "year": 2019,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Atomic nucleus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Atomic_nucleus",
@@ -29900,6 +30424,33 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Sender et al. 2016: Revised Estimates for the Number of Human and Bacteria Cells in the Body (PLoS Biol)",
+     "url": "https://doi.org/10.1371/journal.pbio.1002533",
+     "type": "paper",
+     "year": 2016,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "Ncd Risk Factor Collaboration (NCD-RisC) 2016: A century of trends in adult human height (eLife)",
+     "url": "https://doi.org/10.7554/eLife.13410",
+     "type": "paper",
+     "year": 2016,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 1.2 Structural Organization of the Human Body",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Human body (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Human_body",
      "type": "encyclopedia",
@@ -29928,6 +30479,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 5.1 Layers of the Skin",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-1-layers-of-the-skin",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Human skin (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Human_skin",
      "type": "encyclopedia",
@@ -29952,6 +30512,15 @@
    "drawing_note": "Simple outline, not a portrait.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.3 Axial Muscles of the Head, Neck, and Back",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Face (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Face",
@@ -29980,6 +30549,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 28.6 Lactation",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/28-6-lactation",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Breast (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Breast",
      "type": "encyclopedia",
@@ -30006,6 +30593,15 @@
    "drawing_note": "Drawn as plain circles.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 28.6 Lactation",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/28-6-lactation",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Nipple (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nipple",
@@ -30042,6 +30638,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.1 The Pectoral Girdle",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Clavicle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Clavicle",
      "type": "encyclopedia",
@@ -30067,6 +30672,15 @@
    "drawing_note": "Simple outline of the kneecap.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 9.6 Anatomy of Selected Synovial Joints",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Patella (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Patella",
@@ -30094,6 +30708,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Mons pubis (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Mons_pubis",
      "type": "encyclopedia",
@@ -30118,6 +30741,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 1.6 Anatomical Terminology",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Navel (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Navel",
@@ -30146,6 +30778,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Vulva (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vulva",
      "type": "encyclopedia",
@@ -30172,6 +30813,15 @@
    "drawing_note": "Lobes and ducts drawn as a simple pattern.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 28.6 Lactation",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/28-6-lactation",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Mammary gland (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Mammary_gland",
@@ -30209,6 +30859,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Vagina (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vagina",
      "type": "encyclopedia",
@@ -30235,6 +30894,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Cervix (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Cervix",
@@ -30263,6 +30931,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Fallopian tube (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Fallopian_tube",
      "type": "encyclopedia",
@@ -30288,6 +30965,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 7.2 The Skull",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Human skull (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Human_skull",
@@ -30316,6 +31002,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 7.3 The Vertebral Column",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Vertebral column (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vertebral_column",
      "type": "encyclopedia",
@@ -30342,6 +31037,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 7.4 The Thoracic Cage",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Rib cage (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Rib_cage",
      "type": "encyclopedia",
@@ -30366,6 +31070,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 7.4 The Thoracic Cage",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Sternum (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Sternum",
@@ -30393,6 +31106,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.1 The Pectoral Girdle",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Clavicle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Clavicle",
      "type": "encyclopedia",
@@ -30417,6 +31139,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.2 Bones of the Upper Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Humerus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Humerus",
@@ -30444,6 +31175,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.2 Bones of the Upper Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Radius (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Radius_(bone)",
      "type": "encyclopedia",
@@ -30468,6 +31208,15 @@
    "drawing_note": "Wrist bones shown as one group.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.2 Bones of the Upper Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Hand (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Hand",
@@ -30495,6 +31244,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.3 The Pelvic Girdle and Pelvis",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-3-the-pelvic-girdle-and-pelvis",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Pelvis (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Pelvis",
      "type": "encyclopedia",
@@ -30519,6 +31277,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.4 Bones of the Lower Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Femur (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Femur",
@@ -30545,6 +31312,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.4 Bones of the Lower Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Patella (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Patella",
      "type": "encyclopedia",
@@ -30570,6 +31346,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.4 Bones of the Lower Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Tibia (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Tibia",
      "type": "encyclopedia",
@@ -30594,6 +31379,15 @@
    "drawing_note": "Foot shown foreshortened and simplified.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 8.4 Bones of the Lower Limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Foot (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Foot",
@@ -30621,6 +31415,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "Azevedo et al. 2009: Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled‐up primate brain (J. Comp. Neurol.)",
+     "url": "https://doi.org/10.1002/cne.21974",
+     "type": "paper",
+     "year": 2009,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 13.2 The Central Nervous System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-the-central-nervous-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Human brain (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Human_brain",
      "type": "encyclopedia",
@@ -30645,6 +31457,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 14.1 Sensory Perception",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Human eye (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Human_eye",
      "type": "encyclopedia",
@@ -30668,6 +31489,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 17.4 The Thyroid Gland",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-4-the-thyroid-gland",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Thyroid (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Thyroid",
@@ -30696,6 +31526,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 22.2 The Lungs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-the-lungs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Lung (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Lung",
      "type": "encyclopedia",
@@ -30723,6 +31562,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Heart (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Heart",
      "type": "encyclopedia",
@@ -30746,6 +31594,15 @@
    "drawing_note": "Textbook cut-away (coronal section), simplified. In real life the right ventricle faces the front and the left atrium sits at the back.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Atrium (heart) (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Atrium_(heart)",
@@ -30771,6 +31628,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Ventricle (heart) (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
      "type": "encyclopedia",
@@ -30793,6 +31659,15 @@
    "drawing_note": "Textbook cut-away (coronal section), simplified. In real life the right ventricle faces the front and the left atrium sits at the back.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Atrium (heart) (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Atrium_(heart)",
@@ -30820,6 +31695,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Ventricle (heart) (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
      "type": "encyclopedia",
@@ -30844,6 +31728,15 @@
    "drawing_note": "Textbook cut-away (coronal section), simplified. In real life the right ventricle faces the front and the left atrium sits at the back.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Interventricular septum (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Interventricular_septum",
@@ -30871,6 +31764,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Tricuspid valve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Tricuspid_valve",
      "type": "encyclopedia",
@@ -30896,6 +31798,15 @@
    "drawing_note": "Textbook cut-away (coronal section), simplified. In real life the right ventricle faces the front and the left atrium sits at the back.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Mitral valve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Mitral_valve",
@@ -30923,6 +31834,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Pulmonary valve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Pulmonary_valve",
      "type": "encyclopedia",
@@ -30948,6 +31868,15 @@
    "drawing_note": "Textbook cut-away (coronal section), simplified. In real life the right ventricle faces the front and the left atrium sits at the back.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 19.1 Heart Anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Aortic valve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Aortic_valve",
@@ -30975,6 +31904,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 23.6 Accessory Organs in Digestion: The Liver, Pancreas, and Gallbladder",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Liver (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Liver",
      "type": "encyclopedia",
@@ -30997,6 +31935,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 23.6 Accessory Organs in Digestion: The Liver, Pancreas, and Gallbladder",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Gallbladder (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Gallbladder",
@@ -31024,6 +31971,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 23.4 The Stomach",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-4-the-stomach",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Stomach (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Stomach",
      "type": "encyclopedia",
@@ -31048,6 +32004,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 21.1 Anatomy of the Lymphatic and Immune Systems",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-1-anatomy-of-the-lymphatic-and-immune-systems",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Spleen (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Spleen",
      "type": "encyclopedia",
@@ -31071,6 +32036,24 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 23.6 Accessory Organs in Digestion: The Liver, Pancreas, and Gallbladder",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 17.9 The Endocrine Pancreas",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-9-the-endocrine-pancreas",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Pancreas (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Pancreas",
@@ -31098,6 +32081,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 25.3 Gross Anatomy of the Kidney",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-3-gross-anatomy-of-the-kidney",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Kidney (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Kidney",
      "type": "encyclopedia",
@@ -31121,6 +32113,15 @@
    "drawing_note": "Coils drawn as a simplified pattern, not each real loop.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 23.5 The Small and Large Intestines",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-5-the-small-and-large-intestines",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Small intestine (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Small_intestine",
@@ -31146,6 +32147,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 23.5 The Small and Large Intestines",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-5-the-small-and-large-intestines",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Large intestine (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Large_intestine",
      "type": "encyclopedia",
@@ -31168,6 +32178,15 @@
    "drawing_note": "Drawn see-through so the reproductive organs behind it show.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 25.2 Gross Anatomy of Urine Transport",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-2-gross-anatomy-of-urine-transport",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Urinary bladder (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Urinary_bladder",
@@ -31197,6 +32216,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Uterus (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Uterus",
      "type": "encyclopedia",
@@ -31224,6 +32252,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 27.2 Anatomy and Physiology of the Ovarian Reproductive System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Ovary (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Ovary",
      "type": "encyclopedia",
@@ -31250,6 +32287,24 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 10.2 Skeletal Muscle",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.2 Naming Skeletal Muscles",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-2-naming-skeletal-muscles",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Skeletal muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Skeletal_muscle",
      "type": "encyclopedia",
@@ -31272,6 +32327,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.5 Muscles of the Pectoral Girdle and Upper Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Deltoid muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Deltoid_muscle",
@@ -31296,6 +32360,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.5 Muscles of the Pectoral Girdle and Upper Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Pectoralis major (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Pectoralis_major",
      "type": "encyclopedia",
@@ -31318,6 +32391,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.5 Muscles of the Pectoral Girdle and Upper Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Biceps (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Biceps",
@@ -31342,6 +32424,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.5 Muscles of the Pectoral Girdle and Upper Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Forearm (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Forearm",
      "type": "encyclopedia",
@@ -31364,6 +32455,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.4 Axial Muscles of the Abdominal Wall, and Thorax",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Rectus abdominis muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Rectus_abdominis_muscle",
@@ -31388,6 +32488,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.4 Axial Muscles of the Abdominal Wall, and Thorax",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Abdominal external oblique muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Abdominal_external_oblique_muscle",
      "type": "encyclopedia",
@@ -31410,6 +32519,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.3 Axial Muscles of the Head, Neck, and Back",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Sternocleidomastoid muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Sternocleidomastoid_muscle",
@@ -31436,6 +32554,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.6 Appendicular Muscles of the Pelvic Girdle and Lower Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Quadriceps (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Quadriceps_femoris_muscle",
      "type": "encyclopedia",
@@ -31458,6 +32585,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.6 Appendicular Muscles of the Pelvic Girdle and Lower Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Sartorius muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Sartorius_muscle",
@@ -31482,6 +32618,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.6 Appendicular Muscles of the Pelvic Girdle and Lower Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Adductor muscles of the hip (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Adductor_muscles_of_the_hip",
      "type": "encyclopedia",
@@ -31505,6 +32650,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.6 Appendicular Muscles of the Pelvic Girdle and Lower Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Tibialis anterior muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Tibialis_anterior_muscle",
      "type": "encyclopedia",
@@ -31527,6 +32681,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 11.6 Appendicular Muscles of the Pelvic Girdle and Lower Limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Gastrocnemius muscle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Gastrocnemius_muscle",
@@ -31555,6 +32718,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 20.1 Structure and Function of Blood Vessels",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-blood-vessels",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Artery (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Artery",
      "type": "encyclopedia",
@@ -31581,6 +32753,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 20.5 Circulatory Pathways",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Aorta (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Aorta",
      "type": "encyclopedia",
@@ -31605,6 +32786,15 @@
    "drawing_note": "Main veins drawn; small branches are a generated pattern.",
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 20.1 Structure and Function of Blood Vessels",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-blood-vessels",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Vein (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Vein",
@@ -31632,6 +32822,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 13.4 The Peripheral Nervous System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Nerve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Nerve",
      "type": "encyclopedia",
@@ -31655,6 +32854,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 13.2 The Central Nervous System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-the-central-nervous-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Spinal cord (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Spinal_cord",
@@ -31681,6 +32889,15 @@
    "map_node": null,
    "sources": [
     {
+     "title": "OpenStax Anatomy and Physiology 2e, 13.4 The Peripheral Nervous System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Sciatic nerve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Sciatic_nerve",
      "type": "encyclopedia",
@@ -31704,6 +32921,15 @@
    "drawing_note": null,
    "map_node": null,
    "sources": [
+    {
+     "title": "OpenStax Anatomy and Physiology 2e, 13.4 The Peripheral Nervous System",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-4-the-peripheral-nervous-system",
+     "type": "textbook",
+     "year": 2022,
+     "year_note": "OpenStax publish year of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Median nerve (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Median_nerve",
@@ -31733,6 +32959,24 @@
     "Drawn as a cut-away: real layers to scale, shapes simplified (land on the left half, ocean on the right)."
    ],
    "sources": [
+    {
+     "title": "NASA Science: Earth Facts",
+     "url": "https://science.nasa.gov/earth/facts/",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NASA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "Dalrymple 2001: The age of the Earth in the twentieth century: a problem (mostly) solved (Geological Society, London, Special Publications)",
+     "url": "https://doi.org/10.1144/GSL.SP.2001.190.01.14",
+     "type": "paper",
+     "year": 2001,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
     {
      "title": "Earth (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Earth",
@@ -31773,6 +33017,15 @@
    ],
    "sources": [
     {
+     "title": "NOAA JetStream: Layers of the Atmosphere",
+     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Exosphere (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Exosphere",
      "type": "encyclopedia",
@@ -31802,6 +33055,15 @@
     "Thin gas can reach 2,000 °C, but it would feel cold: too few atoms to warm you."
    ],
    "sources": [
+    {
+     "title": "NOAA JetStream: Layers of the Atmosphere",
+     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Thermosphere (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Thermosphere",
@@ -31833,6 +33095,15 @@
    ],
    "sources": [
     {
+     "title": "NOAA JetStream: Layers of the Atmosphere",
+     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Mesosphere (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Mesosphere",
      "type": "encyclopedia",
@@ -31860,6 +33131,15 @@
    ],
    "details": [],
    "sources": [
+    {
+     "title": "NOAA JetStream: Layers of the Atmosphere",
+     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Stratosphere (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Stratosphere",
@@ -31891,6 +33171,15 @@
    ],
    "sources": [
     {
+     "title": "NOAA JetStream: Layers of the Atmosphere",
+     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Troposphere (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Troposphere",
      "type": "encyclopedia",
@@ -31918,6 +33207,24 @@
    ],
    "sources": [
     {
+     "title": "NOAA JetStream: Layers of the Atmosphere",
+     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "title": "NASA Science: Earth Facts",
+     "url": "https://science.nasa.gov/earth/facts/",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NASA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Atmosphere of Earth (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
      "type": "encyclopedia",
@@ -31942,6 +33249,15 @@
    ],
    "details": [],
    "sources": [
+    {
+     "title": "McDowell 2018: The edge of space: Revisiting the Karman Line (Acta Astronautica)",
+     "url": "https://doi.org/10.1016/j.actaastro.2018.07.003",
+     "type": "paper",
+     "year": 2018,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Kármán line (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_line",
@@ -31970,6 +33286,15 @@
    ],
    "sources": [
     {
+     "title": "NASA: Space Station Facts and Figures",
+     "url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NASA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "International Space Station (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/International_Space_Station",
      "type": "encyclopedia",
@@ -31997,6 +33322,15 @@
    ],
    "details": [],
    "sources": [
+    {
+     "title": "NOAA Ocean Service: How deep is the ocean?",
+     "url": "https://oceanservice.noaa.gov/facts/oceandepth.html",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (NOAA)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Ocean (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Ocean",
@@ -32028,6 +33362,15 @@
    ],
    "sources": [
     {
+     "title": "White et al. 1992: Oceanic crustal thickness from seismic measurements and rare earth element inversions (J. Geophys. Res.)",
+     "url": "https://doi.org/10.1029/92JB01749",
+     "type": "paper",
+     "year": 1992,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
      "title": "Oceanic crust (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Oceanic_crust",
      "type": "encyclopedia",
@@ -32058,6 +33401,15 @@
    ],
    "sources": [
     {
+     "title": "Christensen & Mooney 1995: Seismic velocity structure and composition of the continental crust: A global view (J. Geophys. Res.)",
+     "url": "https://doi.org/10.1029/95JB00259",
+     "type": "paper",
+     "year": 1995,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
      "title": "Continental crust (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Continental_crust",
      "type": "encyclopedia",
@@ -32082,6 +33434,24 @@
    ],
    "details": [],
    "sources": [
+    {
+     "title": "Christensen & Mooney 1995: Seismic velocity structure and composition of the continental crust: A global view (J. Geophys. Res.)",
+     "url": "https://doi.org/10.1029/95JB00259",
+     "type": "paper",
+     "year": 1995,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "title": "White et al. 1992: Oceanic crustal thickness from seismic measurements and rare earth element inversions (J. Geophys. Res.)",
+     "url": "https://doi.org/10.1029/92JB01749",
+     "type": "paper",
+     "year": 1992,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
     {
      "title": "Earth's crust (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Earth%27s_crust",
@@ -32113,6 +33483,15 @@
    ],
    "sources": [
     {
+     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
+     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
+     "type": "paper",
+     "year": 1981,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Upper mantle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Upper_mantle_(Earth)",
      "type": "encyclopedia",
@@ -32142,6 +33521,15 @@
     "A diamond found in 2014 held ringwoodite with water, from this zone."
    ],
    "sources": [
+    {
+     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
+     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
+     "type": "paper",
+     "year": 1981,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Transition zone (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Transition_zone_(Earth)",
@@ -32173,6 +33561,15 @@
    ],
    "sources": [
     {
+     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
+     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
+     "type": "paper",
+     "year": 1981,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
      "title": "Lower mantle (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Lower_mantle",
      "type": "encyclopedia",
@@ -32202,6 +33599,15 @@
     "About 4,000–5,000 °C."
    ],
    "sources": [
+    {
+     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
+     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
+     "type": "paper",
+     "year": 1981,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Earth's outer core (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Earth%27s_outer_core",
@@ -32233,6 +33639,15 @@
     "Its age is debated: roughly 0.5–1.5 billion years."
    ],
    "sources": [
+    {
+     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
+     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
+     "type": "paper",
+     "year": 1981,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
     {
      "title": "Earth's inner core (Wikipedia)",
      "url": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
@@ -37685,8 +39100,8 @@
    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
    "type": "textbook",
    "year": 2022,
-   "year_note": "2nd edition, citation date 20 Apr 2022 (page metadata)",
-   "last_checked": "2026-11-11",
+   "year_note": "OpenStax publish year of this edition",
+   "last_checked": "2026-11-12",
    "link_status": "ok"
   },
   {
@@ -39928,8 +41343,8 @@
    "type": "paper",
    "year": 2001,
    "year_note": "Crossref",
-   "last_checked": "2026-11-11",
-   "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+   "last_checked": "2026-11-12",
+   "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
   },
   {
    "key": "mccollom99",
@@ -40214,11 +41629,12 @@
  ],
  "source_check": {
   "last_checked": "2026-11-11",
-  "method": "v0.3: automatic HTTP check of every source URL on 11 Nov 2026 (follows redirects); DOI links also checked in the DOI registry; years from Crossref, arXiv ids, the URL, the title, or read from the page during this build (year_note says how). Links that failed were rechecked the same day: read from a second network or confirmed in the Web Archive (archived_copy). For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) year is the last-revised year stated on the page or its history, and year_note says so.",
+  "method": "v0.3: automatic HTTP check of every source URL on 11 Nov 2026 (follows redirects); v0.4: the papers, official pages and textbooks added on 12 Nov 2026 were checked the same way (each DOI resolved in Crossref); DOI links also checked in the DOI registry; years from Crossref, arXiv ids, the URL, the title, or read from the page during this build (year_note says how). Links that failed were rechecked the same day: read from a second network or confirmed in the Web Archive (archived_copy). For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) year is the last-revised year stated on the page or its history, and year_note says so.",
   "summary": {
    "ok (site blocks automatic checks; page confirmed in Web Archive)": 13,
-   "ok": 405,
-   "ok (DOI registered; publisher blocks automatic checks)": 53,
+   "ok": 476,
+   "ok (DOI registered; publisher blocks automatic checks)": 52,
+   "ok (DOI registered in Crossref; publisher blocks automatic checks)": 16,
    "ok (rechecked: page read from a second network)": 1,
    "site down on check day (HTTP 502); page confirmed in Web Archive": 30,
    "site down on check day (HTTP 503); page confirmed in Web Archive": 1,

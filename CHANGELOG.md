@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.4 (12 Nov 2026)
+1. 📂 One AI data file per section (`ai/from-nothing-to-us.json`, `maths`, `maths-history`, `planet-earth`, `virtual-cell`, `human-body`, `elements`), each with the same data hash as the page; the biggest is about 81k tokens
+2. 🔘 AI info read-me (`ai/README.md`, `ai/index.json`) and an **AI info** button at the top right; **All site data** (`facts.json`) sits inside the panel after the section files, with sizes and token counts
+3. 🔍 Home search: pages, map and Maths cards, Maths History events, Earth layers, cell and body cards and all 118 elements; keyboard (/, arrows, Enter, Esc), mouse and touch
+4. 📄 88 new sources checked on 12 Nov 2026: DOI papers (each resolved in Crossref), OpenStax textbooks and NASA/NOAA pages, added next to Wikipedia; no Cell, Body, Earth, map or Maths card is Wikipedia-only now
+5. 🖼️ Source badges (📄 paper, 📘 textbook, 🏛 official, W Wikipedia), a size ruler on map cards, a depth strip on Earth layers, gentle card and Home animations, shorter Home text
+6. ⚡ Home ready in ~0.8–1.1 s instead of ~2–2.4 s on a slow phone; Home pictures load only when on screen; the map is laid out only when needed and still draws only what is on screen; card details still load on tap
+7. 🔧 Small fixes (below)
+
+### Bugs found and fixed before release
+1. 🖱️ Clicking the Home search box sent focus back to the first tile
+2. 🖼️ Home tile pictures were out of date (old map labels): re-captured
+3. 🏷️ A map line named a person instead of the idea: now just "one candidate start"
+4. 🔗 One new paper had a wrong DOI and one NASA page timed out: both caught by the link check and replaced
+5. ⌨️ Esc did not close AI info after scrolling it
+6. 🔍 Search missed plurals ("mitochondria") and a clicked result could close the card it opened
+7. 📚 Card sources ran together in one line; badges were misaligned
+8. 📏 Size ruler labels overlapped on small cards
+9. 🐢 The first speed change made opening the map slower: the map now warms up while you are on Home
+10. 🟨 The gold tagline was off-centre: now centred
+11. 🏷️ The title repeated BY ZYPHULLEN: removed (credit already sits top left)
+12. ⬆️ Home was nudged up a little to cut the gap under the top bar
+13. 🤖 All data was a second button: now only AI info sits at the top right, and All site data is in the panel
+
 ## v0.3 (11 Nov 2026)
 - Chain Theory is tagged "Chain Theory" on every node, card and line; orange already marks it as not settled
 - Chain Theory is now one candidate starting point on its own side branch of the map, no longer under the Standard Model; on the Ring it sits off the main ring near its stages, as in v0.2, so the two ends touch
