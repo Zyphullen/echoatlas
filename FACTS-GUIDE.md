@@ -1,4 +1,18 @@
-# facts.json guide · Echo Atlas by Zyphullen (v0.3)
+# facts.json guide · Echo Atlas by Zyphullen (v0.4)
+
+## v0.4: one AI file per section
+
+The same data is also split into one file per section in `ai/`, so an AI can load only what it needs:
+`ai/from-nothing-to-us.json`, `ai/maths.json`, `ai/maths-history.json`, `ai/planet-earth.json`, `ai/virtual-cell.json`, `ai/human-body.json`, `ai/elements.json`.
+
+| Field | What it holds |
+|---|---|
+| `about` | Site, version, `data_hash` (same as the page), colour key, how to suggest a fix, the other section files |
+| `counts` | How many items are in this file |
+| the section's items | Same fields as in `facts.json`; each source is `title`, `url`, `type` |
+| `sources_used` | Every source used in this section once, with `type`, `year` and `link_status` |
+
+`ai/index.json` lists every file with its size and rough token count; `ai/README.md` is the read-me (also shown by the **AI info** button on the site). All of these are made by `src/aifiles.py`, called from `src/build.py`. Links inside a section file drop `reason_sources` (they are the sources on the link's two cards).
 
 `facts.json` holds every fact on the site, its certainty colour and its sources. It is built by `src/build.py` from the same data block as the page, so the page, `facts.json`, `llms.txt` and `knowledge.html` always match. `data_hash` in `facts.json` matches `DATA_HASH` in `index.html`.
 

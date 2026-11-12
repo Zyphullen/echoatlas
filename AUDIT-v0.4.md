@@ -1,5 +1,5 @@
-# AUDIT v0.3 · Echo Atlas by Zyphullen
-Data hash `b6e5afccf7e5` · generated 2026-11-11 by src/audit.py from facts.json.
+# AUDIT v0.4 · Echo Atlas by Zyphullen
+Data hash `3ca624a114cc` · generated 2026-11-12 by src/audit.py from facts.json.
 
 **Result:** ✅ no hard problems · 41 notes.
 
@@ -48,6 +48,7 @@ Data hash `b6e5afccf7e5` · generated 2026-11-11 by src/audit.py from facts.json
 - ✅ History event missing numeric date: none
 - ✅ Chain Theory items not orange: none
 - ✅ Planet layers with a gap or overlap: none
+- ✅ AI section files out of sync: none
 - ✅ virtual_cell cards with no source: none
 - ✅ virtual_body cards with no source: none
 - ✅ planet cards with no source: none
@@ -106,3 +107,8 @@ Data hash `b6e5afccf7e5` · generated 2026-11-11 by src/audit.py from facts.json
 - Every node must sit in its panel and be reachable within the pan limits.
 - The Key opens on the first visit to each map and ring, then keeps the visitor's choice; on phones it must not cover the map.
 - Official names only for theories, laws and sources; never invent a source.
+- v0.4: Home must only open a page from a tile; a click in the search box or AI info must not reset Home. All site data lives inside the AI info panel, after the section files.
+- v0.4: the map sleeps while Home is open (content-visibility); anything that measures the map must run after it is shown, and cull() must run before its first layout.
+- v0.4: ai/*.json, facts.json, llms.txt and ai/README.md must all carry DATA_HASH; always rebuild with src/build.py (never hand-edit ai/).
+- v0.4: add sources with tools/papers_v04.py so every DOI is resolved in Crossref and every page is fetched; never type a title from memory.
+- v0.4: index.html loads thumbs/*.webp from the thumbs/ folder (publish it); the TEST file keeps them inside.

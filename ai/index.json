@@ -1,0 +1,139 @@
+{
+ "about": {
+  "site": "Echo Atlas by Zyphullen",
+  "url": "https://zyphullen.github.io/echoatlas/",
+  "version": "0.4",
+  "author": "Zyphullen",
+  "data_hash": "3ca624a114cc",
+  "generated": "2026-11-12",
+  "read_me": "ai/README.md",
+  "all_data": "facts.json",
+  "certainty_key": {
+   "green": "known",
+   "orange": "we think (leading idea / hypothesis)",
+   "red": "unknown"
+  },
+  "certainty_rule": "green = established (known science, or a defined / proved result in Maths); orange = leading idea / partial progress; red = unknown / open problem. A link takes the colour of its less-certain end.",
+  "suggest_a_fix": {
+   "email": "zyphullen@gmail.com",
+   "subject": "Echo Atlas fix: <Card name> (<card id>)",
+   "note": "Every card has a Suggest a fix button that opens a prefilled e-mail (section, card, card id, version, page link). Card ids: fntu/<id>, maths/<id>, history/<id>-<n>, cell/<id>, body/<id>, planet/<id>, element/<symbol>, <section>/link/<from>><to>."
+  },
+  "what_this_is": "Index of the Echo Atlas AI data files. Load only the section you need."
+ },
+ "files": [
+  {
+   "section": "From Nothing to Us",
+   "file": "ai/from-nothing-to-us.json",
+   "about": "Universe → Us map and ring: from \"Before the Big Bang?\" to us, including Chain Theory (one candidate starting point, orange) and its open gap (red).",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#screen=universe&view=map",
+   "counts": {
+    "nodes": 93,
+    "links": 145,
+    "crosslinks_to_maths": 25
+   },
+   "sources": 245,
+   "non_wikipedia_sources": 223,
+   "bytes": 293039,
+   "approx_tokens": 81000
+  },
+  {
+   "section": "Maths",
+   "file": "ai/maths.json",
+   "about": "Maths map and ring: definitions, proved theorems, partial progress and open problems across 16 branches.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#screen=maths&view=map",
+   "counts": {
+    "maths": 86,
+    "crosslinks_to_universe": 25
+   },
+   "sources": 130,
+   "non_wikipedia_sources": 128,
+   "bytes": 184946,
+   "approx_tokens": 51000
+  },
+  {
+   "section": "Maths History",
+   "file": "ai/maths-history.json",
+   "about": "A dated timeline (one or more landmarks for every Maths node), across five eras. Proposed ideas are kept apart from proofs.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#history=1",
+   "counts": {
+    "maths_history": 86
+   },
+   "sources": 84,
+   "non_wikipedia_sources": 82,
+   "bytes": 68251,
+   "approx_tokens": 19000
+  },
+  {
+   "section": "Planet Earth",
+   "file": "ai/planet-earth.json",
+   "about": "Earth from space to the inner core: atmosphere layers, ocean, crust, mantle and core, with real depths in km.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#planet=earth",
+   "counts": {
+    "planet": 18
+   },
+   "sources": 28,
+   "non_wikipedia_sources": 9,
+   "bytes": 18943,
+   "approx_tokens": 5000
+  },
+  {
+   "section": "Virtual Cell",
+   "file": "ai/virtual-cell.json",
+   "about": "A typical human cell: organelles, molecules, atoms and living processes, drawn to scale where possible.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#cell=membrane",
+   "counts": {
+    "virtual_cell": 37
+   },
+   "sources": 85,
+   "non_wikipedia_sources": 44,
+   "bytes": 48046,
+   "approx_tokens": 13000
+  },
+  {
+   "section": "Human Body",
+   "file": "ai/human-body.json",
+   "about": "Organs, bones, muscles, vessels and nerves, and which kinds of cell build each part.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#body=body",
+   "counts": {
+    "virtual_body": 72,
+    "body_to_cell": 21
+   },
+   "sources": 118,
+   "non_wikipedia_sources": 37,
+   "bytes": 79283,
+   "approx_tokens": 22000
+  },
+  {
+   "section": "All the Elements (and Atom Sandbox)",
+   "file": "ai/elements.json",
+   "about": "All 118 elements with symbols, groups and simplified cosmic origins (where each element was mostly made). The Atom Sandbox uses this table; it is a teaching toy with preset reactions, not a quantum simulator.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#ptable=1",
+   "counts": {
+    "elements": 118
+   },
+   "sources": 14,
+   "non_wikipedia_sources": 14,
+   "bytes": 63000,
+   "approx_tokens": 18000
+  }
+ ],
+ "also": [
+  {
+   "file": "facts.json",
+   "what": "Everything in one file (all sections, all sources, link check)."
+  },
+  {
+   "file": "knowledge.html",
+   "what": "The same facts as plain HTML, no JavaScript."
+  },
+  {
+   "file": "llms.txt",
+   "what": "Short site summary for language models."
+  },
+  {
+   "file": "FACTS-GUIDE.md",
+   "what": "Every field explained."
+  }
+ ]
+}
