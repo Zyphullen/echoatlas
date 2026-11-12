@@ -1,5 +1,5 @@
-# AUDIT v0.5 · Echo Atlas by Zyphullen
-Data hash `24c89747fcc2` · generated 2026-11-12 by src/audit.py from facts.json.
+# AUDIT v0.6 · Echo Atlas by Zyphullen
+Data hash `5e3e8e167849` · generated 2026-11-12 by src/audit.py from facts.json.
 
 **Result:** ✅ no hard problems · 38 notes.
 
@@ -14,13 +14,20 @@ Data hash `24c89747fcc2` · generated 2026-11-12 by src/audit.py from facts.json
 | math_nodes | 86 |
 | math_links | 143 |
 | physics_nodes | 32 |
+| biology_nodes | 33 |
 | timeline_events | 22 |
-| section_links | 107 |
+| section_links | 185 |
 | crosslinks | 25 |
-| sources | 477 |
+| sources | 570 |
 | history_nodes | 86 |
 | history_events | 92 |
 
+- ✅ Biology cards with no sources: none
+- ✅ Biology cards with empty summary: none
+- ✅ Biology cards with no certainty colour: none
+- ✅ Biology cards missing an exact share_url: none
+- ✅ Biology cards with Wikipedia only: none
+- ✅ Dangling biology links: none
 - ✅ Physics cards with no sources: none
 - ✅ Physics cards with empty summary: none
 - ✅ Physics cards with no certainty colour: none
@@ -128,3 +135,4 @@ Data hash `24c89747fcc2` · generated 2026-11-12 by src/audit.py from facts.json
 - v0.5: the mini-map hides behind cards on phones; check it never covers the Key, the zoom buttons or a card.
 - v0.5: Physics and Big Bang to Today open their Key on the first visit, like every map; add new sources with tools/papers_v05.py (DOIs resolved in Crossref, pages fetched).
 - v0.5: links between sections reuse the two cards' sources; a new link claim needs a real source on one of its two cards.
+- v0.6: Biology is a section like Physics (src/biology.js data, src/biology-view.js map, js/biology.js loads only when opened, #biology=1 / #b=<id>); add its sources with tools/papers_v06.py.
