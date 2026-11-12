@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- AI / SI visitors: read llms.txt (and the "aiGuide" section at the top of the body) first; data is one file per section in ai/. -->
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt: important guidance for AI / SI visitors (read first)">
+<meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Echo Atlas by Zyphullen · v0.5</title>
+<title>Echo Atlas by Zyphullen · v0.6</title>
 <meta name="description" content="Echo Atlas by Zyphullen: explore the known, map the unknown. Interactive maps of the universe, maths, life and Earth, with every fact coloured by certainty and sourced.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23070d1f%22 stroke=%22%23ffd36b%22 stroke-width=%228%22/%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%234ff3e3%22/%3E%3C/svg%3E">
 <meta property="og:title" content="Echo Atlas by Zyphullen">
@@ -1103,13 +1106,59 @@ body.home-open .mainmm,body.history-open .mainmm,body.ai-open .mainmm{display:no
  #vphysics.carded .mmap,#vtimeline.carded .mmap{right:8px}
  .vzm{left:10px;bottom:12px}
 }
+
+/* ===== Echo Atlas v0.6: Biology section. The Biology map reuses the Physics map styles: every v0.5 #vphysics rule, copied for #vbiology (generated from v05.css) ===== */
+#vbiology{position:fixed;left:0;right:0;bottom:0;top:var(--barH,0px);z-index:52;overflow:hidden;color:#e5f6ff;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;touch-action:none;-webkit-user-select:none;user-select:none;
+ background:radial-gradient(ellipse at 30% 20%,rgba(255,211,107,.09),transparent 55%),radial-gradient(ellipse at 75% 80%,rgba(79,243,227,.08),transparent 55%),radial-gradient(ellipse at 50% 50%,#071327,#02050d 80%)}
+#vbiology button{font:inherit;cursor:pointer}
+#vbiology .vcbar{height:62px;display:flex;align-items:center;gap:18px;padding:10px 18px;position:absolute;left:0;right:0;top:0;z-index:5;box-sizing:border-box;
+ background:linear-gradient(180deg,rgba(4,13,30,.97),rgba(4,10,24,.85));border-bottom:1px solid rgba(255,211,107,.18)}
+#vbiology .vback{font:600 13px system-ui;border:1px solid #3c698b;border-radius:8px;background:#0b1b33;color:#bfffee;padding:8px 12px}
+#vbiology .vtit{font-size:20px;letter-spacing:.2px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:linear-gradient(90deg,#ffe299,#94fff0);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(255,211,107,.25))}
+#vbiology .vtit small{font-size:11px;letter-spacing:.3px;color:#81a5bc;-webkit-text-fill-color:#81a5bc;margin-left:8px}
+#vbiology.moving .phsvg{cursor:grabbing}
+#vbiology.far .phsub{opacity:0}
+#vbiology.carded .phkey{right:426px}
+#vbiology .mmap{position:absolute;top:72px;right:12px;left:auto;bottom:auto}
+#vbiology.carded .mmap{right:426px}
+@media (max-width:600px){#vbiology .vcbar{gap:10px;padding:8px 10px}
+#vbiology .vtit{font-size:16px}
+#vbiology .vtit small{display:none}
+#vbiology.carded .phkey{display:none}
+#vbiology .mmap{top:64px;right:8px}
+#vbiology.carded .mmap{right:8px}}
+#vbiology .vtit{background:linear-gradient(90deg,#b8ffd9,#7fe9ff);-webkit-background-clip:text;background-clip:text}
+
+/* v0.6b: the mini-map is off on phones (desktop keeps it, with the v0.5c card shift) */
+@media (max-width:600px), (pointer:coarse) and (max-height:500px){.mmap{display:none!important}}
+
+/* v0.6b: gold orb image (one copy, used below) */
+:root{--aiOrbImg:url("data:image/png;base64,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")}
+/* v0.6b: the AI / SI orb stays gold everywhere. Phone "auto dark mode" (Chrome / Samsung "dark mode for web pages")
+   darkened the CSS gradient orb to brown-black; an image fill is left alone, so the orb is drawn as a small PNG image,
+   with a solid gold ring as a second layer. No hover / focus / tap / forced-colour state can swap it for a dark fill. */
+.aiOrb,#atlasBar #barAI .aiOrb,.aiOrb.big{background:var(--aiOrbImg) center/100% 100% no-repeat!important;background-color:transparent!important;border-radius:50%;box-shadow:0 0 14px #ffd36b88,inset 0 0 0 1px #ffe8a8;filter:none!important;opacity:1!important;forced-color-adjust:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.aiBtn,#atlasBar #barAI .aiBtn{-webkit-tap-highlight-color:transparent;color-scheme:only dark;forced-color-adjust:none}
+#atlasBar #barAI .aiBtn{border-color:#c9a24a}
+#atlasBar #barAI .aiBtn:hover,#atlasBar #barAI .aiBtn:focus-visible,#atlasBar #barAI .aiBtn:active{border-color:#ffd36b;box-shadow:0 0 0 2px #ffd36b55,0 0 18px #ffd36b44}
+#atlasBar #barAI .aiBtn:hover .aiOrb,#atlasBar #barAI .aiBtn:focus .aiOrb,#atlasBar #barAI .aiBtn:active .aiOrb{background:var(--aiOrbImg) center/100% 100% no-repeat!important}
+@media (max-width:520px){#atlasBar #barAI .aiOrb{width:24px;height:24px}}
+@media (forced-colors:active){.aiOrb{forced-color-adjust:none}#atlasBar #barAI .aiBtn{border:2px solid #ffd36b}}
+@media (prefers-color-scheme:light){.aiOrb,#atlasBar #barAI .aiOrb{background:var(--aiOrbImg) center/100% 100% no-repeat!important}}
+
+/* v0.6b: AI / SI guidance is in the raw HTML for machine readers; people get the same text from the AI / SI info button, so no popup */
+.aiGuide{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0}
 </style>
+<link rel="help" type="text/markdown" href="ai/README.md" title="AI / SI info read-me">
+<link rel="alternate" type="application/json" href="ai/index.json" title="AI / SI section data files (one per section)">
 <link rel="alternate" type="application/json" href="facts.json" title="All facts (machine-readable)">
 </head>
 <body class="booting">
+<!-- IMPORTANT FOR AI / SI VISITORS (AI and superintelligence): read the "aiGuide" section just below, or llms.txt, before you review or summarise this site. Most data is not on screen; load ai/<section>.json files (one per section) to stay inside your context limit. -->
+<section id="aiGuide" class="aiGuide" role="note" aria-labelledby="aiGuideT" data-for="ai-si-visitors"><h2 id="aiGuideT">Important guidance for AI / SI visitors (read this first)</h2><p>If you are an AI / SI (artificial intelligence or superintelligence) reviewing or summarising Echo Atlas, read this before judging the visible page. Live site: <a href="https://zyphullen.github.io/echoatlas/">https://zyphullen.github.io/echoatlas/</a></p><ol><li><b>What this is:</b> Echo Atlas by Zyphullen (v0.6) is an interactive atlas of knowledge, known and unknown: From Nothing to Us (Universe → Us map), Big Bang to Today, Physics, Biology (with the Virtual Cell and Human Body explorers), Maths (map, ring and history), Planet Earth, the Atom Sandbox and all 118 elements. Most of the page is drawn by JavaScript, so the screen you see (or the text you extract) is only a small part of the data.</li><li><b>Certainty colours:</b> green = known / established (or a proved theorem); orange = we think / leading idea or partial progress; red = unknown / open question. Every card lists its sources. Judge a claim by its colour and sources, not by how it looks on screen.</li><li><b>Load only what you need:</b> The data is split into one JSON file per section, so you can stay inside your context limit. Load one section file first; open facts.json (all data in one file; the section files together are about 356k tokens) only if you really need all of it.</li><li><b>Stay inside your context limit:</b> Do not load every file at once. Pick the section that answers the question, then follow the share_url on each card back to the live page.</li><li><b>Same data everywhere:</b> Every file carries the same data hash: 5e3e8e167849. If two files disagree on the hash, one of them is out of date.</li></ol><h3>Section data files (load one at a time)</h3><ul><li><a href="ai/from-nothing-to-us.json">From Nothing to Us</a> <code>ai/from-nothing-to-us.json</code> · ~81k tokens</li><li><a href="ai/big-bang-to-today.json">Big Bang to Today</a> <code>ai/big-bang-to-today.json</code> · ~25k tokens</li><li><a href="ai/physics.json">Physics</a> <code>ai/physics.json</code> · ~60k tokens</li><li><a href="ai/biology.json">Biology</a> <code>ai/biology.json</code> · ~62k tokens</li><li><a href="ai/maths.json">Maths</a> <code>ai/maths.json</code> · ~51k tokens</li><li><a href="ai/maths-history.json">Maths History</a> <code>ai/maths-history.json</code> · ~19k tokens</li><li><a href="ai/planet-earth.json">Planet Earth</a> <code>ai/planet-earth.json</code> · ~5k tokens</li><li><a href="ai/virtual-cell.json">Virtual Cell</a> <code>ai/virtual-cell.json</code> · ~13k tokens</li><li><a href="ai/human-body.json">Human Body</a> <code>ai/human-body.json</code> · ~22k tokens</li><li><a href="ai/elements.json">All the Elements (and Atom Sandbox)</a> <code>ai/elements.json</code> · ~18k tokens</li></ul><h3>Guides and all data</h3><ul><li><a href="llms.txt">llms.txt</a>: this guide as plain text, plus field notes</li><li><a href="ai/README.md">AI / SI info read-me</a>: the same read-me as the gold AI / SI info button (top right)</li><li><a href="ai/index.json">ai/index.json</a>: list of the section files with sizes</li><li><a href="knowledge.html">knowledge.html</a>: all facts as plain HTML, no JavaScript</li><li><a href="facts.json">facts.json</a>: all site data in one file</li></ul><p>People: the same guide opens from the gold <b>AI / SI info</b> button at the top right. Made by Zyphullen.</p></section>
 <canvas id="sky"></canvas>
 <header id="atlasBar">
-  <div class="brand"><h1>Echo Atlas <span class="ver" title="v0.5">v0.5</span></h1><div class="dsw"><span class="by">by Zyphullen</span><span id="domainDesc" role="status">Home</span></div></div>
+  <div class="brand"><h1>Echo Atlas <span class="ver" title="v0.6">v0.6</span></h1><div class="dsw"><span class="by">by Zyphullen</span><span id="domainDesc" role="status">Home</span></div></div>
   <button class="hbtn barBtn" id="hometop" title="Home: main menu" aria-label="Home: main menu"><i>⌂</i><b>Home</b></button>
   <button class="hbtn barBtn" id="ptbtn" title="Explore every section" aria-label="Explore every section" aria-haspopup="menu" aria-expanded="false" aria-controls="xmenu"><i>☰</i><b>Explore</b></button>
   <div id="search" role="search"><button id="sbtn" title="Search (/)" aria-label="Search"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#9ff5ea" stroke-width="2.2" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg></button>
@@ -1123,7 +1172,7 @@ body.home-open .mainmm,body.history-open .mainmm,body.ai-open .mainmm{display:no
     <button id="infob" title="About and credits" aria-label="About and credits">i</button></div>
 </div>
   <div id="barAI">
-    <button type="button" class="aiBtn" id="aib" aria-haspopup="dialog" title="AI info: what data the site holds, one file per section" aria-label="AI info"><span class="aiOrb" aria-hidden="true"><i></i></span><b>AI info</b></button>
+    <button type="button" class="aiBtn" id="aib" aria-haspopup="dialog" title="AI / SI info (AI and superintelligence): what data the site holds, one file per section" aria-label="AI / SI info"><span class="aiOrb" aria-hidden="true"><i></i></span><b>AI / SI info</b></button>
   </div>
 </header>
 <div id="xmenu" role="menu" aria-label="Explore Echo Atlas"></div>
@@ -1170,7 +1219,7 @@ body.home-open .mainmm,body.history-open .mainmm,body.ai-open .mainmm{display:no
   <div id="efmsg"></div><p class="tag">“Don't collect cards. Collect understanding.”</p></div>
 <div id="infp" class="panel" role="dialog" aria-label="About"><div class="ph"><b>ABOUT</b><button class="x" aria-label="close">×</button></div>
   <p><b>Echo Atlas</b> by Zyphullen. Explore the known. Map the unknown. From Nothing to Us is one section: how everything emerges, from the quantum field to us.</p>
-  <p class="verl">v0.5</p>
+  <p class="verl">v0.6</p>
   <h5>Music</h5><div class="sndrow"><button id="mute2">🔊 Music on</button><input id="vol2" type="range" min="0" max="100" step="1" aria-label="Music volume"></div>
   <p class="cred">Piano: Salamander Grand Piano by Alexander Holm (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>), via <a href="https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html" target="_blank" rel="noopener">FreePats</a></p>
   <div class="irow"><button id="howb">❔ How to use</button><a id="sugg" href="https://github.com/Zyphullen/echoatlas/issues/new" target="_blank" rel="noopener">✎ Suggest a fix</a></div></div>
@@ -1195,7 +1244,7 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const SUP = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
 const pow10 = e => '10' + String(Math.round(e)).split('').map(c => SUP[c]).join('');
 const szShort = n => n.sz == null ? '' : (Math.round(n.sz) === 0 ? '~1 m' : '~' + pow10(n.sz) + ' m');
-const DATA_HASH = '24c89747fcc2'; // same hash is in facts.json (including both maps)
+const DATA_HASH = '5e3e8e167849'; // same hash is in facts.json (including both maps)
 const CHAIN_THEORY_TEST_NODES = new Set(['nothing','axiom','qudits','distill','genres','gauge','alpha','chainmail','ctspace','gap']);
 const SRC = {
  katrin:['KATRIN, Science 2025: neutrino mass below 0.45 eV','https://doi.org/10.1126/science.adq9592'],
@@ -2694,7 +2743,7 @@ function linkInfo(a, b) {
     own: ok === undefined ? null : ok.split(' ').filter(k => SRC[k]), ownNote: (typeof LINK_SRC_NOTE !== 'undefined' && LINK_SRC_NOTE[a + '>' + b]) || '', ct: [a, b].some(i => CHAIN_THEORY_TEST_NODES.has(i) && i !== 'nothing') };
 }
 /* v0.2 source details and the Suggest a fix e-mail (prefilled; people can edit or delete any of it) */
-const FIX_TO = 'zyphullen@gmail.com', FIX_VER = 'v0.4';
+const FIX_TO = 'zyphullen@gmail.com', FIX_VER = 'v0.6';
 function fixMailURL(section, name, id, deep) {
   const subject = `Echo Atlas fix: ${name} (${id})`;
   const body = `Section: ${section}\nCard: ${name}\nCard ID: ${id}\nVersion: ${FIX_VER}\nPage: ${deep}\n\nYour fix:\n\n\n\nSource: (optional, a link that supports the fix)\n`;
@@ -3490,6 +3539,530 @@ const PHYS = [
    src: ['ph_penzias1965', 'planck', 'ph_w_cosmic_microwave_background'], rel: [['fntu', 'cmb', 'the afterglow on the From Nothing to Us map'], ['tl', 'recombination', 'when this light was set free']] }
 ];
 const PHYS_BY_ID = Object.fromEntries(PHYS.map(n => [n.id, n]));
+/* v0.6: sources for Biology. Generated by tools/papers_v06.py on 2026-11-12:
+   every DOI resolved in Crossref, every OpenStax page named from its table of contents, every web page fetched. Nothing typed from memory. */
+Object.assign(SRC, {
+"bi_watson1953": [
+"Watson & Crick 1953: Molecular Structure of Nucleic Acids: A Structure for Deoxyribose Nucleic Acid (Nature)",
+"https://doi.org/10.1038/171737a0"
+],
+"bi_franklin1953": [
+"Franklin & Gosling 1953: Molecular Configuration in Sodium Thymonucleate (Nature)",
+"https://doi.org/10.1038/171740a0"
+],
+"bi_singer1972": [
+"Singer & Nicolson 1972: The Fluid Mosaic Model of the Structure of Cell Membranes (Science)",
+"https://doi.org/10.1126/science.175.4023.720"
+],
+"bi_nirenberg1961": [
+"Nirenberg & Matthaei 1961: The dependence of cell-free protein synthesis in E. coli upon naturally occurring or synthetic polyribonucleotides (Proc. Natl. Acad. Sci. U.S.A.)",
+"https://doi.org/10.1073/pnas.47.10.1588"
+],
+"bi_crick1970": [
+"Crick 1970: Central Dogma of Molecular Biology (Nature)",
+"https://doi.org/10.1038/227561a0"
+],
+"bi_darwin1858": [
+"Darwin & Wallace 1858: On the Tendency of Species to form Varieties; and on the Perpetuation of Varieties and Species by Natural Means of Selection (Journal of the Proceedings of the Linnean Society of London. Zoology)",
+"https://doi.org/10.1111/j.1096-3642.1858.tb02500.x"
+],
+"bi_woese1990": [
+"Woese et al. 1990: Towards a natural system of organisms: proposal for the domains Archaea, Bacteria, and Eucarya (Proc. Natl. Acad. Sci. U.S.A.)",
+"https://doi.org/10.1073/pnas.87.12.4576"
+],
+"bi_sagan1967": [
+"Sagan 1967: On the origin of mitosing cells (Journal of Theoretical Biology)",
+"https://doi.org/10.1016/0022-5193(67)90079-3"
+],
+"bi_zaremba2017": [
+"Zaremba-Niedzwiedzka et al. 2017: Asgard archaea illuminate the origin of eukaryotic cellular complexity (Nature)",
+"https://doi.org/10.1038/nature21031"
+],
+"bi_eme2023": [
+"Eme et al. 2023: Inference and reconstruction of the heimdallarchaeial ancestry of eukaryotes (Nature)",
+"https://doi.org/10.1038/s41586-023-06186-2"
+],
+"bi_theobald2010": [
+"Theobald 2010: A formal test of the theory of universal common ancestry (Nature)",
+"https://doi.org/10.1038/nature09014"
+],
+"bi_moody2024": [
+"Moody et al. 2024: The nature of the last universal common ancestor and its impact on the early Earth system (Nat Ecol Evol)",
+"https://doi.org/10.1038/s41559-024-02461-1"
+],
+"bi_gilbert1986": [
+"Gilbert 1986: Origin of life: The RNA world (Nature)",
+"https://doi.org/10.1038/319618a0"
+],
+"bi_miller1953": [
+"Miller 1953: A Production of Amino Acids Under Possible Primitive Earth Conditions (Science)",
+"https://doi.org/10.1126/science.117.3046.528"
+],
+"bi_raup1982": [
+"Raup & Sepkoski 1982: Mass Extinctions in the Marine Fossil Record (Science)",
+"https://doi.org/10.1126/science.215.4539.1501"
+],
+"bi_hublin2017": [
+"Hublin et al. 2017: New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens (Nature)",
+"https://doi.org/10.1038/nature22336"
+],
+"bi_hodgkin1952": [
+"Hodgkin & Huxley 1952: A quantitative description of membrane current and its application to conduction and excitation in nerve (The Journal of Physiology)",
+"https://doi.org/10.1113/jphysiol.1952.sp004764"
+],
+"bi_seth2022": [
+"Seth & Bayne 2022: Theories of consciousness (Nat Rev Neurosci)",
+"https://doi.org/10.1038/s41583-022-00587-4"
+],
+"bi_lyons2014": [
+"Lyons et al. 2014: The rise of oxygen in Earth’s early ocean and atmosphere (Nature)",
+"https://doi.org/10.1038/nature13068"
+],
+"bi_mitchell1961": [
+"Mitchell 1961: Coupling of Phosphorylation to Electron and Hydrogen Transfer by a Chemi-Osmotic type of Mechanism (Nature)",
+"https://doi.org/10.1038/191144a0"
+],
+"bi_cannon1929": [
+"Cannon 1929: Organization for physiological homeostasis (Physiological Reviews)",
+"https://doi.org/10.1152/physrev.1929.9.3.399"
+],
+"bi_sumner1926": [
+"Sumner 1926: The isolation and crystallization of the enzyme urease (Journal of Biological Chemistry)",
+"https://doi.org/10.1016/S0021-9258(18)84560-4"
+],
+"bi_blankenship2010": [
+"Blankenship 2010: Early Evolution of Photosynthesis (Plant Physiology)",
+"https://doi.org/10.1104/pp.110.161687"
+],
+"bi_mazzarello1999": [
+"Mazzarello 1999: A unifying concept: the history of cell theory (Nat Cell Biol)",
+"https://doi.org/10.1038/8964"
+],
+"bi_erwin2011": [
+"Erwin et al. 2011: The Cambrian Conundrum: Early Divergence and Later Ecological Success in the Early History of Animals (Science)",
+"https://doi.org/10.1126/science.1206375"
+],
+"bi_lindeman1942": [
+"Lindeman 1942: The Trophic‐Dynamic Aspect of Ecology (Ecology)",
+"https://doi.org/10.2307/1930126"
+],
+"bi_desmarais2008": [
+"Des Marais et al. 2008: The NASA Astrobiology Roadmap (Astrobiology)",
+"https://doi.org/10.1089/ast.2008.0819"
+],
+"bi_os_carbon": [
+"OpenStax Biology 2e, 2.3 Carbon",
+"https://openstax.org/books/biology-2e/pages/2-3-carbon"
+],
+"bi_os_macro": [
+"OpenStax Biology 2e, 3.1 Synthesis of Biological Macromolecules",
+"https://openstax.org/books/biology-2e/pages/3-1-synthesis-of-biological-macromolecules"
+],
+"bi_os_studying": [
+"OpenStax Biology 2e, 4.1 Studying Cells",
+"https://openstax.org/books/biology-2e/pages/4-1-studying-cells"
+],
+"bi_os_prok": [
+"OpenStax Biology 2e, 4.2 Prokaryotic Cells",
+"https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells"
+],
+"bi_os_euk": [
+"OpenStax Biology 2e, 4.3 Eukaryotic Cells",
+"https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+],
+"bi_os_membrane": [
+"OpenStax Biology 2e, 5.1 Components and Structure",
+"https://openstax.org/books/biology-2e/pages/5-1-components-and-structure"
+],
+"bi_os_atp": [
+"OpenStax Biology 2e, 6.4 ATP: Adenosine Triphosphate",
+"https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate"
+],
+"bi_os_enzymes": [
+"OpenStax Biology 2e, 6.5 Enzymes",
+"https://openstax.org/books/biology-2e/pages/6-5-enzymes"
+],
+"bi_os_resp": [
+"OpenStax Biology 2e, 7.1 Energy in Living Systems",
+"https://openstax.org/books/biology-2e/pages/7-1-energy-in-living-systems"
+],
+"bi_os_photo": [
+"OpenStax Biology 2e, 8.1 Overview of Photosynthesis",
+"https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis"
+],
+"bi_os_division": [
+"OpenStax Biology 2e, 10.1 Cell Division",
+"https://openstax.org/books/biology-2e/pages/10-1-cell-division"
+],
+"bi_os_meiosis": [
+"OpenStax Biology 2e, 11.1 The Process of Meiosis",
+"https://openstax.org/books/biology-2e/pages/11-1-the-process-of-meiosis"
+],
+"bi_os_mendel": [
+"OpenStax Biology 2e, 12.1 Mendel’s Experiments and the Laws of Probability",
+"https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-probability"
+],
+"bi_os_dna": [
+"OpenStax Biology 2e, 14.2 DNA Structure and Sequencing",
+"https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing"
+],
+"bi_os_code": [
+"OpenStax Biology 2e, 15.1 The Genetic Code",
+"https://openstax.org/books/biology-2e/pages/15-1-the-genetic-code"
+],
+"bi_os_ribosome": [
+"OpenStax Biology 2e, 15.5 Ribosomes and Protein Synthesis",
+"https://openstax.org/books/biology-2e/pages/15-5-ribosomes-and-protein-synthesis"
+],
+"bi_os_evolution": [
+"OpenStax Biology 2e, 18.1 Understanding Evolution",
+"https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution"
+],
+"bi_os_species": [
+"OpenStax Biology 2e, 18.2 Formation of New Species",
+"https://openstax.org/books/biology-2e/pages/18-2-formation-of-new-species"
+],
+"bi_os_popevo": [
+"OpenStax Biology 2e, 19.1 Population Evolution",
+"https://openstax.org/books/biology-2e/pages/19-1-population-evolution"
+],
+"bi_os_tree": [
+"OpenStax Biology 2e, 20.1 Organizing Life on Earth",
+"https://openstax.org/books/biology-2e/pages/20-1-organizing-life-on-earth"
+],
+"bi_os_prokdiv": [
+"OpenStax Biology 2e, 22.1 Prokaryotic Diversity",
+"https://openstax.org/books/biology-2e/pages/22-1-prokaryotic-diversity"
+],
+"bi_os_eukorigin": [
+"OpenStax Biology 2e, 23.1 Eukaryotic Origins",
+"https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins"
+],
+"bi_os_animalhist": [
+"OpenStax Biology 2e, 27.4 The Evolutionary History of the Animal Kingdom",
+"https://openstax.org/books/biology-2e/pages/27-4-the-evolutionary-history-of-the-animal-kingdom"
+],
+"bi_os_primates": [
+"OpenStax Biology 2e, 29.7 The Evolution of Primates",
+"https://openstax.org/books/biology-2e/pages/29-7-the-evolution-of-primates"
+],
+"bi_os_homeostasis": [
+"OpenStax Biology 2e, 33.3 Homeostasis",
+"https://openstax.org/books/biology-2e/pages/33-3-homeostasis"
+],
+"bi_os_neurons": [
+"OpenStax Biology 2e, 35.2 How Neurons Communicate",
+"https://openstax.org/books/biology-2e/pages/35-2-how-neurons-communicate"
+],
+"bi_os_ecosystems": [
+"OpenStax Biology 2e, 46.1 Ecology of Ecosystems",
+"https://openstax.org/books/biology-2e/pages/46-1-ecology-of-ecosystems"
+],
+"bi_os_energyflow": [
+"OpenStax Biology 2e, 46.2 Energy Flow through Ecosystems",
+"https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems"
+],
+"bi_os_cycles": [
+"OpenStax Biology 2e, 46.3 Biogeochemical Cycles",
+"https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles"
+],
+"bi_os_biodiv": [
+"OpenStax Biology 2e, 47.1 The Biodiversity Crisis",
+"https://openstax.org/books/biology-2e/pages/47-1-the-biodiversity-crisis"
+],
+"bi_nasa_astrobio": [
+"NASA Astrobiology",
+"https://astrobiology.nasa.gov/"
+],
+"bi_nasa_carbon": [
+"NASA Earth Observatory: The Carbon Cycle",
+"https://earthobservatory.nasa.gov/features/CarbonCycle"
+],
+"bi_nhgri_dna": [
+"NHGRI: Deoxyribonucleic acid (DNA) fact sheet",
+"https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet"
+],
+"bi_w_biomolecule": [
+"Wikipedia: Biomolecule",
+"https://en.wikipedia.org/wiki/Biomolecule"
+],
+"bi_w_cell_theory": [
+"Wikipedia: Cell theory",
+"https://en.wikipedia.org/wiki/Cell_theory"
+],
+"bi_w_cell_membrane": [
+"Wikipedia: Cell membrane",
+"https://en.wikipedia.org/wiki/Cell_membrane"
+],
+"bi_w_prokaryote": [
+"Wikipedia: Prokaryote",
+"https://en.wikipedia.org/wiki/Prokaryote"
+],
+"bi_w_eukaryote": [
+"Wikipedia: Eukaryote",
+"https://en.wikipedia.org/wiki/Eukaryote"
+],
+"bi_w_dna": [
+"Wikipedia: DNA",
+"https://en.wikipedia.org/wiki/DNA"
+],
+"bi_w_central_dogma_of_molecular_biology": [
+"Wikipedia: Central dogma of molecular biology",
+"https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology"
+],
+"bi_w_genetic_code": [
+"Wikipedia: Genetic code",
+"https://en.wikipedia.org/wiki/Genetic_code"
+],
+"bi_w_enzyme": [
+"Wikipedia: Enzyme",
+"https://en.wikipedia.org/wiki/Enzyme"
+],
+"bi_w_adenosine_triphosphate": [
+"Wikipedia: Adenosine triphosphate",
+"https://en.wikipedia.org/wiki/Adenosine_triphosphate"
+],
+"bi_w_cell_division": [
+"Wikipedia: Cell division",
+"https://en.wikipedia.org/wiki/Cell_division"
+],
+"bi_w_abiogenesis": [
+"Wikipedia: Abiogenesis",
+"https://en.wikipedia.org/wiki/Abiogenesis"
+],
+"bi_w_rna_world": [
+"Wikipedia: RNA world",
+"https://en.wikipedia.org/wiki/RNA_world"
+],
+"bi_w_last_universal_common_ancestor": [
+"Wikipedia: Last universal common ancestor",
+"https://en.wikipedia.org/wiki/Last_universal_common_ancestor"
+],
+"bi_w_symbiogenesis": [
+"Wikipedia: Symbiogenesis",
+"https://en.wikipedia.org/wiki/Symbiogenesis"
+],
+"bi_w_eukaryogenesis": [
+"Wikipedia: Eukaryogenesis",
+"https://en.wikipedia.org/wiki/Eukaryogenesis"
+],
+"bi_w_three_domain_system": [
+"Wikipedia: Three-domain system",
+"https://en.wikipedia.org/wiki/Three-domain_system"
+],
+"bi_w_mendelian_inheritance": [
+"Wikipedia: Mendelian inheritance",
+"https://en.wikipedia.org/wiki/Mendelian_inheritance"
+],
+"bi_w_natural_selection": [
+"Wikipedia: Natural selection",
+"https://en.wikipedia.org/wiki/Natural_selection"
+],
+"bi_w_modern_synthesis_20th_century": [
+"Wikipedia: Modern synthesis (20th century)",
+"https://en.wikipedia.org/wiki/Modern_synthesis_(20th_century)"
+],
+"bi_w_speciation": [
+"Wikipedia: Speciation",
+"https://en.wikipedia.org/wiki/Speciation"
+],
+"bi_w_cambrian_explosion": [
+"Wikipedia: Cambrian explosion",
+"https://en.wikipedia.org/wiki/Cambrian_explosion"
+],
+"bi_w_extinction_event": [
+"Wikipedia: Extinction event",
+"https://en.wikipedia.org/wiki/Extinction_event"
+],
+"bi_w_human_evolution": [
+"Wikipedia: Human evolution",
+"https://en.wikipedia.org/wiki/Human_evolution"
+],
+"bi_w_astrobiology": [
+"Wikipedia: Astrobiology",
+"https://en.wikipedia.org/wiki/Astrobiology"
+],
+"bi_w_photosynthesis": [
+"Wikipedia: Photosynthesis",
+"https://en.wikipedia.org/wiki/Photosynthesis"
+],
+"bi_w_cellular_respiration": [
+"Wikipedia: Cellular respiration",
+"https://en.wikipedia.org/wiki/Cellular_respiration"
+],
+"bi_w_great_oxidation_event": [
+"Wikipedia: Great Oxidation Event",
+"https://en.wikipedia.org/wiki/Great_Oxidation_Event"
+],
+"bi_w_ecosystem": [
+"Wikipedia: Ecosystem",
+"https://en.wikipedia.org/wiki/Ecosystem"
+],
+"bi_w_carbon_cycle": [
+"Wikipedia: Carbon cycle",
+"https://en.wikipedia.org/wiki/Carbon_cycle"
+],
+"bi_w_homeostasis": [
+"Wikipedia: Homeostasis",
+"https://en.wikipedia.org/wiki/Homeostasis"
+],
+"bi_w_action_potential": [
+"Wikipedia: Action potential",
+"https://en.wikipedia.org/wiki/Action_potential"
+],
+"bi_w_consciousness": [
+"Wikipedia: Consciousness",
+"https://en.wikipedia.org/wiki/Consciousness"
+]
+});
+Object.assign(SRC_META, {"https://doi.org/10.1038/171737a0": {"type": "paper", "year": 1953, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/171740a0": {"type": "paper", "year": 1953, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1126/science.175.4023.720": {"type": "paper", "year": 1972, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1073/pnas.47.10.1588": {"type": "paper", "year": 1961, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1038/227561a0": {"type": "paper", "year": 1970, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1111/j.1096-3642.1858.tb02500.x": {"type": "paper", "year": 1858, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1073/pnas.87.12.4576": {"type": "paper", "year": 1990, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1016/0022-5193(67)90079-3": {"type": "paper", "year": 1967, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/nature21031": {"type": "paper", "year": 2017, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/s41586-023-06186-2": {"type": "paper", "year": 2023, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/nature09014": {"type": "paper", "year": 2010, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/s41559-024-02461-1": {"type": "paper", "year": 2024, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/319618a0": {"type": "paper", "year": 1986, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1126/science.117.3046.528": {"type": "paper", "year": 1953, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1126/science.215.4539.1501": {"type": "paper", "year": 1982, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1038/nature22336": {"type": "paper", "year": 2017, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1113/jphysiol.1952.sp004764": {"type": "paper", "year": 1952, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1038/s41583-022-00587-4": {"type": "paper", "year": 2022, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/nature13068": {"type": "paper", "year": 2014, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1038/191144a0": {"type": "paper", "year": 1961, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1152/physrev.1929.9.3.399": {"type": "review", "year": 1929, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1016/S0021-9258(18)84560-4": {"type": "paper", "year": 1926, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1104/pp.110.161687": {"type": "paper", "year": 2010, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1038/8964": {"type": "paper", "year": 1999, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://doi.org/10.1126/science.1206375": {"type": "paper", "year": 2011, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.2307/1930126": {"type": "paper", "year": 1942, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://doi.org/10.1089/ast.2008.0819": {"type": "paper", "year": 2008, "year_note": "Crossref", "last_checked": "2026-11-12", "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)", "http": "403"}, "https://openstax.org/books/biology-2e/pages/2-3-carbon": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/3-1-synthesis-of-biological-macromolecules": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/4-1-studying-cells": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/5-1-components-and-structure": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/6-5-enzymes": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/7-1-energy-in-living-systems": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/10-1-cell-division": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/11-1-the-process-of-meiosis": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-probability": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/15-1-the-genetic-code": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/15-5-ribosomes-and-protein-synthesis": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/18-2-formation-of-new-species": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/19-1-population-evolution": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/20-1-organizing-life-on-earth": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/22-1-prokaryotic-diversity": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/27-4-the-evolutionary-history-of-the-animal-kingdom": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/29-7-the-evolution-of-primates": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/33-3-homeostasis": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/35-2-how-neurons-communicate": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/46-1-ecology-of-ecosystems": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://openstax.org/books/biology-2e/pages/47-1-the-biodiversity-crisis": {"type": "textbook", "year": 2018, "year_note": "OpenStax publish date of this edition", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://astrobiology.nasa.gov/": {"type": "official", "year": null, "year_note": "living page (official body); no single publication year", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://earthobservatory.nasa.gov/features/CarbonCycle": {"type": "official", "year": null, "year_note": "living page (official body); no single publication year", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet": {"type": "official", "year": null, "year_note": "living page (official body); no single publication year", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Biomolecule": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Cell_theory": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Cell_membrane": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Prokaryote": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Eukaryote": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/DNA": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Genetic_code": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Enzyme": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Adenosine_triphosphate": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Cell_division": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Abiogenesis": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/RNA_world": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Last_universal_common_ancestor": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Symbiogenesis": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Eukaryogenesis": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Three-domain_system": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Mendelian_inheritance": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Natural_selection": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Modern_synthesis_(20th_century)": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Speciation": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Cambrian_explosion": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Extinction_event": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Human_evolution": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Astrobiology": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Photosynthesis": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Cellular_respiration": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Great_Oxidation_Event": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Ecosystem": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Carbon_cycle": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Homeostasis": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Action_potential": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Consciousness": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}});
+/* v0.6 BIOLOGY: cells, evolution and life systems. Official names only. Colour = certainty (k green established, t orange leading idea, u red unknown).
+   p = the ideas each card builds on (lines on the Biology map). rel = links to related cards in OTHER sections (#n= From Nothing to Us, #m= Maths,
+   #p= Physics, #t= Big Bang to Today, All the Elements, and Virtual Cell / Human Body / Planet Earth cards); a link's sources are the sources on the
+   two cards it joins. Every source key is in SRC (tools/papers_v06.py resolved every DOI in Crossref and fetched every page). */
+const BIO_CATS = {
+  cells: { name: 'CELLS & MOLECULES', sub: 'the chemistry and machinery inside every cell', col: '#5cf0a0' },
+  evolution: { name: 'EVOLUTION & ORGANISMS', sub: 'where life came from and how it changes', col: '#ffd36b' },
+  systems: { name: 'LIFE SYSTEMS', sub: 'energy, ecosystems and bodies', col: '#7fd4ff' }
+};
+const BIO = [
+ // ---------------- CELLS & MOLECULES ----------------
+ { id: 'chnops', cat: 'cells', name: 'Elements of life (CHNOPS)', sub: 'six elements build most of life', s: 'k', p: [], g: 'chnops',
+   a: ['Most of the mass of every living thing is just six elements: carbon, hydrogen, nitrogen, oxygen, phosphorus and sulfur.', 'Carbon can make four bonds, so it builds the chains and rings of life\'s molecules.'],
+   b: [['Carbon', 'Each carbon atom forms four covalent bonds, giving a huge variety of molecule shapes.'], ['Made in stars', 'Hydrogen comes mostly from the Big Bang; the other five were made in stars.']],
+   src: ['bi_os_carbon', 'bi_w_biomolecule'], rel: [['pt', '6', 'carbon'], ['pt', '15', 'phosphorus, in DNA and ATP'], ['fntu', 'fusion', 'carbon, nitrogen and oxygen are made in stars'], ['cell', 'elC', 'a carbon atom in the Virtual Cell']] },
+ { id: 'macromolecules', cat: 'cells', name: 'Biological macromolecules', sub: 'proteins, nucleic acids, sugars, lipids', s: 'k', p: ['chnops'], g: 'chain',
+   a: ['Four big families of molecules build every cell: proteins, nucleic acids, carbohydrates and lipids.', 'Most are long chains made by linking small units together.'],
+   b: [['Units', 'Amino acids → proteins; nucleotides → DNA and RNA; sugars → starch and cellulose.'], ['Lipids', 'Fats and phospholipids are not long repeating chains, but they build membranes and store energy.']],
+   src: ['bi_os_macro', 'bi_w_biomolecule'], rel: [['fntu', 'amino', 'building blocks of proteins'], ['fntu', 'nucleotides', 'building blocks of DNA and RNA'], ['fntu', 'lipids', 'membrane molecules'], ['cell', 'protein', 'a protein in the Virtual Cell']] },
+ { id: 'cell-theory', cat: 'cells', name: 'Cell theory', sub: 'every living thing is made of cells', s: 'k', p: [], g: 'cell',
+   a: ['All living things are made of one or more cells.', 'The cell is the basic unit of life, and every cell comes from an earlier cell.'],
+   b: [['Built', 'Schleiden and Schwann (1838–39) and Virchow (1855), after the first microscopes of Hooke and van Leeuwenhoek.'], ['Viruses', 'Viruses are not cells; whether they count as alive is debated.']],
+   src: ['bi_mazzarello1999', 'bi_os_studying', 'bi_w_cell_theory'], rel: [['cell', 'cell', 'a typical human cell'], ['fntu', 'protocell', 'the first cells on the From Nothing to Us map']] },
+ { id: 'cell-types', cat: 'cells', name: 'Prokaryotic and eukaryotic cells', sub: 'without and with a nucleus', s: 'k', p: ['cell-theory'], g: 'twocell',
+   a: ['Prokaryotes (bacteria and archaea) have no nucleus.', 'Eukaryotic cells (animals, plants, fungi, protists) keep their DNA in a nucleus and have organelles.'],
+   b: [['Size', 'Most prokaryotic cells are about 0.1–5 µm across; eukaryotic cells are usually about 10–100 µm.'], ['You', 'Your body is built from eukaryotic cells, and carries many prokaryotes too.']],
+   src: ['bi_os_prok', 'bi_os_euk', 'bi_w_prokaryote', 'bi_w_eukaryote'], rel: [['cell', 'nucleus', 'the nucleus'], ['fntu', 'prok', 'bacteria and archaea'], ['fntu', 'eukaryote', 'complex cells']] },
+ { id: 'cell-membrane', cat: 'cells', name: 'Cell membrane', sub: 'a fluid mosaic of lipids and proteins', s: 'k', p: ['macromolecules', 'cell-theory'], g: 'membrane',
+   a: ['A thin double layer of phospholipids, studded with proteins, wraps every cell.', 'It lets some things through and keeps others out.'],
+   b: [['Model', 'The fluid mosaic model (Singer and Nicolson, 1972): proteins float in a fluid layer of lipids.'], ['Thin', 'About 5–10 nm thick.']],
+   src: ['bi_singer1972', 'bi_os_membrane', 'bi_w_cell_membrane'], rel: [['cell', 'membrane', 'the membrane in the Virtual Cell'], ['cell', 'lipid', 'a phospholipid'], ['fntu', 'vesicles', 'fatty bubbles on the From Nothing to Us map']] },
+ { id: 'dna', cat: 'cells', name: 'DNA double helix', sub: 'the molecule of heredity', s: 'k', p: ['macromolecules'], g: 'helix',
+   a: ['DNA is two strands wound into a double helix, joined by base pairs: A with T, G with C.', 'The order of the bases stores genetic information.'],
+   b: [['Discovered', 'Watson and Crick proposed the structure in 1953, using X-ray data from Rosalind Franklin and Raymond Gosling.'], ['Size', 'One set of human chromosomes holds about 3 billion base pairs.']],
+   src: ['bi_watson1953', 'bi_franklin1953', 'bi_os_dna', 'bi_nhgri_dna', 'bi_w_dna'], rel: [['fntu', 'dna', 'DNA on the From Nothing to Us map'], ['cell', 'dna', 'chromatin in the Virtual Cell'], ['cell', 'basepair', 'a base pair']] },
+ { id: 'central-dogma', cat: 'cells', name: 'Central dogma of molecular biology', sub: 'DNA → RNA → protein', s: 'k', p: ['dna'], g: 'dogma',
+   a: ['Genetic information flows from DNA to RNA (transcription) and from RNA to protein (translation).', 'It does not flow back from protein to DNA or RNA.'],
+   b: [['Stated', 'Francis Crick, 1958; restated in Nature in 1970.'], ['RNA → DNA', 'Retroviruses copy RNA back into DNA; this fits Crick\'s rule, which only forbids protein → nucleic acid.']],
+   src: ['bi_crick1970', 'bi_os_ribosome', 'bi_w_central_dogma_of_molecular_biology'], rel: [['cell', 'rib', 'ribosomes make the proteins'], ['fntu', 'proteins', 'proteins on the From Nothing to Us map']] },
+ { id: 'genetic-code', cat: 'cells', name: 'Genetic code', sub: 'three letters for each amino acid', s: 'k', p: ['central-dogma'], g: 'codon',
+   a: ['Each three-letter codon in RNA stands for one amino acid, or "stop".', '64 codons code for 20 standard amino acids, and almost all life uses the same code.'],
+   b: [['Cracked', 'Nirenberg and Matthaei read the first codon (UUU = phenylalanine) in 1961.'], ['Shared', 'The near-universal code is strong evidence that all life shares an ancestor.']],
+   src: ['bi_nirenberg1961', 'bi_os_code', 'bi_w_genetic_code'], rel: [['fntu', 'code', 'the genetic code on the From Nothing to Us map'], ['cell', 'peptide', 'a protein chain']] },
+ { id: 'enzymes', cat: 'cells', name: 'Enzymes', sub: 'catalysts that speed up life', s: 'k', p: ['macromolecules'], g: 'enzyme',
+   a: ['Enzymes are catalysts, mostly proteins, that speed up the chemical reactions in cells.', 'Each one fits its target molecule at an active site.'],
+   b: [['Proof', 'In 1926 James Sumner crystallised the enzyme urease and showed it is a protein.'], ['RNA too', 'Some RNA molecules (ribozymes) are catalysts as well, including the core of the ribosome.']],
+   src: ['bi_sumner1926', 'bi_os_enzymes', 'bi_w_enzyme'], rel: [['cell', 'protein', 'proteins in the Virtual Cell'], ['fntu', 'proteins', 'proteins on the From Nothing to Us map']] },
+ { id: 'atp', cat: 'cells', name: 'ATP', sub: 'the cell\'s energy currency', s: 'k', p: ['macromolecules'], g: 'atp',
+   a: ['Adenosine triphosphate carries energy around the cell.', 'Splitting off its last phosphate releases energy that powers work, from muscles to building proteins.'],
+   b: [['Recycled', 'Cells remake ATP from ADP and phosphate again and again, mostly with the enzyme ATP synthase.'], ['Parts', 'Adenine, the sugar ribose and three phosphate groups.']],
+   src: ['bi_os_atp', 'bi_w_adenosine_triphosphate'], rel: [['cell', 'atp', 'ATP in the Virtual Cell'], ['cell', 'atps', 'ATP synthase'], ['pt', '15', 'phosphorus']] },
+ { id: 'cell-division', cat: 'cells', name: 'Cell division', sub: 'mitosis copies, meiosis mixes', s: 'k', p: ['dna', 'cell-types'], g: 'divide',
+   a: ['In mitosis one cell becomes two identical cells, for growth and repair.', 'Meiosis makes egg and sperm cells with half the chromosomes, and shuffles the genes.'],
+   b: [['First', 'Before dividing, a cell copies all of its DNA.'], ['Bacteria', 'Prokaryotes divide more simply, by binary fission.']],
+   src: ['bi_os_division', 'bi_os_meiosis', 'bi_w_cell_division'], rel: [['cell', 'cent', 'the centrosome organises division'], ['fntu', 'multicell', 'many-celled life']] },
+ // ---------------- EVOLUTION & ORGANISMS ----------------
+ { id: 'origin-of-life', cat: 'evolution', name: 'Origin of life', sub: 'how chemistry became biology', s: 'u', p: ['chnops'], g: 'q',
+   a: ['How non-living chemistry first became living cells is unknown.', 'Experiments show life\'s building blocks can form naturally, but no one has made life from scratch.'],
+   b: [['Classic test', 'In 1953 Stanley Miller made amino acids from simple gases and electric sparks.'], ['When', 'Life was present by about 3.5 billion years ago; how it began is still open.']],
+   src: ['bi_miller1953', 'bi_desmarais2008', 'bi_w_abiogenesis'], rel: [['fntu', 'origin', 'the first spark on the From Nothing to Us map'], ['fntu', 'chem', 'early-Earth chemistry'], ['tl', 'earliest-fossils', 'the oldest widely accepted fossils']] },
+ { id: 'rna-world', cat: 'evolution', name: 'RNA world', sub: 'RNA as both gene and enzyme', s: 't', p: ['origin-of-life', 'central-dogma'], g: 'rna',
+   a: ['A leading idea: early life used RNA both to store genes and to speed up reactions, before DNA and proteins.', 'Ribozymes show that RNA can do both jobs.'],
+   b: [['Named', 'Walter Gilbert named the "RNA world" in 1986.'], ['Status', 'Widely supported but not proven; how the first RNA formed is unknown.']],
+   src: ['bi_gilbert1986', 'bi_w_rna_world'], rel: [['fntu', 'rnaworld', 'RNA world on the From Nothing to Us map']] },
+ { id: 'luca', cat: 'evolution', name: 'Last universal common ancestor (LUCA)', sub: 'the shared ancestor of all life', s: 't', p: ['rna-world', 'genetic-code'], g: 'tree',
+   a: ['All living things today descend from one ancestral population, called LUCA.', 'Its age and features are estimates, worked out by comparing genes.'],
+   b: [['Evidence', 'A formal statistical test in 2010 strongly supported universal common ancestry.'], ['Age', 'A 2024 study estimated LUCA lived about 4.2 billion years ago; other estimates differ.']],
+   src: ['bi_theobald2010', 'bi_moody2024', 'bi_w_last_universal_common_ancestor'], rel: [['fntu', 'luca', 'LUCA on the From Nothing to Us map'], ['tl', 'luca', 'on the Big Bang to Today timeline']] },
+ { id: 'three-domains', cat: 'evolution', name: 'Three domains of life', sub: 'Bacteria · Archaea · Eukarya', s: 'k', p: ['luca', 'cell-types'], g: 'domains',
+   a: ['Comparing ribosomal RNA splits life into three domains: Bacteria, Archaea and Eukarya.', 'Archaea look like bacteria but are a separate branch of life.'],
+   b: [['Proposed', 'Carl Woese and colleagues, 1990.'], ['Debate', 'Newer genome trees suggest eukaryotes grew out of the archaea, giving two primary domains.']],
+   src: ['bi_woese1990', 'bi_os_tree', 'bi_os_prokdiv', 'bi_w_three_domain_system'], rel: [['fntu', 'prok', 'bacteria and archaea']] },
+ { id: 'endosymbiosis', cat: 'evolution', name: 'Endosymbiotic theory', sub: 'mitochondria were once bacteria', s: 'k', p: ['cell-types'], g: 'endo',
+   a: ['Mitochondria and chloroplasts began as free-living bacteria taken inside another cell.', 'They still have their own DNA and divide like bacteria.'],
+   b: [['Champion', 'Lynn Margulis (then Lynn Sagan) set out the case in 1967.'], ['Relatives', 'Mitochondria are related to alphaproteobacteria, chloroplasts to cyanobacteria.']],
+   src: ['bi_sagan1967', 'bi_os_eukorigin', 'bi_w_symbiogenesis'], rel: [['cell', 'mito', 'a mitochondrion in the Virtual Cell'], ['fntu', 'eukaryote', 'complex cells']] },
+ { id: 'eukaryote-origin', cat: 'evolution', name: 'Origin of eukaryotes', sub: 'how complex cells began', s: 't', p: ['endosymbiosis', 'three-domains'], g: 'euk',
+   a: ['Complex cells probably arose when an archaeal host merged with a bacterium that became the mitochondrion.', 'The closest known archaeal relatives are the Asgard archaea.'],
+   b: [['When', 'Clear eukaryote fossils are more than 1.5 billion years old; the exact start is uncertain.'], ['Recent', 'A 2023 genome study placed eukaryotes within the Asgard archaea, near the Heimdallarchaeia.']],
+   src: ['bi_zaremba2017', 'bi_eme2023', 'bi_os_eukorigin', 'bi_w_eukaryogenesis'], rel: [['fntu', 'eukaryote', 'complex cells on the From Nothing to Us map']] },
+ { id: 'mendel', cat: 'evolution', name: 'Mendelian inheritance', sub: 'genes come in pairs', s: 'k', p: [], g: 'pea',
+   a: ['Traits are passed on by separate units (genes), one copy from each parent.', 'Gregor Mendel found the rules by breeding pea plants.'],
+   b: [['Published', 'Mendel, 1866; rediscovered in 1900.'], ['Laws', 'Segregation: the two copies separate into different sex cells. Independent assortment: different genes are often inherited separately.']],
+   src: ['bi_os_mendel', 'bi_w_mendelian_inheritance'], rel: [['maths', 'm_prob', 'inheritance follows the laws of probability']] },
+ { id: 'natural-selection', cat: 'evolution', name: 'Natural selection', sub: 'variation + inheritance → adaptation', s: 'k', p: [], g: 'select',
+   a: ['Individuals vary; variations that help them survive and reproduce are passed on more often.', 'Over many generations this adapts populations to their surroundings.'],
+   b: [['Published', 'Charles Darwin and Alfred Russel Wallace, 1858; Darwin\'s On the Origin of Species, 1859.'], ['Seen today', 'Antibiotic resistance in bacteria evolves by natural selection.']],
+   src: ['bi_darwin1858', 'bi_os_evolution', 'bi_w_natural_selection'], rel: [['fntu', 'animals', 'animals on the From Nothing to Us map']] },
+ { id: 'modern-synthesis', cat: 'evolution', name: 'Modern synthesis', sub: 'Darwin + genetics', s: 'k', p: ['natural-selection', 'mendel'], g: 'synth',
+   a: ['In the 1930s–40s, natural selection and Mendelian genetics were joined into one theory of evolution.', 'Evolution became a change in how common gene variants are in a population.'],
+   b: [['Forces', 'Mutation, natural selection, gene flow and genetic drift.'], ['Since', 'Molecular biology and genomics have extended it.']],
+   src: ['bi_os_popevo', 'bi_w_modern_synthesis_20th_century'], rel: [['maths', 'm_stats', 'population genetics uses statistics']] },
+ { id: 'speciation', cat: 'evolution', name: 'Speciation', sub: 'one species splits into two', s: 'k', p: ['modern-synthesis'], g: 'fork',
+   a: ['New species form when populations stop interbreeding and evolve apart.', 'Often a barrier, such as a mountain range or a sea, separates them first.'],
+   b: [['Kinds', 'Allopatric (split by geography) and sympatric (in the same place).'], ['Result', 'Over billions of years, speciation built the tree of life.']],
+   src: ['bi_os_species', 'bi_w_speciation'], rel: [['fntu', 'plants', 'plants on the From Nothing to Us map']] },
+ { id: 'cambrian', cat: 'evolution', name: 'Cambrian explosion', sub: 'animal body plans appear', s: 'k', p: ['eukaryote-origin', 'speciation'], g: 'trilo',
+   a: ['From about 539 million years ago, most major animal groups appear in the fossil record within a few tens of millions of years.', 'Eyes, shells and legs show up in early fossils such as those of the Burgess Shale.'],
+   b: [['Roots', 'Molecular clocks suggest animal groups began to split earlier, in the Ediacaran.'], ['Why', 'The causes are still debated: oxygen, ecology and genetic toolkits.']],
+   src: ['bi_erwin2011', 'bi_os_animalhist', 'bi_w_cambrian_explosion'], rel: [['tl', 'cambrian', 'on the Big Bang to Today timeline'], ['fntu', 'animals', 'animals on the From Nothing to Us map']] },
+ { id: 'mass-extinctions', cat: 'evolution', name: 'Mass extinctions', sub: 'the big five die-offs', s: 'k', p: ['speciation'], g: 'extinct',
+   a: ['Five times in the last 540 million years, a large share of species died out quickly.', 'The latest, 66 million years ago, ended the non-bird dinosaurs.'],
+   b: [['Found', 'Raup and Sepkoski picked out the big mass extinctions in the marine fossil record in 1982.'], ['Now', 'Many scientists warn that today\'s loss of species could become a sixth.']],
+   src: ['bi_raup1982', 'bi_os_biodiv', 'bi_w_extinction_event'], rel: [['fntu', 'mammals', 'mammals spread after the dinosaurs']] },
+ { id: 'human-evolution', cat: 'evolution', name: 'Human evolution', sub: 'Homo sapiens, about 300,000 years', s: 'k', p: ['cambrian', 'modern-synthesis'], g: 'human',
+   a: ['Humans are primates; our closest living relatives are chimpanzees and bonobos.', 'The oldest known Homo sapiens fossils, from Jebel Irhoud in Morocco, are about 300,000 years old.'],
+   b: [['Africa', 'Our species arose in Africa and later spread around the world.'], ['Cousins', 'Neanderthals and Denisovans were close relatives; many people carry a little of their DNA.']],
+   src: ['bi_hublin2017', 'bi_os_primates', 'bi_w_human_evolution'], rel: [['fntu', 'hsap', 'Homo sapiens on the From Nothing to Us map'], ['tl', 'homo-sapiens', 'on the Big Bang to Today timeline'], ['body', 'body', 'the Human Body explorer']] },
+ { id: 'life-elsewhere', cat: 'evolution', name: 'Life beyond Earth', sub: 'are we alone?', s: 'u', p: ['origin-of-life'], g: 'exo',
+   a: ['No life has yet been found anywhere except Earth.', 'Astrobiologists search Mars, icy moons such as Europa and Enceladus, and the air of planets around other stars.'],
+   b: [['Why look', 'Liquid water, energy sources and the elements of life exist in many places.'], ['Open', 'We know of only one example of life, so we cannot yet tell how common it is.']],
+   src: ['bi_nasa_astrobio', 'bi_desmarais2008', 'bi_w_astrobiology'], rel: [['fntu', 'exo', 'other worlds on the From Nothing to Us map']] },
+ // ---------------- LIFE SYSTEMS ----------------
+ { id: 'photosynthesis', cat: 'systems', name: 'Photosynthesis', sub: 'sunlight → sugar and oxygen', s: 'k', p: ['atp', 'endosymbiosis'], g: 'leaf',
+   a: ['Plants, algae and cyanobacteria use light energy to make sugar from carbon dioxide and water.', 'Oxygen is given off as a by-product.'],
+   b: [['Overall', '6 CO₂ + 6 H₂O + light → C₆H₁₂O₆ + 6 O₂.'], ['Old', 'Oxygen-producing photosynthesis evolved in cyanobacteria more than 2.4 billion years ago.']],
+   src: ['bi_blankenship2010', 'bi_os_photo', 'bi_w_photosynthesis'], rel: [['fntu', 'photosyn', 'photosynthesis on the From Nothing to Us map'], ['ph', 'photon', 'light comes in photons'], ['ph', 'em-radiation', 'sunlight is electromagnetic radiation'], ['cell', 'glucose', 'glucose']] },
+ { id: 'cellular-respiration', cat: 'systems', name: 'Cellular respiration', sub: 'sugar + oxygen → ATP', s: 'k', p: ['atp', 'endosymbiosis'], g: 'mito',
+   a: ['Cells break down sugar with oxygen to make ATP, giving off carbon dioxide and water.', 'In eukaryotes most of this ATP is made in the mitochondria.'],
+   b: [['How', 'A flow of protons across the inner membrane drives ATP synthase (Mitchell\'s chemiosmotic theory, 1961).'], ['Without oxygen', 'Fermentation makes far less ATP from each sugar.']],
+   src: ['bi_mitchell1961', 'bi_os_resp', 'bi_w_cellular_respiration'], rel: [['cell', 'mito', 'a mitochondrion'], ['cell', 'atps', 'ATP synthase'], ['body', 'lungs', 'your lungs bring in the oxygen']] },
+ { id: 'great-oxidation', cat: 'systems', name: 'Great Oxidation Event', sub: 'life fills the air with oxygen', s: 'k', p: ['photosynthesis'], g: 'o2',
+   a: ['About 2.4 billion years ago, oxygen made by cyanobacteria began to build up in the air.', 'It changed Earth\'s chemistry and paved the way for oxygen-breathing life.'],
+   b: [['Evidence', 'Changes in sulfur isotopes and in the minerals found in old rocks.'], ['Slow rise', 'Oxygen stayed far below today\'s level for more than a billion years.']],
+   src: ['bi_lyons2014', 'bi_w_great_oxidation_event'], rel: [['tl', 'goe', 'on the Big Bang to Today timeline'], ['fntu', 'goe', 'oxygen rises on the From Nothing to Us map'], ['planet', 'atmo', 'Earth\'s atmosphere'], ['pt', '8', 'oxygen']] },
+ { id: 'ecosystems', cat: 'systems', name: 'Ecosystems and food webs', sub: 'energy flows, matter cycles', s: 'k', p: ['photosynthesis'], g: 'web',
+   a: ['An ecosystem is all the living things in a place together with their surroundings.', 'Energy flows from producers to consumers; often only about 10% passes on to each next level.'],
+   b: [['Classic paper', 'Raymond Lindeman described energy flow between feeding levels in 1942.'], ['Decomposers', 'Fungi and bacteria break down dead matter and return its nutrients.']],
+   src: ['bi_lindeman1942', 'bi_os_ecosystems', 'bi_os_energyflow', 'bi_w_ecosystem'], rel: [['fntu', 'plants', 'plants'], ['fntu', 'animals', 'animals'], ['planet', 'ocean', 'the ocean']] },
+ { id: 'carbon-cycle', cat: 'systems', name: 'Carbon cycle', sub: 'carbon moves through life, air, sea and rock', s: 'k', p: ['photosynthesis', 'cellular-respiration'], g: 'cycle',
+   a: ['Photosynthesis pulls carbon dioxide out of the air; respiration and decay put it back.', 'Oceans, rocks and fossil fuels store huge amounts of carbon for long times.'],
+   b: [['Today', 'Burning fossil fuels adds carbon to the air faster than natural processes remove it.']],
+   src: ['bi_nasa_carbon', 'bi_os_cycles', 'bi_w_carbon_cycle'], rel: [['pt', '6', 'carbon'], ['planet', 'atmo', 'Earth\'s atmosphere'], ['planet', 'ocean', 'the ocean']] },
+ { id: 'homeostasis', cat: 'systems', name: 'Homeostasis', sub: 'keeping the inside steady', s: 'k', p: ['cell-membrane'], g: 'balance',
+   a: ['Living things keep their inside conditions, such as temperature and blood sugar, within narrow limits.', 'Mostly by negative feedback: a change triggers a response that reverses it.'],
+   b: [['Named', 'Walter Cannon coined the word in the 1920s (reviewed in 1929).'], ['Example', 'Human body temperature is held near 37 °C.']],
+   src: ['bi_cannon1929', 'bi_os_homeostasis', 'bi_w_homeostasis'], rel: [['body', 'body', 'the Human Body explorer'], ['body', 'kidney', 'kidneys balance water and salts'], ['fntu', 'organsys', 'organ systems']] },
+ { id: 'nervous-system', cat: 'systems', name: 'Nervous system', sub: 'neurons send electrical signals', s: 'k', p: ['homeostasis', 'cell-membrane'], g: 'neuron',
+   a: ['Neurons carry fast electrical signals, called action potentials, along their axons.', 'At synapses, chemical messengers pass the signal on to the next cell.'],
+   b: [['Explained', 'Hodgkin and Huxley described the action potential with equations in 1952.'], ['Physics', 'The signal is charged ions (sodium and potassium) flowing through channels in the membrane.']],
+   src: ['bi_hodgkin1952', 'bi_os_neurons', 'bi_w_action_potential'], rel: [['body', 'brain', 'the brain'], ['body', 'nerve', 'nerves'], ['fntu', 'brain', 'the brain on the From Nothing to Us map'], ['ph', 'coulomb-law', 'ions push and pull by electric force'], ['maths', 'm_ode', 'the Hodgkin–Huxley model is differential equations']] },
+ { id: 'consciousness', cat: 'systems', name: 'Consciousness', sub: 'how brains give rise to experience', s: 'u', p: ['nervous-system'], g: 'mind',
+   a: ['How brain activity gives rise to conscious experience is not known.', 'Several scientific theories compete, and experiments to test them are under way.'],
+   b: [['Theories', 'Global workspace, higher-order, integrated information and others (reviewed in 2022).']],
+   src: ['bi_seth2022', 'bi_w_consciousness'], rel: [['fntu', 'mind', 'consciousness on the From Nothing to Us map'], ['body', 'brain', 'the brain']] }
+];
+const BIO_BY_ID = Object.fromEntries(BIO.map(n => [n.id, n]));
 /* v0.5 BIG BANG TO TODAY: dated cosmic events. t = seconds after the Big Bang (early events) or ago = years before today (later events).
    s = certainty (k green established, t orange leading idea, u red unknown). The scale changes between eras (log time early on), so every era is readable.
    rel = links to cards in other sections. Every source key is in SRC. */
@@ -4953,10 +5526,10 @@ window.mathHistoryOpen=function(id, layer=3){
   else {switchDomain('maths');openPop(id,layer);}
 };
 window.mathHistoryDebug=()=>({nodes:MATH.length,dated:Object.keys(MATH_HISTORY).length,events:Object.values(MATH_HISTORY).reduce((a,n)=>a+n.length,0),proposed:Object.values(MATH_HISTORY).flat().filter(e=>e.kind==='idea').length,eras:MATH_ERAS.length});
-/* v0.5 speed: each explorer (Planet Earth, Virtual Cell, Human Body, Atom Sandbox, Physics, Big Bang to Today) loads its code
+/* v0.5 speed (v0.6: + Biology): each explorer (Planet Earth, Virtual Cell, Human Body, Atom Sandbox, Physics, Biology, Big Bang to Today) loads its code
    only the first time it is opened. index.html fetches js/<name>.js; the self-contained TEST file carries the same code inside
    <script type="text/plain" id="lazy-<name>"> and runs it from there. Behaviour after loading is unchanged. */
-const LAZY=(()=>{const done={},wait={},V='810cc6aecd';
+const LAZY=(()=>{const done={},wait={},V='df051f5009';
  function need(name){
   if(done[name])return Promise.resolve();if(wait[name])return wait[name];
   wait[name]=new Promise((res,rej)=>{const el=document.createElement('script'),inl=document.getElementById('lazy-'+name);
@@ -4973,10 +5546,10 @@ const SCREENS=(()=>{
  let domain='universe',view='home',mapContext={domain:'universe',view:'map'};
  const main=document.getElementById('knowledgeScreen'),hometop=document.getElementById('hometop');
  const params=()=>new URLSearchParams(location.hash.slice(1));
- const labels={map:'Map',circle:'Ring',history:'History',planet:'Planet Earth',cell:'Virtual Cell',body:'Human Body',atom:'Atom Sandbox',pt:'Elements',physics:'Physics',timeline:'Big Bang to Today'};
- const viewers=['planet','cell','body','atom','physics','timeline'];
+ const labels={map:'Map',circle:'Ring',history:'History',planet:'Planet Earth',cell:'Virtual Cell',body:'Human Body',atom:'Atom Sandbox',pt:'Elements',physics:'Physics',biology:'Biology',timeline:'Big Bang to Today'};
+ const viewers=['planet','cell','body','atom','physics','biology','timeline'];
  // v0.5: each explorer's code is loaded the first time it is opened (LAZY); until then its global (VPLANET…) does not exist
- const VIEWER=n=>({planet:typeof VPLANET!=='undefined'?VPLANET:null,cell:typeof VCELL!=='undefined'?VCELL:null,body:typeof VBODY!=='undefined'?VBODY:null,atom:typeof VATOM!=='undefined'?VATOM:null,physics:typeof VPHYS!=='undefined'?VPHYS:null,timeline:typeof VTIME!=='undefined'?VTIME:null})[n];
+ const VIEWER=n=>({planet:typeof VPLANET!=='undefined'?VPLANET:null,cell:typeof VCELL!=='undefined'?VCELL:null,body:typeof VBODY!=='undefined'?VBODY:null,atom:typeof VATOM!=='undefined'?VATOM:null,physics:typeof VPHYS!=='undefined'?VPHYS:null,biology:typeof VBIO!=='undefined'?VBIO:null,timeline:typeof VTIME!=='undefined'?VTIME:null})[n];
  let showTok=0;
  const isMapView=v=>v==='map'||v==='circle';
  function closeAll(keepHome){
@@ -5002,17 +5575,18 @@ const SCREENS=(()=>{
    if(view==='home')hometop.setAttribute('aria-current','page');else hometop.removeAttribute('aria-current');
  }
  const SECTIONS=[
-   {name:'From Nothing to Us',items:[['universe','map','From Nothing to Us · Map','⌘'],['universe','circle','From Nothing to Us · Ring','◉'],['universe','planet','Planet Earth','🌍'],['universe','cell','Virtual Cell',dnaSVG()],['universe','body','Human Body',heartSVG()],['universe','atom','Atom Sandbox',atomSVG()],['universe','pt','All the Elements','▦'],['universe','timeline','Big Bang to Today','⏳']]},
+   {name:'From Nothing to Us',items:[['universe','map','From Nothing to Us · Map','⌘'],['universe','circle','From Nothing to Us · Ring','◉'],['universe','planet','Planet Earth','🌍'],['universe','atom','Atom Sandbox',atomSVG()],['universe','pt','All the Elements','▦'],['universe','timeline','Big Bang to Today','⏳']]},
    {name:'Physics',items:[['universe','physics','Physics · forces, particles, light','⚛']]},
+   {name:'Biology',items:[['universe','biology','Biology · cells, evolution, life','🌿'],['universe','cell','Virtual Cell',dnaSVG()],['universe','body','Human Body',heartSVG()]]},
    {name:'Maths',items:[['maths','map','Maths Map','∑'],['maths','circle','Maths Ring','◉'],['maths','history','Maths History','↗']]}
  ];
- const sectionOf=()=>view==='home'?'':view==='physics'?'Physics':view==='history'||DOMAIN==='maths'?'Maths':'From Nothing to Us';
+ const sectionOf=()=>view==='home'?'':view==='physics'?'Physics':['biology','cell','body'].includes(view)?'Biology':view==='history'||DOMAIN==='maths'?'Maths':'From Nothing to Us';
  function paintMenu(){
    const cur=sectionOf(),curD=view==='history'?'maths':domain;
    const item=([d,v,label,icon])=>{const on=view!=='home'&&d===curD&&v===view;return `<button role="menuitem" data-screen="${d}" data-view="${v}" class="${on?'on':''}"${on?' aria-current="page"':''}><i>${icon}</i>${label}${on?' <span class="xcur">current</span>':''}</button>`;};
-   const groups=[...SECTIONS].sort((a,b)=>(b.name===cur)-(a.name===cur));
+   const groups=SECTIONS; /* v0.6b: one fixed order (the Home order), never reshuffled by section */
    document.getElementById('xmenu').innerHTML=`<div class="xhome${view==='home'?' on':''}" role="menuitem" data-home tabindex="0"><i>⌂</i>Home · all sections</div>`+groups.map(g=>`<div class="xsec">${g.name}</div>${g.items.map(item).join('')}`).join('');
-   document.getElementById('domainDesc').textContent=view==='home'?'Home':view==='physics'?'Physics · forces, particles, light':cur+' · '+(labels[view]||'Home');
+   document.getElementById('domainDesc').textContent=view==='home'?'Home':view==='physics'?'Physics · forces, particles, light':view==='biology'?'Biology · cells, evolution, life':cur+' · '+(labels[view]||'Home');
  }
  function paintControls(){
    const maps=isMapView(view);
@@ -5032,6 +5606,7 @@ const SCREENS=(()=>{
    else if(v==='pt')hash='#ptable=1';
    else if(view==='home')hash='#home=1';
    else if(v==='physics')hash=node?'#p='+encodeURIComponent(node):'#physics=1';
+   else if(v==='biology')hash=node?'#b='+encodeURIComponent(node):'#biology=1';
    else if(v==='timeline')hash=node?'#t='+encodeURIComponent(node):'#timeline=1';
    else if(['planet','cell','body','atom'].includes(v))hash='#'+v+'=1';
    else hash='#screen='+d+'&view='+(v==='circle'?'ring':'map');
@@ -5078,6 +5653,7 @@ const SCREENS=(()=>{
      if(v==='cell')VCELL.init(document.body,{focus:opts.focus,tissue:opts.tissue,onMapLink:id=>show('universe','map',{node:id,hash:true}),onClose:opts.tissue?()=>show('universe','body',{focus:opts.tissue.back,hash:true}):closer});
      if(v==='atom')VATOM.init(document.body,{onClose:closer});
      if(v==='physics')VPHYS.init(document.body,{focus:opts.focus,onClose:closer});
+     if(v==='biology')VBIO.init(document.body,{focus:opts.focus,onClose:closer});
      if(v==='timeline')VTIME.init(document.body,{focus:opts.focus,onClose:closer});
      };
      const chunk=viewers.includes(v)?v:null;
@@ -5088,7 +5664,7 @@ const SCREENS=(()=>{
      if(v==='pt'){document.querySelector('#pt .in').style.visibility='visible';openPT();if(opts.element)ptShow(+opts.element);}
    }
    mapContext.view=VIEW==='circle'||mapContext.view==='circle'?mapContext.view:'map';
-   paintControls();route(view==='history'?'maths':domain,v,opts.node||opts.id||(v==='physics'||v==='timeline'?opts.focus:undefined));EF.paintSeen();if(isMapView(view)&&typeof keyFirst==='function')keyFirst(domain+'-'+view);
+   paintControls();route(view==='history'?'maths':domain,v,opts.node||opts.id||(v==='physics'||v==='biology'||v==='timeline'?opts.focus:undefined));EF.paintSeen();if(isMapView(view)&&typeof keyFirst==='function')keyFirst(domain+'-'+view);
    if(view==='home')hometop.blur();
    else if(view==='history')document.getElementById('mhClose').focus({preventScroll:true});
    else if(isMapView(view)){
@@ -5130,6 +5706,7 @@ const SCREENS=(()=>{
    if(h.has('history'))return show('maths','history',{hash:false});
    for(const [key,v] of [['planet','planet'],['cell','cell'],['body','body'],['atom','atom']])if(h.has(key))return show('universe',v,{focus:h.get(key)||undefined,hash:false});
    if(h.has('physics')||h.has('p'))return show('universe','physics',{focus:h.get('p')||undefined,hash:false});
+   if(h.has('biology')||h.has('b'))return show('universe','biology',{focus:h.get('b')||undefined,hash:false});
    if(h.has('timeline')||h.has('t'))return show('universe','timeline',{focus:h.get('t')||undefined,hash:false});
    if(h.has('ptable'))return show('universe','pt',{element:h.get('el'),hash:false});
    if(h.has('l')){const [a,b]=String(h.get('l')).split('>'),L=a&&b&&typeof linkInfo==='function'?linkInfo(a,b):null;
@@ -5166,7 +5743,7 @@ const SCREENS=(()=>{
 /* Echo Atlas Home. Tile images are real screenshots of each screen, captured from the built
    site by capture-thumbs.js and embedded at build time (HOME_THUMBS), so a tile shows exactly
    what opens. */
-const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "body": "thumbs/body.webp", "cell": "thumbs/cell.webp", "fntu-map": "thumbs/fntu-map.webp", "fntu-ring": "thumbs/fntu-ring.webp", "history": "thumbs/history.webp", "maths-map": "thumbs/maths-map.webp", "maths-ring": "thumbs/maths-ring.webp", "physics": "thumbs/physics.webp", "planet": "thumbs/planet.webp", "pt": "thumbs/pt.webp", "timeline": "thumbs/timeline.webp"}; // real screenshots, captured by capture-thumbs.js
+const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "biology": "thumbs/biology.webp", "body": "thumbs/body.webp", "cell": "thumbs/cell.webp", "fntu-map": "thumbs/fntu-map.webp", "fntu-ring": "thumbs/fntu-ring.webp", "history": "thumbs/history.webp", "maths-map": "thumbs/maths-map.webp", "maths-ring": "thumbs/maths-ring.webp", "physics": "thumbs/physics.webp", "planet": "thumbs/planet.webp", "pt": "thumbs/pt.webp", "timeline": "thumbs/timeline.webp"}; // real screenshots, captured by capture-thumbs.js
 (() => {
   const GLYPH={'⚛':atomSVG,dna:dnaSVG,heart:heartSVG};
   const icon=(id,col)=>GLYPH[id]?`<svg class="tileIcon" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="17" fill="#071324" stroke="${col}" stroke-width="1.7"/><g transform="translate(9 9)" color="${col}">${GLYPH[id](24,true)}</g></svg>`:`<svg class="tileIcon" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="17" fill="#071324" stroke="${col}" stroke-width="1.7"/><text x="21" y="27" text-anchor="middle" fill="${col}" font-size="17" font-family="Georgia,serif">${esc(id)}</text></svg>`;
@@ -5174,20 +5751,21 @@ const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "body": "thumbs/b
     {id:'fntu-map',d:'universe',v:'map',title:'From Nothing to Us',kicker:'SECTION · THE ORIGINAL JOURNEY',desc:'93 linked ideas: quantum questions → Big Bang → stars → life → us.',wide:1,icon:'✦',col:'#ffd36b'},
     {id:'maths-map',d:'maths',v:'map',title:'Maths',kicker:'SECTION · COUNTING → OPEN FRONTIERS',desc:'86 ideas in 16 branches, from counting to open problems.',wide:1,icon:'∑',col:'#4ff3e3'},
     {id:'physics',d:'universe',v:'physics',title:'Physics',kicker:'SECTION · FORCES · PARTICLES · LIGHT',desc:'32 ideas, from Newton\'s laws to the Standard Model and the open questions.',wide:1,icon:'✷',col:'#e79cff'},
+    {id:'biology',d:'universe',v:'biology',title:'Biology',kicker:'SECTION · CELLS · EVOLUTION · LIFE',desc:'33 ideas, from DNA and cells to evolution, ecosystems and the open questions.',wide:1,icon:'🌿',col:'#3fe0c0'},
+    {id:'cell',d:'universe',v:'cell',title:'Virtual Cell',kicker:'BIOLOGY',desc:'Zoom into a typical human cell.',icon:'dna',col:'#5cf0a0'},
+    {id:'body',d:'universe',v:'body',title:'Human Body',kicker:'BIOLOGY',desc:'Organs, and the cells that build them.',icon:'heart',col:'#ff9ad5'},
     {id:'timeline',d:'universe',v:'timeline',title:'Big Bang to Today',kicker:'TIMELINE · 13.8 BILLION YEARS',desc:'22 dated events, from the first instant to today.',wide:1,icon:'⏳',col:'#ffd36b'},
     {id:'fntu-ring',d:'universe',v:'circle',title:'Universe Ring',kicker:'FROM NOTHING TO US',desc:'The original journey as one circular loop.',icon:'◉',col:'#ffd36b'},
     {id:'maths-ring',d:'maths',v:'circle',title:'Maths Ring',kicker:'MATHS',desc:'All 16 branches in one connected ring.',icon:'◉',col:'#4ff3e3'},
     {id:'history',d:'maths',v:'history',title:'Maths History',kicker:'MATHS',desc:'92 dated events across five eras. Proposed ideas in violet.',icon:'↗',col:'#e79cff'},
     {id:'planet',d:'universe',v:'planet',title:'Planet Earth',kicker:'FROM NOTHING TO US',desc:'Peel Earth layer by layer, at real depths.',icon:'🌍',col:'#4ff3e3'},
-    {id:'cell',d:'universe',v:'cell',title:'Virtual Cell',kicker:'FROM NOTHING TO US',desc:'Zoom into a typical human cell.',icon:'dna',col:'#5cf0a0'},
-    {id:'body',d:'universe',v:'body',title:'Human Body',kicker:'FROM NOTHING TO US',desc:'Organs, and the cells that build them.',icon:'heart',col:'#ff9ad5'},
     {id:'atom',d:'universe',v:'atom',title:'Atom Sandbox',kicker:'FROM NOTHING TO US',desc:'Build atoms. A teaching toy, not a quantum simulator.',icon:'⚛',col:'#ffd36b'},
     {id:'pt',d:'universe',v:'pt',title:'All the Elements',kicker:'FROM NOTHING TO US',desc:'118 elements and where each one was made.',icon:'▦',col:'#ffd36b'}
   ];
   const TH=typeof HOME_THUMBS!=='undefined'?HOME_THUMBS:{};
   const art=t=>TH[t.id]?`<img class="tileArt tileShot" src="${TH[t.id]}" alt="" loading="lazy" decoding="async">`:`<div class="tileArt tileShot tileNoShot"></div>`;
   const home=document.getElementById('homeScreen');
-  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas <span class="ver">v0.5</span></h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div></div>`;
+  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas <span class="ver">v0.6</span></h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div></div>`;
 })();
 
 /* Maths History (Echo Atlas v0.2): a full-size SVG timeline redrawn at the current zoom.
@@ -5410,7 +5988,7 @@ function centreOnLink(L) { const B = L.kind === 'maths' ? MATH_BY_ID : byId, A1 
   const ph = innerWidth <= 600, z = ph ? .5 : .75, mx = (A1.x + A2.x) / 2, my = (A1.y + A2.y) / 2;
   s = z; tx = (ph ? innerWidth : innerWidth - 330) / 2 - mx * z; ty = UI() + (innerHeight - UI()) * (ph ? .12 : .5) - my * z; apply(); cull(); }
 /* ===== Echo Atlas v0.4: home search, AI info read-me, source badges ===== */
-const AI_INDEX=[{"section": "From Nothing to Us", "file": "ai/from-nothing-to-us.json", "counts": {"nodes": 93, "links": 145, "crosslinks_to_maths": 25}, "sources": 245, "non_wikipedia_sources": 223, "approx_tokens": 81000, "bytes": 293097}, {"section": "Big Bang to Today", "file": "ai/big-bang-to-today.json", "counts": {"big_bang_to_today": 0, "section_links": 42}, "sources": 107, "non_wikipedia_sources": 79, "approx_tokens": 25000, "bytes": 90819}, {"section": "Physics", "file": "ai/physics.json", "counts": {"physics": 32, "section_links": 65}, "sources": 161, "non_wikipedia_sources": 123, "approx_tokens": 60000, "bytes": 216300}, {"section": "Maths", "file": "ai/maths.json", "counts": {"maths": 86, "crosslinks_to_universe": 25}, "sources": 130, "non_wikipedia_sources": 128, "approx_tokens": 51000, "bytes": 184992}, {"section": "Maths History", "file": "ai/maths-history.json", "counts": {"maths_history": 86}, "sources": 84, "non_wikipedia_sources": 82, "approx_tokens": 19000, "bytes": 68297}, {"section": "Planet Earth", "file": "ai/planet-earth.json", "counts": {"planet": 18}, "sources": 28, "non_wikipedia_sources": 9, "approx_tokens": 5000, "bytes": 18989}, {"section": "Virtual Cell", "file": "ai/virtual-cell.json", "counts": {"virtual_cell": 37}, "sources": 85, "non_wikipedia_sources": 44, "approx_tokens": 13000, "bytes": 48092}, {"section": "Human Body", "file": "ai/human-body.json", "counts": {"virtual_body": 72, "body_to_cell": 21}, "sources": 118, "non_wikipedia_sources": 37, "approx_tokens": 22000, "bytes": 79329}, {"section": "All the Elements (and Atom Sandbox)", "file": "ai/elements.json", "counts": {"elements": 118}, "sources": 14, "non_wikipedia_sources": 14, "approx_tokens": 18000, "bytes": 63046}];
+const AI_INDEX=[{"section": "From Nothing to Us", "file": "ai/from-nothing-to-us.json", "counts": {"nodes": 93, "links": 145, "crosslinks_to_maths": 25}, "sources": 245, "non_wikipedia_sources": 223, "approx_tokens": 81000, "bytes": 293127}, {"section": "Big Bang to Today", "file": "ai/big-bang-to-today.json", "counts": {"big_bang_to_today": 0, "section_links": 42}, "sources": 107, "non_wikipedia_sources": 79, "approx_tokens": 25000, "bytes": 90837}, {"section": "Physics", "file": "ai/physics.json", "counts": {"physics": 32, "section_links": 65}, "sources": 161, "non_wikipedia_sources": 123, "approx_tokens": 60000, "bytes": 216318}, {"section": "Biology", "file": "ai/biology.json", "counts": {"biology": 33, "section_links": 78}, "sources": 197, "non_wikipedia_sources": 135, "approx_tokens": 62000, "bytes": 222639}, {"section": "Maths", "file": "ai/maths.json", "counts": {"maths": 86, "crosslinks_to_universe": 25}, "sources": 130, "non_wikipedia_sources": 128, "approx_tokens": 51000, "bytes": 185010}, {"section": "Maths History", "file": "ai/maths-history.json", "counts": {"maths_history": 86}, "sources": 84, "non_wikipedia_sources": 82, "approx_tokens": 19000, "bytes": 68315}, {"section": "Planet Earth", "file": "ai/planet-earth.json", "counts": {"planet": 18}, "sources": 28, "non_wikipedia_sources": 9, "approx_tokens": 5000, "bytes": 19007}, {"section": "Virtual Cell", "file": "ai/virtual-cell.json", "counts": {"virtual_cell": 37}, "sources": 85, "non_wikipedia_sources": 44, "approx_tokens": 13000, "bytes": 48110}, {"section": "Human Body", "file": "ai/human-body.json", "counts": {"virtual_body": 72, "body_to_cell": 21}, "sources": 118, "non_wikipedia_sources": 37, "approx_tokens": 22000, "bytes": 79347}, {"section": "All the Elements (and Atom Sandbox)", "file": "ai/elements.json", "counts": {"elements": 118}, "sources": 14, "non_wikipedia_sources": 14, "approx_tokens": 18000, "bytes": 63064}];
 /* v0.4 pictures instead of words: a cosmic size ruler on map cards (from the card's own size, n.sz = log10 metres)
    and a depth strip on Planet Earth cards (from the layer's own r0/r1 depths). Same data as the text they replace. */
 function sizeBarHTML(n) {
@@ -5436,7 +6014,7 @@ const V04 = (() => {
     history: { name: 'Maths History', col: '#e79cff', glyph: '↗' }, planet: { name: 'Planet Earth', col: '#4ff3e3', glyph: '🌍' },
     cell: { name: 'Virtual Cell', col: '#5cf0a0', glyph: '🧬' }, body: { name: 'Human Body', col: '#ff9ad5', glyph: '♥' },
     el: { name: 'All the Elements', col: '#ffd36b', glyph: '▦' }, page: { name: 'Page', col: '#ffe3a5', glyph: '⌂' }, atom: { name: 'Atom Sandbox', col: '#ffd36b', glyph: '⚛' },
-    physics: { name: 'Physics', col: '#e79cff', glyph: '✷' }, timeline: { name: 'Big Bang to Today', col: '#ffd36b', glyph: '⏳' } };
+    physics: { name: 'Physics', col: '#e79cff', glyph: '✷' }, biology: { name: 'Biology', col: '#3fe0c0', glyph: '🌿' }, timeline: { name: 'Big Bang to Today', col: '#ffd36b', glyph: '⏳' } };
   const CC = { k: '#3dff8a', t: '#ffa53d', u: '#ff4d5e' };
   const jump = h => { history.replaceState(null, '', location.pathname + location.search + h); SCREENS.fromHash(); };
   const PAGES = [
@@ -5445,7 +6023,7 @@ const V04 = (() => {
     ['Maths History', 'maths', 'history', 'history', 'timeline dates eras'], ['Planet Earth', 'universe', 'planet', 'planet', 'earth layers atmosphere core'],
     ['Virtual Cell', 'universe', 'cell', 'cell', 'cell organelles biology'], ['Human Body', 'universe', 'body', 'body', 'body organs anatomy'],
     ['Atom Sandbox', 'universe', 'atom', 'atom', 'atom build collide nucleus'], ['All the Elements', 'universe', 'pt', 'el', 'periodic table elements'],
-    ['Physics', 'universe', 'physics', 'physics', 'physics forces particles light standard model'], ['Big Bang to Today', 'universe', 'timeline', 'timeline', 'timeline big bang history of the universe cosmic']];
+    ['Physics', 'universe', 'physics', 'physics', 'physics forces particles light standard model'], ['Biology', 'universe', 'biology', 'biology', 'biology life cells evolution dna genetics ecology'], ['Big Bang to Today', 'universe', 'timeline', 'timeline', 'timeline big bang history of the universe cosmic']];
   let IX = null;
   /* the index is built on first use only (no cost at start-up) */
   function build() {
@@ -5461,6 +6039,7 @@ const V04 = (() => {
     if (typeof CELL_P !== 'undefined') parts(CELL_P, 'cell', 'cell');
     if (typeof BODY_P !== 'undefined') parts(BODY_P, 'body', 'body');
     if (typeof PHYS !== 'undefined') for (const n of PHYS) add('physics', n.name, n.sub, n.s, [...n.a, ...n.b.map(b => b.join(': '))].join(' · '), () => jump('#p=' + encodeURIComponent(n.id)));
+    if (typeof BIO !== 'undefined') for (const n of BIO) add('biology', n.name, n.sub, n.s, [...n.a, ...n.b.map(b => b.join(': '))].join(' · '), () => jump('#b=' + encodeURIComponent(n.id)));
     if (typeof TL !== 'undefined') for (const e of TL) add('timeline', e.name, e.when, e.s, e.a, () => jump('#t=' + encodeURIComponent(e.id)));
     for (const E of ELS) { const [z, sy, nm, , o] = E; IX.push({ sec: 'el', title: nm, sub: `Element ${z} · ${sy} · ${ORI[o[0]][0]}`, s: 'el', sy: fold4(sy), symRaw: sy, z, col: ORI[o[0]][1], go: () => jump('#ptable=1&el=' + z), nm: fold4(nm), al: '', ln: '', raw: '', tx: '' }); }
     return IX;
@@ -5518,8 +6097,8 @@ const V04 = (() => {
 
   /* ---------- AI info read-me (opens from the home button and the top bar) ---------- */
   const fmtK = n => n >= 1000 ? Math.round(n / 1000) + 'k' : String(n);
-  const ICON = { 'From Nothing to Us': ['✦', '#ffd36b'], 'Maths': ['∑', '#4ff3e3'], 'Maths History': ['↗', '#e79cff'], 'Planet Earth': ['🌍', '#4ff3e3'], 'Virtual Cell': ['🧬', '#5cf0a0'], 'Human Body': ['♥', '#ff9ad5'], 'Physics': ['✷', '#e79cff'], 'Big Bang to Today': ['⏳', '#ffd36b'] };
-  const OPEN = { 'From Nothing to Us': ['universe', 'map'], 'Maths': ['maths', 'map'], 'Maths History': ['maths', 'history'], 'Planet Earth': ['universe', 'planet'], 'Virtual Cell': ['universe', 'cell'], 'Human Body': ['universe', 'body'], 'Physics': ['universe', 'physics'], 'Big Bang to Today': ['universe', 'timeline'] };
+  const ICON = { 'From Nothing to Us': ['✦', '#ffd36b'], 'Maths': ['∑', '#4ff3e3'], 'Maths History': ['↗', '#e79cff'], 'Planet Earth': ['🌍', '#4ff3e3'], 'Virtual Cell': ['🧬', '#5cf0a0'], 'Human Body': ['♥', '#ff9ad5'], 'Physics': ['✷', '#e79cff'], 'Biology': ['🌿', '#3fe0c0'], 'Big Bang to Today': ['⏳', '#ffd36b'] };
+  const OPEN = { 'From Nothing to Us': ['universe', 'map'], 'Maths': ['maths', 'map'], 'Maths History': ['maths', 'history'], 'Planet Earth': ['universe', 'planet'], 'Virtual Cell': ['universe', 'cell'], 'Human Body': ['universe', 'body'], 'Physics': ['universe', 'physics'], 'Biology': ['universe', 'biology'], 'Big Bang to Today': ['universe', 'timeline'] };
   let lastFocus = null;
   function openAI() {
     let p = $('aiInfo');
@@ -5527,9 +6106,9 @@ const V04 = (() => {
       const files = typeof AI_INDEX !== 'undefined' ? AI_INDEX : [];
       const tot = files.reduce((a, f) => a + f.bytes, 0);
       document.body.insertAdjacentHTML('beforeend', `<div id="aiInfo" role="dialog" aria-modal="true" aria-labelledby="aiTitle"><div class="aiCard">
-        <button class="aiX" aria-label="Close AI info">✕</button>
-        <div class="aiHead"><span class="aiOrb big" aria-hidden="true"><i></i></span><div><div class="homeEyebrow">READ ME · FOR AIs AND PEOPLE</div><h2 id="aiTitle">AI info</h2>
-        <p>Echo Atlas holds <b>${N.length + (typeof MATH !== 'undefined' ? MATH.length : 0)}</b> map ideas, <b>${files.reduce((a, f) => a + (f.counts.planet || 0) + (f.counts.virtual_cell || 0) + (f.counts.virtual_body || 0), 0)}</b> explorer cards and <b>118</b> elements. Every fact has a colour for certainty and real sources.</p></div></div>
+        <button class="aiX" aria-label="Close AI / SI info">✕</button>
+        <div class="aiHead"><span class="aiOrb big" aria-hidden="true"><i></i></span><div><div class="homeEyebrow">READ ME · FOR AI / SI AND PEOPLE</div><h2 id="aiTitle">AI / SI info</h2>
+        <p>Echo Atlas holds <b>${N.length + (typeof MATH !== 'undefined' ? MATH.length : 0)}</b> map ideas, <b>${files.reduce((a, f) => a + (f.counts.planet || 0) + (f.counts.virtual_cell || 0) + (f.counts.virtual_body || 0), 0)}</b> explorer cards and <b>118</b> elements. Every fact has a colour for certainty and real sources. <b>AI / SI</b> means artificial intelligence and superintelligence: any machine reader, and people too.</p></div></div>
         <ol class="aiSteps"><li><i>📂</i><span>Load <b>one section file</b> to stay inside your context limit.</span></li><li><i>🔗</i><span>Every card has a <b>share_url</b> back to the site.</span></li><li><i>✅</i><span>Same <b>data hash</b> everywhere: <code>${esc(DATA_HASH)}</code></span></li></ol>
         <div class="aiFiles">${files.map(f => { const [g, c] = ICON[f.section] || ['▦', '#ffd36b'], CW = { nodes: 'cards', links: 'links', crosslinks_to_maths: 'links to Maths', crosslinks_to_universe: 'links to From Nothing to Us', maths: 'cards', maths_history: 'cards with dated events', planet: 'layers', virtual_cell: 'cards', virtual_body: 'cards', body_to_cell: 'body → cell links', elements: 'elements' }, cnt = Object.entries(f.counts).map(([k, v]) => `${v} ${CW[k] || k.replace(/_/g, ' ')}`).join(' · '), o = OPEN[f.section] || ['universe', 'pt'];
           return `<div class="aiFile" style="--c:${c}"><span class="aiG">${g}</span><div class="aiFT"><b>${esc(f.section)}</b><small>${esc(cnt)}</small><span class="aiMeter"><i style="width:${Math.max(4, Math.round(100 * f.bytes / Math.max(...files.map(x => x.bytes))))}%"></i></span><small class="aiTok">~${fmtK(f.approx_tokens)} tokens · ${f.sources} sources (${f.non_wikipedia_sources} papers / official)</small></div>
@@ -5548,7 +6127,7 @@ const V04 = (() => {
   function closeAI() { const p = $('aiInfo'); if (!p) return; p.classList.remove('on'); document.body.classList.remove('ai-open'); if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true }); }
 
   /* top-bar button: was a plain facts.json link; now opens the same read-me (facts.json is one tap away inside) */
-  const aib = $('aib'); if (aib) { aib.setAttribute('title', 'AI info: what data the site holds, one file per section, and all site data'); aib.setAttribute('aria-label', 'AI info'); aib.addEventListener('click', e => { e.preventDefault(); openAI(); }); }
+  const aib = $('aib'); if (aib) { aib.setAttribute('title', 'AI / SI info (AI and superintelligence): what data the site holds, one file per section, and all site data'); aib.setAttribute('aria-label', 'AI / SI info'); aib.addEventListener('click', e => { e.preventDefault(); openAI(); }); }
   addEventListener('keydown', e => { if (e.key === 'Escape' && $('aiInfo')?.classList.contains('on')) { e.preventDefault(); e.stopImmediatePropagation(); closeAI(); } }, true);
   /* v0.4 speed: when the map comes back into view after Home, cull and size it once (it was skipped while hidden) */
   new MutationObserver(() => { if (!mapHidden() && (cullDirty || !keyAvoid._ok)) { keyAvoid._ok = 1; cull(); requestAnimationFrame(() => { apply(); keyAvoid(); }); } }) // cull first (no layout reads), so only on-screen nodes are laid out.observe(document.body, { attributes: true, attributeFilter: ['class'] });
@@ -5566,25 +6145,37 @@ function xsecTarget(kind, id) {
   if (kind === 'ph') { const n = PHYS_BY_ID[id]; return n ? { hash: '#p=' + encodeURIComponent(id), title: n.name } : null; }
   if (kind === 'tl') { const e = TL.find(x => x.id === id); return e ? { hash: '#t=' + encodeURIComponent(id), title: e.name } : null; }
   if (kind === 'pt') { const e = ELS.find(x => String(x[0]) === String(id)); return e ? { hash: '#ptable=1&el=' + e[0], title: e[2] } : null; }
+  if (kind === 'bio') { const n = typeof BIO_BY_ID !== 'undefined' && BIO_BY_ID[id]; return n ? { hash: '#b=' + encodeURIComponent(id), title: n.name } : null; }
+  // v0.6: Virtual Cell, Human Body and Planet Earth links can open one card (#cell=mito); an empty id opens the page
+  const PC = { cell: typeof CELL_P !== 'undefined' ? CELL_P : null, body: typeof BODY_P !== 'undefined' ? BODY_P : null, planet: typeof PLANET_P !== 'undefined' ? PLANET_P : null }[kind];
+  if (PC && id && id !== '1') { const c = PC[id]; return c ? { hash: '#' + kind + '=' + encodeURIComponent(id), title: c.n } : null; }
   const P = { atom: ['Atom Sandbox', '#atom=1'], planet: ['Planet Earth', '#planet=1'], cell: ['Virtual Cell', '#cell=1'], body: ['Human Body', '#body=1'] }[kind];
   return P ? { hash: P[1], title: P[0] } : null; }
 function xsecGo(hash) { history.replaceState(null, '', location.pathname + location.search + hash); SCREENS.fromHash(); }
 const XSEC_BACK = (() => { const m = {}; const add = (k, id, from) => (m[k + ':' + id] = m[k + ':' + id] || []).push(from);
   for (const n of PHYS) for (const [k, id] of n.rel) add(k, id, ['ph', n.id]);
+  if (typeof BIO !== 'undefined') for (const n of BIO) for (const [k, id] of n.rel) add(k, id, ['bio', n.id]);
   for (const e of TL) for (const [k, id] of e.rel || []) add(k, id, ['tl', e.id]);
   return m; })();
 function xsecBack(kind, id) { return (XSEC_BACK[kind + ':' + id] || []).map(([k, i]) => [k, i, '']); }
-const XSEC_KIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], ph: ['⚛', 'Physics', '#e79cff'], tl: ['⏳', 'Big Bang to Today', '#e79cff'] };
+const XSEC_KIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], tl: ['⏳', 'Big Bang to Today', '#e79cff'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'] };
+// v0.6: Virtual Cell and Human Body now sit with Biology on Home; the life-and-us cards of From Nothing to Us still open them directly
+const FNTU_EXPLORE = { protocell: [['cell', 'cell']], prok: [['cell', 'cell']], eukaryote: [['cell', 'cell'], ['cell', 'mito']], multicell: [['cell', 'cell'], ['body', 'body']],
+  dna: [['cell', 'dna']], proteins: [['cell', 'protein']], code: [['cell', 'rib']], lipids: [['cell', 'lipid']], vesicles: [['cell', 'membrane']],
+  tissues: [['body', 'body'], ['cell', 'cell']], organs: [['body', 'body']], organsys: [['body', 'body']], hsap: [['body', 'body']], body: [['body', 'body'], ['cell', 'cell']], brain: [['body', 'brain']] };
 function xsecChipsHTML(list) { const seen = new Set(); let h = '';
   for (const [k, id] of list) { const key = k + ':' + id; if (seen.has(key)) continue; seen.add(key); const t = xsecTarget(k, id), K = XSEC_KIND[k]; if (!t || !K) continue;
     h += `<button class="xchip" data-xgo="${esc(t.hash)}" style="--c:${K[2]}"><i>${K[0]}</i><span><small>${esc(K[1])}</small>${esc(t.title)}</span></button>`; }
   return h ? `<div class="xsec"><h4>In other sections</h4><div class="xchips">${h}</div></div>` : ''; }
 // From Nothing to Us and Maths cards: a row of chips to the Physics ideas and timeline events that point here (added before the buttons)
-(() => { const r0 = renderPop; renderPop = function () { r0.apply(this, arguments); const k = DOMAIN === 'maths' ? 'maths' : 'fntu', h = xsecChipsHTML(xsecBack(k, sel));
+(() => { const r0 = renderPop; renderPop = function () { r0.apply(this, arguments); const k = DOMAIN === 'maths' ? 'maths' : 'fntu', h = xsecChipsHTML([...(k === 'fntu' ? FNTU_EXPLORE[sel] || [] : []), ...xsecBack(k, sel)]);
   if (!h) return; const act = popBody.querySelector('.pact'); if (act) act.insertAdjacentHTML('beforebegin', h); else popBody.insertAdjacentHTML('beforeend', h); };
   popBody.addEventListener('click', e => { const x = e.target.closest('[data-xgo]'); if (x) { e.preventDefault(); e.stopPropagation(); xsecGo(x.dataset.xgo); } }); })();
 
 /* ---------- "You are here" mini-map: a small overview with the screen's view box; tap or drag it to move ---------- */
+/* v0.6b: no mini-map on phones (portrait up to 600px wide, or a touch phone held sideways) */
+const MM_PHONE_Q = '(max-width:600px), (pointer:coarse) and (max-height:500px)';
+function MM_PHONE() { return !!(window.matchMedia && matchMedia(MM_PHONE_Q).matches); }
 function MiniMap(o) {
   const el = document.createElement('div'); el.className = 'mmap ' + (o.cls || ''); el.setAttribute('role', 'group'); el.setAttribute('aria-label', 'Mini-map: you are here');
   el.innerHTML = `<div class="mmp"><div class="mmh"><b>YOU ARE HERE</b><button class="mmc" aria-label="Hide mini-map" title="Hide mini-map">–</button></div><div class="mmw"><span class="mmsec"></span><span class="mmcat"></span></div><canvas aria-label="Tap to move the view there"></canvas></div><button class="mmchip" aria-label="Show mini-map" title="Show mini-map">◱ Map</button>`;
@@ -5601,7 +6192,7 @@ function MiniMap(o) {
     bg = bg || document.createElement('canvas'); bg.width = cv.width; bg.height = cv.height; const g = bg.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, CW, CH);
     for (const [x0, y0, x1, y1, c] of (o.bands ? o.bands() : [])) { g.fillStyle = c; g.globalAlpha = .13; g.fillRect(ox + x0 * k, oy + y0 * k, Math.max(1, (x1 - x0) * k - 1), Math.max(1, (y1 - y0) * k - 1)); }
     g.globalAlpha = .95; for (const [x, y, c] of o.dots()) { g.fillStyle = c; g.beginPath(); g.arc(ox + x * k, oy + y * k, CW > 150 ? 1.7 : 1.4, 0, 7); g.fill(); } g.globalAlpha = 1; }
-  function draw() { raf = 0; if (o.hidden && o.hidden()) { el.classList.add('off'); return; } el.classList.remove('off'); if (min) return;
+  function draw() { raf = 0; if (MM_PHONE() || (o.hidden && o.hidden())) { el.classList.add('off'); return; } el.classList.remove('off'); if (min) return;
     layout(); paintBg(); cx.setTransform(1, 0, 0, 1, 0, 0); cx.clearRect(0, 0, cv.width, cv.height); cx.drawImage(bg, 0, 0); cx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const [a, b, c, d] = o.view(); let X0 = ox + a * k, Y0 = oy + b * k, X1 = ox + c * k, Y1 = oy + d * k;
     X0 = Math.max(1, Math.min(CW - 3, X0)); Y0 = Math.max(1, Math.min(CH - 3, Y0)); X1 = Math.max(X0 + 3, Math.min(CW - 1, X1)); Y1 = Math.max(Y0 + 3, Math.min(CH - 1, Y1));

@@ -1,22 +1,52 @@
-# Echo Atlas by Zyphullen (v0.5)
+# Echo Atlas by Zyphullen (v0.6)
 > Explore the known. Map the unknown.
-> FIRST: open [facts.json](facts.json) before you judge or summarise this site. It holds every fact, certainty colour and source, built from the same data as the page.
+> FIRST: read the guidance below before you judge or summarise this site, then load only the section file you need from ai/. [facts.json](facts.json) holds every fact, certainty colour and source in one file, built from the same data as the page.
 
-Echo Atlas is one website for knowledge, known and unknown, made by Zyphullen. Sections: From Nothing to Us (an interactive Universe → Us map), Big Bang to Today (a dated timeline of the universe), Physics (forces, particles and light), Maths (map, ring and Maths History timeline from counting to open problems), Planet Earth, Virtual Cell, Human Body, Atom Sandbox and All the Elements.
+## Important guidance for AI / SI visitors (read this first)
+If you are an AI / SI (artificial intelligence or superintelligence) reviewing or summarising Echo Atlas, read this before judging the visible page.
 
-- [ai/README.md](ai/README.md): AI info read-me. The data is also split into ONE FILE PER SECTION, so you can load only what you need and stay inside your context limit: [From Nothing to Us](ai/from-nothing-to-us.json), [Big Bang to Today](ai/big-bang-to-today.json), [Physics](ai/physics.json), [Maths](ai/maths.json), [Maths History](ai/maths-history.json), [Planet Earth](ai/planet-earth.json), [Virtual Cell](ai/virtual-cell.json), [Human Body](ai/human-body.json), [All the Elements](ai/elements.json). Index with sizes: [ai/index.json](ai/index.json).
-- [facts.json](facts.json) (all data in one file): 93 Universe → Us nodes, 145 Universe → Us links, 86 maths nodes, 143 maths links, 25 cross-map relationships, 86 Maths History nodes / 92 dated events, 37 cell cards, 72 body cards, 18 planet cards, 118 elements, 32 Physics cards, 22 Big Bang to Today events, 107 links between sections, 477 sources.
+1. What this is: Echo Atlas by Zyphullen (v0.6) is an interactive atlas of knowledge, known and unknown: From Nothing to Us (Universe → Us map), Big Bang to Today, Physics, Biology (with the Virtual Cell and Human Body explorers), Maths (map, ring and history), Planet Earth, the Atom Sandbox and all 118 elements. Most of the page is drawn by JavaScript, so the screen you see (or the text you extract) is only a small part of the data.
+2. Certainty colours: green = known / established (or a proved theorem); orange = we think / leading idea or partial progress; red = unknown / open question. Every card lists its sources. Judge a claim by its colour and sources, not by how it looks on screen.
+3. Load only what you need: The data is split into one JSON file per section, so you can stay inside your context limit. Load one section file first; open facts.json (all data in one file; the section files together are about 356k tokens) only if you really need all of it.
+4. Stay inside your context limit: Do not load every file at once. Pick the section that answers the question, then follow the share_url on each card back to the live page.
+5. Same data everywhere: Every file carries the same data hash: 5e3e8e167849. If two files disagree on the hash, one of them is out of date.
+
+Section data files (load one at a time):
+- [From Nothing to Us](ai/from-nothing-to-us.json) · ~81k tokens
+- [Big Bang to Today](ai/big-bang-to-today.json) · ~25k tokens
+- [Physics](ai/physics.json) · ~60k tokens
+- [Biology](ai/biology.json) · ~62k tokens
+- [Maths](ai/maths.json) · ~51k tokens
+- [Maths History](ai/maths-history.json) · ~19k tokens
+- [Planet Earth](ai/planet-earth.json) · ~5k tokens
+- [Virtual Cell](ai/virtual-cell.json) · ~13k tokens
+- [Human Body](ai/human-body.json) · ~22k tokens
+- [All the Elements (and Atom Sandbox)](ai/elements.json) · ~18k tokens
+
+Guides and all data:
+- [llms.txt](llms.txt): this guide as plain text, plus field notes
+- [AI / SI info read-me](ai/README.md): the same read-me as the gold AI / SI info button (top right)
+- [ai/index.json](ai/index.json): list of the section files with sizes
+- [knowledge.html](knowledge.html): all facts as plain HTML, no JavaScript
+- [facts.json](facts.json): all site data in one file
+
+People: the same guide opens from the gold AI / SI info button at the top right of every page.
+
+Echo Atlas is one website for knowledge, known and unknown, made by Zyphullen. Sections: From Nothing to Us (an interactive Universe → Us map), Big Bang to Today (a dated timeline of the universe), Physics (forces, particles and light), Biology (cells, evolution and life systems, with the Virtual Cell and Human Body explorers), Maths (map, ring and Maths History timeline from counting to open problems), Planet Earth, Virtual Cell, Human Body, Atom Sandbox and All the Elements.
+
+- [ai/README.md](ai/README.md): AI info read-me. The data is also split into ONE FILE PER SECTION, so you can load only what you need and stay inside your context limit: [From Nothing to Us](ai/from-nothing-to-us.json), [Big Bang to Today](ai/big-bang-to-today.json), [Physics](ai/physics.json), [Biology](ai/biology.json), [Maths](ai/maths.json), [Maths History](ai/maths-history.json), [Planet Earth](ai/planet-earth.json), [Virtual Cell](ai/virtual-cell.json), [Human Body](ai/human-body.json), [All the Elements](ai/elements.json). Index with sizes: [ai/index.json](ai/index.json).
+- [facts.json](facts.json) (all data in one file): 93 Universe → Us nodes, 145 Universe → Us links, 86 maths nodes, 143 maths links, 25 cross-map relationships, 86 Maths History nodes / 92 dated events, 37 cell cards, 72 body cards, 18 planet cards, 118 elements, 32 Physics cards, 33 Biology cards, 22 Big Bang to Today events, 185 links between sections, 570 sources.
 - [FACTS-GUIDE.md](FACTS-GUIDE.md): a short guide to every field in facts.json and how to add a fact.
 - [knowledge.html](knowledge.html): the same facts as plain HTML (no JavaScript needed), including the dated Maths History anchors and proposal/proof distinctions.
-- [AUDIT-v0.5.md](AUDIT-v0.5.md): automatic checks of facts.json (missing sources, dangling links, link reasons, source details, counts).
+- [AUDIT-v0.6.md](AUDIT-v0.6.md): automatic checks of facts.json (missing sources, dangling links, link reasons, source details, counts).
 
 Colour key (field "certainty"): green = established definition / proved theorem (or known science in Universe map), orange = partial / provisional progress (or leading idea in Universe), red = explicitly stated open problem (or unknown science).
 Chain Theory (Alex Wissner-Gross, Oct 2026) is shown as one candidate starting point, labelled "Chain Theory" in orange (field "label"; the gap node: "Gap in Chain Theory"), orange, with its open gap in red. No established card on the map depends on it.
-Share links: every card opens directly from its link: #n=<id> (map), #m=<id> (maths), #l=<from>%3E<to> (a link card), #cell=<id>, #body=<id>, #planet=<id>, #ptable=1&el=<z>, #atom=1, #p=<id> (Physics), #t=<id> (Big Bang to Today). Map node links are also in share_url.
+Share links: every card opens directly from its link: #n=<id> (map), #m=<id> (maths), #l=<from>%3E<to> (a link card), #cell=<id>, #body=<id>, #planet=<id>, #ptable=1&el=<z>, #atom=1, #p=<id> (Physics), #b=<id> (Biology), #t=<id> (Big Bang to Today). Map node links are also in share_url.
 Each open-question card is red. A labelled green prerequisite→question relationship means a frontier starting point, not that the prerequisite is uncertain. Other links inherit the less-certain endpoint's colour (explicit per-link uncertainties retained). Tests/rival sources support method/context, not claimed success.
 Link reasons: every link (field "links", maths "links", "crosslinks") has "reason", "reason_certainty_note" and "reason_sources" (the sources on the two cards). v0.3: every Universe → Us link also has its own "sources" for that exact step, and "sources_note" says honestly when none was found.
-Source details: every source object has "type", "year" (publication year; for living pages the last-revised year, with "year_note" saying how it was found), "last_checked" and "link_status" from a real link check on 2026-11-11 (699 source URLs). Summary: 13 ok (site blocks automatic checks; page confirmed in Web Archive); 558 ok; 51 ok (DOI registered; publisher blocks automatic checks); 42 ok (DOI registered in Crossref; publisher blocks automatic checks); 1 ok (rechecked: page read from a second network); 30 site down on check day (HTTP 502); page confirmed in Web Archive; 1 site down on check day (HTTP 503); page confirmed in Web Archive; 1 site unreachable on check day (HTTP 503); recheck; 1 site unreachable on check day; page confirmed in Web Archive; 1 ok (rechecked with a plain client: HTTP 200). Where a site was down or blocks automatic checks, "archived_copy" gives a Web Archive snapshot that confirms the page.
+Source details: every source object has "type", "year" (publication year; for living pages the last-revised year, with "year_note" saying how it was found), "last_checked" and "link_status" from a real link check on 2026-11-11 (775 source URLs). Summary: 13 ok (site blocks automatic checks; page confirmed in Web Archive); 624 ok; 50 ok (DOI registered; publisher blocks automatic checks); 53 ok (DOI registered in Crossref; publisher blocks automatic checks); 1 ok (rechecked: page read from a second network); 30 site down on check day (HTTP 502); page confirmed in Web Archive; 1 site down on check day (HTTP 503); page confirmed in Web Archive; 1 site unreachable on check day (HTTP 503); recheck; 1 site unreachable on check day; page confirmed in Web Archive; 1 ok (rechecked with a plain client: HTTP 200). Where a site was down or blocks automatic checks, "archived_copy" gives a Web Archive snapshot that confirms the page.
 Suggest a fix: every card has a button that e-mails zyphullen@gmail.com with the subject "Echo Atlas fix: <card name> (<card id>)".
 Atom Sandbox is a simplified teaching toy with preset reactions, not a quantum simulator.
-Each item has id, title, certainty, summary, details and sources (title + URL). Data hash: 24c89747fcc2 (same in index.html as DATA_HASH).
+Each item has id, title, certainty, summary, details and sources (title + URL). Data hash: 5e3e8e167849 (same in index.html as DATA_HASH).
 Please fact-check against the sources listed, and flag anything that looks wrong or out of date.

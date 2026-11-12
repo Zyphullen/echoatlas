@@ -2,9 +2,9 @@
  "about": {
   "site": "Echo Atlas by Zyphullen",
   "url": "https://zyphullen.github.io/echoatlas/",
-  "version": "0.5",
+  "version": "0.6",
   "author": "Zyphullen",
-  "data_hash": "24c89747fcc2",
+  "data_hash": "5e3e8e167849",
   "generated": "2026-11-12",
   "read_me": "ai/README.md",
   "all_data": "facts.json",
@@ -34,7 +34,7 @@
    },
    "sources": 245,
    "non_wikipedia_sources": 223,
-   "bytes": 293097,
+   "bytes": 293127,
    "approx_tokens": 81000
   },
   {
@@ -48,7 +48,7 @@
    },
    "sources": 107,
    "non_wikipedia_sources": 79,
-   "bytes": 90819,
+   "bytes": 90837,
    "approx_tokens": 25000
   },
   {
@@ -62,8 +62,22 @@
    },
    "sources": 161,
    "non_wikipedia_sources": 123,
-   "bytes": 216300,
+   "bytes": 216318,
    "approx_tokens": 60000
+  },
+  {
+   "section": "Biology",
+   "file": "ai/biology.json",
+   "about": "Cells, evolution and life systems: the molecules of life, DNA and the genetic code, cells, the origin and evolution of life, photosynthesis, respiration, ecosystems and bodies, with the open questions (origin of life, life beyond Earth, consciousness). The Virtual Cell and Human Body explorers sit with Biology on the site; their cards are in virtual-cell.json and human-body.json.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#biology=1",
+   "counts": {
+    "biology": 33,
+    "section_links": 78
+   },
+   "sources": 197,
+   "non_wikipedia_sources": 135,
+   "bytes": 222639,
+   "approx_tokens": 62000
   },
   {
    "section": "Maths",
@@ -76,7 +90,7 @@
    },
    "sources": 130,
    "non_wikipedia_sources": 128,
-   "bytes": 184992,
+   "bytes": 185010,
    "approx_tokens": 51000
   },
   {
@@ -89,7 +103,7 @@
    },
    "sources": 84,
    "non_wikipedia_sources": 82,
-   "bytes": 68297,
+   "bytes": 68315,
    "approx_tokens": 19000
   },
   {
@@ -102,7 +116,7 @@
    },
    "sources": 28,
    "non_wikipedia_sources": 9,
-   "bytes": 18989,
+   "bytes": 19007,
    "approx_tokens": 5000
   },
   {
@@ -115,7 +129,7 @@
    },
    "sources": 85,
    "non_wikipedia_sources": 44,
-   "bytes": 48092,
+   "bytes": 48110,
    "approx_tokens": 13000
   },
   {
@@ -129,7 +143,7 @@
    },
    "sources": 118,
    "non_wikipedia_sources": 37,
-   "bytes": 79329,
+   "bytes": 79347,
    "approx_tokens": 22000
   },
   {
@@ -142,7 +156,7 @@
    },
    "sources": 14,
    "non_wikipedia_sources": 14,
-   "bytes": 63046,
+   "bytes": 63064,
    "approx_tokens": 18000
   }
  ],

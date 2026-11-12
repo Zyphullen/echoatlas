@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.6b fixes (12 Nov 2026, still shown as v0.6)
+1. 🤖 AI / SI guidance is in the page's own HTML (hidden from people) and at the top of `llms.txt`, linked from the page head, so AIs read it without clicking
+2. 🧭 Explore menu keeps one fixed order; Virtual Cell and Human Body sit only under Biology
+3. 📱 No mini-map on phones (desktop keeps it)
+4. 🖼️ New Biology tile picture showing the map
+5. 🟡 The AI / SI button stays gold on phones, even with dark mode for web pages turned on
+6. ✏️ "AI info" is now "AI / SI info" (AI and superintelligence)
+
+## v0.6 (12 Nov 2026)
+1. 🌿 Biology section: 33 ideas in three bands (Cells & molecules, Evolution & organisms, Life systems), with official papers or textbooks next to Wikipedia
+2. 🧬 Virtual Cell and Human Body tiles moved to sit with Biology on Home; From Nothing to Us cards and its Explore menu still open them
+3. 🔗 Links from Biology to From Nothing to Us, Physics, Big Bang to Today, the Elements, Maths and single Virtual Cell / Human Body / Planet Earth cards
+4. 🗺️ Mini-map, Key on first visit and growing category titles on the Biology map, the same as Physics
+5. 🔎 Search finds Biology pages and facts; AI info lists `ai/biology.json`
+6. ⚡ Biology code loads only when you open it
+
 ## v0.5 (12 Nov 2026)
 1. ⚛️ Physics section: 32 ideas on forces, particles and light, with official papers or textbooks next to Wikipedia
 2. 🗺️ A “you are here” mini-map on the maps, rings and Physics (the timeline has its own era strip)

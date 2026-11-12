@@ -1,11 +1,26 @@
 # Echo Atlas
 
-**Echo Atlas by Zyphullen**: a free, interactive atlas of all knowledge, from the universe to maths.
+**Echo Atlas by Zyphullen**: a free, interactive atlas of all knowledge, from the universe to life and maths.
 *Explore the known. Map the unknown.*
 
 Live: https://zyphullen.github.io/echoatlas/
 
-## Current version: v0.5 (12 Nov 2026)
+## Current version: v0.6 (12 Nov 2026)
+
+1. 🌿 Biology section: 33 ideas on cells, evolution and life systems, each fact coloured by certainty and linked to official papers or textbooks next to Wikipedia
+2. 🧬 Virtual Cell and Human Body now sit with Biology on Home (From Nothing to Us still links to them)
+3. 🔗 Biology links to From Nothing to Us, Physics, Big Bang to Today, the Elements and single Virtual Cell / Human Body cards
+4. 🗺️ The Biology map has the same “you are here” mini-map, Key and growing category titles as Physics
+
+### Fixes before release (still shown as v0.6)
+1. 🤖 AI / SI guidance is in the page for AIs (hidden from people); the yellow button stays
+2. 🧭 Explore stays in one fixed order; Virtual Cell and Human Body only under Biology
+3. 📱 Mini-map off on phones (desktop keeps it)
+4. 🖼️ Clearer Biology Home tile
+5. 🟡 The AI / SI button stays gold on phones
+6. ✏️ “AI info” is now “AI / SI info”
+
+### v0.5 (12 Nov 2026)
 
 1. ⚛️ Physics section: forces, particles and light, each fact coloured by certainty and linked to sources
 2. 🗺️ A “you are here” mini-map on the maps, rings and Physics (the timeline has its own era strip)
