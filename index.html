@@ -6,7 +6,7 @@
 <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt: important guidance for AI / SI visitors (read first)">
 <meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Echo Atlas by Zyphullen · v0.6</title>
+<title>Echo Atlas by Zyphullen · v0.7</title>
 <meta name="description" content="Echo Atlas by Zyphullen: explore the known, map the unknown. Interactive maps of the universe, maths, life and Earth, with every fact coloured by certainty and sourced.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23070d1f%22 stroke=%22%23ffd36b%22 stroke-width=%228%22/%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%234ff3e3%22/%3E%3C/svg%3E">
 <meta property="og:title" content="Echo Atlas by Zyphullen">
@@ -1148,17 +1148,99 @@ body.home-open .mainmm,body.history-open .mainmm,body.ai-open .mainmm{display:no
 
 /* v0.6b: AI / SI guidance is in the raw HTML for machine readers; people get the same text from the AI / SI info button, so no popup */
 .aiGuide{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;border:0}
+
+/* ===== Echo Atlas v0.7: Universe (real images in 3D) and Open questions. Same dark neon gold + turquoise look as the other sections ===== */
+#vcosmos,#vgaps{position:fixed;left:0;right:0;bottom:0;top:var(--barH,0px);z-index:52;overflow:hidden;color:#e5f6ff;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;
+ background:radial-gradient(ellipse at 30% 20%,rgba(255,211,107,.08),transparent 55%),radial-gradient(ellipse at 75% 80%,rgba(79,243,227,.07),transparent 55%),radial-gradient(ellipse at 50% 50%,#061024,#010309 80%)}
+#vcosmos button,#vgaps button{font:inherit;cursor:pointer}
+#vcosmos .vcbar,#vgaps .vcbar{height:62px;display:flex;align-items:center;gap:18px;padding:10px 18px;position:absolute;left:0;right:0;top:0;z-index:5;box-sizing:border-box;background:linear-gradient(180deg,rgba(4,13,30,.97),rgba(4,10,24,.85));border-bottom:1px solid rgba(255,211,107,.18)}
+#vcosmos .vback,#vgaps .vback{font:600 13px system-ui;border:1px solid #3c698b;border-radius:8px;background:#0b1b33;color:#bfffee;padding:8px 12px}
+#vcosmos .vtit,#vgaps .vtit{font-size:20px;letter-spacing:.2px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:linear-gradient(90deg,#ffe299,#94fff0);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(255,211,107,.25))}
+#vcosmos .vtit small,#vgaps .vtit small{font-size:11px;letter-spacing:.3px;color:#81a5bc;-webkit-text-fill-color:#81a5bc;margin-left:8px}
+/* Universe */
+#vcosmos{touch-action:none;-webkit-user-select:none;user-select:none}
+#vcosmos .ucv{position:absolute;left:0;right:0;top:62px;bottom:0;width:100%;height:calc(100% - 62px);display:block;cursor:grab;touch-action:none}
+#vcosmos.moving .ucv{cursor:grabbing}
+#vcosmos .uinfo{font:600 13px system-ui;border:1px solid #a58a50;border-radius:8px;background:rgba(40,30,8,.7);color:#ffe3a5;padding:8px 12px}
+#vcosmos .uinfo[aria-expanded="true"]{background:#ffd36b;color:#141005}
+#vcosmos .uload{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#9fd8e6;font-size:13px;letter-spacing:.3px;opacity:0;transition:opacity .3s;pointer-events:none}
+#vcosmos.loading .uload{opacity:1}
+#vcosmos .ustops{position:absolute;left:50%;transform:translateX(-50%);top:74px;z-index:4;display:flex;gap:6px;padding:5px;border-radius:14px;background:rgba(4,12,28,.78);border:1px solid rgba(79,243,227,.22);max-width:calc(100% - 24px);overflow-x:auto;scrollbar-width:none}
+#vcosmos .ustop{display:flex;align-items:center;gap:6px;white-space:nowrap;border:1px solid transparent;border-radius:10px;background:none;color:#a9c7d8;padding:6px 10px;font-size:12px}
+#vcosmos .ustop b{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1px solid #3c698b;font-size:11px;color:#9ff5ea}
+#vcosmos .ustop.on{border-color:#ffd36b;color:#ffe3a5;background:rgba(255,211,107,.1)}
+#vcosmos .ustop.on b{background:#ffd36b;color:#111;border-color:#ffd36b}
+#vcosmos .uzm{position:absolute;right:14px;bottom:96px;z-index:4;display:flex;flex-direction:column;gap:6px}
+#vcosmos .uzm button{width:42px;height:42px;border-radius:11px;border:1px solid #3c698b;background:rgba(8,22,44,.88);color:#9ff5ea;font-size:20px;line-height:1}
+#vcosmos .ucap{position:absolute;left:14px;bottom:44px;z-index:4;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;max-width:calc(100% - 90px);padding:9px 13px;border-radius:12px;background:rgba(4,12,28,.82);border:1px solid rgba(255,211,107,.22)}
+#vcosmos .ucap b{display:flex;align-items:center;gap:7px;color:#fff1cf;font-size:14px}
+#vcosmos .usz{color:#9ff5ea;font-size:12px;border-left:1px solid #2c4a62;padding-left:10px}
+#vcosmos .ucr{color:#c9b98e;font-size:11.5px}
+#vcosmos .ud,#vgaps .gd{display:inline-block;width:10px;height:10px;border-radius:50%;flex:none;box-shadow:0 0 8px currentColor}
+#vcosmos .uhint{position:absolute;left:14px;bottom:16px;z-index:4;color:#7f9fb3;font-size:11.5px}
+#vcosmos .uhonest{position:absolute;right:14px;bottom:12px;z-index:4;margin:0;max-width:360px;text-align:right;color:#6f8ea3;font-size:10.5px}
+#vcosmos .ufall{position:absolute;inset:62px 0 0 0;display:grid;place-items:center;align-content:center;gap:10px;z-index:3;text-align:center;color:#9fd8e6}
+#vcosmos .ufall img{max-width:min(80vw,640px);max-height:60vh;border-radius:12px}
+#vcosmos .ucard{position:absolute;right:14px;top:120px;bottom:96px;width:390px;z-index:6;overflow:auto;padding:18px 20px;box-sizing:border-box;border-radius:16px;background:linear-gradient(180deg,rgba(8,20,40,.97),rgba(4,10,24,.97));border:1px solid rgba(255,211,107,.3);box-shadow:0 18px 40px rgba(0,0,0,.45);touch-action:pan-y;-webkit-user-select:text;user-select:text}
+#vcosmos .ucard h3{margin:4px 0 2px;font-size:19px;color:#fff1cf}
+#vcosmos .ucard h4{margin:14px 0 4px;font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:#9ff5ea}
+#vcosmos .ucard p{margin:6px 0;line-height:1.5;color:#d3e6f2}
+#vcosmos .ucard .usub{color:#8fb0c6;margin-top:0}
+#vcosmos .ucard .ukick{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
+#vcosmos .ucard .ucredit{margin-top:14px;padding:8px 10px;border-radius:9px;background:rgba(255,211,107,.08);color:#ffe3a5;font-size:12.5px}
+#vcosmos .ucard .usrc{padding-left:18px;margin:4px 0}#vcosmos .ucard .usrc li{margin:4px 0;font-size:12.5px}#vcosmos .ucard a{color:#9ff5ea}
+#vcosmos .ucard .ux{position:sticky;top:0;float:right;width:34px;height:34px;border-radius:9px;border:1px solid #3c698b;background:#0b1b33;color:#bfffee}
+#vcosmos.carded .uzm{right:418px}
+@media (max-width:600px){
+ #vcosmos .vcbar,#vgaps .vcbar{gap:10px;padding:8px 10px}#vcosmos .vtit,#vgaps .vtit{font-size:16px}#vcosmos .vtit small,#vgaps .vtit small{display:none}
+ #vcosmos .ustops{top:70px;left:8px;right:8px;transform:none;max-width:none}#vcosmos .ustop span{display:none}#vcosmos .ustop.on span{display:inline}
+ #vcosmos .uzm{right:8px;bottom:150px}#vcosmos .uzm button{width:40px;height:40px}
+ #vcosmos .ucap{left:8px;right:8px;bottom:58px;max-width:none}#vcosmos .uhint{left:10px;bottom:34px}#vcosmos .uhonest{left:10px;right:10px;bottom:8px;text-align:left;max-width:none}
+ #vcosmos .ucard{left:0;right:0;bottom:0;top:auto;width:auto;max-height:62%;border-radius:16px 16px 0 0}#vcosmos.carded .uzm{display:none}#vcosmos.carded .ucap,#vcosmos.carded .uhint{visibility:hidden}}
+/* Open questions */
+#vgaps .gwrap{position:absolute;left:0;right:0;top:62px;bottom:0;overflow:auto;padding:18px max(16px,calc(50% - 560px)) 40px;box-sizing:border-box;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+#vgaps .gintro{max-width:760px;line-height:1.55;color:#cfe3f0;margin:0 0 12px}
+#vgaps .gfil{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}
+#vgaps .glab{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8fb0c6;margin-right:4px;min-width:58px}
+#vgaps .gfil button{display:inline-flex;align-items:center;gap:6px;border:1px solid #2c4a62;border-radius:999px;background:rgba(8,22,44,.8);color:#cfe3f0;padding:6px 12px;font-size:12.5px}
+#vgaps .gfil button[aria-pressed="true"]{border-color:#ffd36b;background:rgba(255,211,107,.14);color:#ffe3a5}
+#vgaps .gcount{color:#9fb8c8;font-size:13px;margin:12px 0}
+#vgaps .glist{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+#vgaps .gq{position:relative;padding:14px 16px 14px 18px;border-radius:14px;background:linear-gradient(180deg,rgba(10,24,46,.92),rgba(5,12,28,.92));border:1px solid rgba(120,160,190,.18);box-shadow:inset 3px 0 0 var(--c)}
+#vgaps .gtop{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+#vgaps .gcol{display:flex;align-items:center;gap:6px;color:var(--c)}#vgaps .gsec{color:var(--k)}
+#vgaps .gq h3{margin:8px 0 2px;font-size:17px;color:#fff1cf}#vgaps .gsub{margin:0 0 6px;color:#8fb0c6;font-size:13px}
+#vgaps .gq p{line-height:1.5;color:#d3e6f2;margin:6px 0}
+#vgaps details{margin:8px 0;border:1px solid #20384d;border-radius:10px;padding:6px 10px;background:rgba(4,12,26,.6)}
+#vgaps summary{cursor:pointer;color:#9ff5ea;font-size:12.5px;font-weight:600}
+#vgaps details ul{margin:6px 0 2px;padding-left:4px;list-style:none}#vgaps details li{display:block;margin:6px 0;font-size:12.5px;line-height:1.45;color:#cfe3f0}#vgaps details li .gd{width:8px;height:8px;margin-right:6px}
+#vgaps .gsrc h4{margin:8px 0 2px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:#8fb0c6}#vgaps .gsrc ol{margin:2px 0;padding-left:18px}#vgaps .gsrc li{font-size:12px;margin:3px 0}#vgaps a{color:#9ff5ea}
+#vgaps .gmore{list-style:none;color:#7f9fb3}
+#vgaps .gopen{margin-top:10px;border:1px solid #a58a50;border-radius:9px;background:rgba(255,211,107,.12);color:#ffe3a5;padding:8px 12px;font-weight:600}
+#vgaps .gopen:hover,#vgaps .gopen:focus-visible{background:#ffd36b;color:#141005;outline:none}
+@media (max-width:600px){#vgaps .glist{grid-template-columns:1fr}#vgaps .gwrap{padding:14px 12px 40px}}
+/* v0.7 Explore menu: one item for From Nothing to Us and for Maths; Map / Ring / History one tap further */
+#xmenu .xpar{position:relative}
+#xmenu .xpar .xarr{margin-left:auto;padding-left:10px;color:#9ff5ea;font-size:12px}
+#xmenu .xpar .xcur+.xarr{margin-left:8px}
+#xmenu .xpar[aria-expanded="true"]{background:rgba(79,243,227,.06)}
+#xmenu .xsubs{margin:0 0 4px 22px;border-left:1px solid #2a4a63;padding-left:6px}
+#xmenu .xsubs[hidden]{display:none}
+#xmenu button.xsubi{font-size:13px}
+
+/* v0.7 AI panel: automatic checks vs science review */
+#aiInfo .aiQual{margin:12px 0 4px;padding:10px 12px;border:1px solid rgba(79,243,227,.25);border-radius:12px;background:rgba(79,243,227,.05);font-size:13px;line-height:1.45}#aiInfo .aiQual p{margin:3px 0}#aiInfo .aiQual b{color:#ffd36b}
 </style>
 <link rel="help" type="text/markdown" href="ai/README.md" title="AI / SI info read-me">
 <link rel="alternate" type="application/json" href="ai/index.json" title="AI / SI section data files (one per section)">
 <link rel="alternate" type="application/json" href="facts.json" title="All facts (machine-readable)">
 </head>
 <body class="booting">
-<!-- IMPORTANT FOR AI / SI VISITORS (AI and superintelligence): read the "aiGuide" section just below, or llms.txt, before you review or summarise this site. Most data is not on screen; load ai/<section>.json files (one per section) to stay inside your context limit. -->
-<section id="aiGuide" class="aiGuide" role="note" aria-labelledby="aiGuideT" data-for="ai-si-visitors"><h2 id="aiGuideT">Important guidance for AI / SI visitors (read this first)</h2><p>If you are an AI / SI (artificial intelligence or superintelligence) reviewing or summarising Echo Atlas, read this before judging the visible page. Live site: <a href="https://zyphullen.github.io/echoatlas/">https://zyphullen.github.io/echoatlas/</a></p><ol><li><b>What this is:</b> Echo Atlas by Zyphullen (v0.6) is an interactive atlas of knowledge, known and unknown: From Nothing to Us (Universe → Us map), Big Bang to Today, Physics, Biology (with the Virtual Cell and Human Body explorers), Maths (map, ring and history), Planet Earth, the Atom Sandbox and all 118 elements. Most of the page is drawn by JavaScript, so the screen you see (or the text you extract) is only a small part of the data.</li><li><b>Certainty colours:</b> green = known / established (or a proved theorem); orange = we think / leading idea or partial progress; red = unknown / open question. Every card lists its sources. Judge a claim by its colour and sources, not by how it looks on screen.</li><li><b>Load only what you need:</b> The data is split into one JSON file per section, so you can stay inside your context limit. Load one section file first; open facts.json (all data in one file; the section files together are about 356k tokens) only if you really need all of it.</li><li><b>Stay inside your context limit:</b> Do not load every file at once. Pick the section that answers the question, then follow the share_url on each card back to the live page.</li><li><b>Same data everywhere:</b> Every file carries the same data hash: 5e3e8e167849. If two files disagree on the hash, one of them is out of date.</li></ol><h3>Section data files (load one at a time)</h3><ul><li><a href="ai/from-nothing-to-us.json">From Nothing to Us</a> <code>ai/from-nothing-to-us.json</code> · ~81k tokens</li><li><a href="ai/big-bang-to-today.json">Big Bang to Today</a> <code>ai/big-bang-to-today.json</code> · ~25k tokens</li><li><a href="ai/physics.json">Physics</a> <code>ai/physics.json</code> · ~60k tokens</li><li><a href="ai/biology.json">Biology</a> <code>ai/biology.json</code> · ~62k tokens</li><li><a href="ai/maths.json">Maths</a> <code>ai/maths.json</code> · ~51k tokens</li><li><a href="ai/maths-history.json">Maths History</a> <code>ai/maths-history.json</code> · ~19k tokens</li><li><a href="ai/planet-earth.json">Planet Earth</a> <code>ai/planet-earth.json</code> · ~5k tokens</li><li><a href="ai/virtual-cell.json">Virtual Cell</a> <code>ai/virtual-cell.json</code> · ~13k tokens</li><li><a href="ai/human-body.json">Human Body</a> <code>ai/human-body.json</code> · ~22k tokens</li><li><a href="ai/elements.json">All the Elements (and Atom Sandbox)</a> <code>ai/elements.json</code> · ~18k tokens</li></ul><h3>Guides and all data</h3><ul><li><a href="llms.txt">llms.txt</a>: this guide as plain text, plus field notes</li><li><a href="ai/README.md">AI / SI info read-me</a>: the same read-me as the gold AI / SI info button (top right)</li><li><a href="ai/index.json">ai/index.json</a>: list of the section files with sizes</li><li><a href="knowledge.html">knowledge.html</a>: all facts as plain HTML, no JavaScript</li><li><a href="facts.json">facts.json</a>: all site data in one file</li></ul><p>People: the same guide opens from the gold <b>AI / SI info</b> button at the top right. Made by Zyphullen.</p></section>
+<!-- IMPORTANT FOR AI / SI VISITORS (AI and superintelligence): read the "aiGuide" section just below, or llms.txt, before you review or summarise this site. Most data is not on screen; load ai/<section>.json files (one per section): each already holds the facts, colours, sources and connections between ideas, including links to other sections. -->
+<section id="aiGuide" class="aiGuide" role="note" aria-labelledby="aiGuideT" data-for="ai-si-visitors"><h2 id="aiGuideT">Important guidance for AI / SI visitors (read this first)</h2><p>If you are an AI / SI (artificial intelligence or superintelligence) reviewing or summarising Echo Atlas, read this before judging the visible page. Live site: <a href="https://zyphullen.github.io/echoatlas/">https://zyphullen.github.io/echoatlas/</a></p><ol><li><b>What this is:</b> Echo Atlas by Zyphullen (v0.7) is an interactive atlas of knowledge, known and unknown: From Nothing to Us (Universe → Us map, ring and its History, Big Bang to Today), Universe (a 3D zoom through real NASA / ESA images), Physics, Biology (with the Virtual Cell and Human Body explorers), Maths (map, ring and history), Open questions (every red and orange card in one list), Planet Earth, the Atom Sandbox and all 118 elements. Most of the page is drawn by JavaScript, so the screen you see (or the text you extract) is only a small part of the data.</li><li><b>The section files already hold everything:</b> Each section JSON file (ai/&lt;section&gt;.json) already contains that section&#x27;s facts (summary, details), colours (certainty), sources (title, url, type, year, link check) and the connections between ideas: links inside the section and links to cards in other sections (rel / related / section_links, each naming the other section and card id). You do not need to run the site or click anything. To follow a connection into another section, load that section&#x27;s file (listed in about.other_sections) and find the card by id.</li><li><b>Certainty colours:</b> green = known / established (or a proved theorem); orange = we think / leading idea or partial progress; red = unknown / open question. Every card lists its sources. Judge a claim by its colour and sources, not by how it looks on screen.</li><li><b>Load only what you need:</b> Load one section file first, so you stay inside your context limit; open facts.json (all data in one file; the section files together are about 377k tokens) only if you really need all of it. Do not load every file at once.</li><li><b>How to use the site:</b> Every card has a share_url that opens it on the live page; give that to people. Useful addresses: #universe=1 (Universe), #u=&lt;stop id&gt;, #gaps=1 (Open questions), #timeline=1 (Big Bang to Today), #physics=1, #biology=1, #history=1 (Maths History), #screen=universe&amp;view=map, #screen=maths&amp;view=map. Explore (top bar) lists the sections in a fixed order.</li><li><b>Automatic checks are not a science review:</b> The build runs automatic structural checks (every card has a colour and a source, links point at real cards, the data hash matches, source links answer). They do not read the science. There has been no formal science review / peer review yet, so fact-check claims against their sources and report anything wrong.</li><li><b>Same data everywhere:</b> Every file carries the same data hash: 21c967ff63ce. If two files disagree on the hash, one of them is out of date.</li></ol><h3>Section data files (load one at a time)</h3><ul><li><a href="ai/from-nothing-to-us.json">From Nothing to Us</a> <code>ai/from-nothing-to-us.json</code> · ~82k tokens</li><li><a href="ai/big-bang-to-today.json">Big Bang to Today</a> <code>ai/big-bang-to-today.json</code> · ~26k tokens</li><li><a href="ai/universe.json">Universe</a> <code>ai/universe.json</code> · ~12k tokens</li><li><a href="ai/physics.json">Physics</a> <code>ai/physics.json</code> · ~60k tokens</li><li><a href="ai/biology.json">Biology</a> <code>ai/biology.json</code> · ~62k tokens</li><li><a href="ai/maths.json">Maths</a> <code>ai/maths.json</code> · ~52k tokens</li><li><a href="ai/maths-history.json">Maths History</a> <code>ai/maths-history.json</code> · ~19k tokens</li><li><a href="ai/open-questions.json">Open questions</a> <code>ai/open-questions.json</code> · ~4k tokens</li><li><a href="ai/planet-earth.json">Planet Earth</a> <code>ai/planet-earth.json</code> · ~6k tokens</li><li><a href="ai/virtual-cell.json">Virtual Cell</a> <code>ai/virtual-cell.json</code> · ~14k tokens</li><li><a href="ai/human-body.json">Human Body</a> <code>ai/human-body.json</code> · ~22k tokens</li><li><a href="ai/elements.json">All the Elements (and Atom Sandbox)</a> <code>ai/elements.json</code> · ~18k tokens</li></ul><h3>Guides and all data</h3><ul><li><a href="llms.txt">llms.txt</a>: this guide as plain text, plus field notes</li><li><a href="ai/README.md">AI / SI info read-me</a>: the same read-me as the gold AI / SI info button (top right)</li><li><a href="ai/index.json">ai/index.json</a>: list of the section files with sizes</li><li><a href="knowledge.html">knowledge.html</a>: all facts as plain HTML, no JavaScript</li><li><a href="facts.json">facts.json</a>: all site data in one file</li></ul><p>People: the same guide opens from the gold <b>AI / SI info</b> button at the top right. Made by Zyphullen.</p></section>
 <canvas id="sky"></canvas>
 <header id="atlasBar">
-  <div class="brand"><h1>Echo Atlas <span class="ver" title="v0.6">v0.6</span></h1><div class="dsw"><span class="by">by Zyphullen</span><span id="domainDesc" role="status">Home</span></div></div>
+  <div class="brand"><h1>Echo Atlas <span class="ver" title="v0.7">v0.7</span></h1><div class="dsw"><span class="by">by Zyphullen</span><span id="domainDesc" role="status">Home</span></div></div>
   <button class="hbtn barBtn" id="hometop" title="Home: main menu" aria-label="Home: main menu"><i>⌂</i><b>Home</b></button>
   <button class="hbtn barBtn" id="ptbtn" title="Explore every section" aria-label="Explore every section" aria-haspopup="menu" aria-expanded="false" aria-controls="xmenu"><i>☰</i><b>Explore</b></button>
   <div id="search" role="search"><button id="sbtn" title="Search (/)" aria-label="Search"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#9ff5ea" stroke-width="2.2" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg></button>
@@ -1219,7 +1301,7 @@ body.home-open .mainmm,body.history-open .mainmm,body.ai-open .mainmm{display:no
   <div id="efmsg"></div><p class="tag">“Don't collect cards. Collect understanding.”</p></div>
 <div id="infp" class="panel" role="dialog" aria-label="About"><div class="ph"><b>ABOUT</b><button class="x" aria-label="close">×</button></div>
   <p><b>Echo Atlas</b> by Zyphullen. Explore the known. Map the unknown. From Nothing to Us is one section: how everything emerges, from the quantum field to us.</p>
-  <p class="verl">v0.6</p>
+  <p class="verl">v0.7</p>
   <h5>Music</h5><div class="sndrow"><button id="mute2">🔊 Music on</button><input id="vol2" type="range" min="0" max="100" step="1" aria-label="Music volume"></div>
   <p class="cred">Piano: Salamander Grand Piano by Alexander Holm (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>), via <a href="https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html" target="_blank" rel="noopener">FreePats</a></p>
   <div class="irow"><button id="howb">❔ How to use</button><a id="sugg" href="https://github.com/Zyphullen/echoatlas/issues/new" target="_blank" rel="noopener">✎ Suggest a fix</a></div></div>
@@ -1244,7 +1326,7 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const SUP = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
 const pow10 = e => '10' + String(Math.round(e)).split('').map(c => SUP[c]).join('');
 const szShort = n => n.sz == null ? '' : (Math.round(n.sz) === 0 ? '~1 m' : '~' + pow10(n.sz) + ' m');
-const DATA_HASH = '5e3e8e167849'; // same hash is in facts.json (including both maps)
+const DATA_HASH = '21c967ff63ce'; // same hash is in facts.json (including both maps)
 const CHAIN_THEORY_TEST_NODES = new Set(['nothing','axiom','qudits','distill','genres','gauge','alpha','chainmail','ctspace','gap']);
 const SRC = {
  katrin:['KATRIN, Science 2025: neutrino mass below 0.45 eV','https://doi.org/10.1126/science.adq9592'],
@@ -2743,7 +2825,7 @@ function linkInfo(a, b) {
     own: ok === undefined ? null : ok.split(' ').filter(k => SRC[k]), ownNote: (typeof LINK_SRC_NOTE !== 'undefined' && LINK_SRC_NOTE[a + '>' + b]) || '', ct: [a, b].some(i => CHAIN_THEORY_TEST_NODES.has(i) && i !== 'nothing') };
 }
 /* v0.2 source details and the Suggest a fix e-mail (prefilled; people can edit or delete any of it) */
-const FIX_TO = 'zyphullen@gmail.com', FIX_VER = 'v0.6';
+const FIX_TO = 'zyphullen@gmail.com', FIX_VER = 'v0.7';
 function fixMailURL(section, name, id, deep) {
   const subject = `Echo Atlas fix: ${name} (${id})`;
   const body = `Section: ${section}\nCard: ${name}\nCard ID: ${id}\nVersion: ${FIX_VER}\nPage: ${deep}\n\nYour fix:\n\n\n\nSource: (optional, a link that supports the fix)\n`;
@@ -4098,6 +4180,62 @@ const TL = [
   { id: 'homo-sapiens', name: 'Homo sapiens', ago: 3e5, when: '~300,000 years ago', s: 'k', a: 'The oldest known fossils of our species, from Jebel Irhoud in Morocco.', src: ['irhoud'], rel: [['fntu', 'hsap'], ['body', '']] },
   { id: 'today', name: 'Today', ago: 0, when: '13.8 billion years after the Big Bang', s: 'k', a: 'The universe is 13.787 ± 0.020 billion years old (Planck). Still open: the Hubble tension, where two ways of measuring today\'s expansion rate disagree.', src: ['planck', 'h0dn'], rel: [['fntu', 'bigbang'], ['fntu', 'h0']] }
 ];
+/* v0.7 UNIVERSE: a zoomable 3D tour built from real images, one stop per scale. Every picture is a real photograph or a real
+   all-sky map from NASA / ESA telescopes, credited on screen. Pictures are only resized, cropped or re-wrapped onto a ball
+   (all-sky maps), never painted. Sizes and distances come from the sources listed on each stop.
+   s = certainty (k green known, t orange, u red). rel = links into other sections (same format as Physics / Biology). */
+Object.assign(SRC, {
+  uni_nasa_earth: ['NASA NSSDCA: Earth fact sheet', 'https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html'],
+  uni_nasa_sun: ['NASA NSSDCA: Sun fact sheet (radius, Sun/Earth ratio, mean distance)', 'https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html'],
+  uni_blue_marble: ['NASA Visible Earth: Blue Marble collection', 'https://visibleearth.nasa.gov/collection/1484/blue-marble'],
+  uni_img_earth: ['Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)', 'https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg'],
+  uni_sdo: ['NASA Solar Dynamics Observatory (SDO)', 'https://sdo.gsfc.nasa.gov/'],
+  uni_img_sun: ['Image: the Sun by SDO\'s Atmospheric Imaging Assembly, 19 Aug 2010 (NASA/SDO, public domain)', 'https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg'],
+  uni_gaia_img: ['ESA: Gaia\'s sky in colour (Gaia DR2 all-sky map)', 'https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2'],
+  uni_img_gaia: ['Image: Gaia\'s all-sky view, ESA/Gaia/DPAC (CC BY 4.0)', 'https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg'],
+  uni_gaia_dr2: ['Gaia Collaboration 2018: Gaia Data Release 2, summary of the contents (A&A 616, A1)', 'https://arxiv.org/abs/1804.09365'],
+  uni_gravity: ['GRAVITY Collaboration 2019: distance to the Galactic Centre, 8.178 kpc (A&A 625, L10)', 'https://arxiv.org/abs/1904.05721'],
+  uni_m101: ['ESA/Hubble heic0602: largest ever Hubble galaxy portrait, the Pinwheel Galaxy (M101)', 'https://esahubble.org/news/heic0602/'],
+  uni_img_m101: ['Image: M101, European Space Agency & NASA (CC BY 4.0)', 'https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg'],
+  uni_webb: ['NASA / STScI: Webb\'s First Deep Field (NIRCam image of SMACS 0723)', 'https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1'],
+  uni_img_webb: ['Image: Webb\'s First Deep Field, NASA, ESA, CSA, STScI (public domain)', 'https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg'],
+  uni_planck_img: ['ESA: Planck CMB (the cosmic microwave background seen by Planck)', 'https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB'],
+  uni_planck_cmb: ['ESA: Planck and the cosmic microwave background', 'https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background'],
+  uni_img_cmb: ['Image: Cosmic Microwave Background, ESA and the Planck Collaboration (CC BY 4.0)', 'https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg'],
+  uni_w_observable: ['Wikipedia: Observable universe', 'https://en.wikipedia.org/wiki/Observable_universe']
+});
+/* kind: globe (photo map on a ball, look from outside) · disc (flat photo of a round object, turn it) · sky (all-sky map on a ball, look from inside)
+   panel (flat photo of a patch of sky) · shell (all-sky map on a ball around us). size = real size shown on the scale bar. */
+const UNI = [
+  { id: 'earth', name: 'Earth', sub: 'our planet, about 12,742 km across', s: 'k', kind: 'globe', img: 'earth', size: '12,742 km across', lyr: 0,
+    a: 'Earth is a rocky planet with a mean radius of 6,371 km. The globe is wrapped with NASA\'s Blue Marble map.',
+    b: [['What the picture is', 'A cloud-free mosaic of many satellite photos (NASA Blue Marble), not one snapshot. Real colours, real land and sea.'], ['Size', 'Mean radius 6,371 km, so about 12,742 km across (NASA fact sheet).']],
+    credit: 'NASA Earth Observatory / Blue Marble · public domain', src: ['uni_nasa_earth', 'uni_blue_marble', 'uni_img_earth'], rel: [['planet', '1'], ['fntu', 'earth'], ['tl', 'earth-moon']] },
+  { id: 'sun', name: 'The Sun', sub: 'our star, 109 Earths across', s: 'k', kind: 'disc', img: 'sun', size: '1.39 million km across', lyr: 0,
+    a: 'The Sun has a mean radius of 695,700 km, about 109 times Earth\'s. Earth orbits it at a mean distance of 149.6 million km.',
+    b: [['What the picture is', 'A real photo by NASA\'s Solar Dynamics Observatory taken in extreme ultraviolet light, which our eyes cannot see, so the colours are false colours.'], ['Size', 'Mean radius 695,700 km; 109.2 × Earth (NASA fact sheet). Light from the Sun takes about 8 minutes to reach us.']],
+    credit: 'NASA/SDO (AIA) · public domain', src: ['uni_nasa_sun', 'uni_sdo', 'uni_img_sun'], rel: [['fntu', 'solar'], ['tl', 'solar-system'], ['ph', 'em-radiation']] },
+  { id: 'milky-way', name: 'Our sky: the Milky Way from inside', sub: 'Gaia\'s map of 1.7 billion stars', s: 'k', kind: 'sky', img: 'gaia-sky', size: 'the whole sky around us', lyr: 1,
+    a: 'We live inside the Milky Way, about 27,000 light-years from its centre, so we see it as a bright band across the sky. ESA\'s Gaia mapped about 1.7 billion of its stars.',
+    b: [['What the picture is', 'Gaia\'s all-sky map (Data Release 2), built from star measurements, wrapped on a ball around you. Look around: the bright band is the disc of our galaxy, and the two smudges lower right are the Large and Small Magellanic Clouds.'], ['Be careful', 'A sky map shows directions, not distances: stars on it are at very different distances.'], ['Where we are', 'The Galactic Centre is 8.178 kiloparsecs away (about 26,700 light-years), measured by the GRAVITY Collaboration in 2019.']],
+    credit: 'ESA/Gaia/DPAC · CC BY 4.0', src: ['uni_gaia_img', 'uni_gaia_dr2', 'uni_gravity', 'uni_img_gaia'], rel: [['fntu', 'galaxies'], ['ph', 'dark-matter']] },
+  { id: 'spiral-galaxy', name: 'A spiral galaxy like ours (M101)', sub: 'the Pinwheel Galaxy, 25 million light-years away', s: 'k', kind: 'disc', img: 'm101', size: '170,000 light-years across', lyr: 2,
+    a: 'No camera has ever left the Milky Way, so nobody has a photo of our galaxy from outside. M101, the Pinwheel Galaxy, is a real spiral galaxy seen face-on by Hubble.',
+    b: [['What the picture is', 'Hubble\'s largest galaxy portrait: 51 exposures plus ground-based images (ESA/Hubble, 2006). The photo is flat; real galaxy discs are thin but not flat paper.'], ['Size and distance', 'About 170,000 light-years across, nearly twice the Milky Way, and about 25 million light-years away (ESA/Hubble).'], ['Honest note', 'Our galaxy is a barred spiral; M101 is used here only as a real example of what a spiral galaxy looks like.']],
+    credit: 'European Space Agency & NASA · CC BY 4.0', src: ['uni_m101', 'uni_img_m101'], rel: [['fntu', 'galaxies'], ['tl', 'earliest-galaxy']] },
+  { id: 'deep-field', name: 'Galaxies everywhere: Webb\'s First Deep Field', sub: 'thousands of galaxies in a grain-of-sand patch of sky', s: 'k', kind: 'panel', img: 'webb-deep-field', size: 'about 2.4 arcminutes of sky', lyr: 3,
+    a: 'Point a big telescope at a tiny dark patch of sky and it fills with galaxies. This patch is about the size of a grain of sand held at arm\'s length.',
+    b: [['What the picture is', 'NASA\'s Webb telescope, infrared camera NIRCam, 12.5 hours. Infrared light is shown as visible colours.'], ['What you see', 'The galaxy cluster SMACS 0723 as it was 4.6 billion years ago. Its gravity bends light from galaxies far behind it into arcs (gravitational lensing).'], ['Honest note', 'This is a flat photo. The galaxies in it are at many different distances; we do not show them in 3D.']],
+    credit: 'NASA, ESA, CSA, STScI · public domain', src: ['uni_webb', 'uni_img_webb'], rel: [['fntu', 'galaxies'], ['ph', 'general-relativity']] },
+  { id: 'cmb', name: 'The oldest light: the cosmic microwave background', sub: 'ESA Planck\'s map of the whole sky', s: 'k', kind: 'shell', img: 'planck-cmb', size: 'the edge of what we can see', lyr: 4,
+    a: 'The farthest thing we can see is light released about 380,000 years after the Big Bang. ESA\'s Planck mapped it across the whole sky.',
+    b: [['What the picture is', 'Planck\'s all-sky map of tiny temperature differences in the cosmic microwave background, wrapped on a ball with us at the centre. Microwaves are invisible, so the colours are false colours.'], ['How far', 'Because space has expanded, the matter that sent this light is now about 46 billion light-years away: roughly the radius of the observable universe.'], ['Honest note', 'It is a sphere around us because we see out in every direction; it is not a wall at the edge of the universe.']],
+    credit: 'ESA and the Planck Collaboration · CC BY 4.0', src: ['uni_planck_img', 'uni_planck_cmb', 'planck', 'uni_w_observable', 'uni_img_cmb'], rel: [['tl', 'recombination'], ['fntu', 'cmb'], ['ph', 'cmb']] }
+];
+const UNI_BY_ID = Object.fromEntries(UNI.map(n => [n.id, n]));
+
+// v0.7 link check of the Universe sources (12 Nov 2026)
+Object.assign(SRC_META, {"https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered", "last_checked": "2026-11-12", "link_status": "ok", "http": "000"}, "https://visibleearth.nasa.gov/collection/1484/blue-marble": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year)", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered", "last_checked": "2026-11-12", "link_status": "ok", "http": "000"}, "https://sdo.gsfc.nasa.gov/": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year)", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2": {"type": "agency / lab", "year": 2018, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://arxiv.org/abs/1804.09365": {"type": "paper", "year": 2018, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://arxiv.org/abs/1904.05721": {"type": "paper", "year": 2019, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://esahubble.org/news/heic0602/": {"type": "agency / lab", "year": 2006, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1": {"type": "agency / lab", "year": 2022, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB": {"type": "agency / lab", "year": 2013, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year)", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Observable_universe": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}});
 
 for (const n of N) { const x = EXTRA[n.id]; if (x) { if (x.L2 && x.L2.length) n.L2 = x.L2; if (x.L3 && x.L3.length) n.L3 = x.L3; } n.L2 = n.L2 || []; n.L3 = n.L3 || []; }
 /* status is single-source: a node's own data decides its colour in BOTH views. Set solved:true on a node to turn it green with a tick everywhere. */
@@ -4779,7 +4917,7 @@ function switchView(v) { if (v === VIEW || svg.classList.contains('fade')) retur
     cullQ = false; apply(); cull(); if (sel) { placePop(); liftForSheet(); }
     requestAnimationFrame(() => svg.classList.remove('fade')); };
   if (RMOTION()) go(); else { svg.classList.add('fade'); setTimeout(go, 280); } }
-document.getElementById('histb').onclick=()=>{if(typeof SCREENS!=='undefined')SCREENS.show('maths','history',{hash:true});};
+document.getElementById('histb').onclick=()=>{if(typeof SCREENS!=='undefined')(DOMAIN==='maths'?SCREENS.show('maths','history',{hash:true}):SCREENS.show('universe','timeline',{hash:true}));};
 vsw.onclick = e => { const sp = e.target.closest && e.target.closest('span[data-v]'); switchView(sp ? sp.dataset.v : VORD[(VORD.indexOf(VIEW) + 1) % 2]); };
 
 /* ============ ECHO-FLAME (free, no account, kept on this device only) ============
@@ -4879,33 +5017,49 @@ addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (btyEl.cla
   else if (efp.classList.contains('on') || infp.classList.contains('on')) { efp.classList.remove('on'); infp.classList.remove('on'); e.stopImmediatePropagation(); } }, true);
 addEventListener('resize', placePanels);
 
-/* ============ BACKGROUND MUSIC (separate file, loaded only after the first tap or click; low by default) ============ */
+/* ============ BACKGROUND MUSIC (separate files, loaded only after the first tap or click; low by default) ============ */
+/* v0.7: 12 soft piano pieces, shuffled fresh on every visit; when one ends another starts at random (never the same one twice in a row). */
 const MUS = (() => {
-  const URL_ = 'music-stars.mp3', DEF = 0.13, MAXG = 0.3, FADE_IN = 3;
+  const TRACKS_ = /*__TRACKS__*/["music-stars.mp3", "music/P1_stillness.mp3", "music/P3_us.mp3", "music/P4_nebula.mp3", "music/P5_first_light.mp3", "music/P6_orbit.mp3", "music/P7_deep_field.mp3", "music/P8_tides.mp3", "music/P9_ember.mp3", "music/P10_aurora.mp3", "music/P11_horizon.mp3", "music/P12_long_night.mp3"], DEF = 0.13, MAXG = 0.3, FADE_IN = 3, GAP = 1.2;
   let vol = parseFloat(prefGet('fntu-vol')); if (!(vol >= 0 && vol <= MAXG)) vol = DEF;
-  let muted = prefGet('fntu-mute') === '1', ctx = null, gain = null, el = null, started = false, fadeT = 0;
+  let muted = prefGet('fntu-mute') === '1', ctx = null, gain = null, el = null, src = null, started = false, fadeT = 0, cur = -1, nextT = 0, token = 0;
+  const played = [];
+  let bag = [];
+  // shuffle bag: a new random order each time it empties; the first pick of a new bag is never the track that just played
+  function pick() { if (TRACKS_.length < 2) return 0; if (!bag.length) { bag = TRACKS_.map((_, i) => i); for (let i = bag.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [bag[i], bag[j]] = [bag[j], bag[i]]; } if (bag[0] === cur) bag.push(bag.shift()); } return bag.shift(); }
+  const blobs = {};
+  function url(i) { const u = TRACKS_[i]; if (!u.startsWith('inline:')) return u; if (blobs[i]) return blobs[i]; // TEST file: the mp3 rides along as inert base64 text
+    const b = atob(document.getElementById(u.slice(7)).textContent.trim()), a = new Uint8Array(b.length); for (let k = 0; k < b.length; k++) a[k] = b.charCodeAt(k); return blobs[i] = URL.createObjectURL(new Blob([a], { type: 'audio/mpeg' })); }
+  const name = i => i < 0 ? null : TRACKS_[i].startsWith('inline:') ? TRACKS_[i].slice(7) : TRACKS_[i].split('/').pop().replace('.mp3', '');
   const btns = [document.getElementById('mute'), document.getElementById('mute2')], sliders = [document.getElementById('vol'), document.getElementById('vol2')];
   function ui() { btns.forEach(b => { b.textContent = muted ? '🔇' : '🔊'; b.setAttribute('aria-label', muted ? 'Turn music on' : 'Mute music'); b.setAttribute('aria-pressed', muted); b.title = muted ? 'Music off' : 'Music on'; });
     btns[1].textContent = muted ? '🔇 Music off' : '🔊 Music on'; sliders.forEach(s => s.value = Math.round(vol / MAXG * 100)); }
   const target = () => muted ? 0 : vol;
   function ramp(to, sec) { if (gain) { const t = ctx.currentTime; gain.gain.cancelScheduledValues(t); gain.gain.setValueAtTime(gain.gain.value, t); gain.gain.linearRampToValueAtTime(to, t + sec); }
     else if (el) { cancelAnimationFrame(fadeT); const v0 = el.volume, t0 = performance.now(); const st = now => { const k = Math.min(1, (now - t0) / (sec * 1000)); el.volume = Math.max(0, Math.min(1, v0 + (to - v0) * k)); if (k < 1) fadeT = requestAnimationFrame(st); }; fadeT = requestAnimationFrame(st); } }
-  function viaElement() { if (el) return; el = new Audio(URL_); el.loop = true; el.volume = 0; el.preload = 'auto'; const p = el.play(); if (p && p.catch) p.catch(() => {}); ramp(target(), FADE_IN); }
+  const queue = () => { clearTimeout(nextT); nextT = setTimeout(playNext, GAP * 1000); };
+  function playNext() { const my = ++token; cur = pick(); played.push(cur); if (played.length > 40) played.shift();
+    if (ctx) { fetch(url(cur)).then(r => r.ok ? r.arrayBuffer() : Promise.reject(r.status)).then(b => new Promise((ok, no) => ctx.decodeAudioData(b, ok, no)))
+        .then(buf => { if (my !== token) return; try { if (src) src.disconnect(); } catch (e) {} src = ctx.createBufferSource(); src.buffer = buf; src.connect(gain); src.onended = () => { if (my === token) queue(); }; src.start(); })
+        .catch(() => { if (played.length < 2) { try { ctx.close(); } catch (e) {} ctx = gain = null; viaElement(); } else queue(); });
+    } else if (el) { el.src = url(cur); const p = el.play(); if (p && p.catch) p.catch(() => {}); } }
+  function viaElement() { if (el) return; el = new Audio(); el.loop = false; el.volume = 0; el.preload = 'auto'; el.addEventListener('ended', queue); el.addEventListener('error', () => { if (played.length < 60) queue(); });
+    if (cur < 0) playNext(); else { played.pop(); playNext(); } ramp(target(), FADE_IN); }
   function start() { if (started) return; started = true; const AC = window.AudioContext || window.webkitAudioContext;
-    if (AC && /^https?:$/.test(location.protocol)) { // Web Audio: smooth gain on every browser (iOS ignores <audio>.volume) and a gap-free loop
+    if (AC && /^https?:$/.test(location.protocol)) { // Web Audio: smooth gain on every browser (iOS ignores <audio>.volume)
       try { ctx = new AC(); gain = ctx.createGain(); gain.gain.value = 0; gain.connect(ctx.destination); } catch (e) { ctx = gain = null; viaElement(); return; }
-      fetch(URL_).then(r => r.ok ? r.arrayBuffer() : Promise.reject(r.status)).then(b => new Promise((ok, no) => ctx.decodeAudioData(b, ok, no)))
-        .then(buf => { const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true; src.connect(gain); src.start(); gain.gain.setValueAtTime(0, ctx.currentTime); ramp(target(), FADE_IN); })
-        .catch(() => { try { ctx.close(); } catch (e) {} ctx = gain = null; viaElement(); });
+      playNext(); gain.gain.setValueAtTime(0, ctx.currentTime); ramp(target(), FADE_IN);
     } else viaElement(); }
   function gesture(e) { if (e && e.target && e.target.closest && e.target.closest('#mute,#mute2,#vol,#vol2')) return; if (!muted) { start(); if (ctx && ctx.state === 'suspended') ctx.resume(); } }
   ['pointerdown', 'pointerup', 'touchend', 'keydown'].forEach(t => addEventListener(t, gesture, { capture: true, passive: true }));
-  function setMuted(m) { muted = m; prefSet('fntu-mute', m ? '1' : '0'); ui(); if (!m) { start(); if (ctx && ctx.state === 'suspended') ctx.resume(); if (el && el.paused) { const p = el.play(); if (p && p.catch) p.catch(() => {}); } } ramp(target(), m ? .5 : 1.5); }
+  function setMuted(m) { muted = m; prefSet('fntu-mute', m ? '1' : '0'); ui(); if (!m) { start(); if (ctx && ctx.state === 'suspended') ctx.resume(); if (el && el.paused && el.src) { const p = el.play(); if (p && p.catch) p.catch(() => {}); } } ramp(target(), m ? .5 : 1.5); }
   btns.forEach(b => b.onclick = () => setMuted(!muted));
   sliders.forEach(sl => sl.addEventListener('input', () => { vol = sl.value / 100 * MAXG; prefSet('fntu-vol', vol.toFixed(3)); if (vol > 0 && muted) setMuted(false); else { ui(); ramp(target(), .15); } }));
-  document.addEventListener('visibilitychange', () => { if (ctx) { if (document.hidden) ctx.suspend(); else if (!muted) ctx.resume(); } else if (el) { if (document.hidden) el.pause(); else if (!muted) { const p = el.play(); if (p && p.catch) p.catch(() => {}); } } });
+  document.addEventListener('visibilitychange', () => { if (ctx) { if (document.hidden) ctx.suspend(); else if (!muted) ctx.resume(); } else if (el) { if (document.hidden) el.pause(); else if (!muted && el.src) { const p = el.play(); if (p && p.catch) p.catch(() => {}); } } });
   ui();
-  return { get state() { return { started, muted, vol, ctx: ctx ? ctx.state : null, gain: gain ? +gain.gain.value.toFixed(3) : el ? +el.volume.toFixed(3) : null, mode: ctx ? 'webaudio' : el ? 'element' : 'none' }; } };
+  return { get state() { return { started, muted, vol, ctx: ctx ? ctx.state : null, gain: gain ? +gain.gain.value.toFixed(3) : el ? +el.volume.toFixed(3) : null, mode: ctx ? 'webaudio' : el ? 'element' : 'none', tracks: TRACKS_.length, track: name(cur), played: played.map(name), time: el ? +el.currentTime.toFixed(1) : ctx ? +ctx.currentTime.toFixed(1) : 0, dur: el && isFinite(el.duration) ? +el.duration.toFixed(1) : null }; },
+    /* test hook: jump near the end of the current track so the "ended → random next" path runs for real */
+    nearEnd() { if (el && isFinite(el.duration)) el.currentTime = Math.max(0, el.duration - 1); else if (src) { try { src.stop(); } catch (e) {} } } };
 })();
 
 /* ============ CHAIN THEORY NOTE (nodes in the Chain Theory lane) ============ */
@@ -5529,7 +5683,7 @@ window.mathHistoryDebug=()=>({nodes:MATH.length,dated:Object.keys(MATH_HISTORY).
 /* v0.5 speed (v0.6: + Biology): each explorer (Planet Earth, Virtual Cell, Human Body, Atom Sandbox, Physics, Biology, Big Bang to Today) loads its code
    only the first time it is opened. index.html fetches js/<name>.js; the self-contained TEST file carries the same code inside
    <script type="text/plain" id="lazy-<name>"> and runs it from there. Behaviour after loading is unchanged. */
-const LAZY=(()=>{const done={},wait={},V='df051f5009';
+const LAZY=(()=>{const done={},wait={},V='5967fdd8f5';
  function need(name){
   if(done[name])return Promise.resolve();if(wait[name])return wait[name];
   wait[name]=new Promise((res,rej)=>{const el=document.createElement('script'),inl=document.getElementById('lazy-'+name);
@@ -5546,10 +5700,10 @@ const SCREENS=(()=>{
  let domain='universe',view='home',mapContext={domain:'universe',view:'map'};
  const main=document.getElementById('knowledgeScreen'),hometop=document.getElementById('hometop');
  const params=()=>new URLSearchParams(location.hash.slice(1));
- const labels={map:'Map',circle:'Ring',history:'History',planet:'Planet Earth',cell:'Virtual Cell',body:'Human Body',atom:'Atom Sandbox',pt:'Elements',physics:'Physics',biology:'Biology',timeline:'Big Bang to Today'};
- const viewers=['planet','cell','body','atom','physics','biology','timeline'];
+ const labels={map:'Map',circle:'Ring',history:'History',planet:'Planet Earth',cell:'Virtual Cell',body:'Human Body',atom:'Atom Sandbox',pt:'Elements',physics:'Physics',biology:'Biology',timeline:'Big Bang to Today',cosmos:'Universe',gaps:'Open questions'};
+ const viewers=['planet','cell','body','atom','physics','biology','timeline','cosmos','gaps'];
  // v0.5: each explorer's code is loaded the first time it is opened (LAZY); until then its global (VPLANET…) does not exist
- const VIEWER=n=>({planet:typeof VPLANET!=='undefined'?VPLANET:null,cell:typeof VCELL!=='undefined'?VCELL:null,body:typeof VBODY!=='undefined'?VBODY:null,atom:typeof VATOM!=='undefined'?VATOM:null,physics:typeof VPHYS!=='undefined'?VPHYS:null,biology:typeof VBIO!=='undefined'?VBIO:null,timeline:typeof VTIME!=='undefined'?VTIME:null})[n];
+ const VIEWER=n=>({planet:typeof VPLANET!=='undefined'?VPLANET:null,cell:typeof VCELL!=='undefined'?VCELL:null,body:typeof VBODY!=='undefined'?VBODY:null,atom:typeof VATOM!=='undefined'?VATOM:null,physics:typeof VPHYS!=='undefined'?VPHYS:null,biology:typeof VBIO!=='undefined'?VBIO:null,timeline:typeof VTIME!=='undefined'?VTIME:null,cosmos:typeof VUNI!=='undefined'?VUNI:null,gaps:typeof VGAPS!=='undefined'?VGAPS:null})[n];
  let showTok=0;
  const isMapView=v=>v==='map'||v==='circle';
  function closeAll(keepHome){
@@ -5574,19 +5728,26 @@ const SCREENS=(()=>{
    hometop.classList.toggle('on',view==='home');
    if(view==='home')hometop.setAttribute('aria-current','page');else hometop.removeAttribute('aria-current');
  }
+ /* v0.7: From Nothing to Us and Maths are one item each; Map, Ring and History open one tap further. One fixed order, never reshuffled. */
  const SECTIONS=[
-   {name:'From Nothing to Us',items:[['universe','map','From Nothing to Us · Map','⌘'],['universe','circle','From Nothing to Us · Ring','◉'],['universe','planet','Planet Earth','🌍'],['universe','atom','Atom Sandbox',atomSVG()],['universe','pt','All the Elements','▦'],['universe','timeline','Big Bang to Today','⏳']]},
+   {name:'From Nothing to Us',items:[{par:'fntu',d:'universe',label:'From Nothing to Us',icon:'✦',sub:[['universe','map','Map','⌘'],['universe','circle','Ring','◉'],['universe','timeline','History · Big Bang to Today','⏳']]},['universe','planet','Planet Earth','🌍'],['universe','atom','Atom Sandbox',atomSVG()],['universe','pt','All the Elements','▦']]},
+   {name:'Universe',items:[['universe','cosmos','Universe · real images in 3D','🔭']]},
    {name:'Physics',items:[['universe','physics','Physics · forces, particles, light','⚛']]},
    {name:'Biology',items:[['universe','biology','Biology · cells, evolution, life','🌿'],['universe','cell','Virtual Cell',dnaSVG()],['universe','body','Human Body',heartSVG()]]},
-   {name:'Maths',items:[['maths','map','Maths Map','∑'],['maths','circle','Maths Ring','◉'],['maths','history','Maths History','↗']]}
+   {name:'Maths',items:[{par:'maths',d:'maths',label:'Maths',icon:'∑',sub:[['maths','map','Map','∑'],['maths','circle','Ring','◉'],['maths','history','History','↗']]}]},
+   {name:'Open questions',items:[['universe','gaps','Open questions · the gaps','❓']]}
  ];
- const sectionOf=()=>view==='home'?'':view==='physics'?'Physics':['biology','cell','body'].includes(view)?'Biology':view==='history'||DOMAIN==='maths'?'Maths':'From Nothing to Us';
+ const sectionOf=()=>view==='home'?'':view==='physics'?'Physics':view==='cosmos'?'Universe':view==='gaps'?'Open questions':['biology','cell','body'].includes(view)?'Biology':view==='history'||DOMAIN==='maths'?'Maths':'From Nothing to Us';
+ const menuOpen=new Set();
  function paintMenu(){
    const cur=sectionOf(),curD=view==='history'?'maths':domain;
-   const item=([d,v,label,icon])=>{const on=view!=='home'&&d===curD&&v===view;return `<button role="menuitem" data-screen="${d}" data-view="${v}" class="${on?'on':''}"${on?' aria-current="page"':''}><i>${icon}</i>${label}${on?' <span class="xcur">current</span>':''}</button>`;};
-   const groups=SECTIONS; /* v0.6b: one fixed order (the Home order), never reshuffled by section */
-   document.getElementById('xmenu').innerHTML=`<div class="xhome${view==='home'?' on':''}" role="menuitem" data-home tabindex="0"><i>⌂</i>Home · all sections</div>`+groups.map(g=>`<div class="xsec">${g.name}</div>${g.items.map(item).join('')}`).join('');
-   document.getElementById('domainDesc').textContent=view==='home'?'Home':view==='physics'?'Physics · forces, particles, light':view==='biology'?'Biology · cells, evolution, life':cur+' · '+(labels[view]||'Home');
+   const isOn=([d,v])=>view!=='home'&&d===curD&&v===view;
+   const item=([d,v,label,icon],sub)=>{const on=isOn([d,v]);return `<button role="menuitem" data-screen="${d}" data-view="${v}" class="${on?'on':''}${sub?' xsubi':''}"${on?' aria-current="page"':''}><i>${icon}</i>${label}${on?' <span class="xcur">current</span>':''}</button>`;};
+   const parent=p=>{const inside=p.sub.some(isOn),open=menuOpen.has(p.par)||inside;
+     return `<button role="menuitem" class="xpar${inside?' on':''}" data-par="${p.par}" aria-expanded="${open}" aria-controls="xsub-${p.par}"><i>${p.icon}</i>${p.label}${inside?' <span class="xcur">current</span>':''}<span class="xarr" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="xsubs" id="xsub-${p.par}"${open?'':' hidden'}>${p.sub.map(x=>item(x,1)).join('')}</div>`;};
+   const groups=SECTIONS;
+   document.getElementById('xmenu').innerHTML=`<div class="xhome${view==='home'?' on':''}" role="menuitem" data-home tabindex="0"><i>⌂</i>Home · all sections</div>`+groups.map(g=>`<div class="xsec">${g.name}</div>${g.items.map(it=>it.par?parent(it):item(it)).join('')}`).join('');
+   document.getElementById('domainDesc').textContent=view==='home'?'Home':view==='physics'?'Physics · forces, particles, light':view==='biology'?'Biology · cells, evolution, life':view==='cosmos'?'Universe · real images in 3D':view==='gaps'?'Open questions':view==='timeline'?'From Nothing to Us · History':cur+' · '+(labels[view]||'Home');
  }
  function paintControls(){
    const maps=isMapView(view);
@@ -5594,7 +5755,7 @@ const SCREENS=(()=>{
    document.body.dataset.view=view;
    main.dataset.view=view;
    for(const id of ['search','key','ctl'])document.getElementById(id).hidden=!maps;
-   document.getElementById('histb').hidden=!(DOMAIN==='maths'&&maps);
+   document.getElementById('histb').hidden=!maps;document.getElementById('histb').title=DOMAIN==='maths'?'Open Maths History':'Open From Nothing to Us History (Big Bang to Today)';
    document.getElementById('vsw').hidden=!maps;
    document.querySelector('.zoom').style.visibility=maps?'':'hidden';
    paintMenu();updateHomeControl();
@@ -5608,6 +5769,8 @@ const SCREENS=(()=>{
    else if(v==='physics')hash=node?'#p='+encodeURIComponent(node):'#physics=1';
    else if(v==='biology')hash=node?'#b='+encodeURIComponent(node):'#biology=1';
    else if(v==='timeline')hash=node?'#t='+encodeURIComponent(node):'#timeline=1';
+   else if(v==='cosmos')hash=node?'#u='+encodeURIComponent(node):'#universe=1';
+   else if(v==='gaps')hash=location.hash.startsWith('#gaps=1')?location.hash:'#gaps=1';
    else if(['planet','cell','body','atom'].includes(v))hash='#'+v+'=1';
    else hash='#screen='+d+'&view='+(v==='circle'?'ring':'map');
    history.replaceState(null,'',location.pathname+location.search+hash);
@@ -5655,6 +5818,8 @@ const SCREENS=(()=>{
      if(v==='physics')VPHYS.init(document.body,{focus:opts.focus,onClose:closer});
      if(v==='biology')VBIO.init(document.body,{focus:opts.focus,onClose:closer});
      if(v==='timeline')VTIME.init(document.body,{focus:opts.focus,onClose:closer});
+     if(v==='cosmos')VUNI.init(document.body,{focus:opts.focus,onClose:closer});
+     if(v==='gaps')VGAPS.init(document.body,{onClose:closer});
      };
      const chunk=viewers.includes(v)?v:null;
      if(chunk&&!LAZY.has(chunk)){ // v0.5: first visit loads this explorer's code, then opens it exactly as before
@@ -5664,7 +5829,7 @@ const SCREENS=(()=>{
      if(v==='pt'){document.querySelector('#pt .in').style.visibility='visible';openPT();if(opts.element)ptShow(+opts.element);}
    }
    mapContext.view=VIEW==='circle'||mapContext.view==='circle'?mapContext.view:'map';
-   paintControls();route(view==='history'?'maths':domain,v,opts.node||opts.id||(v==='physics'||v==='biology'||v==='timeline'?opts.focus:undefined));EF.paintSeen();if(isMapView(view)&&typeof keyFirst==='function')keyFirst(domain+'-'+view);
+   paintControls();route(view==='history'?'maths':domain,v,opts.node||opts.id||(v==='physics'||v==='biology'||v==='timeline'||v==='cosmos'?opts.focus:undefined));EF.paintSeen();if(isMapView(view)&&typeof keyFirst==='function')keyFirst(domain+'-'+view);
    if(view==='home')hometop.blur();
    else if(view==='history')document.getElementById('mhClose').focus({preventScroll:true});
    else if(isMapView(view)){
@@ -5708,6 +5873,8 @@ const SCREENS=(()=>{
    if(h.has('physics')||h.has('p'))return show('universe','physics',{focus:h.get('p')||undefined,hash:false});
    if(h.has('biology')||h.has('b'))return show('universe','biology',{focus:h.get('b')||undefined,hash:false});
    if(h.has('timeline')||h.has('t'))return show('universe','timeline',{focus:h.get('t')||undefined,hash:false});
+   if(h.has('universe')||h.has('u'))return show('universe','cosmos',{focus:h.get('u')||undefined,hash:false});
+   if(h.has('gaps'))return show('universe','gaps',{hash:false});
    if(h.has('ptable'))return show('universe','pt',{element:h.get('el'),hash:false});
    if(h.has('l')){const [a,b]=String(h.get('l')).split('>'),L=a&&b&&typeof linkInfo==='function'?linkInfo(a,b):null;
      if(L){show(L.kind==='maths'?'maths':'universe',h.get('tv')==='circle'?'circle':'map',{hash:false});
@@ -5719,11 +5886,11 @@ const SCREENS=(()=>{
  }
  hometop.onclick=showHome;
  document.getElementById('ptbtn').onclick=e=>{e.stopPropagation();toggleMenu();};
- document.getElementById('histb').onclick=()=>show(DOMAIN,'history');
+ document.getElementById('histb').onclick=()=>DOMAIN==='maths'?show('maths','history'):show('universe','timeline');
  document.getElementById('vsw').onclick=e=>{const b=e.target.closest('span[data-v]');if(b)show(DOMAIN,b.dataset.v);};
  document.getElementById('vsw').onkeydown=e=>{if(['Enter',' '].includes(e.key)&&e.target.id==='vsw'){e.preventDefault();show(DOMAIN,VIEW==='map'?'circle':'map');}};
  document.getElementById('homeScreen').onclick=e=>{const b=e.target.closest('.homeTile[data-screen]');if(b)show(b.dataset.screen,b.dataset.view);}; // v0.4: only the tiles open a page (a click in the search box must not reset Home)
- document.getElementById('xmenu').onclick=e=>{if(e.target.closest('[data-home]')){closeMenu();return showHome();}const b=e.target.closest('[data-view]');if(b){closeMenu();show(b.dataset.screen,b.dataset.view);}};
+ document.getElementById('xmenu').onclick=e=>{if(e.target.closest('[data-home]')){closeMenu();return showHome();}const par=e.target.closest('[data-par]');if(par){e.stopPropagation();const k=par.dataset.par,open=par.getAttribute('aria-expanded')!=='true';if(open)menuOpen.add(k);else menuOpen.delete(k);const sub=document.getElementById('xsub-'+k);sub.hidden=!open;par.setAttribute('aria-expanded',open);par.querySelector('.xarr').textContent=open?'▾':'▸';if(open){const f=sub.querySelector('[data-view]');if(f&&e.detail===0)f.focus();}return;}const b=e.target.closest('[data-view]');if(b){closeMenu();show(b.dataset.screen,b.dataset.view);}};
  document.getElementById('pt').querySelector('.close').onclick=()=>show('universe','map');
  document.addEventListener('pointerdown',e=>{const m=document.getElementById('xmenu');if(m.classList.contains('on')&&!m.contains(e.target)&&!document.getElementById('ptbtn').contains(e.target))closeMenu();});
  document.addEventListener('click',e=>{const b=e.target.closest('.vback');if(b){e.preventDefault();e.stopImmediatePropagation();show(mapContext.domain,mapContext.view,{hash:true});}},true);
@@ -5731,7 +5898,7 @@ const SCREENS=(()=>{
    if(e.key==='Escape'&&document.getElementById('xmenu').classList.contains('on')){e.preventDefault();closeMenu();document.getElementById('ptbtn').focus();return;}
    const home=e.target.closest('[data-home]');
    if(home&&['Enter',' '].includes(e.key)){e.preventDefault();showHome();return;}
-   const items=[...document.querySelectorAll('#xmenu [data-view]')],i=items.indexOf(document.activeElement),sign=e.key==='ArrowDown'?1:e.key==='ArrowUp'?-1:0;
+   const items=[...document.querySelectorAll('#xmenu [data-view],#xmenu [data-par]')].filter(b=>!b.closest('[hidden]')),i=items.indexOf(document.activeElement),sign=e.key==='ArrowDown'?1:e.key==='ArrowUp'?-1:0;
    if(sign&&items.length){e.preventDefault();items[(i+sign+items.length)%items.length].focus();}
  });
  addEventListener('hashchange',fromHash);
@@ -5743,7 +5910,7 @@ const SCREENS=(()=>{
 /* Echo Atlas Home. Tile images are real screenshots of each screen, captured from the built
    site by capture-thumbs.js and embedded at build time (HOME_THUMBS), so a tile shows exactly
    what opens. */
-const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "biology": "thumbs/biology.webp", "body": "thumbs/body.webp", "cell": "thumbs/cell.webp", "fntu-map": "thumbs/fntu-map.webp", "fntu-ring": "thumbs/fntu-ring.webp", "history": "thumbs/history.webp", "maths-map": "thumbs/maths-map.webp", "maths-ring": "thumbs/maths-ring.webp", "physics": "thumbs/physics.webp", "planet": "thumbs/planet.webp", "pt": "thumbs/pt.webp", "timeline": "thumbs/timeline.webp"}; // real screenshots, captured by capture-thumbs.js
+const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "biology": "thumbs/biology.webp", "body": "thumbs/body.webp", "cell": "thumbs/cell.webp", "fntu-map": "thumbs/fntu-map.webp", "fntu-ring": "thumbs/fntu-ring.webp", "gaps": "thumbs/gaps.webp", "history": "thumbs/history.webp", "maths-map": "thumbs/maths-map.webp", "maths-ring": "thumbs/maths-ring.webp", "physics": "thumbs/physics.webp", "planet": "thumbs/planet.webp", "pt": "thumbs/pt.webp", "timeline": "thumbs/timeline.webp", "universe": "thumbs/universe.webp"}; // real screenshots, captured by capture-thumbs.js
 (() => {
   const GLYPH={'⚛':atomSVG,dna:dnaSVG,heart:heartSVG};
   const icon=(id,col)=>GLYPH[id]?`<svg class="tileIcon" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="17" fill="#071324" stroke="${col}" stroke-width="1.7"/><g transform="translate(9 9)" color="${col}">${GLYPH[id](24,true)}</g></svg>`:`<svg class="tileIcon" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="17" fill="#071324" stroke="${col}" stroke-width="1.7"/><text x="21" y="27" text-anchor="middle" fill="${col}" font-size="17" font-family="Georgia,serif">${esc(id)}</text></svg>`;
@@ -5754,7 +5921,9 @@ const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "biology": "thumb
     {id:'biology',d:'universe',v:'biology',title:'Biology',kicker:'SECTION · CELLS · EVOLUTION · LIFE',desc:'33 ideas, from DNA and cells to evolution, ecosystems and the open questions.',wide:1,icon:'🌿',col:'#3fe0c0'},
     {id:'cell',d:'universe',v:'cell',title:'Virtual Cell',kicker:'BIOLOGY',desc:'Zoom into a typical human cell.',icon:'dna',col:'#5cf0a0'},
     {id:'body',d:'universe',v:'body',title:'Human Body',kicker:'BIOLOGY',desc:'Organs, and the cells that build them.',icon:'heart',col:'#ff9ad5'},
-    {id:'timeline',d:'universe',v:'timeline',title:'Big Bang to Today',kicker:'TIMELINE · 13.8 BILLION YEARS',desc:'22 dated events, from the first instant to today.',wide:1,icon:'⏳',col:'#ffd36b'},
+    {id:'universe',d:'universe',v:'cosmos',title:'Universe',kicker:'SECTION · REAL IMAGES IN 3D',desc:'Zoom from Earth to the oldest light, through real NASA and ESA pictures.',wide:1,icon:'🔭',col:'#7fc8ff'},
+    {id:'gaps',d:'universe',v:'gaps',title:'Open questions',kicker:'EXPLORE THE GAPS',desc:'Every red and orange card in one place, with rival ideas and the tests that could decide them.',wide:1,icon:'❓',col:'#ff7a6b'},
+    {id:'timeline',d:'universe',v:'timeline',title:'Big Bang to Today',kicker:'FROM NOTHING TO US · HISTORY · 13.8 BILLION YEARS',desc:'22 dated events, from the first instant to today.',wide:1,icon:'⏳',col:'#ffd36b'},
     {id:'fntu-ring',d:'universe',v:'circle',title:'Universe Ring',kicker:'FROM NOTHING TO US',desc:'The original journey as one circular loop.',icon:'◉',col:'#ffd36b'},
     {id:'maths-ring',d:'maths',v:'circle',title:'Maths Ring',kicker:'MATHS',desc:'All 16 branches in one connected ring.',icon:'◉',col:'#4ff3e3'},
     {id:'history',d:'maths',v:'history',title:'Maths History',kicker:'MATHS',desc:'92 dated events across five eras. Proposed ideas in violet.',icon:'↗',col:'#e79cff'},
@@ -5765,7 +5934,7 @@ const HOME_THUMBS=/*__THUMBMAP__*/{"atom": "thumbs/atom.webp", "biology": "thumb
   const TH=typeof HOME_THUMBS!=='undefined'?HOME_THUMBS:{};
   const art=t=>TH[t.id]?`<img class="tileArt tileShot" src="${TH[t.id]}" alt="" loading="lazy" decoding="async">`:`<div class="tileArt tileShot tileNoShot"></div>`;
   const home=document.getElementById('homeScreen');
-  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas <span class="ver">v0.6</span></h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div></div>`;
+  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas <span class="ver">v0.7</span></h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div></div>`;
 })();
 
 /* Maths History (Echo Atlas v0.2): a full-size SVG timeline redrawn at the current zoom.
@@ -5988,7 +6157,7 @@ function centreOnLink(L) { const B = L.kind === 'maths' ? MATH_BY_ID : byId, A1 
   const ph = innerWidth <= 600, z = ph ? .5 : .75, mx = (A1.x + A2.x) / 2, my = (A1.y + A2.y) / 2;
   s = z; tx = (ph ? innerWidth : innerWidth - 330) / 2 - mx * z; ty = UI() + (innerHeight - UI()) * (ph ? .12 : .5) - my * z; apply(); cull(); }
 /* ===== Echo Atlas v0.4: home search, AI info read-me, source badges ===== */
-const AI_INDEX=[{"section": "From Nothing to Us", "file": "ai/from-nothing-to-us.json", "counts": {"nodes": 93, "links": 145, "crosslinks_to_maths": 25}, "sources": 245, "non_wikipedia_sources": 223, "approx_tokens": 81000, "bytes": 293127}, {"section": "Big Bang to Today", "file": "ai/big-bang-to-today.json", "counts": {"big_bang_to_today": 0, "section_links": 42}, "sources": 107, "non_wikipedia_sources": 79, "approx_tokens": 25000, "bytes": 90837}, {"section": "Physics", "file": "ai/physics.json", "counts": {"physics": 32, "section_links": 65}, "sources": 161, "non_wikipedia_sources": 123, "approx_tokens": 60000, "bytes": 216318}, {"section": "Biology", "file": "ai/biology.json", "counts": {"biology": 33, "section_links": 78}, "sources": 197, "non_wikipedia_sources": 135, "approx_tokens": 62000, "bytes": 222639}, {"section": "Maths", "file": "ai/maths.json", "counts": {"maths": 86, "crosslinks_to_universe": 25}, "sources": 130, "non_wikipedia_sources": 128, "approx_tokens": 51000, "bytes": 185010}, {"section": "Maths History", "file": "ai/maths-history.json", "counts": {"maths_history": 86}, "sources": 84, "non_wikipedia_sources": 82, "approx_tokens": 19000, "bytes": 68315}, {"section": "Planet Earth", "file": "ai/planet-earth.json", "counts": {"planet": 18}, "sources": 28, "non_wikipedia_sources": 9, "approx_tokens": 5000, "bytes": 19007}, {"section": "Virtual Cell", "file": "ai/virtual-cell.json", "counts": {"virtual_cell": 37}, "sources": 85, "non_wikipedia_sources": 44, "approx_tokens": 13000, "bytes": 48110}, {"section": "Human Body", "file": "ai/human-body.json", "counts": {"virtual_body": 72, "body_to_cell": 21}, "sources": 118, "non_wikipedia_sources": 37, "approx_tokens": 22000, "bytes": 79347}, {"section": "All the Elements (and Atom Sandbox)", "file": "ai/elements.json", "counts": {"elements": 118}, "sources": 14, "non_wikipedia_sources": 14, "approx_tokens": 18000, "bytes": 63064}];
+const AI_INDEX=[{"section": "From Nothing to Us", "file": "ai/from-nothing-to-us.json", "counts": {"nodes": 93, "links": 145, "crosslinks_to_maths": 25}, "sources": 245, "non_wikipedia_sources": 223, "approx_tokens": 82000, "bytes": 294502}, {"section": "Big Bang to Today", "file": "ai/big-bang-to-today.json", "counts": {"big_bang_to_today": 0, "section_links": 42}, "sources": 107, "non_wikipedia_sources": 79, "approx_tokens": 26000, "bytes": 92249}, {"section": "Universe", "file": "ai/universe.json", "counts": {"universe": 0, "section_links": 15}, "sources": 44, "non_wikipedia_sources": 36, "approx_tokens": 12000, "bytes": 43539}, {"section": "Physics", "file": "ai/physics.json", "counts": {"physics": 32, "section_links": 65}, "sources": 161, "non_wikipedia_sources": 123, "approx_tokens": 60000, "bytes": 217622}, {"section": "Biology", "file": "ai/biology.json", "counts": {"biology": 33, "section_links": 78}, "sources": 197, "non_wikipedia_sources": 135, "approx_tokens": 62000, "bytes": 223943}, {"section": "Maths", "file": "ai/maths.json", "counts": {"maths": 86, "crosslinks_to_universe": 25}, "sources": 130, "non_wikipedia_sources": 128, "approx_tokens": 52000, "bytes": 186314}, {"section": "Maths History", "file": "ai/maths-history.json", "counts": {"maths_history": 86}, "sources": 84, "non_wikipedia_sources": 82, "approx_tokens": 19000, "bytes": 69619}, {"section": "Open questions", "file": "ai/open-questions.json", "counts": {"open_questions": 0}, "sources": 0, "non_wikipedia_sources": 0, "approx_tokens": 4000, "bytes": 13062}, {"section": "Planet Earth", "file": "ai/planet-earth.json", "counts": {"planet": 18}, "sources": 28, "non_wikipedia_sources": 9, "approx_tokens": 6000, "bytes": 20311}, {"section": "Virtual Cell", "file": "ai/virtual-cell.json", "counts": {"virtual_cell": 37}, "sources": 85, "non_wikipedia_sources": 44, "approx_tokens": 14000, "bytes": 49414}, {"section": "Human Body", "file": "ai/human-body.json", "counts": {"virtual_body": 72, "body_to_cell": 21}, "sources": 118, "non_wikipedia_sources": 37, "approx_tokens": 22000, "bytes": 80651}, {"section": "All the Elements (and Atom Sandbox)", "file": "ai/elements.json", "counts": {"elements": 118}, "sources": 14, "non_wikipedia_sources": 14, "approx_tokens": 18000, "bytes": 64368}];
 /* v0.4 pictures instead of words: a cosmic size ruler on map cards (from the card's own size, n.sz = log10 metres)
    and a depth strip on Planet Earth cards (from the layer's own r0/r1 depths). Same data as the text they replace. */
 function sizeBarHTML(n) {
@@ -6014,7 +6183,7 @@ const V04 = (() => {
     history: { name: 'Maths History', col: '#e79cff', glyph: '↗' }, planet: { name: 'Planet Earth', col: '#4ff3e3', glyph: '🌍' },
     cell: { name: 'Virtual Cell', col: '#5cf0a0', glyph: '🧬' }, body: { name: 'Human Body', col: '#ff9ad5', glyph: '♥' },
     el: { name: 'All the Elements', col: '#ffd36b', glyph: '▦' }, page: { name: 'Page', col: '#ffe3a5', glyph: '⌂' }, atom: { name: 'Atom Sandbox', col: '#ffd36b', glyph: '⚛' },
-    physics: { name: 'Physics', col: '#e79cff', glyph: '✷' }, biology: { name: 'Biology', col: '#3fe0c0', glyph: '🌿' }, timeline: { name: 'Big Bang to Today', col: '#ffd36b', glyph: '⏳' } };
+    physics: { name: 'Physics', col: '#e79cff', glyph: '✷' }, biology: { name: 'Biology', col: '#3fe0c0', glyph: '🌿' }, timeline: { name: 'Big Bang to Today', col: '#ffd36b', glyph: '⏳' }, cosmos: { name: 'Universe', col: '#7fc8ff', glyph: '🔭' }, gaps: { name: 'Open questions', col: '#ff7a6b', glyph: '❓' } };
   const CC = { k: '#3dff8a', t: '#ffa53d', u: '#ff4d5e' };
   const jump = h => { history.replaceState(null, '', location.pathname + location.search + h); SCREENS.fromHash(); };
   const PAGES = [
@@ -6023,7 +6192,8 @@ const V04 = (() => {
     ['Maths History', 'maths', 'history', 'history', 'timeline dates eras'], ['Planet Earth', 'universe', 'planet', 'planet', 'earth layers atmosphere core'],
     ['Virtual Cell', 'universe', 'cell', 'cell', 'cell organelles biology'], ['Human Body', 'universe', 'body', 'body', 'body organs anatomy'],
     ['Atom Sandbox', 'universe', 'atom', 'atom', 'atom build collide nucleus'], ['All the Elements', 'universe', 'pt', 'el', 'periodic table elements'],
-    ['Physics', 'universe', 'physics', 'physics', 'physics forces particles light standard model'], ['Biology', 'universe', 'biology', 'biology', 'biology life cells evolution dna genetics ecology'], ['Big Bang to Today', 'universe', 'timeline', 'timeline', 'timeline big bang history of the universe cosmic']];
+    ['Physics', 'universe', 'physics', 'physics', 'physics forces particles light standard model'], ['Biology', 'universe', 'biology', 'biology', 'biology life cells evolution dna genetics ecology'], ['Big Bang to Today', 'universe', 'timeline', 'timeline', 'timeline big bang history of the universe cosmic from nothing to us history'],
+    ['Universe', 'universe', 'cosmos', 'cosmos', 'universe 3d real images photos space galaxy sky stars nasa esa hubble webb planck gaia cosmos'], ['Open questions', 'universe', 'gaps', 'gaps', 'open questions gaps unknown mysteries red orange rival ideas tests frontier']];
   let IX = null;
   /* the index is built on first use only (no cost at start-up) */
   function build() {
@@ -6041,6 +6211,7 @@ const V04 = (() => {
     if (typeof PHYS !== 'undefined') for (const n of PHYS) add('physics', n.name, n.sub, n.s, [...n.a, ...n.b.map(b => b.join(': '))].join(' · '), () => jump('#p=' + encodeURIComponent(n.id)));
     if (typeof BIO !== 'undefined') for (const n of BIO) add('biology', n.name, n.sub, n.s, [...n.a, ...n.b.map(b => b.join(': '))].join(' · '), () => jump('#b=' + encodeURIComponent(n.id)));
     if (typeof TL !== 'undefined') for (const e of TL) add('timeline', e.name, e.when, e.s, e.a, () => jump('#t=' + encodeURIComponent(e.id)));
+    if (typeof UNI !== 'undefined') for (const n of UNI) add('cosmos', n.name, n.sub, n.s, [n.a, ...n.b.map(b => b.join(': ')), n.credit].join(' · '), () => jump('#u=' + encodeURIComponent(n.id)));
     for (const E of ELS) { const [z, sy, nm, , o] = E; IX.push({ sec: 'el', title: nm, sub: `Element ${z} · ${sy} · ${ORI[o[0]][0]}`, s: 'el', sy: fold4(sy), symRaw: sy, z, col: ORI[o[0]][1], go: () => jump('#ptable=1&el=' + z), nm: fold4(nm), al: '', ln: '', raw: '', tx: '' }); }
     return IX;
   }
@@ -6097,8 +6268,8 @@ const V04 = (() => {
 
   /* ---------- AI info read-me (opens from the home button and the top bar) ---------- */
   const fmtK = n => n >= 1000 ? Math.round(n / 1000) + 'k' : String(n);
-  const ICON = { 'From Nothing to Us': ['✦', '#ffd36b'], 'Maths': ['∑', '#4ff3e3'], 'Maths History': ['↗', '#e79cff'], 'Planet Earth': ['🌍', '#4ff3e3'], 'Virtual Cell': ['🧬', '#5cf0a0'], 'Human Body': ['♥', '#ff9ad5'], 'Physics': ['✷', '#e79cff'], 'Biology': ['🌿', '#3fe0c0'], 'Big Bang to Today': ['⏳', '#ffd36b'] };
-  const OPEN = { 'From Nothing to Us': ['universe', 'map'], 'Maths': ['maths', 'map'], 'Maths History': ['maths', 'history'], 'Planet Earth': ['universe', 'planet'], 'Virtual Cell': ['universe', 'cell'], 'Human Body': ['universe', 'body'], 'Physics': ['universe', 'physics'], 'Biology': ['universe', 'biology'], 'Big Bang to Today': ['universe', 'timeline'] };
+  const ICON = { 'From Nothing to Us': ['✦', '#ffd36b'], 'Maths': ['∑', '#4ff3e3'], 'Maths History': ['↗', '#e79cff'], 'Planet Earth': ['🌍', '#4ff3e3'], 'Virtual Cell': ['🧬', '#5cf0a0'], 'Human Body': ['♥', '#ff9ad5'], 'Physics': ['✷', '#e79cff'], 'Biology': ['🌿', '#3fe0c0'], 'Big Bang to Today': ['⏳', '#ffd36b'], 'Universe': ['🔭', '#7fc8ff'], 'Open questions': ['❓', '#ff7a6b'] };
+  const OPEN = { 'From Nothing to Us': ['universe', 'map'], 'Maths': ['maths', 'map'], 'Maths History': ['maths', 'history'], 'Planet Earth': ['universe', 'planet'], 'Virtual Cell': ['universe', 'cell'], 'Human Body': ['universe', 'body'], 'Physics': ['universe', 'physics'], 'Biology': ['universe', 'biology'], 'Big Bang to Today': ['universe', 'timeline'], 'Universe': ['universe', 'cosmos'], 'Open questions': ['universe', 'gaps'] };
   let lastFocus = null;
   function openAI() {
     let p = $('aiInfo');
@@ -6109,13 +6280,14 @@ const V04 = (() => {
         <button class="aiX" aria-label="Close AI / SI info">✕</button>
         <div class="aiHead"><span class="aiOrb big" aria-hidden="true"><i></i></span><div><div class="homeEyebrow">READ ME · FOR AI / SI AND PEOPLE</div><h2 id="aiTitle">AI / SI info</h2>
         <p>Echo Atlas holds <b>${N.length + (typeof MATH !== 'undefined' ? MATH.length : 0)}</b> map ideas, <b>${files.reduce((a, f) => a + (f.counts.planet || 0) + (f.counts.virtual_cell || 0) + (f.counts.virtual_body || 0), 0)}</b> explorer cards and <b>118</b> elements. Every fact has a colour for certainty and real sources. <b>AI / SI</b> means artificial intelligence and superintelligence: any machine reader, and people too.</p></div></div>
-        <ol class="aiSteps"><li><i>📂</i><span>Load <b>one section file</b> to stay inside your context limit.</span></li><li><i>🔗</i><span>Every card has a <b>share_url</b> back to the site.</span></li><li><i>✅</i><span>Same <b>data hash</b> everywhere: <code>${esc(DATA_HASH)}</code></span></li></ol>
+        <ol class="aiSteps"><li><i>📂</i><span>Load <b>one section file</b> to stay inside your context limit.</span></li><li><i>🧩</i><span>Each section file already holds the <b>facts, colours, sources and links between ideas</b>, including links to other sections.</span></li><li><i>🔗</i><span>Every card has a <b>share_url</b> back to the site.</span></li><li><i>✅</i><span>Same <b>data hash</b> everywhere: <code>${esc(DATA_HASH)}</code></span></li></ol>
         <div class="aiFiles">${files.map(f => { const [g, c] = ICON[f.section] || ['▦', '#ffd36b'], CW = { nodes: 'cards', links: 'links', crosslinks_to_maths: 'links to Maths', crosslinks_to_universe: 'links to From Nothing to Us', maths: 'cards', maths_history: 'cards with dated events', planet: 'layers', virtual_cell: 'cards', virtual_body: 'cards', body_to_cell: 'body → cell links', elements: 'elements' }, cnt = Object.entries(f.counts).map(([k, v]) => `${v} ${CW[k] || k.replace(/_/g, ' ')}`).join(' · '), o = OPEN[f.section] || ['universe', 'pt'];
           return `<div class="aiFile" style="--c:${c}"><span class="aiG">${g}</span><div class="aiFT"><b>${esc(f.section)}</b><small>${esc(cnt)}</small><span class="aiMeter"><i style="width:${Math.max(4, Math.round(100 * f.bytes / Math.max(...files.map(x => x.bytes))))}%"></i></span><small class="aiTok">~${fmtK(f.approx_tokens)} tokens · ${f.sources} sources (${f.non_wikipedia_sources} papers / official)</small></div>
           <div class="aiAct"><a href="${esc(f.file)}" target="_blank" rel="noopener" class="aiDl">${esc(f.file.replace('ai/', ''))}</a><button data-open="${o[0]}|${o[1]}">Open ↗</button></div></div>`; }).join('')}</div>
         <a class="aiAll" href="facts.json" target="_blank" rel="noopener" id="allDataBtn"><span class="aiRobot" aria-hidden="true">🤖</span><span class="aiAllT"><b>All site data</b><small>facts.json · everything · ~${fmtK(Math.round(tot / 3.6))} tokens</small></span></a>
         <div class="aiKey"><span><i style="--c:#3dff8a"></i>green · known</span><span><i style="--c:#ffa53d"></i>orange · we think</span><span><i style="--c:#ff4d5e"></i>red · unknown</span></div>
         <div class="aiMore"><a href="ai/README.md" target="_blank" rel="noopener">README.md</a><a href="ai/index.json" target="_blank" rel="noopener">index.json</a><a href="llms.txt" target="_blank" rel="noopener">llms.txt</a><a href="knowledge.html" target="_blank" rel="noopener">Plain facts</a><a href="FACTS-GUIDE.md" target="_blank" rel="noopener">Field guide</a></div>
+        <div class="aiQual"><p><b>🤖 Automatic checks</b> run on every build: colours, sources, links, share links, counts, data hash and source links. They do not read the science.</p><p><b>🔬 Science review:</b> no formal peer review yet. Please check claims against their sources.</p></div>
         <p class="aiFoot">All section files together: ~${fmtK(Math.round(tot / 3.6))} tokens. Spotted a mistake? Every card has <b>Suggest a fix</b>.</p></div></div>`);
       p = $('aiInfo');
       p.addEventListener('click', e => { if (e.target === p || e.target.closest('.aiX')) return closeAI(); const b = e.target.closest('[data-open]'); if (b) { const [d, v] = b.dataset.open.split('|'); closeAI(); SCREENS.show(d, v); } });
@@ -6145,6 +6317,7 @@ function xsecTarget(kind, id) {
   if (kind === 'ph') { const n = PHYS_BY_ID[id]; return n ? { hash: '#p=' + encodeURIComponent(id), title: n.name } : null; }
   if (kind === 'tl') { const e = TL.find(x => x.id === id); return e ? { hash: '#t=' + encodeURIComponent(id), title: e.name } : null; }
   if (kind === 'pt') { const e = ELS.find(x => String(x[0]) === String(id)); return e ? { hash: '#ptable=1&el=' + e[0], title: e[2] } : null; }
+  if (kind === 'uni') { const n = typeof UNI_BY_ID !== 'undefined' && UNI_BY_ID[id]; return n ? { hash: '#u=' + encodeURIComponent(id), title: n.name } : null; }
   if (kind === 'bio') { const n = typeof BIO_BY_ID !== 'undefined' && BIO_BY_ID[id]; return n ? { hash: '#b=' + encodeURIComponent(id), title: n.name } : null; }
   // v0.6: Virtual Cell, Human Body and Planet Earth links can open one card (#cell=mito); an empty id opens the page
   const PC = { cell: typeof CELL_P !== 'undefined' ? CELL_P : null, body: typeof BODY_P !== 'undefined' ? BODY_P : null, planet: typeof PLANET_P !== 'undefined' ? PLANET_P : null }[kind];
@@ -6156,9 +6329,10 @@ const XSEC_BACK = (() => { const m = {}; const add = (k, id, from) => (m[k + ':'
   for (const n of PHYS) for (const [k, id] of n.rel) add(k, id, ['ph', n.id]);
   if (typeof BIO !== 'undefined') for (const n of BIO) for (const [k, id] of n.rel) add(k, id, ['bio', n.id]);
   for (const e of TL) for (const [k, id] of e.rel || []) add(k, id, ['tl', e.id]);
+  if (typeof UNI !== 'undefined') for (const n of UNI) for (const [k, id] of n.rel) add(k, id, ['uni', n.id]);
   return m; })();
 function xsecBack(kind, id) { return (XSEC_BACK[kind + ':' + id] || []).map(([k, i]) => [k, i, '']); }
-const XSEC_KIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], tl: ['⏳', 'Big Bang to Today', '#e79cff'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'] };
+const XSEC_KIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], uni: ['🔭', 'Universe', '#7fc8ff'], tl: ['⏳', 'Big Bang to Today', '#e79cff'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'] };
 // v0.6: Virtual Cell and Human Body now sit with Biology on Home; the life-and-us cards of From Nothing to Us still open them directly
 const FNTU_EXPLORE = { protocell: [['cell', 'cell']], prok: [['cell', 'cell']], eukaryote: [['cell', 'cell'], ['cell', 'mito']], multicell: [['cell', 'cell'], ['body', 'body']],
   dna: [['cell', 'dna']], proteins: [['cell', 'protein']], code: [['cell', 'rib']], lipids: [['cell', 'lipid']], vesicles: [['cell', 'membrane']],
@@ -6258,6 +6432,29 @@ const V05LABELS = (() => {
       else { a.el.style.removeProperty('font-size'); if (key === 'map' && a.y0 != null) a.el.setAttribute('y', a.y0.toFixed(1)); if (!a.el.getAttribute('style')) a.el.removeAttribute('style'); } } }
   let q = 0; const a0 = apply; apply = function () { a0.apply(this, arguments); if (!q) q = requestAnimationFrame(() => { q = 0; run(); }); };
   return { run, debug: () => Object.fromEntries(Object.entries(cache).map(([k, L]) => [k, L.map(a => [a.el.textContent, a.base, +(parseFloat(a.el.style.fontSize || a.base) / a.base).toFixed(2), +a.fmax.toFixed(2)])])) }; })();
+/* v0.7: the browser tab names the open card ("Counting & number · Echo Atlas"), so a few ideas open in different tabs are easy to tell apart.
+   Card closed → the normal title comes back. Reads the card's own heading (official names from the data); never touches the address or hash. */
+const CARD_TITLE = (() => {
+  const BASE = document.title, SUFFIX = ' · Echo Atlas';
+  const vis = e => !!e && !e.hidden && !e.closest('[hidden]') && getComputedStyle(e).display !== 'none' && getComputedStyle(e).visibility !== 'hidden' && e.getBoundingClientRect().width > 0;
+  const txt = e => e ? e.textContent.replace(/\s+/g, ' ').trim() : '';
+  function name() {
+    if (document.body.classList.contains('home-open')) return '';
+    const u = document.querySelector('#vcosmos .ucard'); if (vis(u)) return txt(u.querySelector('#uTitle'));               // Universe stop card
+    for (const c of document.querySelectorAll('.phcard')) if (vis(c)) return txt(c.querySelector('h3'));                       // Physics, Biology, Big Bang to Today
+    for (const c of document.querySelectorAll('.vpop')) if (vis(c)) return txt(c.querySelector('.t1'));                        // Virtual Cell, Human Body, Planet Earth
+    const mh = document.getElementById('mhCard'); if (vis(mh)) return txt(document.getElementById('mhcTitle'));               // Maths History event
+    const pi = document.getElementById('ptinfo'), pt = document.getElementById('pt'); if (pt && vis(pi) && pi.querySelector('b')) return txt(pi.querySelector('b')).split(' · ').pop(); // an element
+    const pop = document.getElementById('pop'); if (vis(pop)) return txt(pop.querySelector('#popBody .t1'));                 // map, maths and link cards
+    return '';
+  }
+  let t = 0;
+  function sync() { t = 0; const n = name(), want = n ? n + SUFFIX : BASE; if (document.title !== want) document.title = want; }
+  const soon = () => { if (!t) t = setTimeout(sync, 120); };
+  new MutationObserver(soon).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['hidden', 'style', 'class'] });
+  addEventListener('hashchange', soon); soon();
+  return { sync, name, BASE };
+})();
 
 
 /* ============ START ============ */

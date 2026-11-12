@@ -106,7 +106,7 @@ const VPHYS = (() => {
     const t = [s, cx - n.px * s, cy - n.py * s]; if (now) { [cam.s, cam.tx, cam.ty] = t; apply(); } else animTo(...t); }
   /* ---------- card ---------- */
   const SITE_ = typeof SITE !== 'undefined' ? SITE : 'https://zyphullen.github.io/echoatlas/';
-  const XKIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], tl: ['⏳', 'Big Bang to Today', '#e79cff'], atom: ['⚛', 'Atom Sandbox', '#ffd36b'], pt: ['▦', 'All the Elements', '#ffd36b'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], planet: ['🌍', 'Planet Earth', '#4ff3e3'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'] };
+  const XKIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], tl: ['⏳', 'Big Bang to Today', '#e79cff'], atom: ['⚛', 'Atom Sandbox', '#ffd36b'], pt: ['▦', 'All the Elements', '#ffd36b'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], uni: ['🔭', 'Universe', '#7fc8ff'], planet: ['🌍', 'Planet Earth', '#4ff3e3'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'] };
   function chip(k, id, label) { const [g, sec, col] = XKIND[k] || ['↗', '', '#ffd36b']; const t = typeof xsecTarget === 'function' ? xsecTarget(k, id) : null; if (!t) return '';
     return `<button class="xchip" data-xgo="${esc(t.hash)}" style="--c:${col}" title="${esc(label || '')}"><i>${g}</i><span><small>${esc(sec)}</small>${esc(t.title)}</span></button>`; }
   function render() { const n = BY[sel], c = SCOL[n.s], kids = PHYS.filter(k => k.p.includes(n.id));

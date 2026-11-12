@@ -5,7 +5,19 @@
 
 Live: https://zyphullen.github.io/echoatlas/
 
-## Current version: v0.6 (12 Nov 2026)
+## Current version: v0.7 (12 Nov 2026)
+
+1. 🎹 12 piano tracks that shuffle each visit, with no instant repeat
+2. ⏳ From Nothing to Us has a History view: the Big Bang to Today timeline
+3. 🧭 Shorter Explore: From Nothing to Us and Maths open into Map / Ring / History
+4. 🔭 Universe: a 3D zoom through real NASA / ESA / Hubble / Webb / Planck / Gaia images, with credits
+5. 🤖 Automatic checks and science review are clearly split (no formal peer review yet)
+6. 📦 Clearer AI / SI guidance: each section file holds the facts, colours, sources and links
+7. ❓ Open questions: every red and orange card in one list, with rival ideas and tests
+8. 🧹 Field guide and version labels brought up to date
+9. 🏷️ The tab title shows the open card's name, so tabs are easy to tell apart
+
+## v0.6 (12 Nov 2026)
 
 1. 🌿 Biology section: 33 ideas on cells, evolution and life systems, each fact coloured by certainty and linked to official papers or textbooks next to Wikipedia
 2. 🧬 Virtual Cell and Human Body now sit with Biology on Home (From Nothing to Us still links to them)

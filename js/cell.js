@@ -685,7 +685,7 @@ const VCELL = (() => {
   function init(host, o = {}) {
     if (alive) destroy(); opts = o; alive = true; D = build(); t = 0; last = 0; sel = null; layer = 1; offs = [0, 0]; simT = 0; tm = 0; simR = rng(4242); MC = new Map(); mcTm = null;
     root = document.createElement('div'); root.id = 'vcell'; root.setAttribute('role', 'dialog'); root.setAttribute('aria-label', 'Virtual Cell: a typical human cell');
-    root.innerHTML = (o.embedded ? '' : `<div class="vcbar"><button class="vback" aria-label="Back to the map">← Back</button><b class="vtit">${dnaSVG()} Virtual Cell <small>typical human cell · v0.6</small></b>
+    root.innerHTML = (o.embedded ? '' : `<div class="vcbar"><button class="vback" aria-label="Back to the map">← Back</button><b class="vtit">${dnaSVG()} Virtual Cell <small>typical human cell · v0.7</small></b>
       <div class="vzm"><button class="vout" aria-label="Zoom out">−</button><button class="vin" aria-label="Zoom in">+</button><button class="vfit" aria-label="Show the whole cell">⤢</button></div></div>`) +
       `<div class="vtime" role="group" aria-label="Time speed"><button class="vpl" aria-label="Pause">⏸</button>${SPEEDS.map(s => `<button data-s="${s}" aria-pressed="false">${s >= 1e4 ? '10k' : s}×</button>`).join('')}<button class="vsc" aria-pressed="false" title="Microscope look (subtle, optional)" aria-label="Microscope look">🔬</button><span class="vclk" aria-live="off"></span></div>` +
       `<div class="vban"></div><canvas aria-label="A typical human cell drawn to scale. Tap a part to learn about it."></canvas><div class="vcrumb" aria-live="polite"></div><div class="vhint">Tap any part to learn about it · pinch or scroll to zoom</div><div class="vscl"></div><div class="vpop" role="dialog" aria-live="polite"></div>`;

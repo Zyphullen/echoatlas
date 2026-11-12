@@ -2,10 +2,11 @@
  "name": "Echo Atlas",
  "full_name": "Echo Atlas by Zyphullen",
  "tagline": "Explore the known. Map the unknown.",
- "version": "0.6",
+ "version": "0.7",
  "sections": [
   "From Nothing to Us",
   "Big Bang to Today",
+  "Universe",
   "Physics",
   "Biology",
   "Maths",
@@ -17,7 +18,7 @@
   "All the Elements"
  ],
  "author": "Zyphullen",
- "data_hash": "5e3e8e167849",
+ "data_hash": "21c967ff63ce",
  "generated": "2026-11-12",
  "key": {
   "green": "known",
@@ -36,15 +37,17 @@
   "body": 72,
   "planet": 18,
   "elements": 118,
-  "sources": 570,
+  "sources": 588,
   "physics_nodes": 32,
   "physics_links": 41,
   "biology_nodes": 33,
   "biology_links": 42,
   "timeline_events": 22,
-  "section_links": 185,
+  "universe_stops": 6,
+  "open_questions": 57,
+  "section_links": 200,
   "link_reasons": 313,
-  "source_urls": 775
+  "source_urls": 793
  },
  "nodes": [
   {
@@ -43664,8 +43667,1100 @@
    "year_note": "living page: year of the last revision on the check day",
    "last_checked": "2026-11-12",
    "link_status": "ok"
+  },
+  {
+   "key": "uni_nasa_earth",
+   "title": "NASA NSSDCA: Earth fact sheet",
+   "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+   "type": "agency / lab",
+   "year": null,
+   "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_nasa_sun",
+   "title": "NASA NSSDCA: Sun fact sheet (radius, Sun/Earth ratio, mean distance)",
+   "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+   "type": "agency / lab",
+   "year": null,
+   "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_blue_marble",
+   "title": "NASA Visible Earth: Blue Marble collection",
+   "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+   "type": "agency / lab",
+   "year": null,
+   "year_note": "living page (no single publication year)",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_img_earth",
+   "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+   "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+   "type": "image archive",
+   "year": null,
+   "year_note": "file page with licence and original source",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_sdo",
+   "title": "NASA Solar Dynamics Observatory (SDO)",
+   "url": "https://sdo.gsfc.nasa.gov/",
+   "type": "agency / lab",
+   "year": null,
+   "year_note": "living page (no single publication year)",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_img_sun",
+   "title": "Image: the Sun by SDO's Atmospheric Imaging Assembly, 19 Aug 2010 (NASA/SDO, public domain)",
+   "url": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+   "type": "image archive",
+   "year": null,
+   "year_note": "file page with licence and original source",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_gaia_img",
+   "title": "ESA: Gaia's sky in colour (Gaia DR2 all-sky map)",
+   "url": "https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2",
+   "type": "agency / lab",
+   "year": 2018,
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_img_gaia",
+   "title": "Image: Gaia's all-sky view, ESA/Gaia/DPAC (CC BY 4.0)",
+   "url": "https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg",
+   "type": "image archive",
+   "year": null,
+   "year_note": "file page with licence and original source",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_gaia_dr2",
+   "title": "Gaia Collaboration 2018: Gaia Data Release 2, summary of the contents (A&A 616, A1)",
+   "url": "https://arxiv.org/abs/1804.09365",
+   "type": "paper",
+   "year": 2018,
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_gravity",
+   "title": "GRAVITY Collaboration 2019: distance to the Galactic Centre, 8.178 kpc (A&A 625, L10)",
+   "url": "https://arxiv.org/abs/1904.05721",
+   "type": "paper",
+   "year": 2019,
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_m101",
+   "title": "ESA/Hubble heic0602: largest ever Hubble galaxy portrait, the Pinwheel Galaxy (M101)",
+   "url": "https://esahubble.org/news/heic0602/",
+   "type": "agency / lab",
+   "year": 2006,
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_img_m101",
+   "title": "Image: M101, European Space Agency & NASA (CC BY 4.0)",
+   "url": "https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg",
+   "type": "image archive",
+   "year": null,
+   "year_note": "file page with licence and original source",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_webb",
+   "title": "NASA / STScI: Webb's First Deep Field (NIRCam image of SMACS 0723)",
+   "url": "https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1",
+   "type": "agency / lab",
+   "year": 2022,
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_img_webb",
+   "title": "Image: Webb's First Deep Field, NASA, ESA, CSA, STScI (public domain)",
+   "url": "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg",
+   "type": "image archive",
+   "year": null,
+   "year_note": "file page with licence and original source",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_planck_img",
+   "title": "ESA: Planck CMB (the cosmic microwave background seen by Planck)",
+   "url": "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB",
+   "type": "agency / lab",
+   "year": 2013,
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_planck_cmb",
+   "title": "ESA: Planck and the cosmic microwave background",
+   "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background",
+   "type": "agency / lab",
+   "year": null,
+   "year_note": "living page (no single publication year)",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_img_cmb",
+   "title": "Image: Cosmic Microwave Background, ESA and the Planck Collaboration (CC BY 4.0)",
+   "url": "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg",
+   "type": "image archive",
+   "year": null,
+   "year_note": "file page with licence and original source",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "uni_w_observable",
+   "title": "Wikipedia: Observable universe",
+   "url": "https://en.wikipedia.org/wiki/Observable_universe",
+   "type": "encyclopedia",
+   "year": 2026,
+   "year_note": "living page: year of the last revision on the check day",
+   "last_checked": "2026-11-12",
+   "link_status": "ok"
   }
  ],
+ "quality": {
+  "automatic_checks": {
+   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.7.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+   "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
+  },
+  "science_review": {
+   "status": "No formal peer review yet",
+   "what": "A science review means a person with the right expertise reads each claim against its sources and decides whether it is right, up to date and fairly coloured.",
+   "how_to_help": "Every card has a Suggest a fix button (e-mail). Please check claims against the listed sources and say what looks wrong."
+  }
+ },
+ "universe": {
+  "note": "A zoomable 3D tour through real NASA / ESA images, one stop per scale. Pictures are only resized, cropped or wrapped onto a ball (all-sky maps); nothing is painted in. Sizes are on each stop, not drawn to scale with each other.",
+  "stops": [
+   {
+    "id": "earth",
+    "order": 1,
+    "title": "Earth",
+    "share_url": "https://zyphullen.github.io/echoatlas/#u=earth",
+    "subtitle": "our planet, about 12,742 km across",
+    "certainty": "green",
+    "certainty_word": "known",
+    "shown_as": "photo map wrapped on a ball",
+    "size": "12,742 km across",
+    "summary": [
+     "Earth is a rocky planet with a mean radius of 6,371 km. The globe is wrapped with NASA's Blue Marble map."
+    ],
+    "details": [
+     "What the picture is: A cloud-free mosaic of many satellite photos (NASA Blue Marble), not one snapshot. Real colours, real land and sea.",
+     "Size: Mean radius 6,371 km, so about 12,742 km across (NASA fact sheet)."
+    ],
+    "image": {
+     "file": "universe/earth.webp",
+     "credit": "NASA Earth Observatory / Blue Marble · public domain"
+    },
+    "sources": [
+     {
+      "key": "uni_nasa_earth",
+      "title": "NASA NSSDCA: Earth fact sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+      "type": "agency / lab",
+      "year": null,
+      "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_blue_marble",
+      "title": "NASA Visible Earth: Blue Marble collection",
+      "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+      "type": "agency / lab",
+      "year": null,
+      "year_note": "living page (no single publication year)",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_img_earth",
+      "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+      "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+      "type": "image archive",
+      "year": null,
+      "year_note": "file page with licence and original source",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     }
+    ],
+    "related": [
+     {
+      "section": "Planet Earth",
+      "id": null,
+      "title": "Planet Earth",
+      "share_url": "https://zyphullen.github.io/echoatlas/#planet=1"
+     },
+     {
+      "section": "From Nothing to Us",
+      "id": "earth",
+      "title": "Earth",
+      "share_url": "https://zyphullen.github.io/echoatlas/#n=earth"
+     },
+     {
+      "section": "Big Bang to Today",
+      "id": "earth-moon",
+      "title": "Earth and Moon form",
+      "share_url": "https://zyphullen.github.io/echoatlas/#t=earth-moon"
+     }
+    ]
+   },
+   {
+    "id": "sun",
+    "order": 2,
+    "title": "The Sun",
+    "share_url": "https://zyphullen.github.io/echoatlas/#u=sun",
+    "subtitle": "our star, 109 Earths across",
+    "certainty": "green",
+    "certainty_word": "known",
+    "shown_as": "flat photo you can turn",
+    "size": "1.39 million km across",
+    "summary": [
+     "The Sun has a mean radius of 695,700 km, about 109 times Earth's. Earth orbits it at a mean distance of 149.6 million km."
+    ],
+    "details": [
+     "What the picture is: A real photo by NASA's Solar Dynamics Observatory taken in extreme ultraviolet light, which our eyes cannot see, so the colours are false colours.",
+     "Size: Mean radius 695,700 km; 109.2 × Earth (NASA fact sheet). Light from the Sun takes about 8 minutes to reach us."
+    ],
+    "image": {
+     "file": "universe/sun.webp",
+     "credit": "NASA/SDO (AIA) · public domain"
+    },
+    "sources": [
+     {
+      "key": "uni_nasa_sun",
+      "title": "NASA NSSDCA: Sun fact sheet (radius, Sun/Earth ratio, mean distance)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+      "type": "agency / lab",
+      "year": null,
+      "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_sdo",
+      "title": "NASA Solar Dynamics Observatory (SDO)",
+      "url": "https://sdo.gsfc.nasa.gov/",
+      "type": "agency / lab",
+      "year": null,
+      "year_note": "living page (no single publication year)",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_img_sun",
+      "title": "Image: the Sun by SDO's Atmospheric Imaging Assembly, 19 Aug 2010 (NASA/SDO, public domain)",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+      "type": "image archive",
+      "year": null,
+      "year_note": "file page with licence and original source",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     }
+    ],
+    "related": [
+     {
+      "section": "From Nothing to Us",
+      "id": "solar",
+      "title": "Solar system",
+      "share_url": "https://zyphullen.github.io/echoatlas/#n=solar"
+     },
+     {
+      "section": "Big Bang to Today",
+      "id": "solar-system",
+      "title": "Sun and Solar System form",
+      "share_url": "https://zyphullen.github.io/echoatlas/#t=solar-system"
+     },
+     {
+      "section": "Physics",
+      "id": "em-radiation",
+      "title": "Electromagnetic radiation",
+      "share_url": "https://zyphullen.github.io/echoatlas/#p=em-radiation"
+     }
+    ]
+   },
+   {
+    "id": "milky-way",
+    "order": 3,
+    "title": "Our sky: the Milky Way from inside",
+    "share_url": "https://zyphullen.github.io/echoatlas/#u=milky-way",
+    "subtitle": "Gaia's map of 1.7 billion stars",
+    "certainty": "green",
+    "certainty_word": "known",
+    "shown_as": "all-sky map on a ball around you",
+    "size": "the whole sky around us",
+    "summary": [
+     "We live inside the Milky Way, about 27,000 light-years from its centre, so we see it as a bright band across the sky. ESA's Gaia mapped about 1.7 billion of its stars."
+    ],
+    "details": [
+     "What the picture is: Gaia's all-sky map (Data Release 2), built from star measurements, wrapped on a ball around you. Look around: the bright band is the disc of our galaxy, and the two smudges lower right are the Large and Small Magellanic Clouds.",
+     "Be careful: A sky map shows directions, not distances: stars on it are at very different distances.",
+     "Where we are: The Galactic Centre is 8.178 kiloparsecs away (about 26,700 light-years), measured by the GRAVITY Collaboration in 2019."
+    ],
+    "image": {
+     "file": "universe/gaia-sky.webp",
+     "credit": "ESA/Gaia/DPAC · CC BY 4.0"
+    },
+    "sources": [
+     {
+      "key": "uni_gaia_img",
+      "title": "ESA: Gaia's sky in colour (Gaia DR2 all-sky map)",
+      "url": "https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2",
+      "type": "agency / lab",
+      "year": 2018,
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_gaia_dr2",
+      "title": "Gaia Collaboration 2018: Gaia Data Release 2, summary of the contents (A&A 616, A1)",
+      "url": "https://arxiv.org/abs/1804.09365",
+      "type": "paper",
+      "year": 2018,
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_gravity",
+      "title": "GRAVITY Collaboration 2019: distance to the Galactic Centre, 8.178 kpc (A&A 625, L10)",
+      "url": "https://arxiv.org/abs/1904.05721",
+      "type": "paper",
+      "year": 2019,
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_img_gaia",
+      "title": "Image: Gaia's all-sky view, ESA/Gaia/DPAC (CC BY 4.0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg",
+      "type": "image archive",
+      "year": null,
+      "year_note": "file page with licence and original source",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     }
+    ],
+    "related": [
+     {
+      "section": "From Nothing to Us",
+      "id": "galaxies",
+      "title": "Galaxies",
+      "share_url": "https://zyphullen.github.io/echoatlas/#n=galaxies"
+     },
+     {
+      "section": "Physics",
+      "id": "dark-matter",
+      "title": "Dark matter",
+      "share_url": "https://zyphullen.github.io/echoatlas/#p=dark-matter"
+     }
+    ]
+   },
+   {
+    "id": "spiral-galaxy",
+    "order": 4,
+    "title": "A spiral galaxy like ours (M101)",
+    "share_url": "https://zyphullen.github.io/echoatlas/#u=spiral-galaxy",
+    "subtitle": "the Pinwheel Galaxy, 25 million light-years away",
+    "certainty": "green",
+    "certainty_word": "known",
+    "shown_as": "flat photo you can turn",
+    "size": "170,000 light-years across",
+    "summary": [
+     "No camera has ever left the Milky Way, so nobody has a photo of our galaxy from outside. M101, the Pinwheel Galaxy, is a real spiral galaxy seen face-on by Hubble."
+    ],
+    "details": [
+     "What the picture is: Hubble's largest galaxy portrait: 51 exposures plus ground-based images (ESA/Hubble, 2006). The photo is flat; real galaxy discs are thin but not flat paper.",
+     "Size and distance: About 170,000 light-years across, nearly twice the Milky Way, and about 25 million light-years away (ESA/Hubble).",
+     "Honest note: Our galaxy is a barred spiral; M101 is used here only as a real example of what a spiral galaxy looks like."
+    ],
+    "image": {
+     "file": "universe/m101.webp",
+     "credit": "European Space Agency & NASA · CC BY 4.0"
+    },
+    "sources": [
+     {
+      "key": "uni_m101",
+      "title": "ESA/Hubble heic0602: largest ever Hubble galaxy portrait, the Pinwheel Galaxy (M101)",
+      "url": "https://esahubble.org/news/heic0602/",
+      "type": "agency / lab",
+      "year": 2006,
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_img_m101",
+      "title": "Image: M101, European Space Agency & NASA (CC BY 4.0)",
+      "url": "https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg",
+      "type": "image archive",
+      "year": null,
+      "year_note": "file page with licence and original source",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     }
+    ],
+    "related": [
+     {
+      "section": "From Nothing to Us",
+      "id": "galaxies",
+      "title": "Galaxies",
+      "share_url": "https://zyphullen.github.io/echoatlas/#n=galaxies"
+     },
+     {
+      "section": "Big Bang to Today",
+      "id": "earliest-galaxy",
+      "title": "Earliest galaxies seen",
+      "share_url": "https://zyphullen.github.io/echoatlas/#t=earliest-galaxy"
+     }
+    ]
+   },
+   {
+    "id": "deep-field",
+    "order": 5,
+    "title": "Galaxies everywhere: Webb's First Deep Field",
+    "share_url": "https://zyphullen.github.io/echoatlas/#u=deep-field",
+    "subtitle": "thousands of galaxies in a grain-of-sand patch of sky",
+    "certainty": "green",
+    "certainty_word": "known",
+    "shown_as": "flat photo of a patch of sky",
+    "size": "about 2.4 arcminutes of sky",
+    "summary": [
+     "Point a big telescope at a tiny dark patch of sky and it fills with galaxies. This patch is about the size of a grain of sand held at arm's length."
+    ],
+    "details": [
+     "What the picture is: NASA's Webb telescope, infrared camera NIRCam, 12.5 hours. Infrared light is shown as visible colours.",
+     "What you see: The galaxy cluster SMACS 0723 as it was 4.6 billion years ago. Its gravity bends light from galaxies far behind it into arcs (gravitational lensing).",
+     "Honest note: This is a flat photo. The galaxies in it are at many different distances; we do not show them in 3D."
+    ],
+    "image": {
+     "file": "universe/webb-deep-field.webp",
+     "credit": "NASA, ESA, CSA, STScI · public domain"
+    },
+    "sources": [
+     {
+      "key": "uni_webb",
+      "title": "NASA / STScI: Webb's First Deep Field (NIRCam image of SMACS 0723)",
+      "url": "https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1",
+      "type": "agency / lab",
+      "year": 2022,
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_img_webb",
+      "title": "Image: Webb's First Deep Field, NASA, ESA, CSA, STScI (public domain)",
+      "url": "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg",
+      "type": "image archive",
+      "year": null,
+      "year_note": "file page with licence and original source",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     }
+    ],
+    "related": [
+     {
+      "section": "From Nothing to Us",
+      "id": "galaxies",
+      "title": "Galaxies",
+      "share_url": "https://zyphullen.github.io/echoatlas/#n=galaxies"
+     },
+     {
+      "section": "Physics",
+      "id": "general-relativity",
+      "title": "General relativity",
+      "share_url": "https://zyphullen.github.io/echoatlas/#p=general-relativity"
+     }
+    ]
+   },
+   {
+    "id": "cmb",
+    "order": 6,
+    "title": "The oldest light: the cosmic microwave background",
+    "share_url": "https://zyphullen.github.io/echoatlas/#u=cmb",
+    "subtitle": "ESA Planck's map of the whole sky",
+    "certainty": "green",
+    "certainty_word": "known",
+    "shown_as": "all-sky map on a ball around us",
+    "size": "the edge of what we can see",
+    "summary": [
+     "The farthest thing we can see is light released about 380,000 years after the Big Bang. ESA's Planck mapped it across the whole sky."
+    ],
+    "details": [
+     "What the picture is: Planck's all-sky map of tiny temperature differences in the cosmic microwave background, wrapped on a ball with us at the centre. Microwaves are invisible, so the colours are false colours.",
+     "How far: Because space has expanded, the matter that sent this light is now about 46 billion light-years away: roughly the radius of the observable universe.",
+     "Honest note: It is a sphere around us because we see out in every direction; it is not a wall at the edge of the universe."
+    ],
+    "image": {
+     "file": "universe/planck-cmb.webp",
+     "credit": "ESA and the Planck Collaboration · CC BY 4.0"
+    },
+    "sources": [
+     {
+      "key": "uni_planck_img",
+      "title": "ESA: Planck CMB (the cosmic microwave background seen by Planck)",
+      "url": "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB",
+      "type": "agency / lab",
+      "year": 2013,
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_planck_cmb",
+      "title": "ESA: Planck and the cosmic microwave background",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background",
+      "type": "agency / lab",
+      "year": null,
+      "year_note": "living page (no single publication year)",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "planck",
+      "title": "Planck 2018 results VI: cosmological parameters",
+      "url": "https://arxiv.org/abs/1807.06209",
+      "type": "preprint",
+      "year": 2018,
+      "year_note": "arXiv id",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_w_observable",
+      "title": "Wikipedia: Observable universe",
+      "url": "https://en.wikipedia.org/wiki/Observable_universe",
+      "type": "encyclopedia",
+      "year": 2026,
+      "year_note": "living page: year of the last revision on the check day",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "uni_img_cmb",
+      "title": "Image: Cosmic Microwave Background, ESA and the Planck Collaboration (CC BY 4.0)",
+      "url": "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg",
+      "type": "image archive",
+      "year": null,
+      "year_note": "file page with licence and original source",
+      "last_checked": "2026-11-12",
+      "link_status": "ok"
+     }
+    ],
+    "related": [
+     {
+      "section": "Big Bang to Today",
+      "id": "recombination",
+      "title": "Recombination",
+      "share_url": "https://zyphullen.github.io/echoatlas/#t=recombination"
+     },
+     {
+      "section": "From Nothing to Us",
+      "id": "cmb",
+      "title": "Afterglow (CMB)",
+      "share_url": "https://zyphullen.github.io/echoatlas/#n=cmb"
+     },
+     {
+      "section": "Physics",
+      "id": "cmb",
+      "title": "Cosmic microwave background",
+      "share_url": "https://zyphullen.github.io/echoatlas/#p=cmb"
+     }
+    ]
+   }
+  ]
+ },
+ "open_questions": {
+  "note": "Every red (unknown) and orange (we think) card already in the data, gathered in one list. The full card (sources, rival ideas, tests) is in its own section; open it with share_url. Page: https://zyphullen.github.io/echoatlas/#gaps=1",
+  "red": 28,
+  "orange": 29,
+  "items": [
+   {
+    "section": "From Nothing to Us",
+    "id": "nothing",
+    "title": "Before the Big Bang?",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=nothing",
+    "rival_ideas": 4,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "axiom",
+    "title": "Chain Theory",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=axiom",
+    "rival_ideas": 0,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "qgrav",
+    "title": "Quantum gravity",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=qgrav",
+    "rival_ideas": 5,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "qudits",
+    "title": "Qudits & pairs",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=qudits",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "distill",
+    "title": "Distillation",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=distill",
+    "rival_ideas": 0,
+    "tests": 2
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "inflation",
+    "title": "Inflation",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=inflation",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "genres",
+    "title": "Six kinds of link",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=genres",
+    "rival_ideas": 0,
+    "tests": 2
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "gauge",
+    "title": "Forces from one link",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=gauge",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "alpha",
+    "title": "Chain Theory’s α formula",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=alpha",
+    "rival_ideas": 0,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "seeds",
+    "title": "Seed ripples",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=seeds",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "chainmail",
+    "title": "Chainmail particles",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=chainmail",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "ctspace",
+    "title": "Space & time from links?",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=ctspace",
+    "rival_ideas": 2,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "gap",
+    "title": "Chain → Standard Model",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=gap",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "dm",
+    "title": "Dark matter",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=dm",
+    "rival_ideas": 4,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "de",
+    "title": "Dark energy",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=de",
+    "rival_ideas": 2,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "antimatter",
+    "title": "Why matter won?",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=antimatter",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "h0",
+    "title": "Hubble tension",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=h0",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "numass",
+    "title": "Neutrino masses",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=numass",
+    "rival_ideas": 0,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "halos",
+    "title": "Dark-matter clumps",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=halos",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "firststars",
+    "title": "First stars",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=firststars",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "smbh",
+    "title": "Giant black holes",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=smbh",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "moon",
+    "title": "The Moon",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=moon",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "chem",
+    "title": "Early-Earth chemistry",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=chem",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "nucleotides",
+    "title": "Nucleotides",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=nucleotides",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "peptides",
+    "title": "First peptides",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=peptides",
+    "rival_ideas": 0,
+    "tests": 2
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "rnaworld",
+    "title": "RNA world",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=rnaworld",
+    "rival_ideas": 0,
+    "tests": 2
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "protocell",
+    "title": "Protocells",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=protocell",
+    "rival_ideas": 0,
+    "tests": 2
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "origin",
+    "title": "The first spark",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=origin",
+    "rival_ideas": 3,
+    "tests": 4
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "mind",
+    "title": "Consciousness",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=mind",
+    "rival_ideas": 2,
+    "tests": 2
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "strings",
+    "title": "String theory",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=strings",
+    "rival_ideas": 0,
+    "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "lqg",
+    "title": "Loop quantum gravity",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=lqg",
+    "rival_ideas": 0,
+    "tests": 2
+   },
+   {
+    "section": "Big Bang to Today",
+    "id": "before",
+    "title": "Before the Big Bang?",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#t=before"
+   },
+   {
+    "section": "Big Bang to Today",
+    "id": "planck-epoch",
+    "title": "Planck epoch",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#t=planck-epoch"
+   },
+   {
+    "section": "Big Bang to Today",
+    "id": "inflation",
+    "title": "Cosmic inflation",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#t=inflation"
+   },
+   {
+    "section": "Big Bang to Today",
+    "id": "first-stars",
+    "title": "First stars",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#t=first-stars"
+   },
+   {
+    "section": "Big Bang to Today",
+    "id": "earth-moon",
+    "title": "Earth and Moon form",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#t=earth-moon"
+   },
+   {
+    "section": "Big Bang to Today",
+    "id": "luca",
+    "title": "Last universal common ancestor",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#t=luca"
+   },
+   {
+    "section": "Physics",
+    "id": "grand-unified-theory",
+    "title": "Grand Unified Theory",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#p=grand-unified-theory"
+   },
+   {
+    "section": "Physics",
+    "id": "quantum-gravity",
+    "title": "Quantum gravity",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#p=quantum-gravity"
+   },
+   {
+    "section": "Physics",
+    "id": "neutrino-mass",
+    "title": "Neutrino mass",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#p=neutrino-mass"
+   },
+   {
+    "section": "Physics",
+    "id": "baryon-asymmetry",
+    "title": "Baryon asymmetry",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#p=baryon-asymmetry"
+   },
+   {
+    "section": "Physics",
+    "id": "dark-matter",
+    "title": "Dark matter",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#p=dark-matter"
+   },
+   {
+    "section": "Biology",
+    "id": "origin-of-life",
+    "title": "Origin of life",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=origin-of-life"
+   },
+   {
+    "section": "Biology",
+    "id": "rna-world",
+    "title": "RNA world",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=rna-world"
+   },
+   {
+    "section": "Biology",
+    "id": "luca",
+    "title": "Last universal common ancestor (LUCA)",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=luca"
+   },
+   {
+    "section": "Biology",
+    "id": "eukaryote-origin",
+    "title": "Origin of eukaryotes",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=eukaryote-origin"
+   },
+   {
+    "section": "Biology",
+    "id": "life-elsewhere",
+    "title": "Life beyond Earth",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=life-elsewhere"
+   },
+   {
+    "section": "Biology",
+    "id": "consciousness",
+    "title": "Consciousness",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=consciousness"
+   },
+   {
+    "section": "Maths",
+    "id": "m_twin",
+    "title": "Twin prime conjecture",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_twin"
+   },
+   {
+    "section": "Maths",
+    "id": "m_goldbach",
+    "title": "Goldbach’s conjecture",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_goldbach"
+   },
+   {
+    "section": "Maths",
+    "id": "m_collatz",
+    "title": "Collatz conjecture",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_collatz"
+   },
+   {
+    "section": "Maths",
+    "id": "m_riemann",
+    "title": "Riemann hypothesis",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_riemann"
+   },
+   {
+    "section": "Maths",
+    "id": "m_bsd",
+    "title": "Birch–Swinnerton-Dyer",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_bsd"
+   },
+   {
+    "section": "Maths",
+    "id": "m_hodge",
+    "title": "Hodge conjecture",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_hodge"
+   },
+   {
+    "section": "Maths",
+    "id": "m_pnp",
+    "title": "P versus NP",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_pnp"
+   },
+   {
+    "section": "Maths",
+    "id": "m_mathsGap",
+    "title": "Yang–Mills & the mass gap",
+    "certainty": "red",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_mathsGap"
+   },
+   {
+    "section": "Maths",
+    "id": "m_ns",
+    "title": "Navier–Stokes: 3D smoothness",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#m=m_ns"
+   }
+  ]
+ },
  "physics": {
   "categories": [
    {
@@ -68410,6 +69505,1084 @@
      "link_status": "ok"
     }
    ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "earth",
+    "title": "Earth"
+   },
+   "to": {
+    "section": "Planet Earth",
+    "id": null,
+    "title": "Planet Earth"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_nasa_earth",
+     "title": "NASA NSSDCA: Earth fact sheet",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_blue_marble",
+     "title": "NASA Visible Earth: Blue Marble collection",
+     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_earth",
+     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "earth",
+    "title": "Earth"
+   },
+   "to": {
+    "section": "From Nothing to Us",
+    "id": "earth",
+    "title": "Earth"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_nasa_earth",
+     "title": "NASA NSSDCA: Earth fact sheet",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_blue_marble",
+     "title": "NASA Visible Earth: Blue Marble collection",
+     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_earth",
+     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "zircon",
+     "title": "Wilde et al. 2001: water on Earth 4.4 billion years ago (Nature)",
+     "url": "https://www.nature.com/articles/35051550",
+     "type": "paper",
+     "year": 2001,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "earthcomp",
+     "title": "Morgan & Anders 1980: chemical composition of Earth (PNAS; Fe 32.1%, O 30.1%)",
+     "url": "https://doi.org/10.1073/pnas.77.12.6973",
+     "type": "paper",
+     "year": 1980,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-11",
+     "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+    },
+    {
+     "key": "earthcompW",
+     "title": "Wikipedia (extra): Earth by mass — Fe 32.1%, O 30.1%, Si 15.1%, Mg 13.9%",
+     "url": "https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page; this version last revised 2026-10-15 (Wikipedia page history)",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "earth",
+    "title": "Earth"
+   },
+   "to": {
+    "section": "Big Bang to Today",
+    "id": "earth-moon",
+    "title": "Earth and Moon form"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_nasa_earth",
+     "title": "NASA NSSDCA: Earth fact sheet",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_blue_marble",
+     "title": "NASA Visible Earth: Blue Marble collection",
+     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_earth",
+     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "moon",
+     "title": "Canup & Asphaug 2001: the Moon from a giant impact (Nature)",
+     "url": "https://doi.org/10.1038/35089010",
+     "type": "paper",
+     "year": 2001,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "theia",
+     "title": "Max Planck (MPS): Theia and Earth were neighbours",
+     "url": "https://www.mps.mpg.de/theia-and-earth-were-neighbors",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "hopp",
+     "title": "Science 2025: iron isotopes of Earth and Moon (Theia)",
+     "url": "https://www.science.org/doi/10.1126/science.ado0623",
+     "type": "paper",
+     "year": 2025,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-11",
+     "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "sun",
+    "title": "The Sun"
+   },
+   "to": {
+    "section": "From Nothing to Us",
+    "id": "solar",
+    "title": "Solar system"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_nasa_sun",
+     "title": "NASA NSSDCA: Sun fact sheet (radius, Sun/Earth ratio, mean distance)",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_sdo",
+     "title": "NASA Solar Dynamics Observatory (SDO)",
+     "url": "https://sdo.gsfc.nasa.gov/",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_sun",
+     "title": "Image: the Sun by SDO's Atmospheric Imaging Assembly, 19 Aug 2010 (NASA/SDO, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "sun",
+     "title": "NASA: Sun facts",
+     "url": "https://science.nasa.gov/sun/facts/",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "cai",
+     "title": "Connelly et al. 2012 (Science): CAIs are 4567.30 ± 0.16 million years old",
+     "url": "https://www.science.org/doi/10.1126/science.1226919",
+     "type": "paper",
+     "year": 2012,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-11",
+     "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "sun",
+    "title": "The Sun"
+   },
+   "to": {
+    "section": "Big Bang to Today",
+    "id": "solar-system",
+    "title": "Sun and Solar System form"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_nasa_sun",
+     "title": "NASA NSSDCA: Sun fact sheet (radius, Sun/Earth ratio, mean distance)",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_sdo",
+     "title": "NASA Solar Dynamics Observatory (SDO)",
+     "url": "https://sdo.gsfc.nasa.gov/",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_sun",
+     "title": "Image: the Sun by SDO's Atmospheric Imaging Assembly, 19 Aug 2010 (NASA/SDO, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "cai",
+     "title": "Connelly et al. 2012 (Science): CAIs are 4567.30 ± 0.16 million years old",
+     "url": "https://www.science.org/doi/10.1126/science.1226919",
+     "type": "paper",
+     "year": 2012,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-11",
+     "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+    },
+    {
+     "key": "ph_w_formation_and_evolution_of_the_sola",
+     "title": "Wikipedia: Formation and evolution of the Solar System",
+     "url": "https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "sun",
+    "title": "The Sun"
+   },
+   "to": {
+    "section": "Physics",
+    "id": "em-radiation",
+    "title": "Electromagnetic radiation"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_nasa_sun",
+     "title": "NASA NSSDCA: Sun fact sheet (radius, Sun/Earth ratio, mean distance)",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_sdo",
+     "title": "NASA Solar Dynamics Observatory (SDO)",
+     "url": "https://sdo.gsfc.nasa.gov/",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_sun",
+     "title": "Image: the Sun by SDO's Atmospheric Imaging Assembly, 19 Aug 2010 (NASA/SDO, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_os_spectrum",
+     "title": "OpenStax University Physics Volume 2, 16.5 The Electromagnetic Spectrum",
+     "url": "https://openstax.org/books/university-physics-volume-2/pages/16-5-the-electromagnetic-spectrum",
+     "type": "textbook",
+     "year": 2016,
+     "year_note": "OpenStax publish date of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_nasa_ems",
+     "title": "NASA Science: Tour of the Electromagnetic Spectrum",
+     "url": "https://science.nasa.gov/ems/",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (official body); no single publication year",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_w_electromagnetic_radiation",
+     "title": "Wikipedia: Electromagnetic radiation",
+     "url": "https://en.wikipedia.org/wiki/Electromagnetic_radiation",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "milky-way",
+    "title": "Our sky: the Milky Way from inside"
+   },
+   "to": {
+    "section": "From Nothing to Us",
+    "id": "galaxies",
+    "title": "Galaxies"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_gaia_img",
+     "title": "ESA: Gaia's sky in colour (Gaia DR2 all-sky map)",
+     "url": "https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2",
+     "type": "agency / lab",
+     "year": 2018,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_gaia_dr2",
+     "title": "Gaia Collaboration 2018: Gaia Data Release 2, summary of the contents (A&A 616, A1)",
+     "url": "https://arxiv.org/abs/1804.09365",
+     "type": "paper",
+     "year": 2018,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_gravity",
+     "title": "GRAVITY Collaboration 2019: distance to the Galactic Centre, 8.178 kpc (A&A 625, L10)",
+     "url": "https://arxiv.org/abs/1904.05721",
+     "type": "paper",
+     "year": 2019,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_gaia",
+     "title": "Image: Gaia's all-sky view, ESA/Gaia/DPAC (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "momz14",
+     "title": "Naidu et al. 2025: MoM-z14, a galaxy 280 million years after the Big Bang",
+     "url": "https://arxiv.org/abs/2505.11263",
+     "type": "preprint",
+     "year": 2025,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "lauer",
+     "title": "Lauer et al. 2021: how many galaxies (New Horizons)",
+     "url": "https://arxiv.org/abs/2011.03052",
+     "type": "preprint",
+     "year": 2020,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "milky-way",
+    "title": "Our sky: the Milky Way from inside"
+   },
+   "to": {
+    "section": "Physics",
+    "id": "dark-matter",
+    "title": "Dark matter"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_gaia_img",
+     "title": "ESA: Gaia's sky in colour (Gaia DR2 all-sky map)",
+     "url": "https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2",
+     "type": "agency / lab",
+     "year": 2018,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_gaia_dr2",
+     "title": "Gaia Collaboration 2018: Gaia Data Release 2, summary of the contents (A&A 616, A1)",
+     "url": "https://arxiv.org/abs/1804.09365",
+     "type": "paper",
+     "year": 2018,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_gravity",
+     "title": "GRAVITY Collaboration 2019: distance to the Galactic Centre, 8.178 kpc (A&A 625, L10)",
+     "url": "https://arxiv.org/abs/1904.05721",
+     "type": "paper",
+     "year": 2019,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_gaia",
+     "title": "Image: Gaia's all-sky view, ESA/Gaia/DPAC (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_rubin1970",
+     "title": "Rubin & Ford 1970: Rotation of the Andromeda Nebula from a Spectroscopic Survey of Emission Regions (ApJ)",
+     "url": "https://doi.org/10.1086/150317",
+     "type": "paper",
+     "year": 1970,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "lz",
+     "title": "Berkeley Lab, Dec 2025: LZ sets a world's best in the dark-matter hunt",
+     "url": "https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/",
+     "type": "news / announcement",
+     "year": 2025,
+     "year_note": "URL date",
+     "last_checked": "2026-11-11",
+     "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive, snapshot 2026-08-19)",
+     "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
+    },
+    {
+     "key": "ph_cern_dm",
+     "title": "CERN: Dark matter",
+     "url": "https://home.cern/science/physics/dark-matter",
+     "type": "official",
+     "year": null,
+     "year_note": "living page (official body); no single publication year",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_w_dark_matter",
+     "title": "Wikipedia: Dark matter",
+     "url": "https://en.wikipedia.org/wiki/Dark_matter",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "spiral-galaxy",
+    "title": "A spiral galaxy like ours (M101)"
+   },
+   "to": {
+    "section": "From Nothing to Us",
+    "id": "galaxies",
+    "title": "Galaxies"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_m101",
+     "title": "ESA/Hubble heic0602: largest ever Hubble galaxy portrait, the Pinwheel Galaxy (M101)",
+     "url": "https://esahubble.org/news/heic0602/",
+     "type": "agency / lab",
+     "year": 2006,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_m101",
+     "title": "Image: M101, European Space Agency & NASA (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "momz14",
+     "title": "Naidu et al. 2025: MoM-z14, a galaxy 280 million years after the Big Bang",
+     "url": "https://arxiv.org/abs/2505.11263",
+     "type": "preprint",
+     "year": 2025,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "lauer",
+     "title": "Lauer et al. 2021: how many galaxies (New Horizons)",
+     "url": "https://arxiv.org/abs/2011.03052",
+     "type": "preprint",
+     "year": 2020,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "spiral-galaxy",
+    "title": "A spiral galaxy like ours (M101)"
+   },
+   "to": {
+    "section": "Big Bang to Today",
+    "id": "earliest-galaxy",
+    "title": "Earliest galaxies seen"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_m101",
+     "title": "ESA/Hubble heic0602: largest ever Hubble galaxy portrait, the Pinwheel Galaxy (M101)",
+     "url": "https://esahubble.org/news/heic0602/",
+     "type": "agency / lab",
+     "year": 2006,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_m101",
+     "title": "Image: M101, European Space Agency & NASA (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "momz14",
+     "title": "Naidu et al. 2025: MoM-z14, a galaxy 280 million years after the Big Bang",
+     "url": "https://arxiv.org/abs/2505.11263",
+     "type": "preprint",
+     "year": 2025,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "deep-field",
+    "title": "Galaxies everywhere: Webb's First Deep Field"
+   },
+   "to": {
+    "section": "From Nothing to Us",
+    "id": "galaxies",
+    "title": "Galaxies"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_webb",
+     "title": "NASA / STScI: Webb's First Deep Field (NIRCam image of SMACS 0723)",
+     "url": "https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1",
+     "type": "agency / lab",
+     "year": 2022,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_webb",
+     "title": "Image: Webb's First Deep Field, NASA, ESA, CSA, STScI (public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "momz14",
+     "title": "Naidu et al. 2025: MoM-z14, a galaxy 280 million years after the Big Bang",
+     "url": "https://arxiv.org/abs/2505.11263",
+     "type": "preprint",
+     "year": 2025,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "lauer",
+     "title": "Lauer et al. 2021: how many galaxies (New Horizons)",
+     "url": "https://arxiv.org/abs/2011.03052",
+     "type": "preprint",
+     "year": 2020,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "deep-field",
+    "title": "Galaxies everywhere: Webb's First Deep Field"
+   },
+   "to": {
+    "section": "Physics",
+    "id": "general-relativity",
+    "title": "General relativity"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_webb",
+     "title": "NASA / STScI: Webb's First Deep Field (NIRCam image of SMACS 0723)",
+     "url": "https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1",
+     "type": "agency / lab",
+     "year": 2022,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_webb",
+     "title": "Image: Webb's First Deep Field, NASA, ESA, CSA, STScI (public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_einstein1916gr",
+     "title": "Einstein 1916: Die Grundlage der allgemeinen Relativitätstheorie (Annalen der Physik)",
+     "url": "https://doi.org/10.1002/andp.19163540702",
+     "type": "paper",
+     "year": 1916,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "key": "ph_dyson1920",
+     "title": "Dyson et al. 1920: A determination of the deflection of light by the sun's gravitational field, from observations made at the total eclipse of May 29, 1919 (Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character)",
+     "url": "https://doi.org/10.1098/rsta.1920.0009",
+     "type": "paper",
+     "year": 1920,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "key": "ph_os_einsteingrav",
+     "title": "OpenStax University Physics Volume 1, 13.7 Einstein's Theory of Gravity",
+     "url": "https://openstax.org/books/university-physics-volume-1/pages/13-7-einsteins-theory-of-gravity",
+     "type": "textbook",
+     "year": 2016,
+     "year_note": "OpenStax publish date of this edition",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_w_general_relativity",
+     "title": "Wikipedia: General relativity",
+     "url": "https://en.wikipedia.org/wiki/General_relativity",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "cmb",
+    "title": "The oldest light: the cosmic microwave background"
+   },
+   "to": {
+    "section": "Big Bang to Today",
+    "id": "recombination",
+    "title": "Recombination"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_planck_img",
+     "title": "ESA: Planck CMB (the cosmic microwave background seen by Planck)",
+     "url": "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB",
+     "type": "agency / lab",
+     "year": 2013,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_planck_cmb",
+     "title": "ESA: Planck and the cosmic microwave background",
+     "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_w_observable",
+     "title": "Wikipedia: Observable universe",
+     "url": "https://en.wikipedia.org/wiki/Observable_universe",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_cmb",
+     "title": "Image: Cosmic Microwave Background, ESA and the Planck Collaboration (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_penzias1965",
+     "title": "Penzias & Wilson 1965: A Measurement of Excess Antenna Temperature at 4080 Mc/s. (ApJ)",
+     "url": "https://doi.org/10.1086/148307",
+     "type": "paper",
+     "year": 1965,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "key": "ph_w_recombination_cosmology",
+     "title": "Wikipedia: Recombination (cosmology)",
+     "url": "https://en.wikipedia.org/wiki/Recombination_(cosmology)",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "cmb",
+    "title": "The oldest light: the cosmic microwave background"
+   },
+   "to": {
+    "section": "From Nothing to Us",
+    "id": "cmb",
+    "title": "Afterglow (CMB)"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_planck_img",
+     "title": "ESA: Planck CMB (the cosmic microwave background seen by Planck)",
+     "url": "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB",
+     "type": "agency / lab",
+     "year": 2013,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_planck_cmb",
+     "title": "ESA: Planck and the cosmic microwave background",
+     "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_w_observable",
+     "title": "Wikipedia: Observable universe",
+     "url": "https://en.wikipedia.org/wiki/Observable_universe",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_cmb",
+     "title": "Image: Cosmic Microwave Background, ESA and the Planck Collaboration (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    }
+   ]
+  },
+  {
+   "from": {
+    "section": "Universe",
+    "id": "cmb",
+    "title": "The oldest light: the cosmic microwave background"
+   },
+   "to": {
+    "section": "Physics",
+    "id": "cmb",
+    "title": "Cosmic microwave background"
+   },
+   "label": null,
+   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
+   "sources": [
+    {
+     "key": "uni_planck_img",
+     "title": "ESA: Planck CMB (the cosmic microwave background seen by Planck)",
+     "url": "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB",
+     "type": "agency / lab",
+     "year": 2013,
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_planck_cmb",
+     "title": "ESA: Planck and the cosmic microwave background",
+     "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_w_observable",
+     "title": "Wikipedia: Observable universe",
+     "url": "https://en.wikipedia.org/wiki/Observable_universe",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_cmb",
+     "title": "Image: Cosmic Microwave Background, ESA and the Planck Collaboration (CC BY 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_penzias1965",
+     "title": "Penzias & Wilson 1965: A Measurement of Excess Antenna Temperature at 4080 Mc/s. (ApJ)",
+     "url": "https://doi.org/10.1086/148307",
+     "type": "paper",
+     "year": 1965,
+     "year_note": "Crossref",
+     "last_checked": "2026-11-12",
+     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
+    },
+    {
+     "key": "planck",
+     "title": "Planck 2018 results VI: cosmological parameters",
+     "url": "https://arxiv.org/abs/1807.06209",
+     "type": "preprint",
+     "year": 2018,
+     "year_note": "arXiv id",
+     "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "ph_w_cosmic_microwave_background",
+     "title": "Wikipedia: Cosmic microwave background",
+     "url": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: year of the last revision on the check day",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    }
+   ]
   }
  ],
  "source_check": {
@@ -68417,7 +70590,7 @@
   "method": "v0.3: automatic HTTP check of every source URL on 11 Nov 2026 (follows redirects); v0.4: the papers, official pages and textbooks added on 12 Nov 2026 were checked the same way (each DOI resolved in Crossref); DOI links also checked in the DOI registry; years from Crossref, arXiv ids, the URL, the title, or read from the page during this build (year_note says how). Links that failed were rechecked the same day: read from a second network or confirmed in the Web Archive (archived_copy). For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) year is the last-revised year stated on the page or its history, and year_note says so.",
   "summary": {
    "ok (site blocks automatic checks; page confirmed in Web Archive)": 13,
-   "ok": 624,
+   "ok": 642,
    "ok (DOI registered; publisher blocks automatic checks)": 50,
    "ok (DOI registered in Crossref; publisher blocks automatic checks)": 53,
    "ok (rechecked: page read from a second network)": 1,
