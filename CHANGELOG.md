@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.5 (12 Nov 2026)
+1. ⚛️ Physics section: 32 ideas on forces, particles and light, with official papers or textbooks next to Wikipedia
+2. 🗺️ A “you are here” mini-map on the maps, rings and Physics (the timeline has its own era strip)
+3. 🔎 Category titles above the bands (and ring sectors, Physics categories) grow when you zoom out, all to the same size; grey lane names inside the map stay as they are; node names stay the same size
+4. 🧪 A bigger Atom Sandbox
+5. 🔗 Links between sections (related facts in different sections can be opened from each other)
+6. ⏳ Big Bang to Today: 22 dated events, from the first instant to today
+7. ⚡ Section code (Planet Earth, Virtual Cell, Human Body, Atom Sandbox, Physics, Big Bang to Today, and the rings) loads only when that section is opened; the page looks and works the same
+
+### Bugs found and fixed before release
+1. 🖼️ Home tiles for Physics, Big Bang to Today and the other explorers showed the Back bar in the preview: recaptured without it
+2. 🗺️ The mini-map sat in the bottom left: now top right, just under the top bar
+3. ⚛️ Physics stopped you dragging to the far left or right when zoomed in, and zoom could slip off the mouse: you can now reach those ideas, and zoom stays on the pointer
+4. 🏷️ Grey lane names inside the map were growing, and the titles above the bands ended up different sizes: only the titles above grow now, all the same size
+
+### v0.5c fixes (before release)
+1. 👆 Phones: tapping a Big Bang to Today event no longer also presses a button on the card that opens
+2. 🗺️ Desktop: the mini-map moves left of an open card on the maps and rings, so they never overlap
+3. 🔍 Physics: zooming with the mouse past the map’s edge no longer makes the view jump
+
 ## v0.4 (12 Nov 2026)
 1. 📂 One AI data file per section (`ai/from-nothing-to-us.json`, `maths`, `maths-history`, `planet-earth`, `virtual-cell`, `human-body`, `elements`), each with the same data hash as the page; the biggest is about 81k tokens
 2. 🔘 AI info read-me (`ai/README.md`, `ai/index.json`) and an **AI info** button at the top right; **All site data** (`facts.json`) sits inside the panel after the section files, with sizes and token counts

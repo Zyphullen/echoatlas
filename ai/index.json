@@ -2,9 +2,9 @@
  "about": {
   "site": "Echo Atlas by Zyphullen",
   "url": "https://zyphullen.github.io/echoatlas/",
-  "version": "0.4",
+  "version": "0.5",
   "author": "Zyphullen",
-  "data_hash": "3ca624a114cc",
+  "data_hash": "24c89747fcc2",
   "generated": "2026-11-12",
   "read_me": "ai/README.md",
   "all_data": "facts.json",
@@ -34,8 +34,36 @@
    },
    "sources": 245,
    "non_wikipedia_sources": 223,
-   "bytes": 293039,
+   "bytes": 293097,
    "approx_tokens": 81000
+  },
+  {
+   "section": "Big Bang to Today",
+   "file": "ai/big-bang-to-today.json",
+   "about": "A dated timeline of the universe from the Big Bang to today: the first second, the first nuclei and light, cosmic dawn, galaxies and the Sun, Earth and life. The time scale changes between eras.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#timeline=1",
+   "counts": {
+    "big_bang_to_today": 0,
+    "section_links": 42
+   },
+   "sources": 107,
+   "non_wikipedia_sources": 79,
+   "bytes": 90819,
+   "approx_tokens": 25000
+  },
+  {
+   "section": "Physics",
+   "file": "ai/physics.json",
+   "about": "Forces, particles and light: the four fundamental interactions, the Standard Model, antimatter, dark matter, light, relativity and quantum electrodynamics, with the open questions (quantum gravity, unification, neutrino mass, baryon asymmetry).",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#physics=1",
+   "counts": {
+    "physics": 32,
+    "section_links": 65
+   },
+   "sources": 161,
+   "non_wikipedia_sources": 123,
+   "bytes": 216300,
+   "approx_tokens": 60000
   },
   {
    "section": "Maths",
@@ -48,7 +76,7 @@
    },
    "sources": 130,
    "non_wikipedia_sources": 128,
-   "bytes": 184946,
+   "bytes": 184992,
    "approx_tokens": 51000
   },
   {
@@ -61,7 +89,7 @@
    },
    "sources": 84,
    "non_wikipedia_sources": 82,
-   "bytes": 68251,
+   "bytes": 68297,
    "approx_tokens": 19000
   },
   {
@@ -74,7 +102,7 @@
    },
    "sources": 28,
    "non_wikipedia_sources": 9,
-   "bytes": 18943,
+   "bytes": 18989,
    "approx_tokens": 5000
   },
   {
@@ -87,7 +115,7 @@
    },
    "sources": 85,
    "non_wikipedia_sources": 44,
-   "bytes": 48046,
+   "bytes": 48092,
    "approx_tokens": 13000
   },
   {
@@ -101,7 +129,7 @@
    },
    "sources": 118,
    "non_wikipedia_sources": 37,
-   "bytes": 79283,
+   "bytes": 79329,
    "approx_tokens": 22000
   },
   {
@@ -114,7 +142,7 @@
    },
    "sources": 14,
    "non_wikipedia_sources": 14,
-   "bytes": 63000,
+   "bytes": 63046,
    "approx_tokens": 18000
   }
  ],
