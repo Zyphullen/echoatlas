@@ -2,9 +2,9 @@
  "about": {
   "site": "Echo Atlas by Zyphullen",
   "url": "https://zyphullen.github.io/echoatlas/",
-  "version": "0.6",
+  "version": "0.7",
   "author": "Zyphullen",
-  "data_hash": "5e3e8e167849",
+  "data_hash": "21c967ff63ce",
   "generated": "2026-11-12",
   "read_me": "ai/README.md",
   "all_data": "facts.json",
@@ -12,6 +12,17 @@
    "green": "known",
    "orange": "we think (leading idea / hypothesis)",
    "red": "unknown"
+  },
+  "quality": {
+   "automatic_checks": {
+    "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.7.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+    "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
+   },
+   "science_review": {
+    "status": "No formal peer review yet",
+    "what": "A science review means a person with the right expertise reads each claim against its sources and decides whether it is right, up to date and fairly coloured.",
+    "how_to_help": "Every card has a Suggest a fix button (e-mail). Please check claims against the listed sources and say what looks wrong."
+   }
   },
   "certainty_rule": "green = established (known science, or a defined / proved result in Maths); orange = leading idea / partial progress; red = unknown / open problem. A link takes the colour of its less-certain end.",
   "suggest_a_fix": {
@@ -25,7 +36,7 @@
   {
    "section": "From Nothing to Us",
    "file": "ai/from-nothing-to-us.json",
-   "about": "Universe → Us map and ring: from \"Before the Big Bang?\" to us, including Chain Theory (one candidate starting point, orange) and its open gap (red).",
+   "about": "Universe → Us map and ring (on the site, Explore → From Nothing to Us → Map / Ring / History): from \"Before the Big Bang?\" to us, including Chain Theory (one candidate starting point, orange) and its open gap (red).",
    "open_on_site": "https://zyphullen.github.io/echoatlas/#screen=universe&view=map",
    "counts": {
     "nodes": 93,
@@ -34,13 +45,13 @@
    },
    "sources": 245,
    "non_wikipedia_sources": 223,
-   "bytes": 293127,
-   "approx_tokens": 81000
+   "bytes": 294502,
+   "approx_tokens": 82000
   },
   {
    "section": "Big Bang to Today",
    "file": "ai/big-bang-to-today.json",
-   "about": "A dated timeline of the universe from the Big Bang to today: the first second, the first nuclei and light, cosmic dawn, galaxies and the Sun, Earth and life. The time scale changes between eras.",
+   "about": "A dated timeline of the universe from the Big Bang to today: the first second, the first nuclei and light, cosmic dawn, galaxies and the Sun, Earth and life. The time scale changes between eras. On the site it is also the History view of From Nothing to Us (Explore → From Nothing to Us → History).",
    "open_on_site": "https://zyphullen.github.io/echoatlas/#timeline=1",
    "counts": {
     "big_bang_to_today": 0,
@@ -48,8 +59,22 @@
    },
    "sources": 107,
    "non_wikipedia_sources": 79,
-   "bytes": 90837,
-   "approx_tokens": 25000
+   "bytes": 92249,
+   "approx_tokens": 26000
+  },
+  {
+   "section": "Universe",
+   "file": "ai/universe.json",
+   "about": "A zoomable 3D tour through real NASA / ESA / Hubble / Webb / Planck / Gaia images, one stop per scale: Earth, the Sun, our sky (the Milky Way from inside), a spiral galaxy like ours (M101), Webb's First Deep Field and the cosmic microwave background. Each stop has its real size, the image credit and licence, sources and links to other sections.",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#universe=1",
+   "counts": {
+    "universe": 0,
+    "section_links": 15
+   },
+   "sources": 44,
+   "non_wikipedia_sources": 36,
+   "bytes": 43539,
+   "approx_tokens": 12000
   },
   {
    "section": "Physics",
@@ -62,7 +87,7 @@
    },
    "sources": 161,
    "non_wikipedia_sources": 123,
-   "bytes": 216318,
+   "bytes": 217622,
    "approx_tokens": 60000
   },
   {
@@ -76,7 +101,7 @@
    },
    "sources": 197,
    "non_wikipedia_sources": 135,
-   "bytes": 222639,
+   "bytes": 223943,
    "approx_tokens": 62000
   },
   {
@@ -90,8 +115,8 @@
    },
    "sources": 130,
    "non_wikipedia_sources": 128,
-   "bytes": 185010,
-   "approx_tokens": 51000
+   "bytes": 186314,
+   "approx_tokens": 52000
   },
   {
    "section": "Maths History",
@@ -103,8 +128,21 @@
    },
    "sources": 84,
    "non_wikipedia_sources": 82,
-   "bytes": 68315,
+   "bytes": 69619,
    "approx_tokens": 19000
+  },
+  {
+   "section": "Open questions",
+   "file": "ai/open-questions.json",
+   "about": "Every red (unknown) and orange (we think) card already in the other sections, in one list, with how many rival ideas and tests each has. No new science: the full card is in its own section file (open it with share_url).",
+   "open_on_site": "https://zyphullen.github.io/echoatlas/#gaps=1",
+   "counts": {
+    "open_questions": 0
+   },
+   "sources": 0,
+   "non_wikipedia_sources": 0,
+   "bytes": 13062,
+   "approx_tokens": 4000
   },
   {
    "section": "Planet Earth",
@@ -116,8 +154,8 @@
    },
    "sources": 28,
    "non_wikipedia_sources": 9,
-   "bytes": 19007,
-   "approx_tokens": 5000
+   "bytes": 20311,
+   "approx_tokens": 6000
   },
   {
    "section": "Virtual Cell",
@@ -129,8 +167,8 @@
    },
    "sources": 85,
    "non_wikipedia_sources": 44,
-   "bytes": 48110,
-   "approx_tokens": 13000
+   "bytes": 49414,
+   "approx_tokens": 14000
   },
   {
    "section": "Human Body",
@@ -143,7 +181,7 @@
    },
    "sources": 118,
    "non_wikipedia_sources": 37,
-   "bytes": 79347,
+   "bytes": 80651,
    "approx_tokens": 22000
   },
   {
@@ -156,7 +194,7 @@
    },
    "sources": 14,
    "non_wikipedia_sources": 14,
-   "bytes": 63064,
+   "bytes": 64368,
    "approx_tokens": 18000
   }
  ],

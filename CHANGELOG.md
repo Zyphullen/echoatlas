@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.7 (12 Nov 2026)
+1. 🎹 Music: 12 piano tracks (9 new), shuffled each visit, a new random track when one ends, never the same one twice in a row; the fade-in and volume stay the same
+2. ⏳ From Nothing to Us → History opens the Big Bang to Today timeline (22 events)
+3. 🧭 Explore: From Nothing to Us and Maths are one item each; Map / Ring / History sit one tap further
+4. 🔭 Universe section: Earth, the Sun, our sky, a spiral galaxy like ours, Webb's First Deep Field and the oldest light, all real images with credits (`#universe=1`, `ai/universe.json`)
+5. 🤖 Automatic checks vs science review are split in the AI files, audit, AI / SI panel and plain facts page
+6. 📦 AI / SI guidance says each section file already holds the facts, colours, sources and links between sections, and how to use the site
+7. ❓ Open questions: browse every red and orange card by colour or section, with rival ideas and tests, and jump to the real card (`#gaps=1`)
+8. 🧹 FACTS-GUIDE.md and version labels updated
+9. 🏷️ The browser tab names the open card (e.g. “Counting & number · Echo Atlas”) and goes back to “Echo Atlas by Zyphullen · v0.7” when it closes; the address stays the same
+
 ## v0.6b fixes (12 Nov 2026, still shown as v0.6)
 1. 🤖 AI / SI guidance is in the page's own HTML (hidden from people) and at the top of `llms.txt`, linked from the page head, so AIs read it without clicking
 2. 🧭 Explore menu keeps one fixed order; Virtual Cell and Human Body sit only under Biology
