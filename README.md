@@ -5,7 +5,28 @@
 
 Live: https://zyphullen.github.io/echoatlas/
 
-## Current version: v0.4 (12 Nov 2026)
+## Current version: v0.5 (12 Nov 2026)
+
+1. ⚛️ Physics section: forces, particles and light, each fact coloured by certainty and linked to sources
+2. 🗺️ A “you are here” mini-map on the maps, rings and Physics (the timeline has its own era strip)
+3. 🔎 Category titles above the bands grow when you zoom out, all to the same size, so you can read them from afar; names stay the same size
+4. 🧪 A bigger Atom Sandbox
+5. 🔗 Links between sections, so related facts can be reached from each other
+6. ⏳ Big Bang to Today: a timeline of 22 dated events, from the first instant to now
+7. ⚡ Sections load only when you open them, so the first page is lighter (looks and works the same)
+
+### Bugs found and fixed before release (v0.5)
+1. 🖼️ New Home tiles showed the Back bar in the preview: recaptured without it
+2. 🗺️ The mini-map sat in the bottom left: now top right, just under the top bar
+3. ⚛️ Physics stopped you dragging to the far left or right when zoomed in, and zoom could slip off the mouse: you can now reach those ideas, and zoom stays on the pointer
+4. 🏷️ Grey lane names inside the map were growing, and the titles above the bands ended up different sizes: only the titles above grow now, all the same size
+
+### v0.5c fixes (before release)
+1. 👆 Phones: tapping a Big Bang to Today event no longer also presses a button on the card that opens
+2. 🗺️ Desktop: the mini-map moves left of an open card on the maps and rings, so they never overlap
+3. 🔍 Physics: zooming with the mouse past the map’s edge no longer makes the view jump
+
+### v0.4 (12 Nov 2026)
 
 1. 📂 One AI data file per section in `ai/`, so an AI can load just the part it needs
 2. 🔘 **AI info** at the top right: a read-me of what the site holds, with sizes and token counts for each section file. **All site data** (`facts.json`) sits inside that panel, after the section files

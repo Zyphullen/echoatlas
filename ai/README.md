@@ -1,13 +1,13 @@
-# Echo Atlas · AI info (v0.4)
+# Echo Atlas · AI info (v0.5)
 
 Echo Atlas by Zyphullen is one website for knowledge, known and unknown. Every fact is coloured by certainty and linked to its sources.
 This folder splits the site's data into **one file per section**, so an AI can load only the part it needs and stay inside its context limit.
 
-**Data hash:** `3ca624a114cc` (the same as `DATA_HASH` in the page and `data_hash` in every file below). **Built:** 2026-11-12.
+**Data hash:** `24c89747fcc2` (the same as `DATA_HASH` in the page and `data_hash` in every file below). **Built:** 2026-11-12.
 
 ## Start here
 1. 📂 Pick the section you need from the table and load only that file.
-2. 🧭 Need everything? Load [facts.json](../facts.json) (all sections, about 329k tokens).
+2. 🧭 Need everything? Load [facts.json](../facts.json) (all sections, about 454k tokens).
 3. 🗂️ Need the list as data? Load [index.json](index.json).
 4. 📖 Every field is explained in [FACTS-GUIDE.md](../FACTS-GUIDE.md).
 
@@ -15,6 +15,8 @@ This folder splits the site's data into **one file per section**, so an AI can l
 | Section | What is in it | Sources | Size |
 |---|---|---|---|
 | [From Nothing to Us](from-nothing-to-us.json) | 93 nodes, 145 links, 25 crosslinks_to_maths | 245 (223 papers / official) | ~81k |
+| [Big Bang to Today](big-bang-to-today.json) | 0 big_bang_to_today, 42 section_links | 107 (79 papers / official) | ~25k |
+| [Physics](physics.json) | 32 physics, 65 section_links | 161 (123 papers / official) | ~60k |
 | [Maths](maths.json) | 86 maths, 25 crosslinks_to_universe | 130 (128 papers / official) | ~51k |
 | [Maths History](maths-history.json) | 86 maths_history | 84 (82 papers / official) | ~19k |
 | [Planet Earth](planet-earth.json) | 18 planet | 28 (9 papers / official) | ~5k |
