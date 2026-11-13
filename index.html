@@ -6,14 +6,14 @@
 <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt: important guidance for AI / SI visitors (read first)">
 <meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Echo Atlas · v0.8</title>
+<title>Echo Atlas · v0.9</title>
 <meta name="description" content="Echo Atlas by Zyphullen: explore the known, map the unknown. Interactive maps of the universe, maths, life and Earth, with every fact coloured by certainty and sourced.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23070d1f%22 stroke=%22%23ffd36b%22 stroke-width=%228%22/%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%234ff3e3%22/%3E%3C/svg%3E">
 <meta property="og:title" content="Echo Atlas by Zyphullen">
 <meta property="og:description" content="Explore the known. Map the unknown. Interactive maps of the universe, maths, life and Earth, by Zyphullen.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zyphullen.github.io/echoatlas/og-card-v0.8.png">
-<meta property="og:image" content="https://zyphullen.github.io/echoatlas/og-card-v0.8.png">
+<meta name="twitter:image" content="https://zyphullen.github.io/echoatlas/og-card-v0.9.png">
+<meta property="og:image" content="https://zyphullen.github.io/echoatlas/og-card-v0.9.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -1312,18 +1312,97 @@ body.history-open #atlasBar #search:not(.slotEmpty){visibility:visible!important
 #vgaps .gwrap{top:0!important;padding-top:14px!important}
 /* v0.8c: no "You are here" mini-map box */
 .mmap{display:none!important}
+
+/* ===== v0.9: section views (spider Map, Physics / Biology Ring and History), Book · Ring · Map switch, Universe loader ===== */
+#vsect{position:fixed;left:0;right:0;bottom:0;top:var(--barH,0px);z-index:52;overflow:hidden;color:#e5f6ff;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:radial-gradient(ellipse at 50% 45%,rgba(30,60,110,.32),rgba(4,8,20,0) 62%),linear-gradient(180deg,#050a18,#03060f);touch-action:none;-webkit-user-select:none;user-select:none}
+#vsect button{font:inherit;cursor:pointer}
+#vsect .vssvg{position:absolute;inset:0;width:100%;height:100%;cursor:grab;display:block}
+#vsect.moving .vssvg{cursor:grabbing}
+#vsect .vstit{position:absolute;left:18px;top:14px;z-index:4;font-size:13px;color:#8fb0c8;pointer-events:none;letter-spacing:.2px}
+#vsect .vstit b{font-size:17px;letter-spacing:.3px;margin-right:6px;text-shadow:0 0 12px rgba(255,211,107,.22)}
+#vsect .vsweb circle,#vsect .vsweb line{stroke:#4ff3e3;stroke-opacity:.07;stroke-width:calc(1.2px * var(--is,1))}
+#vsect .vsweb circle{stroke-dasharray:calc(3px * var(--is,1)) calc(7px * var(--is,1))}
+#vsect .vsgl{font-weight:800;letter-spacing:.16em;font-size:var(--gf,15px);opacity:.55;paint-order:stroke;stroke:#03060f;stroke-width:calc(var(--gf,15px) * .33)}
+#vsect .vse{fill:none;stroke-width:calc(1.7px * min(var(--is,1),2.2));opacity:.5;transition:opacity .2s}
+#vsect .vse.s-t,#vsect .vse.s-u{stroke-dasharray:7 6}
+#vsect .vsxe{opacity:.2;stroke-dasharray:3 6;stroke-width:calc(1.3px * min(var(--is,1),2.2))}
+#vsect .vse.hot{opacity:1;stroke-width:calc(2.6px * min(var(--is,1),2.2))}
+#vsect .vse.dim{opacity:.05}
+#vsect .vsn{cursor:pointer;transition:opacity .2s}
+#vsect .vsn .vsh{transition:opacity .2s}
+#vsect .vsn:hover .vsh,#vsect .vsn.on .vsh{opacity:.32}
+#vsect .vsn.on>circle:nth-child(2){stroke-width:3.6}
+#vsect .vsn.dim,#vsect .vshub.dim,#vsect .vsrl.dim{opacity:.18}
+#vsect .vsl{font-size:calc(12.5px * min(var(--is,1),2.4));font-weight:650;fill:#eef7ff;paint-order:stroke;stroke:#04060f;stroke-width:calc(4px * min(var(--is,1),2.4));pointer-events:none}
+#vsect .vsl{transition:opacity .2s}
+#vsect.vs-map.far .vsn:not(.big) .vsl{opacity:0}
+#vsect.vs-map.far .vsn.big .vsl{font-size:calc(13.5px * min(var(--is,1),2.4))}
+#vsect.vs-map .vsn.on .vsl,#vsect.vs-map .vsn:hover .vsl,#vsect.vs-map.lit .vsn:not(.dim) .vsl{opacity:1!important}
+#vsect .vsarcl{opacity:.85;stroke-width:.3em}
+#vsect .vsrl{font-size:calc(12px * min(var(--is,1),1.9));pointer-events:auto;cursor:pointer;fill:#e3eefa}
+#vsect .vshub{cursor:pointer}
+#vsect .vshub rect{filter:drop-shadow(0 0 10px rgba(79,243,227,.18))}
+#vsect .vshub:hover rect{stroke-width:3}
+#vsect .vshi{font-size:16px}#vsect .vshn{font-size:14px;font-weight:700}#vsect .vshc{font-size:11.5px;font-weight:600;opacity:.85}
+#vsect .vsrc1{font-size:26px;font-weight:800;letter-spacing:3px}#vsect .vsrc2{font-size:14px;fill:#8fb0c8}
+#vsect .vskey{position:absolute;right:14px;bottom:14px;z-index:5;display:flex;gap:12px;flex-wrap:wrap;max-width:60vw;padding:8px 12px;border-radius:12px;background:rgba(5,12,29,.86);border:1px solid rgba(87,139,181,.4);font-size:12px;color:#bcd0e4}
+#vsect .vskey>div{display:flex;align-items:center;gap:6px}
+#vsect .d,.vhwrap .d{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid;box-sizing:border-box;background:#0a1226}
+#vsect .d.k{border-color:#3dff8a}#vsect .d.t{border-color:#ffa53d}#vsect .d.u{border-color:#ff4d5e;border-style:dashed}
+#vsect .vskey .ln{display:inline-block;width:22px;height:2px;background:#3dff8a;opacity:.7}
+#vsect .vskey .pill{display:inline-block;width:22px;height:12px;border-radius:7px;border:2px solid #e79cff;box-sizing:border-box}
+#vsect.vs-ring .vsk-map{display:none}
+#vsect.carded .vskey{right:426px}
+#vsect .vzm{left:14px;bottom:14px}
+#vsect .phcard{top:12px}
+/* History: era columns, read top to bottom */
+#vsect.vs-history{touch-action:pan-y}
+#vsect .vhwrap{position:absolute;inset:0;overflow:auto;padding:16px 18px 24px;box-sizing:border-box;-webkit-user-select:text;user-select:text}
+#vsect.carded .vhwrap{right:418px}
+#vsect .vhhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:0 0 12px}
+#vsect .vhhead b{font-size:21px;color:#fff3cf;letter-spacing:.2px}
+#vsect .vhhead>span{color:#8fb0c8;font-size:13px}
+#vsect .vhkey{display:flex;align-items:center;gap:6px}#vsect .vhkey i{margin-left:8px}
+#vsect .vhcols{display:grid;grid-template-columns:repeat(var(--n),minmax(190px,1fr));gap:10px;align-items:start}
+#vsect .vhcol{border:1px solid color-mix(in srgb,var(--c) 45%,transparent);border-top:3px solid var(--c);border-radius:12px;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 7%,transparent),rgba(5,12,29,.6) 140px);padding:10px 8px 8px;min-width:0}
+#vsect .vhcol header{padding:0 4px 8px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.07)}
+#vsect .vhcol header b{display:block;color:var(--c);font-size:12.5px;letter-spacing:1.4px;font-weight:800}
+#vsect .vhcol header small{color:#8fb0c8;font-size:11.5px}
+#vsect .vhev{display:block;width:100%;text-align:left;margin:0 0 7px;padding:8px 10px 9px;border-radius:10px;border:1px solid rgba(87,139,181,.32);border-left:3px solid #3dff8a;background:rgba(7,16,36,.88);color:#e3eefa;transition:border-color .2s,background .2s,transform .15s}
+#vsect .vhev.s-t{border-left-color:#ffa53d}#vsect .vhev.s-u{border-left-color:#ff4d5e;border-left-style:dashed}
+#vsect .vhev:hover,#vsect .vhev:focus-visible{border-color:rgba(79,243,227,.7);background:rgba(12,28,56,.95);transform:translateY(-1px)}
+#vsect .vhev.on{border-color:#ffd36b;box-shadow:0 0 0 1px #ffd36b inset}
+#vsect .vhy{display:inline-block;font-size:11px;font-weight:700;color:var(--g);border:1px solid color-mix(in srgb,var(--g) 55%,transparent);border-radius:20px;padding:1px 7px;margin-bottom:4px}
+#vsect .vhev b{display:block;font-size:13.5px;color:#fff;margin-bottom:2px}
+#vsect .vht{display:block;font-size:12px;line-height:1.38;color:#a9bdd3}
+#vsect .vhnote{color:#6f8aa3;font-size:12px;margin:12px 2px 0}
+#vsect .vhwhen{margin:10px 0;padding:8px 10px;border-radius:10px;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);background:rgba(255,211,107,.04)}
+#vsect .vhwhen b{display:block;color:var(--c);font-size:12px;letter-spacing:.6px}#vsect .vhwhen span{font-size:13px;color:#dfeaf6}
+#vsect .vsbook{border:1px solid #ffd36b;color:#ffe9b0;background:rgba(255,211,107,.08);border-radius:9px;padding:7px 11px;font-weight:650}
+@media(max-width:600px){#vsect .vhcols{grid-template-columns:1fr}#vsect.carded .vhwrap{right:0}#vsect .vskey{display:none}#vsect .vstit span{display:none}}
+/* Book · Ring · Map switch */
+#vsw .vb i,#vsw .vmp i{font-style:normal;font-size:13px}
+/* Universe: quick spinner while the first picture decodes, then a small "sharp" note once the 4096 px one is in */
+#vcosmos .uload::before{content:"";display:inline-block;width:14px;height:14px;margin-right:8px;vertical-align:-2px;border:2px solid rgba(79,243,227,.25);border-top-color:#4ff3e3;border-radius:50%;animation:uspin .8s linear infinite}
+@keyframes uspin{to{transform:rotate(360deg)}}
+#vcosmos .uload{transition:opacity .15s}
+/* the third view button must not squeeze the top-left name and version: the search box gives way instead */
+@media(min-width:601px){#atlasBar .brand{flex-shrink:0}#atlasBar #search{min-width:120px}}
+/* From Nothing to Us Book: the size levels are bordered panels now (polish.css faded the old full-height column fills) */
+#gMap .band rect{opacity:1}
 </style>
 <link rel="help" type="text/markdown" href="ai/README.md" title="AI / SI info read-me">
 <link rel="alternate" type="application/json" href="ai/index.json" title="AI / SI section data files (one per section)">
 <link rel="alternate" type="application/json" href="facts.json" title="All facts (machine-readable)">
-<link rel="preload" as="script" href="js/biology.js?v=e7d0de89e0"><link rel="preload" as="script" href="js/body.js?v=e7d0de89e0"><link rel="preload" as="script" href="js/cell.js?v=e7d0de89e0"><link rel="preload" as="script" href="js/cosmos.js?v=e7d0de89e0"><link rel="preload" as="script" href="js/gaps.js?v=e7d0de89e0"><link rel="preload" as="script" href="js/physics.js?v=e7d0de89e0"><link rel="preload" as="script" href="js/timeline.js?v=e7d0de89e0">
+<link rel="preload" as="script" href="js/biology.js?v=7cae434edb"><link rel="preload" as="script" href="js/body.js?v=7cae434edb"><link rel="preload" as="script" href="js/cell.js?v=7cae434edb"><link rel="preload" as="script" href="js/cosmos.js?v=7cae434edb"><link rel="preload" as="script" href="js/gaps.js?v=7cae434edb"><link rel="preload" as="script" href="js/physics.js?v=7cae434edb"><link rel="preload" as="script" href="js/sect.js?v=7cae434edb"><link rel="preload" as="script" href="js/timeline.js?v=7cae434edb">
 </head>
 <body class="booting">
 <!-- IMPORTANT FOR AI / SI VISITORS (AI and superintelligence): read the "aiGuide" section just below, or llms.txt, before you review or summarise this site. Most data is not on screen; load ai/<section>.json files (one per section): each already holds the facts, colours, sources and connections between ideas, including links to other sections. -->
-<section id="aiGuide" class="aiGuide" role="note" aria-labelledby="aiGuideT" data-for="ai-si-visitors"><h2 id="aiGuideT">Important guidance for AI / SI visitors (read this first)</h2><p>If you are an AI / SI (artificial intelligence or superintelligence) reviewing or summarising Echo Atlas, read this before judging the visible page. Live site: <a href="https://zyphullen.github.io/echoatlas/">https://zyphullen.github.io/echoatlas/</a></p><ol><li><b>What this is:</b> Echo Atlas by Zyphullen (v0.8) is an interactive atlas of knowledge, known and unknown: From Nothing to Us (Universe → Us map, ring and its History, Big Bang to Today), Universe (a 3D zoom through real NASA / ESA images), Physics, Biology (with the Virtual Cell and Human Body explorers), Maths (map, ring and history), Open questions (every red and orange card in one list) and all 118 elements. Most of the page is drawn by JavaScript, so the screen you see (or the text you extract) is only a small part of the data.</li><li><b>The section files already hold everything:</b> Each section JSON file (ai/&lt;section&gt;.json) already contains that section&#x27;s facts (summary, details), colours (certainty), sources (title, url, type, year, link check) and the connections between ideas: links inside the section and links to cards in other sections (rel / related / section_links, each naming the other section and card id). You do not need to run the site or click anything. To follow a connection into another section, load that section&#x27;s file (listed in about.other_sections) and find the card by id.</li><li><b>Certainty colours:</b> green = known / established (or a proved theorem); orange = we think / leading idea or partial progress; red = unknown / open question. Every card lists its sources. Judge a claim by its colour and sources, not by how it looks on screen.</li><li><b>Load only what you need:</b> Load one section file first, so you stay inside your context limit; open facts.json (all data in one file; the section files together are about 369k tokens) only if you really need all of it. Do not load every file at once.</li><li><b>How to use the site:</b> Every card has a share_url that opens it on the live page; give that to people. Useful addresses: #universe=1 (Universe), #u=&lt;stop id&gt;, #gaps=1 (Open questions), #timeline=1 (Big Bang to Today), #physics=1, #biology=1, #history=1 (Maths History), #screen=universe&amp;view=map, #screen=maths&amp;view=map. Explore (top bar) lists the sections in a fixed order.</li><li><b>Automatic checks are not a science review:</b> The build runs automatic structural checks (every card has a colour and a source, links point at real cards, the data hash matches, source links answer). They do not read the science. There has been no formal science review / peer review yet, so fact-check claims against their sources and report anything wrong.</li><li><b>Same data everywhere:</b> Every file carries the same data hash: 7a9b6b5a6725. If two files disagree on the hash, one of them is out of date.</li></ol><h3>Section data files (load one at a time)</h3><ul><li><a href="ai/from-nothing-to-us.json">From Nothing to Us</a> <code>ai/from-nothing-to-us.json</code> · ~82k tokens</li><li><a href="ai/big-bang-to-today.json">Big Bang to Today</a> <code>ai/big-bang-to-today.json</code> · ~25k tokens</li><li><a href="ai/universe.json">Universe</a> <code>ai/universe.json</code> · ~12k tokens</li><li><a href="ai/physics.json">Physics</a> <code>ai/physics.json</code> · ~59k tokens</li><li><a href="ai/biology.json">Biology</a> <code>ai/biology.json</code> · ~62k tokens</li><li><a href="ai/maths.json">Maths</a> <code>ai/maths.json</code> · ~52k tokens</li><li><a href="ai/maths-history.json">Maths History</a> <code>ai/maths-history.json</code> · ~19k tokens</li><li><a href="ai/open-questions.json">Open questions</a> <code>ai/open-questions.json</code> · ~4k tokens</li><li><a href="ai/virtual-cell.json">Virtual Cell</a> <code>ai/virtual-cell.json</code> · ~14k tokens</li><li><a href="ai/human-body.json">Human Body</a> <code>ai/human-body.json</code> · ~22k tokens</li><li><a href="ai/elements.json">All the Elements</a> <code>ai/elements.json</code> · ~18k tokens</li></ul><h3>Guides and all data</h3><ul><li><a href="llms.txt">llms.txt</a>: this guide as plain text, plus field notes</li><li><a href="ai/README.md">AI / SI info read-me</a>: the same read-me as the gold AI / SI info button (top right)</li><li><a href="ai/index.json">ai/index.json</a>: list of the section files with sizes</li><li><a href="knowledge.html">knowledge.html</a>: all facts as plain HTML, no JavaScript</li><li><a href="facts.json">facts.json</a>: all site data in one file</li></ul><p>People: the same guide opens from the gold <b>AI / SI info</b> button at the top right. Made by Zyphullen.</p></section>
+<section id="aiGuide" class="aiGuide" role="note" aria-labelledby="aiGuideT" data-for="ai-si-visitors"><h2 id="aiGuideT">Important guidance for AI / SI visitors (read this first)</h2><p>If you are an AI / SI (artificial intelligence or superintelligence) reviewing or summarising Echo Atlas, read this before judging the visible page. Live site: <a href="https://zyphullen.github.io/echoatlas/">https://zyphullen.github.io/echoatlas/</a></p><ol><li><b>What this is:</b> Echo Atlas by Zyphullen (v0.9) is an interactive atlas of knowledge, known and unknown: From Nothing to Us (Universe → Us map, ring and its History, Big Bang to Today), Universe (a 3D zoom through real NASA / ESA images), Physics, Biology (with the Virtual Cell and Human Body explorers), Maths (map, ring and history), Open questions (every red and orange card in one list) and all 118 elements. Most of the page is drawn by JavaScript, so the screen you see (or the text you extract) is only a small part of the data.</li><li><b>The section files already hold everything:</b> Each section JSON file (ai/&lt;section&gt;.json) already contains that section&#x27;s facts (summary, details), colours (certainty), sources (title, url, type, year, link check) and the connections between ideas: links inside the section and links to cards in other sections (rel / related / section_links, each naming the other section and card id). You do not need to run the site or click anything. To follow a connection into another section, load that section&#x27;s file (listed in about.other_sections) and find the card by id.</li><li><b>Certainty colours:</b> green = known / established (or a proved theorem); orange = we think / leading idea or partial progress; red = unknown / open question. Every card lists its sources. Judge a claim by its colour and sources, not by how it looks on screen.</li><li><b>Load only what you need:</b> Load one section file first, so you stay inside your context limit; open facts.json (all data in one file; the section files together are about 371k tokens) only if you really need all of it. Do not load every file at once.</li><li><b>How to use the site:</b> Every card has a share_url that opens it on the live page; give that to people. Useful addresses: #universe=1 (Universe), #u=&lt;stop id&gt;, #gaps=1 (Open questions), #timeline=1 (Big Bang to Today), #physics=1, #biology=1, #history=1 (Maths History), #screen=universe&amp;view=map, #screen=maths&amp;view=map. Explore (top bar) lists the sections in a fixed order.</li><li><b>Automatic checks are not a science review:</b> The build runs automatic structural checks (every card has a colour and a source, links point at real cards, the data hash matches, source links answer). They do not read the science. There has been no formal science review / peer review yet, so fact-check claims against their sources and report anything wrong.</li><li><b>Same data everywhere:</b> Every file carries the same data hash: 49e748a9f816. If two files disagree on the hash, one of them is out of date.</li></ol><h3>Section data files (load one at a time)</h3><ul><li><a href="ai/from-nothing-to-us.json">From Nothing to Us</a> <code>ai/from-nothing-to-us.json</code> · ~82k tokens</li><li><a href="ai/big-bang-to-today.json">Big Bang to Today</a> <code>ai/big-bang-to-today.json</code> · ~25k tokens</li><li><a href="ai/universe.json">Universe</a> <code>ai/universe.json</code> · ~12k tokens</li><li><a href="ai/physics.json">Physics</a> <code>ai/physics.json</code> · ~60k tokens</li><li><a href="ai/biology.json">Biology</a> <code>ai/biology.json</code> · ~63k tokens</li><li><a href="ai/maths.json">Maths</a> <code>ai/maths.json</code> · ~52k tokens</li><li><a href="ai/maths-history.json">Maths History</a> <code>ai/maths-history.json</code> · ~19k tokens</li><li><a href="ai/open-questions.json">Open questions</a> <code>ai/open-questions.json</code> · ~4k tokens</li><li><a href="ai/virtual-cell.json">Virtual Cell</a> <code>ai/virtual-cell.json</code> · ~14k tokens</li><li><a href="ai/human-body.json">Human Body</a> <code>ai/human-body.json</code> · ~22k tokens</li><li><a href="ai/elements.json">All the Elements</a> <code>ai/elements.json</code> · ~18k tokens</li></ul><h3>Guides and all data</h3><ul><li><a href="llms.txt">llms.txt</a>: this guide as plain text, plus field notes</li><li><a href="ai/README.md">AI / SI info read-me</a>: the same read-me as the gold AI / SI info button (top right)</li><li><a href="ai/index.json">ai/index.json</a>: list of the section files with sizes</li><li><a href="knowledge.html">knowledge.html</a>: all facts as plain HTML, no JavaScript</li><li><a href="facts.json">facts.json</a>: all site data in one file</li></ul><p>People: the same guide opens from the gold <b>AI / SI info</b> button at the top right. Made by Zyphullen.</p></section>
 <canvas id="sky"></canvas>
 <header id="atlasBar">
-  <div class="brand"><h1>Echo Atlas <span class="ver" title="v0.8">v0.8</span></h1><div class="dsw"><span id="domainDesc" role="status">Home</span></div></div>
+  <div class="brand"><h1>Echo Atlas <span class="ver" title="v0.9">v0.9</span></h1><div class="dsw"><span id="domainDesc" role="status">Home</span></div></div>
   <button class="hbtn barBtn" id="hometop" title="Home: main menu" aria-label="Home: main menu"><i>⌂</i><b>Home</b></button>
   <button class="hbtn barBtn" id="ptbtn" title="Explore every section" aria-label="Explore every section" aria-haspopup="menu" aria-expanded="false" aria-controls="xmenu"><i>☰</i><b>Explore</b></button>
   <div id="search" role="search"><button id="sbtn" title="Search (/)" aria-label="Search"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#9ff5ea" stroke-width="2.2" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg></button>
@@ -1332,7 +1411,7 @@ body.history-open #atlasBar #search:not(.slotEmpty){visibility:visible!important
   <div class="barSpacer"></div>
   <div class="barRight">
   <div id="ctl" aria-label="View, Echo-Flame and sound">
-  <button id="histb" title="Open Maths History" hidden>↗<b>History</b></button><button id="vsw" title="Switch between the map and the ring"><span class="vm" data-v="map">🗺️<b>Map</b></span><span class="vc" data-v="circle"><em>◯</em><b>Ring</b></span></button>
+  <button id="histb" title="Open Maths History" hidden>↗<b>History</b></button><button id="vsw" title="Choose how to read this section: Book, Ring or Map"><span class="vb" data-v="book"><i>📖</i><b>Book</b></span><span class="vc" data-v="ring"><em>◯</em><b>Ring</b></span><span class="vmp" data-v="map"><i>🕸️</i><b>Map</b></span></button>
   <div class="row"><button id="efb" title="Your Echo-Flame and save code" aria-label="Echo-Flame">🔥<b id="efn">0</b></button>
     <div class="snd"><button id="mute" title="Music on" aria-label="Mute music">🔊</button><input id="vol" type="range" min="0" max="100" step="1" aria-label="Music volume"></div>
     <button id="infob" title="Music: pick a song, or About" aria-label="Music list and About" aria-haspopup="dialog" aria-expanded="false" aria-controls="musMenu">i</button></div>
@@ -1392,7 +1471,7 @@ body.history-open #atlasBar #search:not(.slotEmpty){visibility:visible!important
   <p class="mmFoot mmAboutRow"><button type="button" id="mmAbout">About Echo Atlas</button></p></div>
 <div id="infp" class="panel" role="dialog" aria-label="About"><div class="ph"><b>ABOUT</b><button class="x" aria-label="close">×</button></div>
   <p><b>Echo Atlas</b> by Zyphullen. Explore the known. Map the unknown. From Nothing to Us is one section: how everything emerges, from the quantum field to us.</p>
-  <p class="verl">v0.8</p>
+  <p class="verl">v0.9</p>
   <h5>Music</h5><div class="sndrow"><button id="mute2">🔊 Music on</button><input id="vol2" type="range" min="0" max="100" step="1" aria-label="Music volume"></div>
   <p class="cred">Piano: Salamander Grand Piano by Alexander Holm (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>), via <a href="https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html" target="_blank" rel="noopener">FreePats</a></p>
   <div class="irow"><button id="howb">❔ How to use</button><a id="sugg" href="https://github.com/Zyphullen/echoatlas/issues/new" target="_blank" rel="noopener">✎ Suggest a fix</a></div></div>
@@ -1417,7 +1496,7 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const SUP = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
 const pow10 = e => '10' + String(Math.round(e)).split('').map(c => SUP[c]).join('');
 const szShort = n => n.sz == null ? '' : (Math.round(n.sz) === 0 ? '~1 m' : '~' + pow10(n.sz) + ' m');
-const DATA_HASH = '7a9b6b5a6725'; // same hash is in facts.json (including both maps)
+const DATA_HASH = '49e748a9f816'; // same hash is in facts.json (including both maps)
 const CHAIN_THEORY_TEST_NODES = new Set(['nothing','axiom','qudits','distill','genres','gauge','alpha','chainmail','ctspace','gap']);
 const SRC = {
  katrin:['KATRIN, Science 2025: neutrino mass below 0.45 eV','https://doi.org/10.1126/science.adq9592'],
@@ -4306,6 +4385,95 @@ const UNI_BY_ID = Object.fromEntries(UNI.map(n => [n.id, n]));
 
 // v0.7 link check of the Universe sources (12 Nov 2026)
 Object.assign(SRC_META, {"https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered", "last_checked": "2026-11-12", "link_status": "ok", "http": "000"}, "https://visibleearth.nasa.gov/collection/1484/blue-marble": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year)", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered", "last_checked": "2026-11-12", "link_status": "ok", "http": "000"}, "https://sdo.gsfc.nasa.gov/": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year)", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.esa.int/ESA_Multimedia/Images/2018/04/Gaia_s_sky_in_colour2": {"type": "agency / lab", "year": 2018, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://arxiv.org/abs/1804.09365": {"type": "paper", "year": 2018, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://arxiv.org/abs/1904.05721": {"type": "paper", "year": 2019, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Gaia%27s_all-sky_view_(ESA_Gaia_DR2_AllSky_Brightness_Colour_black_bg_8k).jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://esahubble.org/news/heic0602/": {"type": "agency / lab", "year": 2006, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:M101_hires_STScI-PRC2006-10a.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://webbtelescope.org/contents/media/images/2022/038/01G7JGTH21B5GN9VCYAHBXKSD1": {"type": "agency / lab", "year": 2022, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.esa.int/ESA_Multimedia/Images/2013/03/Planck_CMB": {"type": "agency / lab", "year": 2013, "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_and_the_cosmic_microwave_background": {"type": "agency / lab", "year": null, "year_note": "living page (no single publication year)", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://en.wikipedia.org/wiki/Observable_universe": {"type": "encyclopedia", "year": 2026, "year_note": "living page: year of the last revision on the check day", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}, "https://commons.wikimedia.org/wiki/File:Cosmic_Microwave_Background_(CMB).jpeg": {"type": "image archive", "year": null, "year_note": "file page with licence and original source", "last_checked": "2026-11-12", "link_status": "ok", "http": "200"}});
+/* v0.9 PHYSICS HISTORY: one dated landmark for every Physics card (the year it was first published, measured or proposed).
+   y = year (CE), when = how the date reads, t = one line of what happened, k = kind: fact (published / measured), idea (proposed, not yet shown), open (still open: shown in the last column).
+   The sources are the card's own sources (PHYS[...].src). A publication date is not always a discovery date; several people often got there together. */
+const PHYS_ERAS = [
+  { id: 'classical', name: 'CLASSICAL BEGINNINGS', sub: '1600 → 1800', from: 1600, to: 1800, col: '#ffd36b' },
+  { id: 'fields', name: 'FIELDS & LIGHT', sub: '1800 → 1900', from: 1800, to: 1900, col: '#4ff3e3' },
+  { id: 'quanta', name: 'RELATIVITY & QUANTA', sub: '1900 → 1930', from: 1900, to: 1930, col: '#e79cff' },
+  { id: 'particles', name: 'PARTICLES & FORCES', sub: '1930 → 1980', from: 1930, to: 1980, col: '#7fc8ff' },
+  { id: 'machines', name: 'BIG EXPERIMENTS', sub: '1980 → today', from: 1980, to: 2100, col: '#5cf0a0' },
+  { id: 'open', name: 'STILL OPEN', sub: 'questions nobody has answered yet', open: true, col: '#ff4d5e' }
+];
+const PHYS_HIST = {
+  'speed-of-light': { y: 1676, when: '1676', k: 'fact', t: 'Ole Rømer times the moons of Jupiter and shows light takes time to travel.' },
+  'newton-laws': { y: 1687, when: '1687', k: 'fact', t: 'Isaac Newton sets out the three laws of motion in the Principia.' },
+  'universal-gravitation': { y: 1687, when: '1687', k: 'fact', t: 'The same book: one law of gravity for apples, the Moon and the planets.' },
+  'coulomb-law': { y: 1785, when: '1785', k: 'fact', t: 'Charles-Augustin de Coulomb measures the force between electric charges with a torsion balance.' },
+  'atomic-spectra': { y: 1859, when: '1859', k: 'fact', t: 'Kirchhoff and Bunsen show each element has its own set of spectral lines.' },
+  'maxwell-equations': { y: 1865, when: '1865', k: 'fact', t: 'James Clerk Maxwell unites electricity and magnetism, and finds light is an electromagnetic wave.' },
+  'em-radiation': { y: 1887, when: '1887', k: 'fact', t: 'Heinrich Hertz makes and detects radio waves, confirming Maxwell.' },
+  'leptons': { y: 1897, when: '1897', k: 'fact', t: 'J. J. Thomson finds the electron, the first known lepton.' },
+  'blackbody': { y: 1900, when: '1900', k: 'fact', t: 'Max Planck explains black-body light with energy in small packets (quanta).' },
+  'special-relativity': { y: 1905, when: '1905', k: 'fact', t: 'Albert Einstein: the speed of light is the same for everyone; space and time stretch.' },
+  'photon': { y: 1905, when: '1905', k: 'fact', t: 'Einstein explains the photoelectric effect with particles of light (Compton confirms them in 1923).' },
+  'general-relativity': { y: 1915, when: '1915', k: 'fact', t: 'Einstein publishes general relativity: gravity is curved spacetime.' },
+  'noether-theorem': { y: 1918, when: '1918', k: 'fact', t: 'Emmy Noether proves every symmetry gives a conserved quantity.' },
+  'wave-particle-duality': { y: 1924, when: '1924', k: 'fact', t: 'Louis de Broglie proposes that matter has waves too; electron waves are seen in 1927.' },
+  'antimatter': { y: 1932, when: '1932', k: 'fact', t: 'Carl Anderson finds the positron, predicted by Paul Dirac in 1928.' },
+  'dark-matter': { y: 1933, when: '1933', k: 'idea', t: 'Fritz Zwicky finds galaxies in the Coma cluster move too fast for the matter we see.' },
+  'weak-interaction': { y: 1934, when: '1934', k: 'fact', t: 'Enrico Fermi publishes his theory of beta decay, the first theory of the weak force.' },
+  'qed': { y: 1948, when: 'late 1940s', k: 'fact', t: 'Feynman, Schwinger and Tomonaga complete quantum electrodynamics.' },
+  'quarks': { y: 1964, when: '1964', k: 'fact', t: 'Murray Gell-Mann and George Zweig propose quarks; SLAC sees signs of them in 1968.' },
+  'cmb': { y: 1965, when: '1965', k: 'fact', t: 'Arno Penzias and Robert Wilson find the cosmic microwave background by accident.' },
+  'electroweak': { y: 1967, when: '1961–1968', k: 'fact', t: 'Glashow, Weinberg and Salam unite the electromagnetic and weak forces.' },
+  'strong-interaction': { y: 1973, when: '1973', k: 'fact', t: 'Gross, Wilczek and Politzer find asymptotic freedom, the key to quantum chromodynamics.' },
+  'standard-model': { y: 1975, when: 'mid 1970s', k: 'fact', t: 'The quark model, QCD and electroweak theory come together as the Standard Model.' },
+  'fundamental-interactions': { y: 1979, when: '1979', k: 'fact', t: 'The Nobel Prize for electroweak unification: three of the four forces now share one framework.' },
+  'gauge-bosons': { y: 1983, when: '1983', k: 'fact', t: 'The W and Z bosons are found at CERN (UA1 and UA2).' },
+  'neutrino-oscillation': { y: 1998, when: '1998', k: 'fact', t: 'Super-Kamiokande shows neutrinos change flavour, so they have mass.' },
+  'higgs-boson': { y: 2012, when: '2012', k: 'fact', t: 'ATLAS and CMS at CERN find the Higgs boson.' },
+  'gravitational-waves': { y: 2015, when: '2015', k: 'fact', t: 'LIGO detects gravitational waves from two merging black holes (announced 2016).' },
+  'grand-unified-theory': { y: 1974, when: 'since 1974', k: 'open', t: 'Georgi and Glashow propose the first grand unified theory; no proton decay has been seen.' },
+  'quantum-gravity': { y: 1930, when: 'since the 1930s', k: 'open', t: 'Nobody has a tested theory that joins general relativity and quantum physics.' },
+  'neutrino-mass': { y: 1998, when: 'since 1998', k: 'open', t: 'We know neutrinos have mass, but not how much, or why so little.' },
+  'baryon-asymmetry': { y: 1967, when: 'since 1967', k: 'open', t: 'Andrei Sakharov sets out what is needed to make more matter than antimatter; the known effects are too small.' }
+};
+/* v0.9 BIOLOGY HISTORY: one dated landmark for every Biology card (the year it was first published, measured or proposed).
+   Same fields as PHYS_HIST. The sources are the card's own sources (BIO[...].src). A publication date is not always a discovery date. */
+const BIO_ERAS = [
+  { id: 'early', name: 'FIRST CLUES', sub: 'before 1900', from: 1600, to: 1900, col: '#ffd36b' },
+  { id: 'early20', name: 'GENES & CELLS', sub: '1900 → 1950', from: 1900, to: 1950, col: '#7fd4ff' },
+  { id: 'molecular', name: 'THE MOLECULES OF LIFE', sub: '1950 → 1975', from: 1950, to: 1975, col: '#5cf0a0' },
+  { id: 'modern', name: 'GENOMES & THE TREE OF LIFE', sub: '1975 → today', from: 1975, to: 2100, col: '#e79cff' },
+  { id: 'open', name: 'STILL OPEN', sub: 'questions nobody has answered yet', open: true, col: '#ff4d5e' }
+];
+const BIO_HIST = {
+  'photosynthesis': { y: 1779, when: '1779', k: 'fact', t: 'Jan Ingenhousz shows green plants need light to make the air fresh (oxygen).' },
+  'cell-theory': { y: 1839, when: '1838–1839', k: 'fact', t: 'Schleiden and Schwann: all plants and animals are made of cells.' },
+  'chnops': { y: 1858, when: '1858', k: 'fact', t: 'August Kekulé shows carbon makes four bonds, the key to the chemistry of life.' },
+  'natural-selection': { y: 1859, when: '1858–1859', k: 'fact', t: 'Darwin and Wallace present natural selection; On the Origin of Species follows.' },
+  'mendel': { y: 1866, when: '1866', k: 'fact', t: 'Gregor Mendel publishes his pea experiments: traits pass on in fixed ratios.' },
+  'cell-division': { y: 1882, when: '1882', k: 'fact', t: 'Walther Flemming describes mitosis, how chromosomes split when a cell divides.' },
+  'cambrian': { y: 1909, when: '1909', k: 'fact', t: 'Charles Walcott finds the Burgess Shale, full of early animal fossils.' },
+  'macromolecules': { y: 1920, when: '1920', k: 'fact', t: 'Hermann Staudinger proposes that giant chain molecules (macromolecules) exist.' },
+  'cell-types': { y: 1925, when: '1925', k: 'fact', t: 'Édouard Chatton names the two kinds of cell: prokaryotic and eukaryotic.' },
+  'human-evolution': { y: 1925, when: '1925', k: 'fact', t: 'Raymond Dart describes the Taung child, an early human relative from Africa.' },
+  'enzymes': { y: 1926, when: '1926', k: 'fact', t: 'James Sumner crystallises urease and shows an enzyme is a protein.' },
+  'homeostasis': { y: 1929, when: '1926–1929', k: 'fact', t: 'Walter Cannon names homeostasis: the body keeps its inside steady.' },
+  'atp': { y: 1929, when: '1929', k: 'fact', t: 'ATP is discovered (Karl Lohmann; Fiske and Subbarow).' },
+  'modern-synthesis': { y: 1942, when: '1942', k: 'fact', t: 'Julian Huxley\'s book names the modern synthesis of genetics and evolution.' },
+  'speciation': { y: 1942, when: '1942', k: 'fact', t: 'Ernst Mayr sets out how new species form when groups stop interbreeding.' },
+  'ecosystems': { y: 1942, when: '1942', k: 'fact', t: 'Raymond Lindeman describes how energy flows between feeding levels.' },
+  'nervous-system': { y: 1952, when: '1952', k: 'fact', t: 'Hodgkin and Huxley explain the nerve signal (action potential) with equations.' },
+  'dna': { y: 1953, when: '1953', k: 'fact', t: 'Watson and Crick propose the double helix, using X-ray data from Franklin and Gosling.' },
+  'central-dogma': { y: 1958, when: '1958', k: 'fact', t: 'Francis Crick states the central dogma: DNA → RNA → protein.' },
+  'carbon-cycle': { y: 1958, when: '1958', k: 'fact', t: 'Charles Keeling starts measuring carbon dioxide in the air at Mauna Loa.' },
+  'genetic-code': { y: 1961, when: '1961', k: 'fact', t: 'Nirenberg and Matthaei read the first codon: UUU means phenylalanine.' },
+  'cellular-respiration': { y: 1961, when: '1961', k: 'fact', t: 'Peter Mitchell proposes how cells make ATP from a flow of protons.' },
+  'endosymbiosis': { y: 1967, when: '1967', k: 'fact', t: 'Lynn Margulis argues mitochondria and chloroplasts were once free-living bacteria.' },
+  'cell-membrane': { y: 1972, when: '1972', k: 'fact', t: 'Singer and Nicolson propose the fluid mosaic model of the cell membrane.' },
+  'mass-extinctions': { y: 1982, when: '1982', k: 'fact', t: 'Raup and Sepkoski pick out the big mass extinctions in the fossil record.' },
+  'rna-world': { y: 1986, when: '1986', k: 'idea', t: 'Walter Gilbert names the RNA world: early life may have run on RNA alone.' },
+  'three-domains': { y: 1990, when: '1990', k: 'fact', t: 'Carl Woese and colleagues propose three domains: bacteria, archaea and eukaryotes.' },
+  'great-oxidation': { y: 2000, when: '2000', k: 'fact', t: 'Sulfur isotopes in old rocks show oxygen first built up about 2.4 billion years ago.' },
+  'luca': { y: 2010, when: '2010', k: 'idea', t: 'A formal statistical test strongly supports one common ancestor for all life.' },
+  'eukaryote-origin': { y: 2023, when: '2023', k: 'idea', t: 'A genome study places eukaryotes within the Asgard archaea.' },
+  'origin-of-life': { y: 1953, when: 'since 1953', k: 'open', t: 'Stanley Miller makes amino acids from simple gases, but how life began is still unknown.' },
+  'life-elsewhere': { y: 1976, when: 'since 1976', k: 'open', t: 'The Viking landers test Mars soil for life; no life has yet been found beyond Earth.' },
+  'consciousness': { y: 2022, when: 'today', k: 'open', t: 'Several theories compete (a 2022 review); none explains how the brain makes experience.' }
+};
 
 for (const n of N) { const x = EXTRA[n.id]; if (x) { if (x.L2 && x.L2.length) n.L2 = x.L2; if (x.L3 && x.L3.length) n.L3 = x.L3; } n.L2 = n.L2 || []; n.L3 = n.L3 || []; }
 /* status is single-source: a node's own data decides its colour in BOTH views. Set solved:true on a node to turn it green with a tick everywhere. */
@@ -4349,8 +4517,12 @@ N.forEach(n => n.p.forEach(p => byId[p].kids.push(n.id)));
     const y0 = Math.max(base, mid - (col.length - 1) / 2 * GAP); col.forEach((n, i) => n.y = y0 + i * GAP); }
   const mn = Math.min(...N.map(n => n.y)); N.forEach(n => n.y = Math.round(n.y - mn + 190));
 })();
-const WM = X(LASTR) + 390, HM = Math.max(...N.map(n => n.y)) + 190; let W = WM, H = HM;
-N.forEach(n => { n.mx = n.x; n.my = n.y; });
+/* v0.9 BOOK: the same placement turned on its side, so From Nothing to Us reads top to bottom like Maths, Physics and Biology.
+   Each stage is a row (Y), the branches sit side by side, and the size levels (BANDS) become bordered panels stacked down the page. */
+const ROWH = 285, TOP0 = 170, BOOKX = 240;
+const Y = r => TOP0 + r * ROWH;
+N.forEach(n => { n.mx = n.y + BOOKX; n.my = Y(n.r); n.x = n.mx; n.y = n.my; });
+const WM = Math.max(...N.map(n => n.mx)) + BOOKX, HM = Y(LASTR) + 330; let W = WM, H = HM;
 for (const id in EL2) { const n = byId[id]; if (!n) continue; n.el = n.el || {}; for (const p in EL2[id]) if (n.p.includes(p) && !n.el[p]) n.el[p] = EL2[id][p]; }
 
 /* size levels = column groups: [label, short label, first stage, last stage, colour, size range] */
@@ -4491,7 +4663,8 @@ defs.innerHTML = Object.entries(SC).map(([k, c]) =>
 
 const bez = (P, t) => { const u = 1 - t; return [u * u * u * P[0] + 3 * u * u * t * P[2] + 3 * u * t * t * P[4] + t * t * t * P[6], u * u * u * P[1] + 3 * u * u * t * P[3] + 3 * u * t * t * P[5] + t * t * t * P[7]]; };
 const halfW = n => Math.max(62, n.name.length * 4.7 + 6, n.line.length * 3.5 + 6);
-const bx = v => v <= 0 ? 0 : Math.max(0, Math.min(WM, X(v))); // map x of a stage boundary
+const bx = v => v <= 0 ? 0 : Math.max(0, Math.min(WM, X(v))); // (old) map x of a stage boundary
+const by = v => v <= 0 ? Y(-0.5) : Math.min(HM, Y(v)); // v0.9 Book: map y of a stage boundary
 const edgeStatus = (n, p) => (n.es && n.es[p.id]) || (RANK[n.s] >= RANK[p.s] ? n.s : p.s);
 
 const TORD = { cosmic: 0, matter: 1, life: 1, chain: 2 };
@@ -4519,34 +4692,35 @@ function nodeSVG(n, i, ring) { const c = SC[n.s], u = n.s === 'u', open = isOpen
   </g>`; }
 const labSVG = (e, c) => `<g class="elab" data-a="${e.a}" data-b="${e.b}" transform="translate(${e.lx.toFixed(1)} ${e.ly.toFixed(1)})"><rect x="${-e.lw / 2}" y="-10" width="${e.lw}" height="20" rx="10" fill="#070d1f" fill-opacity=".92" stroke="${c}" stroke-opacity=".55"/><text y="4.3" text-anchor="middle" font-size="12" fill="#dce8f8">${esc(e.lab)}</text></g>`;
 
-/* ============ MAP SCENE (left → right) ============ */
+/* ============ BOOK SCENE (v0.9: top → bottom; was the left → right Map) ============ */
 function buildMap() { N.forEach(n => { n.x = n.mx; n.y = n.my; });
 const boxes = []; // obstacles for edge labels
 N.forEach(n => boxes.push([n.x - halfW(n), n.y - 50, n.x + halfW(n), n.y + 108]));
 const EDGES = [];
 for (const n of N) for (const pid of n.p) {
   const p = byId[pid], s = edgeStatus(n, p);
-  let P; if (n.r === p.r) { const x = p.x + 44, bow = 95; P = [x, p.y + 8, x + bow, p.y + 8, x + bow, n.y - 8, n.x + 46, n.y - 8]; } // same stage: small arc on the right
-  else { const x1 = p.x + 44, y1 = p.y, x2 = n.x - 50, y2 = n.y, dx = Math.max(40, (x2 - x1) * 0.5); P = [x1, y1, x1 + dx, y1, x2 - dx, y2, x2, y2]; }
+  let P; if (n.r === p.r) { const sg = n.x >= p.x ? 1 : -1, x1 = p.x + 44 * sg, x2 = n.x - 48 * sg, dx = (x2 - x1) * 0.35; P = [x1, p.y, x1 + dx, p.y, x2 - dx, n.y, x2, n.y]; } // same stage: side by side
+  else { const x1 = p.x, y1 = p.y + 112, x2 = n.x, y2 = n.y - 50, dy = Math.max(40, (y2 - y1) * 0.5); P = [x1, y1, x1, y1 + dy, x2, y2 - dy, x2, y2]; }
   EDGES.push({ a: pid, b: n.id, s, P, lab: n.el && n.el[pid], dr: n.r - p.r });
 }
 // long lines (4+ stages) are drawn as a short "← from …" chip left of the child, so they do not cross the whole map
 const LONG = 4;
-EDGES.forEach(e => { e.long = e.dr >= LONG; if (e.long) e.lab = '← from ' + byId[e.a].name + (e.lab ? ': ' + e.lab : ''); });
+EDGES.forEach(e => { e.long = e.dr >= LONG; if (e.long) e.lab = '↑ from ' + byId[e.a].name + (e.lab ? ': ' + e.lab : ''); });
 const overlap = b => boxes.reduce((m, o) => m + Math.max(0, Math.min(b[2], o[2]) - Math.max(b[0], o[0])) * Math.max(0, Math.min(b[3], o[3]) - Math.max(b[1], o[1])), 0);
 for (const e of EDGES) { if (!e.lab) continue;
   const w = Math.min(260, e.lab.length * 6.4 + 16), h = 19; let cands = [];
-  if (e.long) { const x2 = e.P[6], y2 = e.P[7]; for (const dx of [20, 70, 130]) for (const dy of [0, -26, 26, -52, 52, -80, 80, -110, 110]) cands.push([x2 - 20 - w / 2 - dx, y2 + dy]); }
-  else { let t0 = .5; if (e.dr > 1) { let lo = 0, hi = 1; const tx0 = e.P[6] - COL * .45; for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (bez(e.P, m)[0] < tx0) lo = m; else hi = m; } t0 = lo; }
+  if (e.long) { const x2 = e.P[6], y2 = e.P[7]; for (const dy of [12, 34, 58]) for (const dx of [0, -70, 70, -140, 140, -210, 210]) cands.push([x2 + dx, y2 - 14 - dy]); }
+  else { let t0 = .5; if (e.dr > 1) { let lo = 0, hi = 1; const ty0 = e.P[7] - ROWH * .45; for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (bez(e.P, m)[1] < ty0) lo = m; else hi = m; } t0 = lo; }
     const ts = []; for (let t = .08; t < .93; t += .03) ts.push(t); ts.sort((a, b) => Math.abs(a - t0) - Math.abs(b - t0)); cands = ts.map(t => bez(e.P, t)); }
   let best = null, bo = 1e18; for (const [x, y] of cands) { const b = [x - w / 2 - 3, y - h / 2 - 3, x + w / 2 + 3, y + h / 2 + 3], o = overlap(b); if (o < bo) { bo = o; best = [x, y, b]; if (!o) break; } }
   boxes.push(best[2]); e.lx = best[0]; e.ly = best[1]; e.lw = w;
-  if (e.long) { const x1 = e.lx + w / 2, x2 = e.P[6], y2 = e.P[7], dx = Math.max(12, (x2 - x1) * .5); e.P = [x1, e.ly, x1 + dx, e.ly, x2 - dx, y2, x2, y2]; } }
+  if (e.long) { const y1 = e.ly + h / 2, x1 = e.lx, x2 = e.P[6], y2 = e.P[7], dy = Math.max(10, (y2 - y1) * .5); e.P = [x1, y1, x1, y1 + dy, x2, y2 - dy, x2, y2]; } }
 
 let bands = '', edges = '', labs = '', nodes = '';
-BANDS.forEach(([name, , a, b, c, sz], i) => { const x0 = bx(a), x1 = bx(b);
-  bands += `<g class="band"><rect x="${x0}" y="-600" width="${x1 - x0}" height="${H + 1200}" fill="${c}" opacity="${i % 2 ? .035 : .055}"/><line y1="-600" y2="${H + 600}" x1="${x0}" x2="${x0}" stroke="${c}" stroke-opacity=".25" stroke-dasharray="4 8"/>` +
-    `<text class="mapband" x="${(x0 + x1) / 2}" y="-35" text-anchor="middle" fill="${c}">${esc(name)}</text><text class="mapbandsz" x="${(x0 + x1) / 2}" y="-10" text-anchor="middle" fill="${c}">${esc(sz)}</text>`;
+// v0.9 Book: each size level is a bordered panel, stacked top to bottom (like the Physics and Biology panels), its name top left
+BANDS.forEach(([name, , a, b, c, sz], i) => { const y0 = by(a) + 8, y1 = by(b) - 8;
+  bands += `<g class="band"><rect x="40" y="${y0}" width="${WM - 80}" height="${y1 - y0}" rx="30" fill="${c}" fill-opacity="${i % 2 ? .035 : .055}" stroke="${c}" stroke-opacity=".5" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-dasharray="6 7"/>` +
+    `<text class="mapband" x="84" y="${y0 + 46}" text-anchor="start" fill="${c}">${esc(name)}</text><text class="mapbandsz" x="86" y="${y0 + 72}" text-anchor="start" fill="${c}">${esc(sz)}</text>`;
   bands += '</g>'; });
 // lane names: ONE label per lane, beside the lane's first nodes, in a spot clear of nodes, line labels and lines
 const LANE_FROM = { matter: 1 }; // skip the shared root ("Before the Big Bang?") for matter
@@ -4556,11 +4730,11 @@ for (const ln in LANES) { const txt = LANES[ln][0], tw = txt.length * 10.6, th =
   let best = null, bs = 1e18;
   ns.forEach((n, k) => { for (const [dy, pen] of [[-86, 0], [-112, 30], [132, 15], [156, 45]]) for (const [ax, pa] of [[-tw / 2, 0], [-60, 10], [60 - tw, 10]]) {
     const x0 = n.x + ax, y = n.y + dy, b = [x0 - 6, y - th - 4, x0 + tw + 6, y + 6];
-    if (b[1] < 80) continue; // keep clear of the column titles at the top of the map
+    if (b[1] < 60) continue;
     let sc = overlap(b) * 4 + k * 60 + pen + pa;
     for (const n2 of N) { const r = Math.max(76, halfW(n2)); sc += Math.max(0, Math.min(b[2], n2.x + r) - Math.max(b[0], n2.x - r)) * Math.max(0, Math.min(b[3], n2.y + 108) - Math.max(b[1], n2.y - 76)) * 4; }
     for (const pts of edgePts) for (const [px, py] of pts) if (px > b[0] && px < b[2] && py > b[1] && py < b[3]) sc += 120;
-    for (const B of BANDS) { const xb = bx(B[2]); if (xb > b[0] && xb < b[2]) sc += 400; }
+    for (const B of BANDS) { const yb = by(B[2]); if (yb > b[1] - 8 && yb < b[3] + 8) sc += 400; }
     if (sc < bs) { bs = sc; best = [x0, y]; } } });
   if (best) bands += `<g class="band"><text class="lane" x="${best[0].toFixed(1)}" y="${best[1].toFixed(1)}" text-anchor="start">${esc(txt)}</text></g>`; }
 EDGES.forEach((e, i) => { const P = e.P, c = SC[e.s];
@@ -4714,7 +4888,7 @@ function drawSky() { const d = Math.min(2, devicePixelRatio || 1), w = innerWidt
 /* ============ PAN / ZOOM ============ */
 let s = 1, tx = 0, ty = 0, anim = null, sel = null, cullQ = false, movT = 0;
 const MAXS = 3, UI = () => typeof v8UI === 'function' && innerWidth <= 600 ? v8UI() : innerWidth <= 600 ? 112 : 112; // header only: no separate scale strip
-const minS = () => Math.min(innerWidth / (W + 60), (innerHeight - UI()) / (H + 40)) * 0.96;
+const minS = () => Math.min(innerWidth / (W + 60), (innerHeight - UI()) / (H + 40)) * (typeof DOMAIN !== 'undefined' && DOMAIN === 'maths' && VIEW === 'circle' ? 0.66 : 0.96); // v0.9b: the Maths Ring zooms out a little further, so its section names have room round the edge
 function clamp() { const vw = innerWidth, vh = innerHeight, ww = W * s, hh = H * s, top = UI();
   // v0.3c: when the whole map fits, it may still slide until its edge reaches the middle, so wheel/pinch zoom stays on the pointer
   tx = ww < vw ? Math.min(Math.max(tx, vw / 2 - ww), vw / 2) : Math.min(Math.max(tx, vw - ww - 120), 120);
@@ -4741,6 +4915,8 @@ function animTo(s2, tx2, ty2, ms = 550, done) { cancelAnimationFrame(anim); cons
   anim = requestAnimationFrame(stepA); }
 // start view: the left (base) end of the map at a readable zoom
 function homeView() { if (VIEW === 'circle') return innerWidth <= 600 && typeof v8CircleHome === 'function' ? v8CircleHome() : fitView();
+  { const vw = innerWidth, top = UI(), s2 = vw <= 600 ? 0.5 : 0.72, keyW = vw <= 600 ? 0 : 300, cx = byId.nothing.x;   // v0.9 Book: start at the top panel, centred on the first card
+    return [s2, (vw - keyW) / 2 - cx * s2, top + 14 - (Y(-0.5) + 10) * s2]; }
   const vw = innerWidth, vh = innerHeight, top = UI(), ns = N.filter(n => n.r <= 2), y0 = Math.min(...ns.map(n => n.y)) - 100, y1 = Math.max(...ns.map(n => n.y)) + 120;
   const s2 = vw <= 600 ? 0.55 : Math.min(0.85, Math.max(0.6, (vh - top - 20) / (y1 - y0))), cy = vw <= 600 ? byId.nothing.y + 60 : (y0 + y1) / 2;
   return [s2, 16 - (X(0) - 110) * s2, top + (vh - top) / 2 - cy * s2]; }
@@ -5529,7 +5705,7 @@ function buildMathRing() {
     const c=+key, g=MATH.find(n=>n.col===c); if(!g)continue; const a=(g.sectorA+g.sectorB)/2, rr=MR.R*1.31; // v0.3c: each name sits over its own panel's arc
     const x=MR.CX+Math.cos(a)*rr*MR.EX,y=MR.CY+Math.sin(a)*rr*MR.EY;
     let degrees=a*180/Math.PI+90;if(degrees>90&&degrees<270)degrees-=180;
-    deco+=`<text class="cband" transform="translate(${x} ${y}) rotate(${degrees})" text-anchor="middle" fill="${meta[2]}" stroke="#04060f" stroke-width="5" paint-order="stroke">${String(c+1).padStart(2,'0')} · ${esc(meta[0])}</text>`;
+    deco+=`<text class="cband" data-ra="${a.toFixed(4)}" data-span="${(g.sectorB-g.sectorA).toFixed(4)}" data-rr="${(rr*Math.min(MR.EX,MR.EY)).toFixed(1)}" data-rx="${x.toFixed(1)}" data-ry="${y.toFixed(1)}" transform="translate(${x} ${y}) rotate(${degrees})" text-anchor="middle" fill="${meta[2]}" stroke="#04060f" stroke-width="5" paint-order="stroke">${String(c+1).padStart(2,'0')} · ${esc(meta[0])}</text>`;
   }
   deco+=`<circle cx="${MR.CX}" cy="${MR.CY}" r="475" fill="url(#usGlow)" opacity=".5"/><text class="cq" x="${MR.CX}" y="${MR.CY-45}" text-anchor="middle">Known → new frontiers</text><text class="cq2" x="${MR.CX}" y="${MR.CY+28}" text-anchor="middle">Count · prove · model · compute · discover</text><text class="cq2" x="${MR.CX}" y="${MR.CY+69}" text-anchor="middle">One field. Many branches. Open questions remain.</text>`;
   const edges=links.map(e=>{const P=e.P;return `<path class="edge${e.far?' quiet':''}" data-a="${e.a}" data-b="${e.b}" d="M${P[0]} ${P[1]} C${P[2]} ${P[3]} ${P[4]} ${P[5]} ${P[6]} ${P[7]}" fill="none" stroke="${SC[e.s]}" stroke-opacity="${e.s==='k'?'.6':'.8'}" stroke-width="2.1" ${e.s==='k'&&!e.far?'':'stroke-dasharray="'+(e.far?'2 5':'7 6')+'"'} marker-end="url(#arr-${e.s})"/>`;}).join('');
@@ -5759,7 +5935,7 @@ window.mathHistoryDebug=()=>({nodes:MATH.length,dated:Object.keys(MATH_HISTORY).
 /* v0.5 speed (v0.6: + Biology): each explorer (Virtual Cell, Human Body, Physics, Biology, Big Bang to Today) loads its code
    only the first time it is opened. index.html fetches js/<name>.js; the self-contained TEST file carries the same code inside
    <script type="text/plain" id="lazy-<name>"> and runs it from there. Behaviour after loading is unchanged. */
-const LAZY=(()=>{const done={},wait={},V='e7d0de89e0';
+const LAZY=(()=>{const done={},wait={},V='7cae434edb';
  function need(name){
   if(done[name])return Promise.resolve();if(wait[name])return wait[name];
   wait[name]=new Promise((res,rej)=>{const el=document.createElement('script'),inl=document.getElementById('lazy-'+name);
@@ -5776,10 +5952,10 @@ const SCREENS=(()=>{
  let domain='universe',view='home',mapContext={domain:'universe',view:'map'};
  const main=document.getElementById('knowledgeScreen'),hometop=document.getElementById('hometop');
  const params=()=>new URLSearchParams(location.hash.slice(1));
- const labels={map:'Map',circle:'Ring',history:'History',cell:'Virtual Cell',body:'Human Body',pt:'Elements',physics:'Physics',biology:'Biology',timeline:'Big Bang to Today',cosmos:'Universe',gaps:'Open questions'};
- const viewers=['cell','body','physics','biology','timeline','cosmos','gaps'];
+ const labels={map:'Book',circle:'Ring',sect:'Map',history:'History',cell:'Virtual Cell',body:'Human Body',pt:'Elements',physics:'Physics',biology:'Biology',timeline:'Big Bang to Today',cosmos:'Universe',gaps:'Open questions'};
+ const viewers=['cell','body','physics','biology','timeline','cosmos','gaps','sect'];
  // v0.5: each explorer's code is loaded the first time it is opened (LAZY); until then its global (VPLANET…) does not exist
- const VIEWER=n=>({cell:typeof VCELL!=='undefined'?VCELL:null,body:typeof VBODY!=='undefined'?VBODY:null,physics:typeof VPHYS!=='undefined'?VPHYS:null,biology:typeof VBIO!=='undefined'?VBIO:null,timeline:typeof VTIME!=='undefined'?VTIME:null,cosmos:typeof VUNI!=='undefined'?VUNI:null,gaps:typeof VGAPS!=='undefined'?VGAPS:null})[n];
+ const VIEWER=n=>({cell:typeof VCELL!=='undefined'?VCELL:null,body:typeof VBODY!=='undefined'?VBODY:null,physics:typeof VPHYS!=='undefined'?VPHYS:null,biology:typeof VBIO!=='undefined'?VBIO:null,timeline:typeof VTIME!=='undefined'?VTIME:null,cosmos:typeof VUNI!=='undefined'?VUNI:null,gaps:typeof VGAPS!=='undefined'?VGAPS:null,sect:typeof VSECT!=='undefined'?VSECT:null})[n];
  let showTok=0;
  const isMapView=v=>v==='map'||v==='circle';
  function closeAll(keepHome){
@@ -5806,24 +5982,39 @@ const SCREENS=(()=>{
  }
  /* v0.8: each section is one item; Map / Ring / History live in the top bar (FNTU and Maths). One fixed order, never reshuffled. */
  const SECTIONS=[
-   {name:'From Nothing to Us',items:[['universe','map','From Nothing to Us','✦'],['universe','pt','All the Elements','▦']]},
+   {name:'From Nothing to Us',items:[['universe','map','From Nothing to Us','✦','fntu'],['universe','pt','All the Elements','▦']]},
    {name:'Universe',items:[['universe','cosmos','Universe · real images in 3D','🔭']]},
-   {name:'Physics',items:[['universe','physics','Physics · forces, particles, light','⚛']]},
-   {name:'Biology',items:[['universe','biology','Biology · cells, evolution, life','🌿'],['universe','cell','Virtual Cell',dnaSVG()],['universe','body','Human Body',heartSVG()]]},
-   {name:'Maths',items:[['maths','map','Maths','∑']]},
+   {name:'Physics',items:[['universe','physics','Physics · forces, particles, light','⚛','physics']]},
+   {name:'Biology',items:[['universe','biology','Biology · cells, evolution, life','🌿','biology'],['universe','cell','Virtual Cell',dnaSVG()],['universe','body','Human Body',heartSVG()]]},
+   {name:'Maths',items:[['maths','map','Maths','∑','maths']]},
    {name:'Open questions',items:[['universe','gaps','Open questions · the gaps','❓']]}
  ];
- const sectionOf=()=>view==='home'?'':view==='physics'?'Physics':view==='cosmos'?'Universe':view==='gaps'?'Open questions':['biology','cell','body'].includes(view)?'Biology':view==='history'||DOMAIN==='maths'?'Maths':'From Nothing to Us';
+ /* v0.9: every section has History + Book · Ring · Map. curSec / curMode say where we are; goSec opens a section's view
+    (or the one you had open last time: remembered on this device, Book on a first visit). */
+ let sectCtx={sec:'physics',mode:'map'};
+ const SECV={fntu:{history:['universe','timeline'],book:['universe','map'],ring:['universe','circle'],map:['universe','sect',{sec:'fntu',mode:'map'}]},
+   maths:{history:['maths','history'],book:['maths','map'],ring:['maths','circle'],map:['universe','sect',{sec:'maths',mode:'map'}]},
+   physics:{history:['universe','sect',{sec:'physics',mode:'history'}],book:['universe','physics'],ring:['universe','sect',{sec:'physics',mode:'ring'}],map:['universe','sect',{sec:'physics',mode:'map'}]},
+   biology:{history:['universe','sect',{sec:'biology',mode:'history'}],book:['universe','biology'],ring:['universe','sect',{sec:'biology',mode:'ring'}],map:['universe','sect',{sec:'biology',mode:'map'}]}};
+ const SECNAME={fntu:'From Nothing to Us',maths:'Maths',physics:'Physics',biology:'Biology'};
+ const curSec=()=>view==='sect'?sectCtx.sec:view==='physics'?'physics':view==='biology'?'biology':view==='timeline'?'fntu':view==='history'?'maths':isMapView(view)?(domain==='maths'?'maths':'fntu'):null;
+ const curMode=()=>view==='sect'?sectCtx.mode:view==='timeline'||view==='history'?'history':view==='circle'?'ring':curSec()?'book':null;
+ const VKEY='ea09-view-';
+ const lastMode=sec=>{try{const m=localStorage.getItem(VKEY+sec);return ['history','book','ring','map'].includes(m)?m:'book';}catch(e){return 'book';}};
+ function remember(){const sc=curSec(),m=curMode();if(sc&&m)try{localStorage.setItem(VKEY+sc,m);}catch(e){}}
+ function goSec(sec,mode,extra={}){if(!SECV[sec])return;mode=mode||lastMode(sec);const [d,v,o]=SECV[sec][mode]||SECV[sec].book;return show(d,v,{...(o||{}),...extra});}
+ const sectionOf=()=>view==='home'?'':view==='sect'?SECNAME[sectCtx.sec]:view==='physics'?'Physics':view==='cosmos'?'Universe':view==='gaps'?'Open questions':['biology','cell','body'].includes(view)?'Biology':view==='history'||DOMAIN==='maths'?'Maths':'From Nothing to Us';
  const menuOpen=new Set();
  function paintMenu(){
    const cur=sectionOf(),curD=view==='history'?'maths':domain;
-   const isOn=([d,v])=>{
+   const isOn=([d,v,,,sc])=>{
      if(view==='home')return false;
+     if(sc)return curSec()===sc;
      if(d==='universe'&&v==='map')return view==='timeline'||(curD==='universe'&&(view==='map'||view==='circle'));
      if(d==='maths'&&v==='map')return view==='history'||(curD==='maths'&&(view==='map'||view==='circle'));
      return d===curD&&v===view;
    };
-   const item=([d,v,label,icon],sub)=>{const on=isOn([d,v]);return `<button role="menuitem" data-screen="${d}" data-view="${v}" class="${on?'on':''}${sub?' xsubi':''}"${on?' aria-current="page"':''}><i>${icon}</i>${label}${on?' <span class="xcur">current</span>':''}</button>`;};
+   const item=([d,v,label,icon,sc],sub)=>{const on=isOn([d,v,label,icon,sc]);return `<button role="menuitem" data-screen="${d}" data-view="${v}"${sc?` data-sec="${sc}"`:''} class="${on?'on':''}${sub?' xsubi':''}"${on?' aria-current="page"':''}><i>${icon}</i>${label}${on?' <span class="xcur">current</span>':''}</button>`;};
    const parent=p=>{const inside=p.sub.some(isOn),open=menuOpen.has(p.par)||inside;
      return `<button role="menuitem" class="xpar${inside?' on':''}" data-par="${p.par}" aria-expanded="${open}" aria-controls="xsub-${p.par}"><i>${p.icon}</i>${p.label}${inside?' <span class="xcur">current</span>':''}<span class="xarr" aria-hidden="true">${open?'▾':'▸'}</span></button><div class="xsubs" id="xsub-${p.par}"${open?'':' hidden'}>${p.sub.map(x=>item(x,1)).join('')}</div>`;};
    const groups=SECTIONS;
@@ -5832,8 +6023,9 @@ const SCREENS=(()=>{
  }
  function paintControls(){
    const maps=isMapView(view);
-   const switcher=maps||view==='timeline'||view==='history';
-   const onHist=view==='timeline'||view==='history';
+   const sc=curSec(),md=curMode();
+   const switcher=!!sc;
+   const onHist=md==='history';
    document.body.dataset.screen=view==='home'?'home':view==='history'?'history':domain;
    document.body.dataset.view=view;
    main.dataset.view=view;
@@ -5842,14 +6034,17 @@ const SCREENS=(()=>{
    // v0.8: the top bar keeps one layout everywhere. Search shows on Map, Ring and both History pages; elsewhere its slot stays as empty space.
    {const sr=document.getElementById('search'),want=maps||view==='history'||view==='timeline';sr.hidden=false;sr.classList.toggle('slotEmpty',!want);if(!want)sr.classList.remove('wide');}
    const histb=document.getElementById('histb'),vsw=document.getElementById('vsw');
-   const mathsSw=view==='history'||((onHist?domain:DOMAIN)==='maths');
-   histb.hidden=!switcher;histb.title=onHist?(mathsSw?'Maths History':'From Nothing to Us History (Big Bang to Today)'):(mathsSw?'Open Maths History':'Open From Nothing to Us History (Big Bang to Today)');
+   const HT={fntu:'From Nothing to Us History (Big Bang to Today)',maths:'Maths History',physics:'Physics History',biology:'Biology History'}[sc]||'History';
+   histb.hidden=!switcher;histb.title=onHist?HT:'Open '+HT;
    histb.classList.toggle('on',onHist);if(onHist)histb.setAttribute('aria-current','page');else histb.removeAttribute('aria-current');
    vsw.hidden=!switcher;
-   if(onHist){vsw.classList.remove('isCircle');vsw.querySelectorAll('span[data-v]').forEach(sp=>sp.classList.remove('on'));}
+   paintVsw();
    document.querySelector('.zoom').style.visibility=maps?'':'hidden';
    paintMenu();updateHomeControl();
  }
+ function paintVsw(){const vsw=document.getElementById('vsw'),md=curMode();vsw.classList.remove('isCircle');
+   vsw.querySelectorAll('span[data-v]').forEach(sp=>{const on=sp.dataset.v===md;sp.classList.toggle('on',on);if(on)sp.setAttribute('aria-current','page');else sp.removeAttribute('aria-current');});
+   const sc=curSec();if(sc)vsw.setAttribute('aria-label',`${SECNAME[sc]}: showing ${md==='history'?'History':md==='ring'?'Ring':md==='map'?'Map':'Book'}. Choose Book, Ring or Map (Enter moves to the next)`);}
  function route(d,v,node){
    let hash;
    if(node&&(v==='map'||v==='circle'))hash=(d==='maths'?'#m=':'#n=')+encodeURIComponent(node)+(v==='circle'?'&tv=circle':'');
@@ -5860,6 +6055,7 @@ const SCREENS=(()=>{
    else if(v==='biology')hash=node?'#b='+encodeURIComponent(node):'#biology=1';
    else if(v==='timeline')hash=node?'#t='+encodeURIComponent(node):'#timeline=1';
    else if(v==='cosmos')hash=node?'#u='+encodeURIComponent(node):'#universe=1';
+   else if(v==='sect')hash='#sv='+sectCtx.sec+'-'+sectCtx.mode+(node?'&c='+encodeURIComponent(node):'');
    else if(v==='gaps')hash=location.hash.startsWith('#gaps=1')?location.hash:'#gaps=1';
    else if(['cell','body'].includes(v))hash='#'+v+'=1';
    else hash='#screen='+d+'&view='+(v==='circle'?'ring':'map');
@@ -5883,6 +6079,7 @@ const SCREENS=(()=>{
    if(d!=='universe'&&d!=='maths')throw Error('Unknown screen');
    if(d==='maths'&&!['map','circle','history'].includes(v))v='map';
    if(d==='universe'&&!['map','circle',...viewers,'pt'].includes(v))v='map';
+   if(v==='sect')sectCtx={sec:['fntu','maths','physics','biology'].includes(opts.sec)?opts.sec:'physics',mode:['map','ring','history'].includes(opts.mode)?opts.mode:'map'};
    const tok=++showTok;
    const beforeMap={domain:DOMAIN,view:VIEW};
    if(view==='history')beforeMap.domain='maths';
@@ -5910,6 +6107,7 @@ const SCREENS=(()=>{
      if(v==='timeline')VTIME.init(document.body,{focus:opts.focus,onClose:closer});
      if(v==='cosmos')VUNI.init(document.body,{focus:opts.focus,onClose:closer});
      if(v==='gaps')VGAPS.init(document.body,{onClose:closer});
+     if(v==='sect')VSECT.init(document.body,{sec:sectCtx.sec,mode:sectCtx.mode,focus:opts.focus,onClose:closer});
      };
      const chunk=viewers.includes(v)?v:null;
      if(chunk&&!LAZY.has(chunk)){ // v0.5: first visit loads this explorer's code, then opens it exactly as before
@@ -5919,7 +6117,7 @@ const SCREENS=(()=>{
      if(v==='pt'){document.querySelector('#pt .in').style.visibility='visible';openPT();if(opts.element)ptShow(+opts.element);}
    }
    mapContext.view=VIEW==='circle'||mapContext.view==='circle'?mapContext.view:'map';
-   paintControls();route(view==='history'?'maths':domain,v,opts.node||opts.id||(v==='physics'||v==='biology'||v==='timeline'||v==='cosmos'?opts.focus:undefined));EF.paintSeen();if(isMapView(view)&&typeof keyFirst==='function')keyFirst(domain+'-'+view);
+   paintControls();remember();route(view==='history'?'maths':domain,v,opts.node||opts.id||(v==='physics'||v==='biology'||v==='timeline'||v==='cosmos'||v==='sect'?opts.focus:undefined));EF.paintSeen();if(isMapView(view)&&typeof keyFirst==='function')keyFirst(domain+'-'+view);
    if(view==='home')hometop.blur();
    else if(view==='history')document.getElementById('mhClose').focus({preventScroll:true});
    else if(isMapView(view)){
@@ -5967,6 +6165,7 @@ const SCREENS=(()=>{
    if(h.has('timeline')||h.has('t'))return show('universe','timeline',{focus:h.get('t')||undefined,hash:false});
    if(h.has('universe')||h.has('u'))return show('universe','cosmos',{focus:h.get('u')||undefined,hash:false});
    if(h.has('gaps'))return show('universe','gaps',{hash:false});
+   if(h.has('sv')){const [sc,md]=String(h.get('sv')).split('-');if(SECV[sc]&&SECV[sc][md]){const [d,v,o]=SECV[sc][md];return show(d,v,{...(o||{}),focus:h.get('c')||undefined,hash:false});}}
    if(h.has('ptable'))return show('universe','pt',{element:h.get('el'),hash:false});
    if(h.has('l')){const [a,b]=String(h.get('l')).split('>'),L=a&&b&&typeof linkInfo==='function'?linkInfo(a,b):null;
      if(L){show(L.kind==='maths'?'maths':'universe',h.get('tv')==='circle'?'circle':'map',{hash:false});
@@ -5978,11 +6177,11 @@ const SCREENS=(()=>{
  }
  hometop.onclick=showHome;
  document.getElementById('ptbtn').onclick=e=>{e.stopPropagation();toggleMenu();};
- document.getElementById('histb').onclick=()=>DOMAIN==='maths'?show('maths','history'):show('universe','timeline');
- document.getElementById('vsw').onclick=e=>{const b=e.target.closest('span[data-v]');if(b)show(DOMAIN,b.dataset.v);};
- document.getElementById('vsw').onkeydown=e=>{if(['Enter',' '].includes(e.key)&&e.target.id==='vsw'){e.preventDefault();show(DOMAIN,VIEW==='map'?'circle':'map');}};
- document.getElementById('homeScreen').onclick=e=>{const b=e.target.closest('.homeTile[data-screen]');if(b)show(b.dataset.screen,b.dataset.view);}; // v0.4: only the tiles open a page (a click in the search box must not reset Home)
- document.getElementById('xmenu').onclick=e=>{if(e.target.closest('[data-home]')){closeMenu();return showHome();}const par=e.target.closest('[data-par]');if(par){e.stopPropagation();const k=par.dataset.par,open=par.getAttribute('aria-expanded')!=='true';if(open)menuOpen.add(k);else menuOpen.delete(k);const sub=document.getElementById('xsub-'+k);sub.hidden=!open;par.setAttribute('aria-expanded',open);par.querySelector('.xarr').textContent=open?'▾':'▸';if(open){const f=sub.querySelector('[data-view]');if(f&&e.detail===0)f.focus();}return;}const b=e.target.closest('[data-view]');if(b){closeMenu();show(b.dataset.screen,b.dataset.view);}};
+ document.getElementById('histb').onclick=()=>goSec(curSec()||'fntu','history');
+ document.getElementById('vsw').onclick=e=>{const b=e.target.closest('span[data-v]');if(b&&curSec())goSec(curSec(),b.dataset.v);};
+ document.getElementById('vsw').onkeydown=e=>{if(['Enter',' '].includes(e.key)&&e.target.id==='vsw'&&curSec()){e.preventDefault();const O=['book','ring','map'],m=curMode();goSec(curSec(),O[(O.indexOf(m)+1)%3]);}};
+ document.getElementById('homeScreen').onclick=e=>{const b=e.target.closest('.homeTile[data-screen]');if(b){if(b.dataset.sec)goSec(b.dataset.sec);else show(b.dataset.screen,b.dataset.view);}}; // v0.4: only the tiles open a page (a click in the search box must not reset Home)
+ document.getElementById('xmenu').onclick=e=>{if(e.target.closest('[data-home]')){closeMenu();return showHome();}const par=e.target.closest('[data-par]');if(par){e.stopPropagation();const k=par.dataset.par,open=par.getAttribute('aria-expanded')!=='true';if(open)menuOpen.add(k);else menuOpen.delete(k);const sub=document.getElementById('xsub-'+k);sub.hidden=!open;par.setAttribute('aria-expanded',open);par.querySelector('.xarr').textContent=open?'▾':'▸';if(open){const f=sub.querySelector('[data-view]');if(f&&e.detail===0)f.focus();}return;}const b=e.target.closest('[data-view]');if(b){closeMenu();if(b.dataset.sec)goSec(b.dataset.sec);else show(b.dataset.screen,b.dataset.view);}};
  document.getElementById('pt').querySelector('.close').onclick=()=>show('universe','map');
  document.addEventListener('pointerdown',e=>{const m=document.getElementById('xmenu');if(m.classList.contains('on')&&!m.contains(e.target)&&!document.getElementById('ptbtn').contains(e.target))closeMenu();});
  document.addEventListener('click',e=>{const b=e.target.closest('.vback');if(b){e.preventDefault();e.stopImmediatePropagation();show(mapContext.domain,mapContext.view,{hash:true});}},true);
@@ -5996,7 +6195,7 @@ const SCREENS=(()=>{
  addEventListener('hashchange',fromHash);
  const bar=document.getElementById('atlasBar'),barH=()=>document.documentElement.style.setProperty('--barH',Math.ceil(bar.getBoundingClientRect().height)+'px');
  if(window.ResizeObserver)new ResizeObserver(barH).observe(bar);addEventListener('resize',barH);barH();
- return {show,showHome,paint:paintControls,fromHash,get domain(){return domain},get view(){return view},hash:(d,v)=>`#screen=${d}&view=${v==='circle'?'ring':'map'}`,close:showHome};
+ return {show,showHome,goSec,paint:paintControls,paintVsw,fromHash,get domain(){return domain},get view(){return view},get sec(){return curSec()},get mode(){return curMode()},lastMode,hash:(d,v)=>`#screen=${d}&view=${v==='circle'?'ring':'map'}`,close:showHome};
 })();
 
 /* Echo Atlas Home. Tile images are real screenshots of each screen, captured from the built
@@ -6007,10 +6206,10 @@ const HOME_THUMBS=/*__THUMBMAP__*/{"biology": "thumbs/biology.webp", "body": "th
   const GLYPH={'⚛':atomSVG,dna:dnaSVG,heart:heartSVG};
   const icon=(id,col)=>GLYPH[id]?`<svg class="tileIcon" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="17" fill="#071324" stroke="${col}" stroke-width="1.7"/><g transform="translate(9 9)" color="${col}">${GLYPH[id](24,true)}</g></svg>`:`<svg class="tileIcon" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="17" fill="#071324" stroke="${col}" stroke-width="1.7"/><text x="21" y="27" text-anchor="middle" fill="${col}" font-size="17" font-family="Georgia,serif">${esc(id)}</text></svg>`;
   const T=[
-    {id:'fntu-map',d:'universe',v:'map',title:'From Nothing to Us',kicker:'SECTION · THE ORIGINAL JOURNEY',desc:'93 linked ideas: quantum questions → Big Bang → stars → life → us.',wide:1,icon:'✦',col:'#ffd36b'},
-    {id:'maths-map',d:'maths',v:'map',title:'Maths',kicker:'SECTION · COUNTING → OPEN FRONTIERS',desc:'86 ideas in 16 branches, from counting to open problems.',wide:1,icon:'∑',col:'#4ff3e3'},
-    {id:'physics',d:'universe',v:'physics',title:'Physics',kicker:'SECTION · FORCES · PARTICLES · LIGHT',desc:'32 ideas, from Newton\'s laws to the Standard Model and the open questions.',wide:1,icon:'✷',col:'#e79cff'},
-    {id:'biology',d:'universe',v:'biology',title:'Biology',kicker:'SECTION · CELLS · EVOLUTION · LIFE',desc:'33 ideas, from DNA and cells to evolution, ecosystems and the open questions.',wide:1,icon:'🌿',col:'#3fe0c0'},
+    {id:'fntu-map',d:'universe',v:'map',sec:'fntu',title:'From Nothing to Us',kicker:'SECTION · THE ORIGINAL JOURNEY',desc:'93 linked ideas: quantum questions → Big Bang → stars → life → us.',wide:1,icon:'✦',col:'#ffd36b'},
+    {id:'maths-map',d:'maths',v:'map',sec:'maths',title:'Maths',kicker:'SECTION · COUNTING → OPEN FRONTIERS',desc:'86 ideas in 16 branches, from counting to open problems.',wide:1,icon:'∑',col:'#4ff3e3'},
+    {id:'physics',d:'universe',v:'physics',sec:'physics',title:'Physics',kicker:'SECTION · FORCES · PARTICLES · LIGHT',desc:'32 ideas, from Newton\'s laws to the Standard Model and the open questions.',wide:1,icon:'✷',col:'#e79cff'},
+    {id:'biology',d:'universe',v:'biology',sec:'biology',title:'Biology',kicker:'SECTION · CELLS · EVOLUTION · LIFE',desc:'33 ideas, from DNA and cells to evolution, ecosystems and the open questions.',wide:1,icon:'🌿',col:'#3fe0c0'},
     {id:'cell',d:'universe',v:'cell',title:'Virtual Cell',kicker:'BIOLOGY',desc:'Zoom into a typical human cell.',icon:'dna',col:'#5cf0a0'},
     {id:'body',d:'universe',v:'body',title:'Human Body',kicker:'BIOLOGY',desc:'Organs, and the cells that build them.',icon:'heart',col:'#ff9ad5'},
     {id:'universe',d:'universe',v:'cosmos',title:'Universe',kicker:'SECTION · REAL IMAGES IN 3D',desc:'Zoom from Earth to the oldest light, through real NASA and ESA pictures.',wide:1,icon:'🔭',col:'#7fc8ff'},
@@ -6024,7 +6223,7 @@ const HOME_THUMBS=/*__THUMBMAP__*/{"biology": "thumbs/biology.webp", "body": "th
   const TH=typeof HOME_THUMBS!=='undefined'?HOME_THUMBS:{};
   const art=t=>TH[t.id]?`<img class="tileArt tileShot" src="${TH[t.id]}" alt="" loading="lazy" decoding="async">`:`<div class="tileArt tileShot tileNoShot"></div>`;
   const home=document.getElementById('homeScreen');
-  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas</h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div><footer class="homeCredit">Built with Grok Bot, made by <a href="https://x.com/Zyphullen" target="_blank" rel="noopener">Zyphullen</a></footer></div>`;
+  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas</h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}"${t.sec?` data-sec="${t.sec}"`:''} data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div><footer class="homeCredit">Built with Grok Bot, made by <a href="https://x.com/Zyphullen" target="_blank" rel="noopener">Zyphullen</a></footer></div>`;
 })();
 
 /* Maths History (Echo Atlas v0.2): a full-size SVG timeline redrawn at the current zoom.
@@ -6247,7 +6446,7 @@ function centreOnLink(L) { const B = L.kind === 'maths' ? MATH_BY_ID : byId, A1 
   const ph = innerWidth <= 600, z = ph ? .5 : .75, mx = (A1.x + A2.x) / 2, my = (A1.y + A2.y) / 2;
   s = z; tx = (ph ? innerWidth : innerWidth - 330) / 2 - mx * z; ty = UI() + (innerHeight - UI()) * (ph ? .12 : .5) - my * z; apply(); cull(); }
 /* ===== Echo Atlas v0.4: home search, AI info read-me, source badges ===== */
-const AI_INDEX=[{"section": "From Nothing to Us", "file": "ai/from-nothing-to-us.json", "counts": {"nodes": 93, "links": 145, "crosslinks_to_maths": 25}, "sources": 245, "non_wikipedia_sources": 223, "approx_tokens": 82000, "bytes": 294466}, {"section": "Big Bang to Today", "file": "ai/big-bang-to-today.json", "counts": {"big_bang_to_today": 22, "section_links": 41}, "sources": 107, "non_wikipedia_sources": 79, "approx_tokens": 25000, "bytes": 91338}, {"section": "Universe", "file": "ai/universe.json", "counts": {"universe": 6, "section_links": 14}, "sources": 44, "non_wikipedia_sources": 36, "approx_tokens": 12000, "bytes": 42585}, {"section": "Physics", "file": "ai/physics.json", "counts": {"physics": 32, "section_links": 61}, "sources": 161, "non_wikipedia_sources": 123, "approx_tokens": 59000, "bytes": 213212}, {"section": "Biology", "file": "ai/biology.json", "counts": {"biology": 33, "section_links": 77}, "sources": 195, "non_wikipedia_sources": 135, "approx_tokens": 62000, "bytes": 223207}, {"section": "Maths", "file": "ai/maths.json", "counts": {"maths": 86, "crosslinks_to_universe": 25}, "sources": 130, "non_wikipedia_sources": 128, "approx_tokens": 52000, "bytes": 186278}, {"section": "Maths History", "file": "ai/maths-history.json", "counts": {"maths_history": 86}, "sources": 84, "non_wikipedia_sources": 82, "approx_tokens": 19000, "bytes": 69583}, {"section": "Open questions", "file": "ai/open-questions.json", "counts": {"open_questions": 57, "red": 28, "orange": 29}, "sources": 0, "non_wikipedia_sources": 0, "sources_note": "Sources are on each real card: follow its share_url, or load its own section file.", "approx_tokens": 4000, "bytes": 13048}, {"section": "Virtual Cell", "file": "ai/virtual-cell.json", "counts": {"virtual_cell": 37}, "sources": 85, "non_wikipedia_sources": 44, "approx_tokens": 14000, "bytes": 49378}, {"section": "Human Body", "file": "ai/human-body.json", "counts": {"virtual_body": 72, "body_to_cell": 21}, "sources": 118, "non_wikipedia_sources": 37, "approx_tokens": 22000, "bytes": 80615}, {"section": "All the Elements", "file": "ai/elements.json", "counts": {"elements": 118}, "sources": 14, "non_wikipedia_sources": 14, "approx_tokens": 18000, "bytes": 64210}];
+const AI_INDEX=[{"section": "From Nothing to Us", "file": "ai/from-nothing-to-us.json", "counts": {"nodes": 93, "links": 145, "crosslinks_to_maths": 25}, "sources": 245, "non_wikipedia_sources": 223, "approx_tokens": 82000, "bytes": 294466}, {"section": "Big Bang to Today", "file": "ai/big-bang-to-today.json", "counts": {"big_bang_to_today": 22, "section_links": 41}, "sources": 107, "non_wikipedia_sources": 79, "approx_tokens": 25000, "bytes": 91338}, {"section": "Universe", "file": "ai/universe.json", "counts": {"universe": 6, "section_links": 14}, "sources": 44, "non_wikipedia_sources": 36, "approx_tokens": 12000, "bytes": 42585}, {"section": "Physics", "file": "ai/physics.json", "counts": {"physics": 32, "section_links": 61}, "sources": 161, "non_wikipedia_sources": 123, "approx_tokens": 60000, "bytes": 217684}, {"section": "Biology", "file": "ai/biology.json", "counts": {"biology": 33, "section_links": 77}, "sources": 195, "non_wikipedia_sources": 135, "approx_tokens": 63000, "bytes": 227730}, {"section": "Maths", "file": "ai/maths.json", "counts": {"maths": 86, "crosslinks_to_universe": 25}, "sources": 130, "non_wikipedia_sources": 128, "approx_tokens": 52000, "bytes": 186278}, {"section": "Maths History", "file": "ai/maths-history.json", "counts": {"maths_history": 86}, "sources": 84, "non_wikipedia_sources": 82, "approx_tokens": 19000, "bytes": 69583}, {"section": "Open questions", "file": "ai/open-questions.json", "counts": {"open_questions": 57, "red": 28, "orange": 29}, "sources": 0, "non_wikipedia_sources": 0, "sources_note": "Sources are on each real card: follow its share_url, or load its own section file.", "approx_tokens": 4000, "bytes": 13048}, {"section": "Virtual Cell", "file": "ai/virtual-cell.json", "counts": {"virtual_cell": 37}, "sources": 85, "non_wikipedia_sources": 44, "approx_tokens": 14000, "bytes": 49378}, {"section": "Human Body", "file": "ai/human-body.json", "counts": {"virtual_body": 72, "body_to_cell": 21}, "sources": 118, "non_wikipedia_sources": 37, "approx_tokens": 22000, "bytes": 80615}, {"section": "All the Elements", "file": "ai/elements.json", "counts": {"elements": 118}, "sources": 14, "non_wikipedia_sources": 14, "approx_tokens": 18000, "bytes": 64210}];
 /* v0.4 pictures instead of words: a cosmic size ruler on map cards (from the card's own size, n.sz = log10 metres)
    Same data as the text they replace. */
 function sizeBarHTML(n) {
@@ -6473,24 +6672,45 @@ const V05MM = (() => {
 
 /* ---------- category labels grow when you zoom out (node names keep their size) ----------
    Only the titles above the bands / ring sectors change, and they all grow to the same size on screen.
-   The grey lane names inside the map stay as they are. The Maths Ring is left exactly as it was. */
+   The grey lane names inside the map stay as they are. Since v0.9b the Maths Ring names do the same, and on both Rings they also stop growing past RMAX when you zoom in. */
 const V05LABELS = (() => {
-  const T = 18, CAP = 20, SETS = { map: '#gMap .mapband', circle: '#gCircle .cband', mmap: '#gMathMap .mband .mapband' };
+  const T = 18, CAP = 20, SETS = { map: '#gMap .mapband', circle: '#gCircle .cband', mmap: '#gMathMap .mband .mapband', mcircle: '#gMathCircle .cband' };
+  // v0.9b: on the two Rings the section names keep a readable size on screen at every zoom (between RMIN and RMAX px)
+  const RMIN = 15, RMAX = 30, RING = { circle: 1, mcircle: 1 };
   const cache = {};
   function prep(key) { if (cache[key]) return cache[key]; const els = [...document.querySelectorAll(SETS[key])]; if (!els.length) return null;
     const L = els.map(el => { const base = parseFloat(getComputedStyle(el).fontSize) || 16, b = el.getBBox(); let cx = b.x + b.width / 2, cy = b.y + b.height / 2, w = b.width, h = b.height;
       const m = /translate\(([\-\d.]+)[ ,]+([\-\d.]+)\)\s*rotate\(([\-\d.]+)\)/.exec(el.getAttribute('transform') || '');
       if (m) { const r = m[3] * Math.PI / 180, c = Math.abs(Math.cos(r)), sn = Math.abs(Math.sin(r)); cx = +m[1] + cx * Math.cos(r) - cy * Math.sin(r); cy = +m[2] + (b.x + b.width / 2) * Math.sin(r) + (b.y + b.height / 2) * Math.cos(r); const w2 = w * c + h * sn, h2 = w * sn + h * c; w = w2; h = h2; }
       return { el, base, cx, cy, w, h, y0: el.hasAttribute('y') ? +el.getAttribute('y') : null, k: '' }; });
+    // Rings: names run along the circle, so the room each one has is the gap to its neighbours along the ring
+    if (key === 'circle' || key === 'mcircle') { for (const a of L) a.tw = a.el.getComputedTextLength ? a.el.getComputedTextLength() : a.w;
+      for (const a of L) { let f = CAP; for (const b of L) if (b !== a) f = Math.min(f, 2 * Math.hypot(a.cx - b.cx, a.cy - b.cy) / (a.tw + b.tw) * .9); a.fmax = Math.max(1, f); }
+      return (cache[key] = L); }
     for (const a of L) { let f = CAP; for (const b of L) if (b !== a) { const g = Math.max(2 * Math.abs(a.cx - b.cx) / (a.w + b.w), 2 * Math.abs(a.cy - b.cy) / (a.h + b.h)); f = Math.min(f, g * .92); }
       a.fmax = Math.max(1, f); }
     return (cache[key] = L); }
-  function run() { if (mapHidden()) return; const key = DOMAIN === 'maths' ? (VIEW === 'map' ? 'mmap' : null) : VIEW; if (!key || !SETS[key]) return;
+  function run() { if (mapHidden()) return; const key = DOMAIN === 'maths' ? (VIEW === 'map' ? 'mmap' : VIEW === 'circle' ? 'mcircle' : null) : VIEW; if (!key || !SETS[key]) return;
     const L = prep(key); if (!L) return; const S0 = key === 'circle' ? .42 : .55, u = Math.max(0, Math.min(1, (S0 - s) / (S0 * .5)));
     let maxWorld = Infinity; for (const a of L) maxWorld = Math.min(maxWorld, a.base * a.fmax);
     const targetWorld = Math.min(T / s, maxWorld);
-    for (const a of L) { const f = Math.max(1, 1 + u * (Math.max(1, targetWorld / a.base) - 1)), k = f.toFixed(2); if (k === a.k) continue; a.k = k;
-      if (f > 1.004) { a.el.style.fontSize = (a.base * f).toFixed(1) + 'px';
+    // Maths Ring zoomed far out: along the circle there is no room left for a readable name, so each name turns
+    // to point outwards like a spoke, on two short lines, at a readable size (12.5 to 30 px on screen)
+    if (key === 'mcircle') { const want = Math.max(RMIN, Math.min(RMAX, 16 * s)) / s, spoke = want > maxWorld * 1.02, sw = Math.max(12.5, Math.min(RMAX, 16 * s)) / s;
+      for (const a of L) { const d = a.el.dataset; if (d.ra == null) continue;
+        if (a.l1 == null) { const t = a.el.textContent, m = /^(\d+ · )(.*)$/.exec(t) || [0, '', t], body = m[2]; let cut = -1, best = 1e9, r; const re = / & |, | /g;
+          while ((r = re.exec(body))) { const p = r[0] === ', ' ? r.index + 1 : r[0] === ' & ' ? r.index + 2 : r.index, sc = Math.abs(p - body.length / 2) - (r[0] === ' ' ? 0 : 3); if (sc < best) { best = sc; cut = p; } }
+          a.t0 = t; a.tr0 = a.el.getAttribute('transform'); a.l1 = cut < 0 ? t : m[1] + body.slice(0, cut).trim(); a.l2 = cut < 0 ? '' : body.slice(cut).trim(); }
+        const f = spoke ? sw : Math.min(want, Math.max(a.base, maxWorld)), k = (spoke ? 'r' : 't') + f.toFixed(1); if (k === a.k) continue; a.k = k;
+        if (spoke) { const ang = +d.ra, left = Math.cos(ang) < 0, deg = ang * 180 / Math.PI + (left ? 180 : 0), e = (x) => x.replace(/&/g, '&amp;');
+          a.el.setAttribute('transform', `translate(${d.rx} ${d.ry}) rotate(${deg.toFixed(2)})`); a.el.setAttribute('text-anchor', left ? 'end' : 'start');
+          a.el.innerHTML = a.l2 ? `<tspan x="0" y="-.2em">${e(a.l1)}</tspan><tspan x="0" y=".95em">${e(a.l2)}</tspan>` : `<tspan x="0" y=".35em">${e(a.l1)}</tspan>`;
+          a.el.style.strokeWidth = (f * .3).toFixed(1) + 'px'; }
+        else { a.el.setAttribute('transform', a.tr0); a.el.setAttribute('text-anchor', 'middle'); if (a.el.children.length) a.el.textContent = a.t0; a.el.style.removeProperty('stroke-width'); }
+        if (Math.abs(f - a.base) > .05) a.el.style.fontSize = f.toFixed(1) + 'px'; else a.el.style.removeProperty('font-size'); }
+      return; }
+    for (const a of L) { const f = RING[key] ? Math.min(Math.max(RMIN, Math.min(RMAX, a.base * s)) / s, Math.max(a.base, maxWorld)) / a.base : Math.max(1, 1 + u * (Math.max(1, targetWorld / a.base) - 1)), k = f.toFixed(2); if (k === a.k) continue; a.k = k;
+      if (f > 1.004 || f < .996) { a.el.style.fontSize = (a.base * f).toFixed(1) + 'px';
         if (key === 'map' && a.y0 != null) a.el.setAttribute('y', (a.y0 - (a.base * f - a.base) * .85).toFixed(1)); }
       else { a.el.style.removeProperty('font-size'); if (key === 'map' && a.y0 != null) a.el.setAttribute('y', a.y0.toFixed(1)); if (!a.el.getAttribute('style')) a.el.removeAttribute('style'); } } }
   let q = 0; const a0 = apply; apply = function () { a0.apply(this, arguments); if (!q) q = requestAnimationFrame(() => { q = 0; run(); }); };
@@ -6509,7 +6729,10 @@ const PAGE_TITLE = (() => {
   function page() {
     let v, d; try { v = SCREENS.view; d = SCREENS.domain; } catch (e) { return ''; }
     if (!v || v === 'home') return '';
-    if (v === 'map' || v === 'circle') return (d === 'maths' ? 'Maths' : 'From Nothing to Us') + (v === 'map' ? ' · Map' : ' · Ring');
+    if (v === 'map' || v === 'circle') return (d === 'maths' ? 'Maths' : 'From Nothing to Us') + (v === 'map' ? ' · Book' : ' · Ring');
+    if (v === 'sect') { const S = { fntu: 'From Nothing to Us', maths: 'Maths', physics: 'Physics', biology: 'Biology' }, M = { map: 'Map', ring: 'Ring', history: 'History' };
+      return (S[SCREENS.sec] || '') + ' · ' + (M[SCREENS.mode] || 'Map'); }
+    if (v === 'physics' || v === 'biology') return NAMES[v] + ' · Book';
     return NAMES[v] || '';
   }
   function card() {
@@ -6603,6 +6826,22 @@ const HOME_STARS = (() => {
    then that section's own switches (History / Map / Ring on FNTU and Maths), then
    flame + volume + i (song list) + AI / SI. The explorers' second bar (Back + name + version)
    is gone: Home and Explore cover getting around, and the page name is in the top bar. */
+/* ===== Echo Atlas v0.9 (main script) =====
+   1. Book · Ring · Map switch stays in step with whatever moved the map (keyboard, links, the old Map / Ring code).
+   2. Universe opens fast: its picture starts downloading and decoding the moment you point at Explore or the Universe tile,
+      so it is ready by the time you click (index.html only; the TEST file carries the pictures inside itself). */
+(() => {
+  if (typeof syncSwitch === 'function') { const s0 = syncSwitch; syncSwitch = function () { const r = s0.apply(this, arguments); try { SCREENS.paintVsw(); } catch (e) {} return r; }; }
+  let warmed = false;
+  function warmUni() { if (warmed) return; warmed = true;
+    try { if (typeof LAZY !== 'undefined' && !document.getElementById('lazy-cosmos')) LAZY.need('cosmos').catch(() => {}); } catch (e) {}
+    const u = (typeof UNI_IMG !== 'undefined' && UNI_IMG.earth) || 'universe/earth.webp'; if (u.startsWith('inline:')) return;
+    const im = new Image(); im.decoding = 'async'; im.src = u; if (im.decode) im.decode().catch(() => {}); }
+  const hot = e => { const t = e.target; if (!t || !t.closest) return; if (t.closest('#ptbtn,[data-view="cosmos"],.homeTile[data-view="cosmos"]')) warmUni(); };
+  addEventListener('pointerover', hot, { passive: true }); addEventListener('focusin', hot);
+  // and anyway once the page is idle, so a first visit straight to the menu is quick too
+  (window.requestIdleCallback || (f => setTimeout(f, 2500)))(() => setTimeout(warmUni, 1200));
+})();
 
 
 /* ============ START ============ */
@@ -6612,7 +6851,7 @@ init();
 // test hooks (used for screenshots): #view=fit | #c=<stage column>&y=<world y>&z=<zoom> | &open=<id>&layer=<1-3> | #ptable=1&el=<Z>
 (() => { const h = new URLSearchParams(location.hash.slice(1)); if (h.has('n') && !h.has('tv')) h.set('tv', 'map'); if (h.has('tv')) { setScene(h.get('tv') === 'circle' ? 'circle' : 'map'); syncSwitch(); [s, tx, ty] = homeView(); }
   if (h.get('view') === 'fit') [s, tx, ty] = fitView();
-  if (h.has('c')) { s = +(h.get('z') || s); tx = innerWidth / 2 - X(+h.get('c')) * s; ty = UI() + (innerHeight - UI()) / 2 - (+(h.get('y') || H / 2)) * s; }
+  if (h.has('c')) { s = +(h.get('z') || s); tx = innerWidth / 2 - (+(h.get('x') || W / 2)) * s; ty = UI() + (innerHeight - UI()) / 2 - (+(h.get('y') || H / 2)) * s; }
   apply(); if (h.has('open')) openPop(h.get('open'), +(h.get('layer') || 1));
   if (h.has('n') && !h.has('m')) openShared(h.get('n'));
   if (h.has('loop') && VIEW === 'circle') openLoop(+(h.get('layer') || 1));

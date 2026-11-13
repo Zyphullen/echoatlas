@@ -16,7 +16,7 @@
   "All the Elements"
  ],
  "author": "Zyphullen",
- "data_hash": "7a9b6b5a6725",
+ "data_hash": "49e748a9f816",
  "generated": "2026-11-13",
  "key": {
   "green": "known",
@@ -43124,7 +43124,7 @@
  ],
  "quality": {
   "automatic_checks": {
-   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.8.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.9.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
    "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
   },
   "science_review": {
@@ -44056,6 +44056,12 @@
    {
     "id": "newton-laws",
     "title": "Newton's laws of motion",
+    "history": {
+     "year": 1687,
+     "when": "1687",
+     "kind": "fact",
+     "text": "Isaac Newton sets out the three laws of motion in the Principia."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=newton-laws",
     "category": "FORCES",
     "subtitle": "force, mass and acceleration",
@@ -44122,6 +44128,12 @@
    {
     "id": "universal-gravitation",
     "title": "Newton's law of universal gravitation",
+    "history": {
+     "year": 1687,
+     "when": "1687",
+     "kind": "fact",
+     "text": "The same book: one law of gravity for apples, the Moon and the planets."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=universal-gravitation",
     "category": "FORCES",
     "subtitle": "every mass pulls every other mass",
@@ -44190,6 +44202,12 @@
    {
     "id": "coulomb-law",
     "title": "Coulomb's law",
+    "history": {
+     "year": 1785,
+     "when": "1785",
+     "kind": "fact",
+     "text": "Charles-Augustin de Coulomb measures the force between electric charges with a torsion balance."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=coulomb-law",
     "category": "FORCES",
     "subtitle": "electric charges attract or repel",
@@ -44241,6 +44259,12 @@
    {
     "id": "noether-theorem",
     "title": "Noether's theorem",
+    "history": {
+     "year": 1918,
+     "when": "1918",
+     "kind": "fact",
+     "text": "Emmy Noether proves every symmetry gives a conserved quantity."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=noether-theorem",
     "category": "FORCES",
     "subtitle": "symmetry gives conservation laws",
@@ -44309,6 +44333,12 @@
    {
     "id": "general-relativity",
     "title": "General relativity",
+    "history": {
+     "year": 1915,
+     "when": "1915",
+     "kind": "fact",
+     "text": "Einstein publishes general relativity: gravity is curved spacetime."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=general-relativity",
     "category": "FORCES",
     "subtitle": "gravity is curved spacetime",
@@ -44403,6 +44433,12 @@
    {
     "id": "gravitational-waves",
     "title": "Gravitational waves",
+    "history": {
+     "year": 2015,
+     "when": "2015",
+     "kind": "fact",
+     "text": "LIGO detects gravitational waves from two merging black holes (announced 2016)."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=gravitational-waves",
     "category": "FORCES",
     "subtitle": "ripples in spacetime",
@@ -44481,6 +44517,12 @@
    {
     "id": "strong-interaction",
     "title": "Quantum chromodynamics",
+    "history": {
+     "year": 1973,
+     "when": "1973",
+     "kind": "fact",
+     "text": "Gross, Wilczek and Politzer find asymptotic freedom, the key to quantum chromodynamics."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=strong-interaction",
     "category": "FORCES",
     "subtitle": "the strong interaction",
@@ -44573,6 +44615,12 @@
    {
     "id": "weak-interaction",
     "title": "Weak interaction",
+    "history": {
+     "year": 1934,
+     "when": "1934",
+     "kind": "fact",
+     "text": "Enrico Fermi publishes his theory of beta decay, the first theory of the weak force."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=weak-interaction",
     "category": "FORCES",
     "subtitle": "changes one particle into another",
@@ -44646,6 +44694,12 @@
    {
     "id": "electroweak",
     "title": "Electroweak interaction",
+    "history": {
+     "year": 1967,
+     "when": "1961–1968",
+     "kind": "fact",
+     "text": "Glashow, Weinberg and Salam unite the electromagnetic and weak forces."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=electroweak",
     "category": "FORCES",
     "subtitle": "electromagnetism and the weak force as one",
@@ -44715,6 +44769,12 @@
    {
     "id": "fundamental-interactions",
     "title": "Fundamental interactions",
+    "history": {
+     "year": 1979,
+     "when": "1979",
+     "kind": "fact",
+     "text": "The Nobel Prize for electroweak unification: three of the four forces now share one framework."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=fundamental-interactions",
     "category": "FORCES",
     "subtitle": "four known forces",
@@ -44778,6 +44838,12 @@
    {
     "id": "grand-unified-theory",
     "title": "Grand Unified Theory",
+    "history": {
+     "year": 1974,
+     "when": "since 1974",
+     "kind": "open",
+     "text": "Georgi and Glashow propose the first grand unified theory; no proton decay has been seen."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=grand-unified-theory",
     "category": "FORCES",
     "subtitle": "one force behind three?",
@@ -44850,6 +44916,12 @@
    {
     "id": "quantum-gravity",
     "title": "Quantum gravity",
+    "history": {
+     "year": 1930,
+     "when": "since the 1930s",
+     "kind": "open",
+     "text": "Nobody has a tested theory that joins general relativity and quantum physics."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=quantum-gravity",
     "category": "FORCES",
     "subtitle": "gravity with quantum rules",
@@ -44922,6 +44994,12 @@
    {
     "id": "leptons",
     "title": "Leptons",
+    "history": {
+     "year": 1897,
+     "when": "1897",
+     "kind": "fact",
+     "text": "J. J. Thomson finds the electron, the first known lepton."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=leptons",
     "category": "PARTICLES",
     "subtitle": "electron, muon, tau and neutrinos",
@@ -44991,6 +45069,12 @@
    {
     "id": "quarks",
     "title": "Quarks",
+    "history": {
+     "year": 1964,
+     "when": "1964",
+     "kind": "fact",
+     "text": "Murray Gell-Mann and George Zweig propose quarks; SLAC sees signs of them in 1968."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=quarks",
     "category": "PARTICLES",
     "subtitle": "up, down, strange, charm, bottom, top",
@@ -45074,6 +45158,12 @@
    {
     "id": "antimatter",
     "title": "Antimatter",
+    "history": {
+     "year": 1932,
+     "when": "1932",
+     "kind": "fact",
+     "text": "Carl Anderson finds the positron, predicted by Paul Dirac in 1928."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=antimatter",
     "category": "PARTICLES",
     "subtitle": "every particle has an opposite",
@@ -45153,6 +45243,12 @@
    {
     "id": "gauge-bosons",
     "title": "Gauge bosons",
+    "history": {
+     "year": 1983,
+     "when": "1983",
+     "kind": "fact",
+     "text": "The W and Z bosons are found at CERN (UA1 and UA2)."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=gauge-bosons",
     "category": "PARTICLES",
     "subtitle": "the force carriers",
@@ -45227,6 +45323,12 @@
    {
     "id": "standard-model",
     "title": "Standard Model",
+    "history": {
+     "year": 1975,
+     "when": "mid 1970s",
+     "kind": "fact",
+     "text": "The quark model, QCD and electroweak theory come together as the Standard Model."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=standard-model",
     "category": "PARTICLES",
     "subtitle": "the particle physics theory",
@@ -45308,6 +45410,12 @@
    {
     "id": "higgs-boson",
     "title": "Higgs boson",
+    "history": {
+     "year": 2012,
+     "when": "2012",
+     "kind": "fact",
+     "text": "ATLAS and CMS at CERN find the Higgs boson."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=higgs-boson",
     "category": "PARTICLES",
     "subtitle": "found in 2012",
@@ -45395,6 +45503,12 @@
    {
     "id": "neutrino-oscillation",
     "title": "Neutrino oscillation",
+    "history": {
+     "year": 1998,
+     "when": "1998",
+     "kind": "fact",
+     "text": "Super-Kamiokande shows neutrinos change flavour, so they have mass."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=neutrino-oscillation",
     "category": "PARTICLES",
     "subtitle": "neutrinos change type",
@@ -45465,6 +45579,12 @@
    {
     "id": "neutrino-mass",
     "title": "Neutrino mass",
+    "history": {
+     "year": 1998,
+     "when": "since 1998",
+     "kind": "open",
+     "text": "We know neutrinos have mass, but not how much, or why so little."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=neutrino-mass",
     "category": "PARTICLES",
     "subtitle": "how heavy is a neutrino?",
@@ -45525,6 +45645,12 @@
    {
     "id": "baryon-asymmetry",
     "title": "Baryon asymmetry",
+    "history": {
+     "year": 1967,
+     "when": "since 1967",
+     "kind": "open",
+     "text": "Andrei Sakharov sets out what is needed to make more matter than antimatter; the known effects are too small."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=baryon-asymmetry",
     "category": "PARTICLES",
     "subtitle": "why is there more matter than antimatter?",
@@ -45596,6 +45722,12 @@
    {
     "id": "dark-matter",
     "title": "Dark matter",
+    "history": {
+     "year": 1933,
+     "when": "1933",
+     "kind": "idea",
+     "text": "Fritz Zwicky finds galaxies in the Coma cluster move too fast for the matter we see."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=dark-matter",
     "category": "PARTICLES",
     "subtitle": "mass we cannot see",
@@ -45686,6 +45818,12 @@
    {
     "id": "maxwell-equations",
     "title": "Maxwell's equations",
+    "history": {
+     "year": 1865,
+     "when": "1865",
+     "kind": "fact",
+     "text": "James Clerk Maxwell unites electricity and magnetism, and finds light is an electromagnetic wave."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=maxwell-equations",
     "category": "LIGHT",
     "subtitle": "electricity, magnetism and light",
@@ -45761,6 +45899,12 @@
    {
     "id": "em-radiation",
     "title": "Electromagnetic radiation",
+    "history": {
+     "year": 1887,
+     "when": "1887",
+     "kind": "fact",
+     "text": "Heinrich Hertz makes and detects radio waves, confirming Maxwell."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=em-radiation",
     "category": "LIGHT",
     "subtitle": "radio to gamma rays",
@@ -45828,6 +45972,12 @@
    {
     "id": "speed-of-light",
     "title": "Speed of light",
+    "history": {
+     "year": 1676,
+     "when": "1676",
+     "kind": "fact",
+     "text": "Ole Rømer times the moons of Jupiter and shows light takes time to travel."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=speed-of-light",
     "category": "LIGHT",
     "subtitle": "299 792 458 m/s",
@@ -45890,6 +46040,12 @@
    {
     "id": "special-relativity",
     "title": "Special relativity",
+    "history": {
+     "year": 1905,
+     "when": "1905",
+     "kind": "fact",
+     "text": "Albert Einstein: the speed of light is the same for everyone; space and time stretch."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=special-relativity",
     "category": "LIGHT",
     "subtitle": "space, time and E = mc²",
@@ -45951,6 +46107,12 @@
    {
     "id": "blackbody",
     "title": "Planck's law",
+    "history": {
+     "year": 1900,
+     "when": "1900",
+     "kind": "fact",
+     "text": "Max Planck explains black-body light with energy in small packets (quanta)."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=blackbody",
     "category": "LIGHT",
     "subtitle": "black-body radiation",
@@ -46012,6 +46174,12 @@
    {
     "id": "photon",
     "title": "Photon",
+    "history": {
+     "year": 1905,
+     "when": "1905",
+     "kind": "fact",
+     "text": "Einstein explains the photoelectric effect with particles of light (Compton confirms them in 1923)."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=photon",
     "category": "LIGHT",
     "subtitle": "a quantum of light",
@@ -46093,6 +46261,12 @@
    {
     "id": "wave-particle-duality",
     "title": "Wave–particle duality",
+    "history": {
+     "year": 1924,
+     "when": "1924",
+     "kind": "fact",
+     "text": "Louis de Broglie proposes that matter has waves too; electron waves are seen in 1927."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=wave-particle-duality",
     "category": "LIGHT",
     "subtitle": "waves and particles at once",
@@ -46153,6 +46327,12 @@
    {
     "id": "atomic-spectra",
     "title": "Atomic spectra",
+    "history": {
+     "year": 1859,
+     "when": "1859",
+     "kind": "fact",
+     "text": "Kirchhoff and Bunsen show each element has its own set of spectral lines."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=atomic-spectra",
     "category": "LIGHT",
     "subtitle": "each element's light fingerprint",
@@ -46231,6 +46411,12 @@
    {
     "id": "qed",
     "title": "Quantum electrodynamics",
+    "history": {
+     "year": 1948,
+     "when": "late 1940s",
+     "kind": "fact",
+     "text": "Feynman, Schwinger and Tomonaga complete quantum electrodynamics."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=qed",
     "category": "LIGHT",
     "subtitle": "light and charged matter",
@@ -46300,6 +46486,12 @@
    {
     "id": "cmb",
     "title": "Cosmic microwave background",
+    "history": {
+     "year": 1965,
+     "when": "1965",
+     "kind": "fact",
+     "text": "Arno Penzias and Robert Wilson find the cosmic microwave background by accident."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=cmb",
     "category": "LIGHT",
     "subtitle": "the oldest light",
@@ -49641,6 +49833,12 @@
    {
     "id": "chnops",
     "title": "Elements of life (CHNOPS)",
+    "history": {
+     "year": 1858,
+     "when": "1858",
+     "kind": "fact",
+     "text": "August Kekulé shows carbon makes four bonds, the key to the chemistry of life."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=chnops",
     "category": "CELLS & MOLECULES",
     "subtitle": "six elements build most of life",
@@ -49711,6 +49909,12 @@
    {
     "id": "macromolecules",
     "title": "Biological macromolecules",
+    "history": {
+     "year": 1920,
+     "when": "1920",
+     "kind": "fact",
+     "text": "Hermann Staudinger proposes that giant chain molecules (macromolecules) exist."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=macromolecules",
     "category": "CELLS & MOLECULES",
     "subtitle": "proteins, nucleic acids, sugars, lipids",
@@ -49783,6 +49987,12 @@
    {
     "id": "cell-theory",
     "title": "Cell theory",
+    "history": {
+     "year": 1839,
+     "when": "1838–1839",
+     "kind": "fact",
+     "text": "Schleiden and Schwann: all plants and animals are made of cells."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=cell-theory",
     "category": "CELLS & MOLECULES",
     "subtitle": "every living thing is made of cells",
@@ -49849,6 +50059,12 @@
    {
     "id": "cell-types",
     "title": "Prokaryotic and eukaryotic cells",
+    "history": {
+     "year": 1925,
+     "when": "1925",
+     "kind": "fact",
+     "text": "Édouard Chatton names the two kinds of cell: prokaryotic and eukaryotic."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=cell-types",
     "category": "CELLS & MOLECULES",
     "subtitle": "without and with a nucleus",
@@ -49934,6 +50150,12 @@
    {
     "id": "cell-membrane",
     "title": "Cell membrane",
+    "history": {
+     "year": 1972,
+     "when": "1972",
+     "kind": "fact",
+     "text": "Singer and Nicolson propose the fluid mosaic model of the cell membrane."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=cell-membrane",
     "category": "CELLS & MOLECULES",
     "subtitle": "a fluid mosaic of lipids and proteins",
@@ -50010,6 +50232,12 @@
    {
     "id": "dna",
     "title": "DNA double helix",
+    "history": {
+     "year": 1953,
+     "when": "1953",
+     "kind": "fact",
+     "text": "Watson and Crick propose the double helix, using X-ray data from Franklin and Gosling."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=dna",
     "category": "CELLS & MOLECULES",
     "subtitle": "the molecule of heredity",
@@ -50105,6 +50333,12 @@
    {
     "id": "central-dogma",
     "title": "Central dogma of molecular biology",
+    "history": {
+     "year": 1958,
+     "when": "1958",
+     "kind": "fact",
+     "text": "Francis Crick states the central dogma: DNA → RNA → protein."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=central-dogma",
     "category": "CELLS & MOLECULES",
     "subtitle": "DNA → RNA → protein",
@@ -50173,6 +50407,12 @@
    {
     "id": "genetic-code",
     "title": "Genetic code",
+    "history": {
+     "year": 1961,
+     "when": "1961",
+     "kind": "fact",
+     "text": "Nirenberg and Matthaei read the first codon: UUU means phenylalanine."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=genetic-code",
     "category": "CELLS & MOLECULES",
     "subtitle": "three letters for each amino acid",
@@ -50241,6 +50481,12 @@
    {
     "id": "enzymes",
     "title": "Enzymes",
+    "history": {
+     "year": 1926,
+     "when": "1926",
+     "kind": "fact",
+     "text": "James Sumner crystallises urease and shows an enzyme is a protein."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=enzymes",
     "category": "CELLS & MOLECULES",
     "subtitle": "catalysts that speed up life",
@@ -50309,6 +50555,12 @@
    {
     "id": "atp",
     "title": "ATP",
+    "history": {
+     "year": 1929,
+     "when": "1929",
+     "kind": "fact",
+     "text": "ATP is discovered (Karl Lohmann; Fiske and Subbarow)."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=atp",
     "category": "CELLS & MOLECULES",
     "subtitle": "the cell's energy currency",
@@ -50374,6 +50626,12 @@
    {
     "id": "cell-division",
     "title": "Cell division",
+    "history": {
+     "year": 1882,
+     "when": "1882",
+     "kind": "fact",
+     "text": "Walther Flemming describes mitosis, how chromosomes split when a cell divides."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=cell-division",
     "category": "CELLS & MOLECULES",
     "subtitle": "mitosis copies, meiosis mixes",
@@ -50443,6 +50701,12 @@
    {
     "id": "origin-of-life",
     "title": "Origin of life",
+    "history": {
+     "year": 1953,
+     "when": "since 1953",
+     "kind": "open",
+     "text": "Stanley Miller makes amino acids from simple gases, but how life began is still unknown."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=origin-of-life",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "how chemistry became biology",
@@ -50518,6 +50782,12 @@
    {
     "id": "rna-world",
     "title": "RNA world",
+    "history": {
+     "year": 1986,
+     "when": "1986",
+     "kind": "idea",
+     "text": "Walter Gilbert names the RNA world: early life may have run on RNA alone."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=rna-world",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "RNA as both gene and enzyme",
@@ -50570,6 +50840,12 @@
    {
     "id": "luca",
     "title": "Last universal common ancestor (LUCA)",
+    "history": {
+     "year": 2010,
+     "when": "2010",
+     "kind": "idea",
+     "text": "A formal statistical test strongly supports one common ancestor for all life."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=luca",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "the shared ancestor of all life",
@@ -50639,6 +50915,12 @@
    {
     "id": "three-domains",
     "title": "Three domains of life",
+    "history": {
+     "year": 1990,
+     "when": "1990",
+     "kind": "fact",
+     "text": "Carl Woese and colleagues propose three domains: bacteria, archaea and eukaryotes."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=three-domains",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "Bacteria · Archaea · Eukarya",
@@ -50711,6 +50993,12 @@
    {
     "id": "endosymbiosis",
     "title": "Endosymbiotic theory",
+    "history": {
+     "year": 1967,
+     "when": "1967",
+     "kind": "fact",
+     "text": "Lynn Margulis argues mitochondria and chloroplasts were once free-living bacteria."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=endosymbiosis",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "mitochondria were once bacteria",
@@ -50779,6 +51067,12 @@
    {
     "id": "eukaryote-origin",
     "title": "Origin of eukaryotes",
+    "history": {
+     "year": 2023,
+     "when": "2023",
+     "kind": "idea",
+     "text": "A genome study places eukaryotes within the Asgard archaea."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=eukaryote-origin",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "how complex cells began",
@@ -50851,6 +51145,12 @@
    {
     "id": "mendel",
     "title": "Mendelian inheritance",
+    "history": {
+     "year": 1866,
+     "when": "1866",
+     "kind": "fact",
+     "text": "Gregor Mendel publishes his pea experiments: traits pass on in fixed ratios."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=mendel",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "genes come in pairs",
@@ -50900,6 +51200,12 @@
    {
     "id": "natural-selection",
     "title": "Natural selection",
+    "history": {
+     "year": 1859,
+     "when": "1858–1859",
+     "kind": "fact",
+     "text": "Darwin and Wallace present natural selection; On the Origin of Species follows."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=natural-selection",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "variation + inheritance → adaptation",
@@ -50959,6 +51265,12 @@
    {
     "id": "modern-synthesis",
     "title": "Modern synthesis",
+    "history": {
+     "year": 1942,
+     "when": "1942",
+     "kind": "fact",
+     "text": "Julian Huxley's book names the modern synthesis of genetics and evolution."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=modern-synthesis",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "Darwin + genetics",
@@ -51011,6 +51323,12 @@
    {
     "id": "speciation",
     "title": "Speciation",
+    "history": {
+     "year": 1942,
+     "when": "1942",
+     "kind": "fact",
+     "text": "Ernst Mayr sets out how new species form when groups stop interbreeding."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=speciation",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "one species splits into two",
@@ -51062,6 +51380,12 @@
    {
     "id": "cambrian",
     "title": "Cambrian explosion",
+    "history": {
+     "year": 1909,
+     "when": "1909",
+     "kind": "fact",
+     "text": "Charles Walcott finds the Burgess Shale, full of early animal fossils."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=cambrian",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "animal body plans appear",
@@ -51131,6 +51455,12 @@
    {
     "id": "mass-extinctions",
     "title": "Mass extinctions",
+    "history": {
+     "year": 1982,
+     "when": "1982",
+     "kind": "fact",
+     "text": "Raup and Sepkoski pick out the big mass extinctions in the fossil record."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=mass-extinctions",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "the big five die-offs",
@@ -51192,6 +51522,12 @@
    {
     "id": "human-evolution",
     "title": "Human evolution",
+    "history": {
+     "year": 1925,
+     "when": "1925",
+     "kind": "fact",
+     "text": "Raymond Dart describes the Taung child, an early human relative from Africa."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=human-evolution",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "Homo sapiens, about 300,000 years",
@@ -51268,6 +51604,12 @@
    {
     "id": "life-elsewhere",
     "title": "Life beyond Earth",
+    "history": {
+     "year": 1976,
+     "when": "since 1976",
+     "kind": "open",
+     "text": "The Viking landers test Mars soil for life; no life has yet been found beyond Earth."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=life-elsewhere",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "are we alone?",
@@ -51329,6 +51671,12 @@
    {
     "id": "photosynthesis",
     "title": "Photosynthesis",
+    "history": {
+     "year": 1779,
+     "when": "1779",
+     "kind": "fact",
+     "text": "Jan Ingenhousz shows green plants need light to make the air fresh (oxygen)."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=photosynthesis",
     "category": "LIFE SYSTEMS",
     "subtitle": "sunlight → sugar and oxygen",
@@ -51412,6 +51760,12 @@
    {
     "id": "cellular-respiration",
     "title": "Cellular respiration",
+    "history": {
+     "year": 1961,
+     "when": "1961",
+     "kind": "fact",
+     "text": "Peter Mitchell proposes how cells make ATP from a flow of protons."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=cellular-respiration",
     "category": "LIFE SYSTEMS",
     "subtitle": "sugar + oxygen → ATP",
@@ -51488,6 +51842,12 @@
    {
     "id": "great-oxidation",
     "title": "Great Oxidation Event",
+    "history": {
+     "year": 2000,
+     "when": "2000",
+     "kind": "fact",
+     "text": "Sulfur isotopes in old rocks show oxygen first built up about 2.4 billion years ago."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=great-oxidation",
     "category": "LIFE SYSTEMS",
     "subtitle": "life fills the air with oxygen",
@@ -51560,6 +51920,12 @@
    {
     "id": "ecosystems",
     "title": "Ecosystems and food webs",
+    "history": {
+     "year": 1942,
+     "when": "1942",
+     "kind": "fact",
+     "text": "Raymond Lindeman describes how energy flows between feeding levels."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=ecosystems",
     "category": "LIFE SYSTEMS",
     "subtitle": "energy flows, matter cycles",
@@ -51645,6 +52011,12 @@
    {
     "id": "carbon-cycle",
     "title": "Carbon cycle",
+    "history": {
+     "year": 1958,
+     "when": "1958",
+     "kind": "fact",
+     "text": "Charles Keeling starts measuring carbon dioxide in the air at Mauna Loa."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=carbon-cycle",
     "category": "LIFE SYSTEMS",
     "subtitle": "carbon moves through life, air, sea and rock",
@@ -51713,6 +52085,12 @@
    {
     "id": "homeostasis",
     "title": "Homeostasis",
+    "history": {
+     "year": 1929,
+     "when": "1926–1929",
+     "kind": "fact",
+     "text": "Walter Cannon names homeostasis: the body keeps its inside steady."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=homeostasis",
     "category": "LIFE SYSTEMS",
     "subtitle": "keeping the inside steady",
@@ -51788,6 +52166,12 @@
    {
     "id": "nervous-system",
     "title": "Nervous system",
+    "history": {
+     "year": 1952,
+     "when": "1952",
+     "kind": "fact",
+     "text": "Hodgkin and Huxley explain the nerve signal (action potential) with equations."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=nervous-system",
     "category": "LIFE SYSTEMS",
     "subtitle": "neurons send electrical signals",
@@ -51878,6 +52262,12 @@
    {
     "id": "consciousness",
     "title": "Consciousness",
+    "history": {
+     "year": 2022,
+     "when": "today",
+     "kind": "open",
+     "text": "Several theories compete (a 2022 review); none explains how the brain makes experience."
+    },
     "share_url": "https://zyphullen.github.io/echoatlas/#b=consciousness",
     "category": "LIFE SYSTEMS",
     "subtitle": "how brains give rise to experience",

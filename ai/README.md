@@ -3,7 +3,7 @@
 Echo Atlas by Zyphullen is one website for knowledge, known and unknown. Every fact is coloured by certainty and linked to its sources.
 This folder splits the site's data into **one file per section**, so an AI can load only the part it needs and stay inside its context limit.
 
-**Data hash:** `7a9b6b5a6725` (the same as `DATA_HASH` in the page and `data_hash` in every file below). **Built:** 2026-11-13.
+**Data hash:** `49e748a9f816` (the same as `DATA_HASH` in the page and `data_hash` in every file below). **Built:** 2026-11-13.
 
 ## For AI / SI readers: what is already here
 - 📦 **Each section file is complete for its section.** It holds the facts (`summary`, `details`), the colours (`certainty`), the sources (`sources`, full details in `sources_used`) and the **connections between ideas**: links inside the section and links to cards in other sections (`rel`, `related`, `section_links`, each naming the other section and card id).
@@ -18,7 +18,7 @@ This folder splits the site's data into **one file per section**, so an AI can l
 
 ## Start here
 1. 📂 Pick the section you need from the table and load only that file.
-2. 🧭 Need everything? Load [facts.json](../facts.json) (all sections, about 555k tokens).
+2. 🧭 Need everything? Load [facts.json](../facts.json) (all sections, about 558k tokens).
 3. 🗂️ Need the list as data? Load [index.json](index.json).
 4. 📖 Every field is explained in [FACTS-GUIDE.md](../FACTS-GUIDE.md).
 
@@ -28,8 +28,8 @@ This folder splits the site's data into **one file per section**, so an AI can l
 | [From Nothing to Us](from-nothing-to-us.json) | 93 nodes, 145 links, 25 crosslinks_to_maths | 245 (223 papers / official) | ~82k |
 | [Big Bang to Today](big-bang-to-today.json) | 22 big_bang_to_today, 41 section_links | 107 (79 papers / official) | ~25k |
 | [Universe](universe.json) | 6 universe, 14 section_links | 44 (36 papers / official) | ~12k |
-| [Physics](physics.json) | 32 physics, 61 section_links | 161 (123 papers / official) | ~59k |
-| [Biology](biology.json) | 33 biology, 77 section_links | 195 (135 papers / official) | ~62k |
+| [Physics](physics.json) | 32 physics, 61 section_links | 161 (123 papers / official) | ~60k |
+| [Biology](biology.json) | 33 biology, 77 section_links | 195 (135 papers / official) | ~63k |
 | [Maths](maths.json) | 86 maths, 25 crosslinks_to_universe | 130 (128 papers / official) | ~52k |
 | [Maths History](maths-history.json) | 86 maths_history | 84 (82 papers / official) | ~19k |
 | [Open questions](open-questions.json) | 57 open_questions, 28 red, 29 orange | Sources are on each real card: follow its share_url, or load its own section file. | ~4k |
@@ -52,7 +52,7 @@ This folder splits the site's data into **one file per section**, so an AI can l
 A link takes the colour of its less-certain end.
 
 ## Automatic checks vs science review
-- 🤖 **Automatic checks** (`src/audit.py`, report in `AUDIT-v0.8.md`): Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.8.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers. They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked.
+- 🤖 **Automatic checks** (`src/audit.py`, report in `AUDIT-v0.8.md`): Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.9.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers. They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked.
 - 🔬 **Science review**: No formal peer review yet. A science review means a person with the right expertise reads each claim against its sources and decides whether it is right, up to date and fairly coloured. The audit is **not** a peer review.
 - 🙋 Every card has a Suggest a fix button (e-mail). Please check claims against the listed sources and say what looks wrong.
 

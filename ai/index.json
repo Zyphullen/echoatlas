@@ -4,7 +4,7 @@
   "url": "https://zyphullen.github.io/echoatlas/",
   "version": "0.8",
   "author": "Zyphullen",
-  "data_hash": "7a9b6b5a6725",
+  "data_hash": "49e748a9f816",
   "generated": "2026-11-13",
   "read_me": "ai/README.md",
   "all_data": "facts.json",
@@ -15,7 +15,7 @@
   },
   "quality": {
    "automatic_checks": {
-    "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.8.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+    "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.9.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
     "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
    },
    "science_review": {
@@ -87,8 +87,8 @@
    },
    "sources": 161,
    "non_wikipedia_sources": 123,
-   "bytes": 213212,
-   "approx_tokens": 59000
+   "bytes": 217684,
+   "approx_tokens": 60000
   },
   {
    "section": "Biology",
@@ -101,8 +101,8 @@
    },
    "sources": 195,
    "non_wikipedia_sources": 135,
-   "bytes": 223207,
-   "approx_tokens": 62000
+   "bytes": 227730,
+   "approx_tokens": 63000
   },
   {
    "section": "Maths",
