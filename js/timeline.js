@@ -89,7 +89,7 @@ const VTIME = (() => {
   function centreOn(id, now) { const e = BY[id], s = Math.max(cam.s, minS() * (phone() ? 4 : 2.2)), t = [s, (vw() - cardW()) / 2 - e.x * s]; if (now) { [cam.s, cam.tx] = t; apply(); } else animTo(...t); }
   /* ---------- card ---------- */
   const SITE_ = typeof SITE !== 'undefined' ? SITE : 'https://zyphullen.github.io/echoatlas/';
-  const XKIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], uni: ['🔭', 'Universe', '#7fc8ff'], atom: ['⚛', 'Atom Sandbox', '#ffd36b'], pt: ['▦', 'All the Elements', '#ffd36b'], planet: ['🌍', 'Planet Earth', '#4ff3e3'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'], tl: ['⏳', 'Big Bang to Today', '#e79cff'] };
+  const XKIND = { fntu: ['✦', 'From Nothing to Us', '#ffd36b'], maths: ['∑', 'Maths', '#4ff3e3'], ph: ['⚛', 'Physics', '#e79cff'], bio: ['🌿', 'Biology', '#5cf0a0'], uni: ['🔭', 'Universe', '#7fc8ff'], pt: ['▦', 'All the Elements', '#ffd36b'], cell: ['🧬', 'Virtual Cell', '#5cf0a0'], body: ['♥', 'Human Body', '#ff9ad5'], tl: ['⏳', 'Big Bang to Today', '#e79cff'] };
   function chip(k, id, label) { const [g, sec, col] = XKIND[k] || ['↗', '', '#ffd36b']; const t = typeof xsecTarget === 'function' ? xsecTarget(k, id) : null; if (!t) return '';
     return `<button class="xchip" data-xgo="${esc(t.hash)}" style="--c:${col}" title="${esc(label || '')}"><i>${g}</i><span><small>${esc(sec)}</small>${esc(t.title)}</span></button>`; }
   function render() { const e = BY[sel], c = SCOL[e.s], i = EV.indexOf(e), era = ERA.find(r => e.x >= r.x0 && e.x <= r.x1) || ERA[4];
