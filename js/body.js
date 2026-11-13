@@ -181,7 +181,7 @@ const VBODY = (() => {
   let oc = null, og = null, root, cv, cx, hc, raf = 0, alive = false, B = null, cam = { x: 0, y: H / 2, z: .4 }, anim = null, sel = null, layer = 1, t = 0, last = 0, fps = 0, fpsN = 0, fpsT = 0, opts = {}, sex = 'female';
   const ON = { skin: false, muscle: true, bone: true, organ: true, vessel: true, nerve: true }, ON0 = { ...ON };
   let crEl, hint, scl, pop, ban, onKey, banTxt = '', crumbTxt = '';
-  const VW = () => cv.clientWidth, VH = () => cv.clientHeight, mob = () => innerWidth <= 600, TOP = () => mob() ? 215 : 100; // mobile: room for layer row, crumb and the note so nothing covers the head
+  const VW = () => cv.clientWidth, VH = () => cv.clientHeight, mob = () => innerWidth <= 600, TOP = () => mob() ? 150 : 56; // room for the layer row just under the top bar
   const fitZ = () => Math.min(VW() / 620, (VH() - TOP() - 60) / (H * 1.04)), ZMAX = 20; // finite: at most 20 px per mm
   const clampZ = z => Math.max(fitZ() * .8, Math.min(ZMAX, z));
   const w2s = (x, y) => [(x - cam.x) * cam.z + VW() / 2, (y - cam.y) * cam.z + (VH() + TOP()) / 2];
@@ -308,7 +308,7 @@ const VBODY = (() => {
   // ---------- life cycle ----------
   function init(host = document.body, o = {}) { if (alive) destroy(); opts = o; alive = true; sex = 'female'; Object.assign(ON, ON0); B = BUILD[sex](); BR.clear(); skinPath = B.parts[0].path;
     root = document.createElement('div'); root.id = 'vbody'; root.setAttribute('role', 'dialog'); root.setAttribute('aria-label', 'Human Body');
-    root.innerHTML = `<div class="vcbar"><button class="vback" aria-label="Back to the map">← Back</button><b class="vtit">${heartSVG()} Human Body <small>v0.7</small></b><div class="vzm"><button class="vout" aria-label="Zoom out">−</button><button class="vin" aria-label="Zoom in">+</button><button class="vfit" aria-label="Show the whole body">⤢</button></div></div>` +
+    root.innerHTML = `<div class="vcbar"><button class="vback" aria-label="Back to the map">← Back</button><b class="vtit">${heartSVG()} Human Body <small>v0.8</small></b><div class="vzm"><button class="vout" aria-label="Zoom out">−</button><button class="vin" aria-label="Zoom in">+</button><button class="vfit" aria-label="Show the whole body">⤢</button></div></div>` +
       `<div class="vtime vlay" role="group" aria-label="Layers">${LAYERS.map(([k, n, c]) => `<button data-l="${k}" aria-pressed="${ON[k]}" class="${ON[k] ? 'on' : ''}"><i style="background:${c}"></i>${n}</button>`).join('')}</div>` +
       `<canvas aria-label="Human body, front view. Tap a part to learn about it."></canvas><div class="vcrumb"></div><div class="vscl"></div><div class="vban"></div><div class="vhint">Tap any part · pinch or scroll to zoom · toggle layers above</div><div class="vpop" role="dialog" aria-live="polite"></div>`;
     host.appendChild(root); const $ = s => root.querySelector(s); cv = $('canvas'); cx = cv.getContext('2d'); hc = document.createElement('canvas').getContext('2d');

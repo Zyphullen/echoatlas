@@ -2,10 +2,10 @@
  "about": {
   "site": "Echo Atlas by Zyphullen",
   "url": "https://zyphullen.github.io/echoatlas/",
-  "version": "0.7",
+  "version": "0.8",
   "author": "Zyphullen",
-  "data_hash": "21c967ff63ce",
-  "generated": "2026-11-12",
+  "data_hash": "7a9b6b5a6725",
+  "generated": "2026-11-13",
   "read_me": "ai/README.md",
   "all_data": "facts.json",
   "certainty_key": {
@@ -15,7 +15,7 @@
   },
   "quality": {
    "automatic_checks": {
-    "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.7.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+    "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.8.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
     "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
    },
    "science_review": {
@@ -28,7 +28,7 @@
   "suggest_a_fix": {
    "email": "zyphullen@gmail.com",
    "subject": "Echo Atlas fix: <Card name> (<card id>)",
-   "note": "Every card has a Suggest a fix button that opens a prefilled e-mail (section, card, card id, version, page link). Card ids: fntu/<id>, maths/<id>, history/<id>-<n>, cell/<id>, body/<id>, planet/<id>, element/<symbol>, <section>/link/<from>><to>."
+   "note": "Every card has a Suggest a fix button that opens a prefilled e-mail (section, card, card id, version, page link). Card ids: fntu/<id>, maths/<id>, history/<id>-<n>, cell/<id>, body/<id>, element/<symbol>, <section>/link/<from>><to>."
   },
   "what_this_is": "Index of the Echo Atlas AI data files. Load only the section you need."
  },
@@ -45,7 +45,7 @@
    },
    "sources": 245,
    "non_wikipedia_sources": 223,
-   "bytes": 294502,
+   "bytes": 294466,
    "approx_tokens": 82000
   },
   {
@@ -54,13 +54,13 @@
    "about": "A dated timeline of the universe from the Big Bang to today: the first second, the first nuclei and light, cosmic dawn, galaxies and the Sun, Earth and life. The time scale changes between eras. On the site it is also the History view of From Nothing to Us (Explore → From Nothing to Us → History).",
    "open_on_site": "https://zyphullen.github.io/echoatlas/#timeline=1",
    "counts": {
-    "big_bang_to_today": 0,
-    "section_links": 42
+    "big_bang_to_today": 22,
+    "section_links": 41
    },
    "sources": 107,
    "non_wikipedia_sources": 79,
-   "bytes": 92249,
-   "approx_tokens": 26000
+   "bytes": 91338,
+   "approx_tokens": 25000
   },
   {
    "section": "Universe",
@@ -68,12 +68,12 @@
    "about": "A zoomable 3D tour through real NASA / ESA / Hubble / Webb / Planck / Gaia images, one stop per scale: Earth, the Sun, our sky (the Milky Way from inside), a spiral galaxy like ours (M101), Webb's First Deep Field and the cosmic microwave background. Each stop has its real size, the image credit and licence, sources and links to other sections.",
    "open_on_site": "https://zyphullen.github.io/echoatlas/#universe=1",
    "counts": {
-    "universe": 0,
-    "section_links": 15
+    "universe": 6,
+    "section_links": 14
    },
    "sources": 44,
    "non_wikipedia_sources": 36,
-   "bytes": 43539,
+   "bytes": 42585,
    "approx_tokens": 12000
   },
   {
@@ -83,12 +83,12 @@
    "open_on_site": "https://zyphullen.github.io/echoatlas/#physics=1",
    "counts": {
     "physics": 32,
-    "section_links": 65
+    "section_links": 61
    },
    "sources": 161,
    "non_wikipedia_sources": 123,
-   "bytes": 217622,
-   "approx_tokens": 60000
+   "bytes": 213212,
+   "approx_tokens": 59000
   },
   {
    "section": "Biology",
@@ -97,11 +97,11 @@
    "open_on_site": "https://zyphullen.github.io/echoatlas/#biology=1",
    "counts": {
     "biology": 33,
-    "section_links": 78
+    "section_links": 77
    },
-   "sources": 197,
+   "sources": 195,
    "non_wikipedia_sources": 135,
-   "bytes": 223943,
+   "bytes": 223207,
    "approx_tokens": 62000
   },
   {
@@ -115,7 +115,7 @@
    },
    "sources": 130,
    "non_wikipedia_sources": 128,
-   "bytes": 186314,
+   "bytes": 186278,
    "approx_tokens": 52000
   },
   {
@@ -128,7 +128,7 @@
    },
    "sources": 84,
    "non_wikipedia_sources": 82,
-   "bytes": 69619,
+   "bytes": 69583,
    "approx_tokens": 19000
   },
   {
@@ -137,25 +137,15 @@
    "about": "Every red (unknown) and orange (we think) card already in the other sections, in one list, with how many rival ideas and tests each has. No new science: the full card is in its own section file (open it with share_url).",
    "open_on_site": "https://zyphullen.github.io/echoatlas/#gaps=1",
    "counts": {
-    "open_questions": 0
+    "open_questions": 57,
+    "red": 28,
+    "orange": 29
    },
    "sources": 0,
    "non_wikipedia_sources": 0,
-   "bytes": 13062,
+   "sources_note": "Sources are on each real card: follow its share_url, or load its own section file.",
+   "bytes": 13048,
    "approx_tokens": 4000
-  },
-  {
-   "section": "Planet Earth",
-   "file": "ai/planet-earth.json",
-   "about": "Earth from space to the inner core: atmosphere layers, ocean, crust, mantle and core, with real depths in km.",
-   "open_on_site": "https://zyphullen.github.io/echoatlas/#planet=earth",
-   "counts": {
-    "planet": 18
-   },
-   "sources": 28,
-   "non_wikipedia_sources": 9,
-   "bytes": 20311,
-   "approx_tokens": 6000
   },
   {
    "section": "Virtual Cell",
@@ -167,7 +157,7 @@
    },
    "sources": 85,
    "non_wikipedia_sources": 44,
-   "bytes": 49414,
+   "bytes": 49378,
    "approx_tokens": 14000
   },
   {
@@ -181,20 +171,20 @@
    },
    "sources": 118,
    "non_wikipedia_sources": 37,
-   "bytes": 80651,
+   "bytes": 80615,
    "approx_tokens": 22000
   },
   {
-   "section": "All the Elements (and Atom Sandbox)",
+   "section": "All the Elements",
    "file": "ai/elements.json",
-   "about": "All 118 elements with symbols, groups and simplified cosmic origins (where each element was mostly made). The Atom Sandbox uses this table; it is a teaching toy with preset reactions, not a quantum simulator.",
+   "about": "All 118 elements with symbols, groups and simplified cosmic origins (where each element was mostly made).",
    "open_on_site": "https://zyphullen.github.io/echoatlas/#ptable=1",
    "counts": {
     "elements": 118
    },
    "sources": 14,
    "non_wikipedia_sources": 14,
-   "bytes": 64368,
+   "bytes": 64210,
    "approx_tokens": 18000
   }
  ],

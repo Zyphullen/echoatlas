@@ -574,13 +574,13 @@ const VCELL = (() => {
   // ---------- breadcrumb, banner, clock ----------
   let crumbTxt = '';
   function crumb() { const z = cam.z; let parts, hintT = 'Tap any part to learn about it · pinch or scroll to zoom';
-    { parts = ['Human cell']; const g = regionAt(cam.x, cam.y);
+    { parts = []; const g = regionAt(cam.x, cam.y);
       if (z >= 1.2 && g.k !== 'out') parts.push(g.n); else if (z >= 1.2) parts.push('Outside the cell');
       if (z >= 8 && z < 110) { parts.push('Macromolecules' + (g.s && g.s !== g.n ? ': ' + g.s : '')); hintT = 'Big molecules: proteins, ribosomes, DNA spools (2–30 nm)'; }
       if (z >= 110) { const m = mol(Math.floor(cam.x / TILE), Math.floor(cam.y / TILE)); parts.push('Molecules' + (m ? ': ' + P[m.key].n : '')); hintT = 'Keep zooming: every molecule is made of atoms'; }
       if (z >= 450) { const a = nearestAtom(cam.x, cam.y); parts.push('Atoms' + (a ? ': ' + EL[a.e].nm : '')); hintT = 'Zoom into one atom to look inside it';
         if (a && a.r * z > 90) { parts.push('Inside an atom'); hintT = 'Mostly empty space: a tiny nucleus in a cloud of electrons'; } } }
-    const txt = parts.join(' › '); if (txt !== crumbTxt) { crumbTxt = txt; crEl.textContent = txt; } if (hint.textContent !== hintT) hint.textContent = hintT; }
+    const txt = parts.join(' › '); if (txt !== crumbTxt) { crumbTxt = txt; crEl.textContent = txt; crEl.style.display = txt ? '' : 'none'; } if (hint.textContent !== hintT) hint.textContent = hintT; }
   let banTxt = '', clkTxt = '';
   const fmtT = s => { if (s < 60) return s.toFixed(1) + ' s'; const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), ss = Math.floor(s % 60); return (d ? d + ' d ' : '') + h + ':' + String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0'); };
   function status() { const z = cam.z;
@@ -685,7 +685,7 @@ const VCELL = (() => {
   function init(host, o = {}) {
     if (alive) destroy(); opts = o; alive = true; D = build(); t = 0; last = 0; sel = null; layer = 1; offs = [0, 0]; simT = 0; tm = 0; simR = rng(4242); MC = new Map(); mcTm = null;
     root = document.createElement('div'); root.id = 'vcell'; root.setAttribute('role', 'dialog'); root.setAttribute('aria-label', 'Virtual Cell: a typical human cell');
-    root.innerHTML = (o.embedded ? '' : `<div class="vcbar"><button class="vback" aria-label="Back to the map">← Back</button><b class="vtit">${dnaSVG()} Virtual Cell <small>typical human cell · v0.7</small></b>
+    root.innerHTML = (o.embedded ? '' : `<div class="vcbar"><button class="vback" aria-label="Back to the map">← Back</button><b class="vtit">${dnaSVG()} Virtual Cell <small>typical human cell · v0.8</small></b>
       <div class="vzm"><button class="vout" aria-label="Zoom out">−</button><button class="vin" aria-label="Zoom in">+</button><button class="vfit" aria-label="Show the whole cell">⤢</button></div></div>`) +
       `<div class="vtime" role="group" aria-label="Time speed"><button class="vpl" aria-label="Pause">⏸</button>${SPEEDS.map(s => `<button data-s="${s}" aria-pressed="false">${s >= 1e4 ? '10k' : s}×</button>`).join('')}<button class="vsc" aria-pressed="false" title="Microscope look (subtle, optional)" aria-label="Microscope look">🔬</button><span class="vclk" aria-live="off"></span></div>` +
       `<div class="vban"></div><canvas aria-label="A typical human cell drawn to scale. Tap a part to learn about it."></canvas><div class="vcrumb" aria-live="polite"></div><div class="vhint">Tap any part to learn about it · pinch or scroll to zoom</div><div class="vscl"></div><div class="vpop" role="dialog" aria-live="polite"></div>`;

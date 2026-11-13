@@ -5,7 +5,33 @@
 
 Live: https://zyphullen.github.io/echoatlas/
 
-## Current version: v0.7 (12 Nov 2026)
+## Current version: v0.8 (12 Nov 2026)
+
+1. 🏷️ The browser tab shows the open page (e.g. “From Nothing to Us · History · Echo Atlas”), or the card name when a card is open
+2. 🎹 ♫ Music button on every page, Home too: pick any of the 12 songs, or let them play at random until you mute
+3. 🧹 Top left: Echo Atlas, the version and the name of the open page (and card)
+4. 🤖 AI / SI panel shows the real counts: 57 open questions (28 red, 29 orange), 22 dated events, 6 Universe stops
+5. ⚡ Physics, Virtual Cell and the other explorers open instantly, even the first time after a hard refresh
+6. ✂️ No version pill next to the big Home title (the top left still shows it)
+7. ⬆️ The Home title sits a line higher
+8. ✨ Slow, gentle star twinkles behind Home (still when “reduce motion” is on)
+9. 🧾 Home footer: “Built with Grok Bot, made by Zyphullen”
+10. 🧭 No second bar (Back, name, version) on Physics, Virtual Cell and the other explorers; their own zoom and layer buttons stay
+11. 📐 One top bar that looks the same on every page: Home, Explore, Music and AI / SI always in the same place; search on Map, Ring and History
+
+### Fixes before live (13 Nov 2026, still shown as v0.8)
+1. 🧹 Top left is Echo Atlas (version + open page name under it), then Home and Explore beside it, on every page
+2. 🎹 Music is the flame, speaker and i (song list + Random), like v0.7; About stays a link in that list
+3. ⬇️ The Home title sits one line lower so it does not sit under the top bar
+4. 🗺️ From Nothing to Us and Maths open Map directly; History / Map / Ring sit in the top bar (no Explore dropdowns)
+5. 🌍 Planet Earth is parked; Universe covers Earth. Old `#planet=` links open Universe
+6. ⚛️ Atom Sandbox is parked; All the Elements (periodic table) stays. Old `#atom=` links open Home
+7. 🔭 Universe step bar, Cell speed bar and Human Body layer buttons sit just under the top bar
+8. 🗺️ The “You are here” mini-map box is gone (the timeline era strip stays)
+9. 🧫 The “Human cell” label above the cell is gone
+10. ❓ Open questions starts just under the top bar, with no empty gap
+
+## v0.7 (12 Nov 2026)
 
 1. 🎹 12 piano tracks that shuffle each visit, with no instant repeat
 2. ⏳ From Nothing to Us has a History view: the Big Bang to Today timeline

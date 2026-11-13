@@ -1,9 +1,9 @@
-# facts.json guide · Echo Atlas by Zyphullen (v0.7)
+# facts.json guide · Echo Atlas by Zyphullen (v0.8)
 
 ## One AI file per section
 
 The same data is also split into one file per section in `ai/`, so an AI can load only what it needs:
-`ai/from-nothing-to-us.json`, `ai/big-bang-to-today.json`, `ai/universe.json`, `ai/physics.json`, `ai/biology.json`, `ai/maths.json`, `ai/maths-history.json`, `ai/open-questions.json`, `ai/planet-earth.json`, `ai/virtual-cell.json`, `ai/human-body.json`, `ai/elements.json`.
+`ai/from-nothing-to-us.json`, `ai/big-bang-to-today.json`, `ai/universe.json`, `ai/physics.json`, `ai/biology.json`, `ai/maths.json`, `ai/maths-history.json`, `ai/open-questions.json`, `ai/virtual-cell.json`, `ai/human-body.json`, `ai/elements.json`.
 
 Each section file already holds that section's facts, colours, sources and the links between ideas, including links to cards in other sections (`related`, `section_links`). Load another section file only to read the card at the other end of a link.
 
@@ -44,7 +44,7 @@ A link takes the colour of its less-certain end, the same as the line on the map
 | `open_questions` | Every red and orange card already in the data, in one list (`red`, `orange`, `items`) |
 | `quality` | What the automatic checks do, and that no formal science review has been done yet |
 | `maths`, `maths_history`, `crosslinks` | Maths map, dated Maths History, Maths ↔ Universe links |
-| `virtual_cell`, `virtual_body`, `planet`, `body_to_cell` | The explorers' cards |
+| `virtual_cell`, `virtual_body`, `body_to_cell` | The explorers' cards |
 | `elements` | 118 elements and where they come from (`origin_key`, `list`, `not_yet_made`) |
 | `sources`, `source_check` | Every source and the link check (date, method, summary) |
 | `suggest_a_fix` | E-mail and subject format for corrections |
@@ -87,13 +87,11 @@ Share link for a link card: `#l=<from>%3E<to>` (for example `#l=bbn%3Eatoms`).
 | `maths_history.nodes[]` | via `#m=<id>` | `id`, `share_url`, `events[]` (`index`, `year`, `end_year`, `label`, `kind` idea/proof, `text`, `certainty`, `sources`) |
 | `virtual_cell[]` | `#cell=<id>` | `id`, `title`, `certainty`, `summary`, `details`, `drawing_note`, `map_node`, `sources` |
 | `virtual_body[]` | `#body=<id>` | same as the cell |
-| `planet[]` | `#planet=<id>` | plus `partly`, `depth_km`, `side` |
 | `elements.list[]` | `#ptable=1&el=<z>` | `z`, `symbol`, `name`, `group`, `main_origin`, `also_from`, `sources` |
 | `physics.nodes[]`, `biology.nodes[]` | `#p=<id>`, `#b=<id>` | `id`, `title`, `category`, `subtitle`, `certainty`, `summary`, `details`, `parents`, `sources`, `related` |
 | `big_bang_to_today.events[]` | `#t=<id>` | `id`, `title`, `when`, `seconds_after_big_bang`, `certainty`, `summary`, `sources`, `related` |
 | `universe.stops[]` | `#u=<id>` | `id`, `order`, `title`, `subtitle`, `size`, `shown_as`, `certainty`, `summary`, `details`, `image`, `sources`, `related` |
 | `open_questions.items[]` | its `share_url` | `section`, `id`, `title`, `certainty`, `rival_ideas`, `tests` (the full card stays in its own section) |
-| Atom Sandbox | `#atom=1` | A teaching toy, not in facts.json |
 
 ## A source
 
@@ -103,7 +101,7 @@ For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) `year` is the year
 
 ## Automatic checks vs science review
 
-- 🤖 `src/audit.py` (report in `AUDIT-v0.7.md`) checks structure: colours, sources, links, share links, counts, data hash and that source links answer. It does not read the science.
+- 🤖 `src/audit.py` (report in `AUDIT-v0.8.md`) checks structure: colours, sources, links, share links, counts, data hash and that source links answer. It does not read the science.
 - 🔬 No formal science review / peer review has been done yet. Check claims against their sources and use **Suggest a fix**.
 
 ## Adding a fact fast
@@ -111,7 +109,7 @@ For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) `year` is the year
 1. **Map card**: add an object to `src/nodes.js`: `{id, r, x, s:'k'|'t'|'u', ic, name, line, sz, szt, info:[…], L2:[…], L3:[…], src:['key'], p:['parent-id'], el:{parent:'line label'}}`. `r` is the stage column. Add `es:{parent:'u'}` only to make one line less certain.
 2. **Source**: add `key:['Title (year)', 'https://…']` to `src/sources.js`. Prefer the paper or the official page; a Wikipedia page can be an extra key.
 3. **Link source**: add `'parent>child':'key1 key2'` to `LINK_SRC` in `src/link-sources.js` (an empty string plus a `LINK_SRC_NOTE` if none exists).
-4. **Explorer card**: `src/cellparts.js`, `src/bodyparts.js`, `src/planetparts.js`. **Maths**: `src/maths-nodes.js`, `src/maths-history.js`. **Physics / Biology / timeline**: `src/physics.js`, `src/biology.js`, `src/cosmic-timeline.js`. **Universe stop**: `src/universe.js` (real images only, in `src/universe/`, with the credit).
+4. **Explorer card**: `src/cellparts.js`, `src/bodyparts.js`. **Maths**: `src/maths-nodes.js`, `src/maths-history.js`. **Physics / Biology / timeline**: `src/physics.js`, `src/biology.js`, `src/cosmic-timeline.js`. **Universe stop**: `src/universe.js` (real images only, in `src/universe/`, with the credit).
 5. Check new links: `python3 tools/source_meta_v03.py` after a link check, then `python3 src/build.py`. The build stops on a missing source, a missing parent or a JavaScript error, and `python3 src/audit.py` runs the automatic checks (structure only, not a science review); `node test-v0.7.js` runs the browser tests.
 
 Spot a mistake? Every card has **Suggest a fix**, or e-mail zyphullen@gmail.com with the subject `Echo Atlas fix: <card name> (<card id>)`.

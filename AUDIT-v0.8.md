@@ -1,5 +1,5 @@
-# AUDIT v0.7 · Echo Atlas by Zyphullen
-Data hash `21c967ff63ce` · generated 2026-11-12 by src/audit.py from facts.json.
+# AUDIT v0.8 · Echo Atlas by Zyphullen
+Data hash `7a9b6b5a6725` · generated 2026-11-13 by src/audit.py from facts.json.
 
 > 🤖 **These are automatic checks, not a science review.** A script checks structure: colours, sources, links, share links, counts, data hash and that source URLs answer. It does not read the science, so passing does not mean a claim is right. 🔬 **Science review: no formal peer review yet.** Please check claims against their sources and use Suggest a fix.
 
@@ -11,7 +11,6 @@ Data hash `21c967ff63ce` · generated 2026-11-12 by src/audit.py from facts.json
 | links | 145 |
 | cell | 37 |
 | body | 72 |
-| planet | 18 |
 | elements | 118 |
 | math_nodes | 86 |
 | math_links | 143 |
@@ -20,7 +19,7 @@ Data hash `21c967ff63ce` · generated 2026-11-12 by src/audit.py from facts.json
 | physics_nodes | 32 |
 | biology_nodes | 33 |
 | timeline_events | 22 |
-| section_links | 200 |
+| section_links | 193 |
 | crosslinks | 25 |
 | sources | 588 |
 | history_nodes | 86 |
@@ -79,11 +78,9 @@ Data hash `21c967ff63ce` · generated 2026-11-12 by src/audit.py from facts.json
 - ✅ History event kind unclear: none
 - ✅ History event missing numeric date: none
 - ✅ Chain Theory items not orange: none
-- ✅ Planet layers with a gap or overlap: none
 - ✅ AI section files out of sync: none
 - ✅ virtual_cell cards with no source: none
 - ✅ virtual_body cards with no source: none
-- ✅ planet cards with no source: none
 
 **Audit review:** The 40 initially reported notes included 32 references actually used by historical events; those are now counted as used. Eight additional original/foundational references are intentionally retained as optional bibliography for future reading—not as card/event evidence. Retaining them cannot hide a missing citation: all card, relationship and event evidence is checked above.
 
@@ -141,7 +138,7 @@ Data hash `21c967ff63ce` · generated 2026-11-12 by src/audit.py from facts.json
 - v0.4: ai/*.json, facts.json, llms.txt and ai/README.md must all carry DATA_HASH; always rebuild with src/build.py (never hand-edit ai/).
 - v0.4: add sources with tools/papers_v04.py so every DOI is resolved in Crossref and every page is fetched; never type a title from memory.
 - v0.4: index.html loads thumbs/*.webp from the thumbs/ folder (publish it); the TEST file keeps them inside.
-- v0.5: section code loads only when opened. index.html loads js/*.js (publish the js/ folder); the TEST file keeps the same code inside. Anything that calls VPLANET, VCELL, VBODY, VATOM, VPHYS or VTIME must go through SCREENS.show (or LAZY.need) first.
+- v0.5: section code loads only when opened. index.html loads js/*.js (publish the js/ folder); the TEST file keeps the same code inside. Anything that calls VCELL, VBODY, VPHYS or VTIME must go through SCREENS.show (or LAZY.need) first.
 - v0.5: the Universe Ring, Maths Map and Maths Ring are drawn the first time they are opened. Code that looks for their nodes must call setScene / mathScene first; never query #gCircle, #gMathMap or #gMathCircle at start-up.
 - v0.5: category labels (lanes, size bands, ring sectors, Physics categories) grow when zoomed out; node names must stay the same size. Do not put node text in the label lists.
 - v0.5: the mini-map hides behind cards on phones; check it never covers the Key, the zoom buttons or a card.

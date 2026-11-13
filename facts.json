@@ -2,7 +2,7 @@
  "name": "Echo Atlas",
  "full_name": "Echo Atlas by Zyphullen",
  "tagline": "Explore the known. Map the unknown.",
- "version": "0.7",
+ "version": "0.8",
  "sections": [
   "From Nothing to Us",
   "Big Bang to Today",
@@ -11,15 +11,13 @@
   "Biology",
   "Maths",
   "Maths History",
-  "Planet Earth",
   "Virtual Cell",
   "Human Body",
-  "Atom Sandbox",
   "All the Elements"
  ],
  "author": "Zyphullen",
- "data_hash": "21c967ff63ce",
- "generated": "2026-11-12",
+ "data_hash": "7a9b6b5a6725",
+ "generated": "2026-11-13",
  "key": {
   "green": "known",
   "orange": "we think (leading idea / hypothesis)",
@@ -35,7 +33,6 @@
   "crosslinks": 25,
   "cell": 37,
   "body": 72,
-  "planet": 18,
   "elements": 118,
   "sources": 588,
   "physics_nodes": 32,
@@ -45,7 +42,7 @@
   "timeline_events": 22,
   "universe_stops": 6,
   "open_questions": 57,
-  "section_links": 200,
+  "section_links": 193,
   "link_reasons": 313,
   "source_urls": 793
  },
@@ -32954,724 +32951,6 @@
    ]
   }
  ],
- "planet": [
-  {
-   "id": "earth",
-   "title": "Earth",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": null,
-   "side": null,
-   "summary": [
-    "Radius about 6,371 km. Mass about 6 × 10²⁴ kg.",
-    "Formed about 4.54 billion years ago."
-   ],
-   "details": [
-    "Drawn as a cut-away: real layers to scale, shapes simplified (land on the left half, ocean on the right)."
-   ],
-   "sources": [
-    {
-     "title": "NASA Science: Earth Facts",
-     "url": "https://science.nasa.gov/earth/facts/",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NASA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Dalrymple 2001: The age of the Earth in the twentieth century: a problem (mostly) solved (Geological Society, London, Special Publications)",
-     "url": "https://doi.org/10.1144/GSL.SP.2001.190.01.14",
-     "type": "paper",
-     "year": 2001,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "title": "Earth (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Earth",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-08 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    },
-    {
-     "title": "Structure of Earth (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Internal_structure_of_Earth",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-20 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "exo",
-   "title": "Exosphere",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": "orange",
-   "depth_km": [
-    -10000,
-    -600
-   ],
-   "side": null,
-   "summary": [
-    "From about 600 km up to about 10,000 km.",
-    "Gas so thin its atoms hardly ever meet."
-   ],
-   "details": [
-    "Its outer edge is fuzzy; it fades into space (some count it out to the Moon)."
-   ],
-   "sources": [
-    {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Exosphere (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Exosphere",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-04 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "thermo",
-   "title": "Thermosphere",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    -600,
-    -85
-   ],
-   "side": null,
-   "summary": [
-    "From about 85 to 600 km up. Auroras glow here.",
-    "The ISS flies here, about 400 km up."
-   ],
-   "details": [
-    "Thin gas can reach 2,000 °C, but it would feel cold: too few atoms to warm you."
-   ],
-   "sources": [
-    {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Thermosphere (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Thermosphere",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-26 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "meso",
-   "title": "Mesosphere",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    -85,
-    -50
-   ],
-   "side": null,
-   "summary": [
-    "From about 50 to 85 km up.",
-    "Most meteors burn up here."
-   ],
-   "details": [
-    "The coldest part of the atmosphere, about −90 °C at the top."
-   ],
-   "sources": [
-    {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Mesosphere (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Mesosphere",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-04 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "strato",
-   "title": "Stratosphere",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    -50,
-    -12
-   ],
-   "side": null,
-   "summary": [
-    "From about 12 to 50 km up.",
-    "Holds the ozone layer, which blocks most UV light."
-   ],
-   "details": [],
-   "sources": [
-    {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Stratosphere (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Stratosphere",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-04 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "tropo",
-   "title": "Troposphere",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    -12,
-    0
-   ],
-   "side": null,
-   "summary": [
-    "From the ground up to about 12 km (8 km at the poles, 18 km at the equator).",
-    "Almost all weather happens here."
-   ],
-   "details": [
-    "Holds about three quarters of the air’s mass."
-   ],
-   "sources": [
-    {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Troposphere (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Troposphere",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-04 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "atmo",
-   "title": "Atmosphere",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": null,
-   "side": null,
-   "summary": [
-    "A thin layer of gas: 78% nitrogen, 21% oxygen.",
-    "Zoom in to see its 5 layers."
-   ],
-   "details": [
-    "Half of all air is below about 5.5 km."
-   ],
-   "sources": [
-    {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "NASA Science: Earth Facts",
-     "url": "https://science.nasa.gov/earth/facts/",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NASA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Atmosphere of Earth (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-24 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "karman",
-   "title": "Kármán line",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": null,
-   "side": null,
-   "summary": [
-    "100 km up: a common agreed edge of space.",
-    "It is a convention, not a physical wall."
-   ],
-   "details": [],
-   "sources": [
-    {
-     "title": "McDowell 2018: The edge of space: Revisiting the Karman Line (Acta Astronautica)",
-     "url": "https://doi.org/10.1016/j.actaastro.2018.07.003",
-     "type": "paper",
-     "year": 2018,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Kármán line (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_line",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-08 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "iss",
-   "title": "Space Station (ISS)",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": null,
-   "side": null,
-   "summary": [
-    "Orbits about 400–420 km up.",
-    "Goes round Earth about every 90 minutes."
-   ],
-   "details": [
-    "Shown far bigger than real (it is about 109 m wide)."
-   ],
-   "sources": [
-    {
-     "title": "NASA: Space Station Facts and Figures",
-     "url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NASA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "International Space Station (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/International_Space_Station",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-10 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "ocean",
-   "title": "Ocean",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    0,
-    3.7
-   ],
-   "side": "sea",
-   "summary": [
-    "Covers about 71% of Earth. Average depth about 3.7 km.",
-    "Deepest point: about 10.9 km (Challenger Deep)."
-   ],
-   "details": [],
-   "sources": [
-    {
-     "title": "NOAA Ocean Service: How deep is the ocean?",
-     "url": "https://oceanservice.noaa.gov/facts/oceandepth.html",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Ocean (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Ocean",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-28 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "ocrust",
-   "title": "Oceanic crust",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    3.7,
-    10.7
-   ],
-   "side": "sea",
-   "summary": [
-    "About 7 km thick, mostly basalt.",
-    "Young: rarely older than about 200 million years."
-   ],
-   "details": [
-    "Made at mid-ocean ridges and sinks back into the mantle."
-   ],
-   "sources": [
-    {
-     "title": "White et al. 1992: Oceanic crustal thickness from seismic measurements and rare earth element inversions (J. Geophys. Res.)",
-     "url": "https://doi.org/10.1029/92JB01749",
-     "type": "paper",
-     "year": 1992,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "title": "Oceanic crust (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Oceanic_crust",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-08 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "ccrust",
-   "title": "Continental crust",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    0,
-    35
-   ],
-   "side": "land",
-   "summary": [
-    "About 35 km thick on average, up to 70 km under big mountains.",
-    "Lighter granite-like rock; parts are over 4 billion years old."
-   ],
-   "details": [
-    "Its base is the Moho, where rock gets much denser."
-   ],
-   "sources": [
-    {
-     "title": "Christensen & Mooney 1995: Seismic velocity structure and composition of the continental crust: A global view (J. Geophys. Res.)",
-     "url": "https://doi.org/10.1029/95JB00259",
-     "type": "paper",
-     "year": 1995,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "title": "Continental crust (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Continental_crust",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-17 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "crust",
-   "title": "Crust",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": null,
-   "side": null,
-   "summary": [
-    "Earth’s thin rocky skin: less than 1% of its volume.",
-    "Zoom in to see ocean and continent crust."
-   ],
-   "details": [],
-   "sources": [
-    {
-     "title": "Christensen & Mooney 1995: Seismic velocity structure and composition of the continental crust: A global view (J. Geophys. Res.)",
-     "url": "https://doi.org/10.1029/95JB00259",
-     "type": "paper",
-     "year": 1995,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "title": "White et al. 1992: Oceanic crustal thickness from seismic measurements and rare earth element inversions (J. Geophys. Res.)",
-     "url": "https://doi.org/10.1029/92JB01749",
-     "type": "paper",
-     "year": 1992,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "title": "Earth's crust (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Earth%27s_crust",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-31 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "umantle",
-   "title": "Upper mantle",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    35,
-    410
-   ],
-   "side": null,
-   "summary": [
-    "From the crust down to about 410 km. Solid rock (peridotite).",
-    "It flows very slowly, a few cm a year, moving the plates."
-   ],
-   "details": [
-    "The plates (lithosphere) are the stiff top ~100 km; below is the softer asthenosphere."
-   ],
-   "sources": [
-    {
-     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
-     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
-     "type": "paper",
-     "year": 1981,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Upper mantle (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Upper_mantle_(Earth)",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-11-11 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "tzone",
-   "title": "Transition zone",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": "orange",
-   "depth_km": [
-    410,
-    660
-   ],
-   "side": null,
-   "summary": [
-    "From about 410 to 660 km down. Minerals squeeze into new forms.",
-    "It may hold a lot of water inside minerals (how much is still debated)."
-   ],
-   "details": [
-    "A diamond found in 2014 held ringwoodite with water, from this zone."
-   ],
-   "sources": [
-    {
-     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
-     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
-     "type": "paper",
-     "year": 1981,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Transition zone (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Transition_zone_(Earth)",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-26 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "lmantle",
-   "title": "Lower mantle",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": "red",
-   "depth_km": [
-    660,
-    2891
-   ],
-   "side": null,
-   "summary": [
-    "From about 660 to 2,891 km down. Hot solid rock.",
-    "Its main mineral, bridgmanite, is the most common mineral on Earth."
-   ],
-   "details": [
-    "Two continent-sized blobs sit at its base; where they came from is unknown."
-   ],
-   "sources": [
-    {
-     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
-     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
-     "type": "paper",
-     "year": 1981,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Lower mantle (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Lower_mantle",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-19 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "ocore",
-   "title": "Outer core",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": null,
-   "depth_km": [
-    2891,
-    5150
-   ],
-   "side": null,
-   "summary": [
-    "From about 2,891 to 5,150 km down. Liquid iron and nickel.",
-    "Its flow makes Earth’s magnetic field."
-   ],
-   "details": [
-    "About 4,000–5,000 °C."
-   ],
-   "sources": [
-    {
-     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
-     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
-     "type": "paper",
-     "year": 1981,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Earth's outer core (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Earth%27s_outer_core",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-28 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "id": "icore",
-   "title": "Inner core",
-   "certainty": "green",
-   "certainty_word": "known",
-   "partly": "orange",
-   "depth_km": [
-    5150,
-    6371
-   ],
-   "side": null,
-   "summary": [
-    "A solid iron-nickel ball, radius about 1,220 km.",
-    "About 5,000–5,400 °C, near the Sun’s surface temperature."
-   ],
-   "details": [
-    "It is solid because of the huge pressure.",
-    "Its age is debated: roughly 0.5–1.5 billion years."
-   ],
-   "sources": [
-    {
-     "title": "Dziewonski & Anderson 1981: Preliminary reference Earth model (Physics of the Earth and Planetary Interiors)",
-     "url": "https://doi.org/10.1016/0031-9201(81)90046-7",
-     "type": "paper",
-     "year": 1981,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Earth's inner core (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-08 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  }
- ],
  "body_to_cell": [
   {
    "part": "heart",
@@ -43845,7 +43124,7 @@
  ],
  "quality": {
   "automatic_checks": {
-   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.7.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.8.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
    "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
   },
   "science_review": {
@@ -43911,12 +43190,6 @@
      }
     ],
     "related": [
-     {
-      "section": "Planet Earth",
-      "id": null,
-      "title": "Planet Earth",
-      "share_url": "https://zyphullen.github.io/echoatlas/#planet=1"
-     },
      {
       "section": "From Nothing to Us",
       "id": "earth",
@@ -44962,13 +44235,6 @@
       "title": "Electromagnetism",
       "label": "electromagnetism on the From Nothing to Us map",
       "share_url": "https://zyphullen.github.io/echoatlas/#n=em"
-     },
-     {
-      "section": "Atom Sandbox",
-      "id": null,
-      "title": "Atom Sandbox",
-      "label": "electrons are held to the nucleus by this pull",
-      "share_url": "https://zyphullen.github.io/echoatlas/#atom=1"
      }
     ]
    },
@@ -45719,13 +44985,6 @@
       "title": "Electrons & leptons",
       "label": "electrons and leptons on the From Nothing to Us map",
       "share_url": "https://zyphullen.github.io/echoatlas/#n=electrons"
-     },
-     {
-      "section": "Atom Sandbox",
-      "id": null,
-      "title": "Atom Sandbox",
-      "label": "electrons fill the shells in the Atom Sandbox",
-      "share_url": "https://zyphullen.github.io/echoatlas/#atom=1"
      }
     ]
    },
@@ -46828,13 +46087,6 @@
       "title": "Photons",
       "label": "photons on the From Nothing to Us map",
       "share_url": "https://zyphullen.github.io/echoatlas/#n=photons"
-     },
-     {
-      "section": "Atom Sandbox",
-      "id": null,
-      "title": "Atom Sandbox",
-      "label": "photons are the γ in the Atom Sandbox",
-      "share_url": "https://zyphullen.github.io/echoatlas/#atom=1"
      }
     ]
    },
@@ -46960,13 +46212,6 @@
      }
     ],
     "related": [
-     {
-      "section": "Atom Sandbox",
-      "id": null,
-      "title": "Atom Sandbox",
-      "label": "the shells in the Atom Sandbox",
-      "share_url": "https://zyphullen.github.io/echoatlas/#atom=1"
-     },
      {
       "section": "All the Elements",
       "id": "H",
@@ -52297,11 +51542,11 @@
       "share_url": "https://zyphullen.github.io/echoatlas/#n=goe"
      },
      {
-      "section": "Planet Earth",
-      "id": "atmo",
-      "title": "Atmosphere",
-      "label": "Earth's atmosphere",
-      "share_url": "https://zyphullen.github.io/echoatlas/#planet=atmo"
+      "section": "Universe",
+      "id": "earth",
+      "title": "Earth",
+      "label": "Earth in the Universe tour",
+      "share_url": "https://zyphullen.github.io/echoatlas/#u=earth"
      },
      {
       "section": "All the Elements",
@@ -52389,11 +51634,11 @@
       "share_url": "https://zyphullen.github.io/echoatlas/#n=animals"
      },
      {
-      "section": "Planet Earth",
-      "id": "ocean",
-      "title": "Ocean",
-      "label": "the ocean",
-      "share_url": "https://zyphullen.github.io/echoatlas/#planet=ocean"
+      "section": "Universe",
+      "id": "earth",
+      "title": "Earth",
+      "label": "Earth in the Universe tour",
+      "share_url": "https://zyphullen.github.io/echoatlas/#u=earth"
      }
     ]
    },
@@ -52457,18 +51702,11 @@
       "share_url": "https://zyphullen.github.io/echoatlas/#ptable=1&el=6"
      },
      {
-      "section": "Planet Earth",
-      "id": "atmo",
-      "title": "Atmosphere",
-      "label": "Earth's atmosphere",
-      "share_url": "https://zyphullen.github.io/echoatlas/#planet=atmo"
-     },
-     {
-      "section": "Planet Earth",
-      "id": "ocean",
-      "title": "Ocean",
-      "label": "the ocean",
-      "share_url": "https://zyphullen.github.io/echoatlas/#planet=ocean"
+      "section": "Universe",
+      "id": "earth",
+      "title": "Earth",
+      "label": "Earth in the Universe tour",
+      "share_url": "https://zyphullen.github.io/echoatlas/#u=earth"
      }
     ]
    },
@@ -56302,12 +55540,6 @@
       "id": "moon",
       "title": "The Moon",
       "share_url": "https://zyphullen.github.io/echoatlas/#n=moon"
-     },
-     {
-      "section": "Planet Earth",
-      "id": null,
-      "title": "Planet Earth",
-      "share_url": "https://zyphullen.github.io/echoatlas/#planet=1"
      }
     ]
    },
@@ -56942,42 +56174,6 @@
      "year": null,
      "year_note": "year not stated",
      "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Physics",
-    "id": "coulomb-law",
-    "title": "Coulomb's law"
-   },
-   "to": {
-    "section": "Atom Sandbox",
-    "id": null,
-    "title": "Atom Sandbox"
-   },
-   "label": "electrons are held to the nucleus by this pull",
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "ph_os_coulomb",
-     "title": "OpenStax University Physics Volume 2, 5.3 Coulomb's Law",
-     "url": "https://openstax.org/books/university-physics-volume-2/pages/5-3-coulombs-law",
-     "type": "textbook",
-     "year": 2016,
-     "year_note": "OpenStax publish date of this edition",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "ph_w_coulomb_s_law",
-     "title": "Wikipedia: Coulomb's law",
-     "url": "https://en.wikipedia.org/wiki/Coulomb's_law",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page: year of the last revision on the check day",
-     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ]
@@ -58719,62 +57915,6 @@
      "year": 2026,
      "year_note": "dated 23 Oct 2026 on the title page",
      "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Physics",
-    "id": "leptons",
-    "title": "Leptons"
-   },
-   "to": {
-    "section": "Atom Sandbox",
-    "id": null,
-    "title": "Atom Sandbox"
-   },
-   "label": "electrons fill the shells in the Atom Sandbox",
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "ph_thomson1897",
-     "title": "Thomson 1897: Cathode Rays (Philosophical Magazine)",
-     "url": "https://doi.org/10.1080/14786449708621070",
-     "type": "paper",
-     "year": 1897,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "key": "ph_os_particles",
-     "title": "OpenStax University Physics Volume 3, 11.1 Introduction to Particle Physics",
-     "url": "https://openstax.org/books/university-physics-volume-3/pages/11-1-introduction-to-particle-physics",
-     "type": "textbook",
-     "year": 2016,
-     "year_note": "OpenStax publish date of this edition",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "pdg",
-     "title": "Particle Data Group: Review of Particle Physics",
-     "url": "https://pdg.lbl.gov/",
-     "type": "review",
-     "year": null,
-     "year_note": "year not stated",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    },
-    {
-     "key": "ph_w_lepton",
-     "title": "Wikipedia: Lepton",
-     "url": "https://en.wikipedia.org/wiki/Lepton",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page: year of the last revision on the check day",
-     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ]
@@ -60760,72 +59900,6 @@
   {
    "from": {
     "section": "Physics",
-    "id": "photon",
-    "title": "Photon"
-   },
-   "to": {
-    "section": "Atom Sandbox",
-    "id": null,
-    "title": "Atom Sandbox"
-   },
-   "label": "photons are the γ in the Atom Sandbox",
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "ph_einstein1905pe",
-     "title": "Einstein 1905: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt (Annalen der Physik)",
-     "url": "https://doi.org/10.1002/andp.19053220607",
-     "type": "paper",
-     "year": 1905,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "key": "ph_compton1923",
-     "title": "Compton 1923: A Quantum Theory of the Scattering of X-rays by Light Elements (Phys. Rev.)",
-     "url": "https://doi.org/10.1103/PhysRev.21.483",
-     "type": "paper",
-     "year": 1923,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "key": "ph_os_photoelectric",
-     "title": "OpenStax University Physics Volume 3, 6.2 Photoelectric Effect",
-     "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect",
-     "type": "textbook",
-     "year": 2016,
-     "year_note": "OpenStax publish date of this edition",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "ph_os_compton",
-     "title": "OpenStax University Physics Volume 3, 6.3 The Compton Effect",
-     "url": "https://openstax.org/books/university-physics-volume-3/pages/6-3-the-compton-effect",
-     "type": "textbook",
-     "year": 2016,
-     "year_note": "OpenStax publish date of this edition",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "ph_w_photon",
-     "title": "Wikipedia: Photon",
-     "url": "https://en.wikipedia.org/wiki/Photon",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page: year of the last revision on the check day",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Physics",
     "id": "wave-particle-duality",
     "title": "Wave–particle duality"
    },
@@ -60886,62 +59960,6 @@
      "year": 2017,
      "year_note": "course taught Fall 2017 (MIT OCW page)",
      "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Physics",
-    "id": "atomic-spectra",
-    "title": "Atomic spectra"
-   },
-   "to": {
-    "section": "Atom Sandbox",
-    "id": null,
-    "title": "Atom Sandbox"
-   },
-   "label": "the shells in the Atom Sandbox",
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "ph_bohr1913",
-     "title": "Bohr 1913: On the constitution of atoms and molecules (Philosophical Magazine)",
-     "url": "https://doi.org/10.1080/14786441308634955",
-     "type": "paper",
-     "year": 1913,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-12",
-     "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
-    },
-    {
-     "key": "ph_os_bohr",
-     "title": "OpenStax University Physics Volume 3, 6.4 Bohr’s Model of the Hydrogen Atom",
-     "url": "https://openstax.org/books/university-physics-volume-3/pages/6-4-bohrs-model-of-the-hydrogen-atom",
-     "type": "textbook",
-     "year": 2016,
-     "year_note": "OpenStax publish date of this edition",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "ph_nist_asd",
-     "title": "NIST Atomic Spectra Database",
-     "url": "https://www.nist.gov/pml/atomic-spectra-database",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (official body); no single publication year",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "ph_w_spectral_line",
-     "title": "Wikipedia: Spectral line",
-     "url": "https://en.wikipedia.org/wiki/Spectral_line",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page: year of the last revision on the check day",
-     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ]
@@ -65453,11 +64471,11 @@
     "title": "Great Oxidation Event"
    },
    "to": {
-    "section": "Planet Earth",
-    "id": "atmo",
-    "title": "Atmosphere"
+    "section": "Universe",
+    "id": "earth",
+    "title": "Earth"
    },
-   "label": "Earth's atmosphere",
+   "label": "Earth in the Universe tour",
    "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
    "sources": [
     {
@@ -65481,30 +64499,33 @@
      "link_status": "ok"
     },
     {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
+     "key": "uni_nasa_earth",
+     "title": "NASA NSSDCA: Earth fact sheet",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+     "type": "agency / lab",
      "year": null,
-     "year_note": "living page (NOAA)",
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
      "last_checked": "2026-11-12",
      "link_status": "ok"
     },
     {
-     "title": "NASA Science: Earth Facts",
-     "url": "https://science.nasa.gov/earth/facts/",
-     "type": "official",
+     "key": "uni_blue_marble",
+     "title": "NASA Visible Earth: Blue Marble collection",
+     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+     "type": "agency / lab",
      "year": null,
-     "year_note": "living page (NASA)",
+     "year_note": "living page (no single publication year)",
      "last_checked": "2026-11-12",
      "link_status": "ok"
     },
     {
-     "title": "Atmosphere of Earth (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-24 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
+     "key": "uni_img_earth",
+     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ]
@@ -65724,11 +64745,11 @@
     "title": "Ecosystems and food webs"
    },
    "to": {
-    "section": "Planet Earth",
-    "id": "ocean",
-    "title": "Ocean"
+    "section": "Universe",
+    "id": "earth",
+    "title": "Earth"
    },
-   "label": "the ocean",
+   "label": "Earth in the Universe tour",
    "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
    "sources": [
     {
@@ -65772,21 +64793,33 @@
      "link_status": "ok"
     },
     {
-     "title": "NOAA Ocean Service: How deep is the ocean?",
-     "url": "https://oceanservice.noaa.gov/facts/oceandepth.html",
-     "type": "official",
+     "key": "uni_nasa_earth",
+     "title": "NASA NSSDCA: Earth fact sheet",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+     "type": "agency / lab",
      "year": null,
-     "year_note": "living page (NOAA)",
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
      "last_checked": "2026-11-12",
      "link_status": "ok"
     },
     {
-     "title": "Ocean (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Ocean",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-28 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
+     "key": "uni_blue_marble",
+     "title": "NASA Visible Earth: Blue Marble collection",
+     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+     "type": "agency / lab",
+     "year": null,
+     "year_note": "living page (no single publication year)",
+     "last_checked": "2026-11-12",
+     "link_status": "ok"
+    },
+    {
+     "key": "uni_img_earth",
+     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+     "type": "image archive",
+     "year": null,
+     "year_note": "file page with licence and original source",
+     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ]
@@ -65864,11 +64897,11 @@
     "title": "Carbon cycle"
    },
    "to": {
-    "section": "Planet Earth",
-    "id": "atmo",
-    "title": "Atmosphere"
+    "section": "Universe",
+    "id": "earth",
+    "title": "Earth"
    },
-   "label": "Earth's atmosphere",
+   "label": "Earth in the Universe tour",
    "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
    "sources": [
     {
@@ -65902,94 +64935,33 @@
      "link_status": "ok"
     },
     {
-     "title": "NOAA JetStream: Layers of the Atmosphere",
-     "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere",
-     "type": "official",
+     "key": "uni_nasa_earth",
+     "title": "NASA NSSDCA: Earth fact sheet",
+     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+     "type": "agency / lab",
      "year": null,
-     "year_note": "living page (NOAA)",
+     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
      "last_checked": "2026-11-12",
      "link_status": "ok"
     },
     {
-     "title": "NASA Science: Earth Facts",
-     "url": "https://science.nasa.gov/earth/facts/",
-     "type": "official",
+     "key": "uni_blue_marble",
+     "title": "NASA Visible Earth: Blue Marble collection",
+     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+     "type": "agency / lab",
      "year": null,
-     "year_note": "living page (NASA)",
+     "year_note": "living page (no single publication year)",
      "last_checked": "2026-11-12",
      "link_status": "ok"
     },
     {
-     "title": "Atmosphere of Earth (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-24 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Biology",
-    "id": "carbon-cycle",
-    "title": "Carbon cycle"
-   },
-   "to": {
-    "section": "Planet Earth",
-    "id": "ocean",
-    "title": "Ocean"
-   },
-   "label": "the ocean",
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "bi_nasa_carbon",
-     "title": "NASA Earth Observatory: The Carbon Cycle",
-     "url": "https://earthobservatory.nasa.gov/features/CarbonCycle",
-     "type": "official",
+     "key": "uni_img_earth",
+     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
+     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
+     "type": "image archive",
      "year": null,
-     "year_note": "living page (official body); no single publication year",
+     "year_note": "file page with licence and original source",
      "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "bi_os_cycles",
-     "title": "OpenStax Biology 2e, 46.3 Biogeochemical Cycles",
-     "url": "https://openstax.org/books/biology-2e/pages/46-3-biogeochemical-cycles",
-     "type": "textbook",
-     "year": 2018,
-     "year_note": "OpenStax publish date of this edition",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "bi_w_carbon_cycle",
-     "title": "Wikipedia: Carbon cycle",
-     "url": "https://en.wikipedia.org/wiki/Carbon_cycle",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page: year of the last revision on the check day",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "NOAA Ocean Service: How deep is the ocean?",
-     "url": "https://oceanservice.noaa.gov/facts/oceandepth.html",
-     "type": "official",
-     "year": null,
-     "year_note": "living page (NOAA)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "title": "Ocean (Wikipedia)",
-     "url": "https://en.wikipedia.org/wiki/Ocean",
-     "type": "encyclopedia",
-     "year": 2026,
-     "year_note": "living page; this version last revised 2026-10-28 (Wikipedia page history)",
-     "last_checked": "2026-11-11",
      "link_status": "ok"
     }
    ]
@@ -68920,52 +67892,6 @@
   {
    "from": {
     "section": "Big Bang to Today",
-    "id": "earth-moon",
-    "title": "Earth and Moon form"
-   },
-   "to": {
-    "section": "Planet Earth",
-    "id": null,
-    "title": "Planet Earth"
-   },
-   "label": null,
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "moon",
-     "title": "Canup & Asphaug 2001: the Moon from a giant impact (Nature)",
-     "url": "https://doi.org/10.1038/35089010",
-     "type": "paper",
-     "year": 2001,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    },
-    {
-     "key": "theia",
-     "title": "Max Planck (MPS): Theia and Earth were neighbours",
-     "url": "https://www.mps.mpg.de/theia-and-earth-were-neighbors",
-     "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "ok"
-    },
-    {
-     "key": "hopp",
-     "title": "Science 2025: iron isotopes of Earth and Moon (Theia)",
-     "url": "https://www.science.org/doi/10.1126/science.ado0623",
-     "type": "paper",
-     "year": 2025,
-     "year_note": "Crossref",
-     "last_checked": "2026-11-11",
-     "link_status": "ok (DOI registered; publisher blocks automatic checks)"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Big Bang to Today",
     "id": "oldest-water",
     "title": "Oldest evidence of water"
    },
@@ -69502,52 +68428,6 @@
      "year": null,
      "year_note": "living page (no single publication year)",
      "last_checked": "2026-11-11",
-     "link_status": "ok"
-    }
-   ]
-  },
-  {
-   "from": {
-    "section": "Universe",
-    "id": "earth",
-    "title": "Earth"
-   },
-   "to": {
-    "section": "Planet Earth",
-    "id": null,
-    "title": "Planet Earth"
-   },
-   "label": null,
-   "note": "A link between sections: the two cards are about related things. Its sources are the sources on the two cards; it does not add a new scientific claim.",
-   "sources": [
-    {
-     "key": "uni_nasa_earth",
-     "title": "NASA NSSDCA: Earth fact sheet",
-     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
-     "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year); the build box timed out on it, so it was opened by a second fetch on 12 Nov 2026 and answered",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "uni_blue_marble",
-     "title": "NASA Visible Earth: Blue Marble collection",
-     "url": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
-     "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-12",
-     "link_status": "ok"
-    },
-    {
-     "key": "uni_img_earth",
-     "title": "Image: Whole world, land and oceans (NASA Earth Observatory / Blue Marble, public domain)",
-     "url": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans.jpg",
-     "type": "image archive",
-     "year": null,
-     "year_note": "file page with licence and original source",
-     "last_checked": "2026-11-12",
      "link_status": "ok"
     }
    ]
@@ -70604,6 +69484,6 @@
  "suggest_a_fix": {
   "email": "zyphullen@gmail.com",
   "subject": "Echo Atlas fix: <Card name> (<card id>)",
-  "note": "Every card has a Suggest a fix button that opens a prefilled e-mail (section, card, card id, version, page link). Card ids: fntu/<id>, maths/<id>, history/<id>-<n>, cell/<id>, body/<id>, planet/<id>, element/<symbol>, <section>/link/<from>><to>."
+  "note": "Every card has a Suggest a fix button that opens a prefilled e-mail (section, card, card id, version, page link). Card ids: fntu/<id>, maths/<id>, history/<id>-<n>, cell/<id>, body/<id>, element/<symbol>, <section>/link/<from>><to>."
  }
 }
