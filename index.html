@@ -12,8 +12,8 @@
 <meta property="og:title" content="Echo Atlas by Zyphullen">
 <meta property="og:description" content="Explore the known. Map the unknown. Interactive maps of the universe, maths, life and Earth, by Zyphullen.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zyphullen.github.io/echoatlas/og-card.png">
-<meta property="og:image" content="https://zyphullen.github.io/echoatlas/og-card.png">
+<meta name="twitter:image" content="https://zyphullen.github.io/echoatlas/og-card-v0.8.png">
+<meta property="og:image" content="https://zyphullen.github.io/echoatlas/og-card-v0.8.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -1250,6 +1250,7 @@ body:not(.home-open) .homeTwinkles{display:none}
 @keyframes eaTwinkle{0%,62%,100%{opacity:.08;transform:scale(.6)}78%{opacity:var(--o);transform:scale(1)}88%{opacity:calc(var(--o) * .5);transform:scale(.85)}}
 @media(prefers-reduced-motion:reduce){.homeTwinkles .tw{animation:none!important;opacity:.22;transform:none}}
 /* v0.8 Home footer credit */
+.homeCredit a{color:#8cd9d2}
 .homeCredit{text-align:center;font-size:11.5px;color:#a6b5cc;letter-spacing:.3px;padding:2px 9px 22px}
 @media(max-width:600px){.homeCredit{font-size:11px;padding-bottom:18px}}
 
@@ -6023,7 +6024,7 @@ const HOME_THUMBS=/*__THUMBMAP__*/{"biology": "thumbs/biology.webp", "body": "th
   const TH=typeof HOME_THUMBS!=='undefined'?HOME_THUMBS:{};
   const art=t=>TH[t.id]?`<img class="tileArt tileShot" src="${TH[t.id]}" alt="" loading="lazy" decoding="async">`:`<div class="tileArt tileShot tileNoShot"></div>`;
   const home=document.getElementById('homeScreen');
-  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas</h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div><footer class="homeCredit">Built with Grok Bot, made by Zyphullen</footer></div>`;
+  home.innerHTML=`<div class="homeWrap"><div class="homeIntro"><h2 id="homeTitle">Echo Atlas</h2><p class="homeTag">Explore the known. Map the unknown.</p><p>Maps, timelines and explorers. Every fact is coloured by certainty and linked to its sources.</p></div><div class="homeTiles">${T.map(t=>`<button class="homeTile${t.wide?' wide':''}" data-screen="${t.d}" data-view="${t.v}" data-thumb="${t.id}" style="--tc:${t.col}" aria-label="Open ${esc(t.title)}"><div class="tilePreview">${art(t)}<span class="tileEnter">Open ↗</span></div><div class="tileContent"><div class="tileKicker">${t.kicker}</div><div class="tileHead">${icon(t.icon,t.col)}<h3>${t.title}</h3><span class="tileArrow">↗</span></div><p>${t.desc}</p></div></button>`).join('')}</div><div class="homeBottom"><span><i></i>Green established · orange provisional · red open / unknown</span><span>Previews are real screenshots of each screen. Your progress stays on this device; no account needed.</span><a href="knowledge.html">Plain facts</a> · <a href="facts.json">Data &amp; sources</a></div><footer class="homeCredit">Built with Grok Bot, made by <a href="https://x.com/Zyphullen" target="_blank" rel="noopener">Zyphullen</a></footer></div>`;
 })();
 
 /* Maths History (Echo Atlas v0.2): a full-size SVG timeline redrawn at the current zoom.
