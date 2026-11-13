@@ -5,7 +5,20 @@
 
 Live: https://zyphullen.github.io/echoatlas/
 
-## Current version: v0.8 (12 Nov 2026)
+## Current version: v0.9 (13 Nov 2026)
+
+1. ⚡ Universe opens faster, with a loading spinner
+2. 🔭 Sharper Universe pictures (8K Earth) that stay crisp when you zoom in
+3. 🔍 Zooming never jumps to another Universe stop
+4. 🌿 Biology gets a Ring and a History
+5. ⚛️ Physics gets a Ring and a History
+6. 📖 From Nothing to Us reads top to bottom, in bordered sections
+7. 🔘 Every section has Book · Ring · Map; Book opens first
+8. 🕸️ Map is a spider web of links: click any dot for its card
+9. 💾 Each section remembers the view you used last
+10. 🔠 Ring section names stay readable at every zoom
+
+## v0.8 (12 Nov 2026)
 
 1. 🏷️ The browser tab shows the open page (e.g. “From Nothing to Us · History · Echo Atlas”), or the card name when a card is open
 2. 🎹 ♫ Music button on every page, Home too: pick any of the 12 songs, or let them play at random until you mute

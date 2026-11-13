@@ -1,15 +1,18 @@
 'use strict';
 /* v0.7 UNIVERSE: a zoomable 3D tour through real images, one stop per scale (Earth → Sun → our sky → a spiral galaxy → a deep field → the oldest light).
    Raw WebGL 1, no libraries, no network. Pictures come from UNI_IMG (index.html: universe/*.webp next to the page; TEST file: inline).
-   Drag to turn or look around, wheel / pinch / + − to zoom; zooming past a stop's limits moves to the next scale. #universe=1 · #u=<stop id> */
+   Drag to turn or look around, wheel / pinch / + − to zoom. v0.9: zoom only zooms inside the scale you picked (it never jumps to another one);
+   pick a scale with the 1–6 bar or ‹ ›. Each picture shows a small one at once, then swaps in a sharp 4096 px one (mipmaps + anisotropic
+   filtering), so close zooms stay crisp. #universe=1 · #u=<stop id> */
 const VUNI = (() => {
   const K = ['#3dff8a', '#ffa53d', '#ff4d5e'], CN = { k: 'known', t: 'we think', u: 'unknown' }, CC = { k: K[0], t: K[1], u: K[2] };
   // per kind: camera distance range (globe / disc / panel / shell) or field of view range (sky, seen from inside)
-  const LIM = { globe: [1.35, 7, 3.2], disc: [0.9, 6.5, 2.6], panel: [0.75, 6, 2.4], shell: [1.25, 6, 3.2], sky: [28, 100, 75] };
+  const LIM = { globe: [1.25, 7, 3.2], disc: [0.4, 6.5, 2.6], panel: [0.32, 6, 2.4], shell: [1.32, 6, 3.2], sky: [24, 100, 75] };   // v0.9: closer than v0.8, only as close as the sharp pictures hold up
   let root, cv, gl, prog, alive = false, opts = {}, i0 = 0, cur = null, dist = 3, yaw = 0, pitch = 0, fade = 1, fadeDir = 0, raf = 0, last = 0, spin = true;
   let sphere, quad, tex = {}, ptrs = new Map(), pinch0 = 0, drag = null, card, cardOn = false, glOK = true, onKey, onResize, nextIdx = -1, enterFrom = 0;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const imgURL = k => { const u = (typeof UNI_IMG !== 'undefined' && UNI_IMG[k]) || ('universe/' + k + '.webp'); if (!u.startsWith('inline:')) return u;
+  let aniso = null, maxTex = 4096; const HI = new Set(['earth', 'sun', 'gaia-sky', 'm101', 'webb-deep-field']); // pictures with a sharp universe/hi/ copy (the CMB has no sharper original)
+  const imgURL = k => { const u = (typeof UNI_IMG !== 'undefined' && UNI_IMG[k]) || ('universe/' + (k.startsWith('hi-') ? 'hi/' + k.slice(3) : k) + '.webp'); if (!u.startsWith('inline:')) return u;
     const el = document.getElementById(u.slice(7)); if (!el) return ''; if (el._url) return el._url; const b = atob(el.textContent.trim()), a = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) a[i] = b.charCodeAt(i);
     return el._url = URL.createObjectURL(new Blob([a], { type: 'image/webp' })); };
 
@@ -23,11 +26,13 @@ const VUNI = (() => {
   /* ---------- GL setup ---------- */
   const VS = `attribute vec3 p;attribute vec2 t;uniform mat4 M;varying vec2 v;varying vec3 q;void main(){v=t;q=p;gl_Position=M*vec4(p,1.0);}`;
   // mode 0 sphere (equirectangular, u flipped for sky maps), 1 round photo (soft circular edge), 2 square photo (soft edges)
-  const FS = `precision mediump float;varying vec2 v;varying vec3 q;uniform sampler2D T;uniform float A,mode,flip,shade;uniform vec3 L;
+  // v0.9: a light unsharp mask (the picture minus its 1-texel blur) keeps close zooms crisp; it only sharpens real pixels, nothing is painted in
+  const FS = `precision mediump float;varying vec2 v;varying vec3 q;uniform sampler2D T;uniform float A,mode,flip,shade,SH;uniform vec3 L;uniform vec2 TS;
+    vec4 tx(vec2 u){vec4 c=texture2D(T,u);if(SH>0.001){vec4 b=(texture2D(T,u+vec2(TS.x,0.0))+texture2D(T,u-vec2(TS.x,0.0))+texture2D(T,u+vec2(0.0,TS.y))+texture2D(T,u-vec2(0.0,TS.y)))*0.25;c.rgb=clamp(c.rgb+(c.rgb-b.rgb)*SH,0.0,1.0);}return c;}
     void main(){vec4 c;float a=A;
-      if(mode<0.5){float lon=atan(q.x,q.z),lat=asin(clamp(q.y,-1.0,1.0));float u=0.5+lon/6.2831853;if(flip>0.5)u=1.0-u;c=texture2D(T,vec2(u,0.5-lat/3.1415927));
-        if(shade>0.5){float d=max(dot(normalize(q),L),0.0);c.rgb*=0.55+0.6*d;}}
-      else{c=texture2D(T,v);vec2 w=v*2.0-1.0;if(mode<1.5){a*=smoothstep(1.0,0.86,length(w));}else{a*=smoothstep(1.0,0.9,max(abs(w.x),abs(w.y)));}}
+      if(mode<0.5){float lon=atan(q.x,q.z),lat=asin(clamp(q.y,-1.0,1.0));float u=0.5+lon/6.2831853;if(flip>0.5)u=1.0-u;c=tx(vec2(u,0.5-lat/3.1415927));
+        if(shade>0.5){float d=max(dot(normalize(q),L),0.0);c.rgb*=0.5+0.52*d;}}
+      else{c=tx(v);vec2 w=v*2.0-1.0;if(mode<1.5){a*=smoothstep(1.0,0.86,length(w));}else{a*=smoothstep(1.0,0.9,max(abs(w.x),abs(w.y)));}}
       gl_FragColor=vec4(c.rgb,c.a*a);}`;
   function sh(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw Error(gl.getShaderInfoLog(s)); return s; }
   function mesh(pos, uv, idx) { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(pos), gl.STATIC_DRAW);
@@ -42,20 +47,35 @@ const VUNI = (() => {
     for (let y = 0; y < NY; y++) for (let x = 0; x < NX; x++) { const a = y * (NX + 1) + x, b = a + NX + 1; I.push(a, b, a + 1, a + 1, b, b + 1); }
     sphere = mesh(P, U, I); quad = mesh([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, 1, 0], [0, 1, 1, 1, 1, 0, 0, 0], [0, 1, 2, 0, 2, 3]);
     gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    aniso = gl.getExtension('EXT_texture_filter_anisotropic') || gl.getExtension('WEBKIT_EXT_texture_filter_anisotropic') || gl.getExtension('MOZ_EXT_texture_filter_anisotropic');
+    maxTex = gl.getParameter(gl.MAX_TEXTURE_SIZE) || 4096;
     return true;
   }
+  function upload(k, t, im) { tex[k] && (tex[k].w = im.width, tex[k].h = im.height); gl.bindTexture(gl.TEXTURE_2D, t); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, im);
+    const pot = (im.width & (im.width - 1)) === 0 && (im.height & (im.height - 1)) === 0;
+    if (pot) { gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); } else gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, pot ? gl.REPEAT : gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    if (aniso && pot) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(16, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT) || 1)); }
+  // decode off the main thread where the browser can (img.decode), so opening a scale never freezes the page
+  function loadImg(src, done, fail) { const im = new Image(); im.decoding = 'async';
+    const go = () => { if (!alive || !gl) return; done(im); };
+    im.onload = () => { if (im.decode) im.decode().then(go, go); else go(); }; im.onerror = fail; im.src = src; return im; }
+  // the 8192 px Earth only goes in whole where the graphics card can hold it; elsewhere it is halved first
+  function fitTex(im) { if (im.width <= maxTex && im.height <= maxTex) return im; const f = maxTex / Math.max(im.width, im.height), c = document.createElement('canvas');
+    c.width = Math.round(im.width * f); c.height = Math.round(im.height * f); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); return c; }
   function texture(k) {
     if (tex[k]) return tex[k].ok ? tex[k].t : null;
     const src = imgURL(k); if (!src) return null; // TEST file still reading its inline pictures: try again next frame
-    const t = gl.createTexture(), im = new Image(); tex[k] = { t, ok: false, img: im };
-    im.onload = () => { if (!alive || !gl) return; gl.bindTexture(gl.TEXTURE_2D, t); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
-      try { gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, im); } catch (e) { tex[k].err = true; return; }
-      const pot = (im.width & (im.width - 1)) === 0 && (im.height & (im.height - 1)) === 0;
-      if (pot) { gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); } else gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, pot ? gl.REPEAT : gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      tex[k].ok = true; root.classList.remove('loading'); };
-    im.onerror = () => { tex[k].err = true; };
-    im.src = src; return null;
+    const t = gl.createTexture(), T = tex[k] = { t, ok: false, hi: false };
+    // TEST file: for the later stops the small copy is left out (size limit) and the sharp picture is the first and only one
+    const one = typeof UNI_IMG !== 'undefined' && UNI_IMG[k] && UNI_IMG[k] === UNI_IMG['hi-' + k];
+    loadImg(src, im => { try { upload(k, t, fitTex(im)); } catch (e) { T.err = true; return; } T.ok = true; T.hi = one; if (cur && cur.img === k) root.classList.remove('loading'); kick();
+      // v0.9: then the sharp picture, swapped into the same texture once it is decoded
+      if (!one && maxTex >= 4096 && HI.has(k)) setTimeout(() => { if (!alive || !gl) return; const hs = imgURL('hi-' + k); if (!hs) return;
+        loadImg(hs, hm => { try { upload(k, t, fitTex(hm)); T.hi = true; kick(); } catch (e) {} }, () => {}); }, cur && cur.img === k ? 30 : 400); },
+      () => { T.err = true; });
+    return null;
   }
   function draw(m, M, A, mode, flip, shadeOn) {
     const pl = gl.getAttribLocation(prog, 'p'), tl = gl.getAttribLocation(prog, 't');
@@ -71,7 +91,7 @@ const VUNI = (() => {
   function frame(now) {
     raf = 0; if (!alive) return; const dt = Math.min(0.05, (now - (last || now)) / 1000); last = now;
     if (fadeDir) { fade += fadeDir * dt * 3.2; if (fadeDir < 0 && fade <= 0) { fade = 0; fadeDir = 1; select(nextIdx, enterFrom); } else if (fade >= 1) { fade = 1; fadeDir = 0; } }
-    if (spin && !drag && cur && cur.kind !== 'sky') yaw += dt * (cur.kind === 'globe' ? 0.12 : 0.05);
+    if (spin && !drag && cur && cur.kind !== 'sky') yaw += dt * (cur.kind === 'globe' ? 0.12 : 0.05) * Math.min(1, near());
     render(); if (fadeDir || spin || drag) raf = requestAnimationFrame(frame);
   }
   const kick = () => { if (!raf && alive) raf = requestAnimationFrame(frame); };
@@ -80,12 +100,13 @@ const VUNI = (() => {
     if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
     gl.viewport(0, 0, cv.width, cv.height); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     const t = texture(cur.img); if (!t) return; gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, t); gl.uniform1i(gl.getUniformLocation(prog, 'T'), 0);
+    { const T = tex[cur.img]; gl.uniform2f(gl.getUniformLocation(prog, 'TS'), 1 / (T.w || 2048), 1 / (T.h || 1024)); gl.uniform1f(gl.getUniformLocation(prog, 'SH'), T.hi ? 0.25 + 0.45 * Math.max(0, 1 - Math.min(1, near())) : 0.15); }
     const asp = w / Math.max(1, h), narrow = asp < 0.8 ? 1.25 : 1;
     if (cur.kind === 'sky') {   // inside the ball: zoom changes the field of view
       const P = persp(dist * Math.PI / 180 * narrow, asp, 0.05, 10), V = mul(rotX(pitch), rotY(yaw));
       gl.disable(gl.CULL_FACE); draw(sphere, mul(P, mul(V, [3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1])), fade, 0, 1, 0); return;
     }
-    const P = persp(0.75 * narrow, asp, 0.05, 50), V = mul(trans(0, 0, -dist), mul(rotX(pitch), rotY(yaw)));
+    const P = persp(0.75 * narrow, asp, 0.005, 50), V = mul(trans(0, 0, -dist), mul(rotX(pitch), rotY(yaw)));
     if (cur.kind === 'globe') { gl.enable(gl.CULL_FACE); gl.cullFace(gl.BACK); draw(sphere, mul(P, V), fade, 0, 0, 1); gl.disable(gl.CULL_FACE); }
     else if (cur.kind === 'shell') { gl.enable(gl.CULL_FACE); gl.cullFace(gl.FRONT); draw(sphere, mul(P, V), fade * 0.55, 0, 1, 0); gl.cullFace(gl.BACK); draw(sphere, mul(P, V), fade * 0.82, 0, 1, 0); gl.disable(gl.CULL_FACE); }
     else draw(quad, mul(P, V), fade, cur.kind === 'disc' ? 1 : 2, 0, 0);
@@ -99,7 +120,7 @@ const VUNI = (() => {
     if (UNI[i0 + 1]) texture(UNI[i0 + 1].img);   // warm the next picture
     root.querySelectorAll('.ustop').forEach((b, k) => { b.classList.toggle('on', k === i0); b.setAttribute('aria-current', k === i0 ? 'step' : 'false'); });
     const n = cur; root.querySelector('.ucap').innerHTML = `<b><i class="ud" style="background:${CC[n.s]}"></i>${esc(n.name)}</b><span class="usz">${esc(n.size)}</span><span class="ucr">📷 ${esc(n.credit)}</span>`;
-    root.querySelector('.uhint').textContent = n.kind === 'sky' ? 'Drag to look around · zoom in and out · zoom out further for the next scale' : 'Drag to turn · zoom in and out · zoom out for the next scale';
+    root.querySelector('.uhint').textContent = (n.kind === 'sky' ? 'Drag to look around' : 'Drag to turn') + ' · zoom in for detail · pick another scale above';
     paintCard(); hashSet(); if (!glOK) fallback(); kick();
   }
   function go(i, from) { if (i < 0 || i >= UNI.length || i === i0 && !from) return; if (!glOK) return select(i, from); nextIdx = i; enterFrom = from || 0; fadeDir = -1; kick(); }
@@ -115,15 +136,18 @@ const VUNI = (() => {
   function fallback() { const f = root.querySelector('.ufall'); f.hidden = false; f.innerHTML = `<img src="${imgURL(cur.img)}" alt="${esc(cur.name)}"><p>3D needs WebGL, which is off in this browser. Here is the real picture.</p>`; }
 
   /* ---------- input ---------- */
-  function zoomBy(f) { const L = LIM[cur.kind]; let d = dist * f; opts._moved = 1;
-    if (d > L[1] * 1.02) { if (i0 < UNI.length - 1 && !fadeDir) go(i0 + 1, -1); d = L[1]; } else if (d < L[0] * 0.98) { if (i0 > 0 && !fadeDir) go(i0 - 1, 1); d = L[0]; }
-    dist = Math.max(L[0], Math.min(L[1], d)); spin = false; kick(); }
+  // v0.9: zoom stays inside this scale. Globe and shell zoom by height above the surface, so the last steps near the ground are fine-grained.
+  const ballK = () => cur.kind === 'globe' || cur.kind === 'shell';
+  const near = () => { const L = LIM[cur.kind]; return ballK() ? (dist - 1) / (L[2] - 1) : dist / L[2]; };
+  function zoomBy(f) { const L = LIM[cur.kind]; opts._moved = 1;
+    const d = ballK() ? 1 + (dist - 1) * f : dist * f;
+    dist = Math.max(L[0], Math.min(L[1], d)); spin = false; root.classList.toggle('uclose', near() < 0.35); kick(); }
   function onWheel(e) { e.preventDefault(); zoomBy(Math.exp(Math.max(-60, Math.min(60, e.deltaY)) * 0.004)); }
   function onDown(e) { cv.setPointerCapture && cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]); spin = false;
     if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch0 = Math.hypot(a[0] - b[0], a[1] - b[1]); drag = null; } else drag = { x: e.clientX, y: e.clientY }; root.classList.add('moving'); kick(); }
   function onMove(e) { if (!ptrs.has(e.pointerId)) return; ptrs.set(e.pointerId, [e.clientX, e.clientY]);
     if (ptrs.size === 2) { const [a, b] = [...ptrs.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0) zoomBy(pinch0 / d); pinch0 = d; return; }
-    if (!drag) return; const k = cur.kind === 'sky' ? dist / 75 * 0.006 : 0.008; yaw += (e.clientX - drag.x) * k; pitch = Math.max(-1.4, Math.min(1.4, pitch + (e.clientY - drag.y) * k)); drag = { x: e.clientX, y: e.clientY }; opts._moved = 1; kick(); }
+    if (!drag) return; const k = cur.kind === 'sky' ? dist / 75 * 0.006 : 0.008 * Math.min(1, Math.max(0.04, near())); yaw += (e.clientX - drag.x) * k; pitch = Math.max(-1.4, Math.min(1.4, pitch + (e.clientY - drag.y) * k)); drag = { x: e.clientX, y: e.clientY }; opts._moved = 1; kick(); }
   function onUp(e) { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch0 = 0; if (!ptrs.size) { drag = null; root.classList.remove('moving'); } }
 
   function init(host = document.body, o = {}) {
@@ -156,7 +180,7 @@ const VUNI = (() => {
   }
   function destroy() { alive = false; cancelAnimationFrame(raf); raf = 0; if (onKey) removeEventListener('keydown', onKey); if (onResize) removeEventListener('resize', onResize);
     try { const x = gl && gl.getExtension('WEBGL_lose_context'); x && x.loseContext(); } catch (e) {} gl = null; tex = {}; ptrs.clear(); if (root) root.remove(); root = null; }
-  return { init, destroy, isOpen: () => alive, go: i => go(i, 0), get state() { return cur ? { stop: cur.id, i: i0, kind: cur.kind, dist: +dist.toFixed(3), yaw: +yaw.toFixed(3), pitch: +pitch.toFixed(3), gl: glOK, loaded: !!(tex[cur.img] && tex[cur.img].ok), fading: !!fadeDir, card: cardOn } : null; },
+  return { init, destroy, isOpen: () => alive, go: i => go(i, 0), get state() { return cur ? { stop: cur.id, i: i0, kind: cur.kind, dist: +dist.toFixed(3), yaw: +yaw.toFixed(3), pitch: +pitch.toFixed(3), gl: glOK, loaded: !!(tex[cur.img] && tex[cur.img].ok), hi: !!(tex[cur.img] && tex[cur.img].hi), min: LIM[cur.kind][0], max: LIM[cur.kind][1], fading: !!fadeDir, card: cardOn } : null; },
     zoom: f => zoomBy(f), open: id => { const n = UNI_BY_ID[id]; if (n) { go(UNI.indexOf(n), 0); openCard(true); } } };
 })();
 window.VUNI = VUNI;
