@@ -101,7 +101,7 @@ For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) `year` is the year
 
 ## Automatic checks vs science review
 
-- 🤖 `src/audit.py` (report in `AUDIT-v0.8.md`) checks structure: colours, sources, links, share links, counts, data hash and that source links answer. It does not read the science.
+- 🤖 `src/audit.py` (report in `AUDIT-v1.0.md`) checks structure: colours, sources, links, share links, counts, data hash and that source links answer. It does not read the science.
 - 🔬 No formal science review / peer review has been done yet. Check claims against their sources and use **Suggest a fix**.
 
 ## Adding a fact fast

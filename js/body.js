@@ -262,7 +262,7 @@ const VBODY = (() => {
       const show = q && ON[q.layer] && z >= LMIN[id] && (q.layer === 'skin' || !ON.skin); const [X, Y] = w2s(x, y);
       const ok = show && X > 30 && X < VW() - 30 && Y > TOP() + 10 && Y < VH() - 60 && !used.some(([a, b]) => Math.abs(a - X) < 90 && Math.abs(b - Y) < 22);
       if (!ok) { if (el) el.style.display = 'none'; continue; } used.push([X, Y]);
-      if (!el) { el = labEls[id] = document.createElement('div'); el.className = 'vlab'; el.textContent = P[id].n.replace(/ \(.*\)/, ''); root.appendChild(el); }
+      if (!el) { el = labEls[id] = document.createElement('div'); el.className = 'vlab'; el.textContent = P[id].n.replace(/ \(.*\)/, ''); el.setAttribute('role', 'button'); el.tabIndex = -1; el.onclick = e => { e.stopPropagation(); const p = B.parts.find(r => r.id === id) || B.lines.find(r => r.id === id); if (p) select(p, false); }; root.appendChild(el); }
       el.style.display = 'block'; el.style.transform = `translate(${(X).toFixed(0)}px,${Y.toFixed(0)}px) translate(-50%,-50%)`; } }
   // ---------- crumb, banner, scale ----------
   function regionName(x, y) { const r = y < 230 ? 'Head' : y < 300 ? 'Neck' : Math.abs(x) > 160 && y < 1030 ? (x < 0 ? 'Right arm' : 'Left arm') : y < 520 ? 'Chest' : y < 760 ? 'Abdomen' : y < 890 ? 'Pelvis' : y < 1550 ? (x < 0 ? 'Right leg' : 'Left leg') : (x < 0 ? 'Right foot' : 'Left foot'); return r; }
@@ -284,13 +284,14 @@ const VBODY = (() => {
   function boundsOf(q) { let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9; for (let y = -50; y <= H + 50; y += 6) for (let x = -300; x <= 300; x += 6) { const inn = q.pts ? (hc.lineWidth = q.w + 2, hc.isPointInStroke(q.path, x, y)) : q.line ? (hc.lineWidth = q.lw, hc.isPointInStroke(q.path, x, y)) : hc.isPointInPath(q.path, x, y); if (inn) { x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y); } } return [x0, y0, x1, y1]; }
   function select(q, zoomTo) { if (!q) { sel = null; showPop(); return; } const b = boundsOf(q); sel = [q.id, b]; layer = 1; showPop();
     if (zoomTo) { const bw = Math.max(40, b[2] - b[0]), bh = Math.max(40, b[3] - b[1]); animTo((b[0] + b[2]) / 2 + (mob() ? 0 : bw * .25), (b[1] + b[3]) / 2 + (mob() ? bh * .3 : 0), Math.min(VW() * .4 / bw, (VH() - TOP() - 80) * (mob() ? .45 : .6) / bh, 2.2)); } }
-  function showPop() { if (!sel) { pop.style.display = 'none'; return; } const c = P[sel[0]]; pop.style.display = 'block';
-    pop.innerHTML = `<button class="x" aria-label="Close">×</button><b class="t1">${c.n}</b><div class="chip"><i style="background:${SCOL[c.s]}"></i>${SNAME[c.s]}${c.s2 ? ` · <i style="background:${SCOL[c.s2]}"></i>some parts still being studied` : ''}</div>${c.a.map(x => `<p>${x}</p>`).join('')}
-      <div class="chip"><i style="background:${SCOL.t}"></i>Drawing: ${c.d || 'position and size to scale; shape simplified.'}</div>
-      ${layer >= 2 ? `<div class="lay">${c.b.map(x => `<p>${x}</p>`).join('')}<div class="src">Sources: ${c.src.map(([n, u]) => srcInlineHTML(n, u)).join('')}</div></div>` : ''}
-      <div class="pact">${layer < 2 ? '<button class="more">Read more ▾</button>' : ''}<span class="lv">Layer ${layer} of 2</span>${copyBtnHTML(SITE + '#body=' + encodeURIComponent(sel[0]))}${fixBtnHTML('Human Body', c.n, 'body/' + sel[0], SITE + '#body=' + encodeURIComponent(sel[0]))}</div>${cellOf(sel[0]) && opts.onCell ? `<button class="more vtocell">🔬 See its cells</button>` : ''}`;
+  function showPop() { const hh = '#body=' + (sel ? encodeURIComponent(sel[0]) : '1'); if (alive && location.hash !== hh && /^#body=/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search + hh);
+    if (!sel) { pop.style.display = 'none'; return; } const c = P[sel[0]]; pop.style.display = 'block'; const lk = SITE + '#body=' + encodeURIComponent(sel[0]);
+    pop.innerHTML = CB({ x: '<button class="x" aria-label="Close">×</button>', t: c.n, tcls: 't1', sub: 'Human Body', c: SCOL[c.s], w: SNAME[c.s] + (c.s2 ? ' · some parts still being studied' : ''),
+      q: c.a.map(x => `<p>${x}</p>`).join(''), m: c.b.map(x => `<p>${x}</p>`).join(''), d: `<p class="chip"><i style="background:${SCOL.t}"></i>Drawing: ${c.d || 'position and size to scale; shape simplified.'}</p>`,
+      s: `<ul class="srcl">${c.src.map(([n, u]) => srcItemHTML(n, u)).join('')}</ul>`,
+      a: copyBtnHTML(lk) + fixBtnHTML('Human Body', c.n, 'body/' + sel[0], lk) + (cellOf(sel[0]) && opts.onCell ? `<button class="more vtocell">🔬 See its cells</button>` : '') });
     const tc = pop.querySelector('.vtocell'); if (tc) tc.onclick = () => { const id = sel[0], f = opts.onCell; destroy(); f(id, cellOf(id)); };
-    pop.querySelector('.x').onclick = () => { sel = null; showPop(); }; const m = pop.querySelector('.more'); if (m) m.onclick = () => { layer = 2; showPop(); }; }
+    pop.querySelector('.x').onclick = () => { sel = null; showPop(); }; }
   const cellOf = id => typeof BODY_CELLS !== 'undefined' && (BODY_CELLS[id] || (/^h_/.test(id) && BODY_CELLS.heart) || null);
   // ---------- input ----------
   function zoomAt(X, Y, k) { const [wx, wy] = s2w(X, Y); anim = null; cam.z = clampZ(cam.z * k); const [wx2, wy2] = s2w(X, Y); cam.x += wx - wx2; cam.y += wy - wy2; clampCam(); }
@@ -319,7 +320,9 @@ const VBODY = (() => {
   function destroy() { alive = false; cancelAnimationFrame(raf); if (onKey) removeEventListener('keydown', onKey); if (root) root.remove(); root = null; }
   function close() { destroy(); opts.onClose && opts.onClose(); }
   function focus(id) { if (!alive || !P[id]) return; const q = B.parts.find(p => p.id === id) || B.lines.find(p => p.id === id); if (!q) { /* v0.3: heart cut-away parts and whole-body cards open from a shared link too */ if (B.HS.some(h => h.id === id)) { const hq = B.parts.find(p => p.id === 'heart'); if (hq) { if (!ON[hq.layer]) setLayer(hq.layer, true); if (ON.skin) setLayer('skin', false); select(hq, true); } sel = [id, sel ? sel[1] : null]; } else sel = [id, null]; layer = 1; showPop(); return; } if (!ON[q.layer]) setLayer(q.layer, true); if (q.layer !== 'skin' && ON.skin) setLayer('skin', false); select(q, true); }
-  return { init, destroy, focus, isOpen: () => alive, parts: P, w2s: (x, y) => w2s(x, y), layers: o => { if (o) for (const k in o) setLayer(k, !!o[k]); return { ...ON }; },
+  return { init, destroy, focus, isOpen: () => alive, getCam: () => ({ ...cam }), setCam: c => { if (!alive || !c) return; anim = null; cam = { x: c.x, y: c.y, z: c.z }; }, parts: P, w2s: (x, y) => w2s(x, y), layers: o => { if (o) for (const k in o) setLayer(k, !!o[k]); return { ...ON }; },
     go: (x, y, z) => animTo(x, y, z), pts: () => ({ breast: [94, 425], nipple: [95, 458], collar: [80, 302], knee: [74, 1150], mons: [0, 828], vulva: [0, 880], navel: [0, 660], heart: [20, 450], liver: [-90, 570], femur: [100, 1010], skin: [-150, 1000], brain: [0, 70], aorta: [11, 620] }), crumb: () => crumbTxt,
     debug: () => ({ cam: { ...cam }, sel: sel && sel[0], layer, fps, on: { ...ON }, branches: [...BR.values()].reduce((a, b) => a + b.length, 0), sex }), BUILD };
 })();
+
+window.VBODY = VBODY;

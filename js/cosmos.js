@@ -65,12 +65,13 @@ const VUNI = (() => {
   function fitTex(im) { if (im.width <= maxTex && im.height <= maxTex) return im; const f = maxTex / Math.max(im.width, im.height), c = document.createElement('canvas');
     c.width = Math.round(im.width * f); c.height = Math.round(im.height * f); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); return c; }
   function texture(k) {
+    if (!gl) return null;   // v1.0: no WebGL: the 2D picture is shown instead (this used to throw and leave the page on "Loading…")
     if (tex[k]) return tex[k].ok ? tex[k].t : null;
     const src = imgURL(k); if (!src) return null; // TEST file still reading its inline pictures: try again next frame
     const t = gl.createTexture(), T = tex[k] = { t, ok: false, hi: false };
     // TEST file: for the later stops the small copy is left out (size limit) and the sharp picture is the first and only one
     const one = typeof UNI_IMG !== 'undefined' && UNI_IMG[k] && UNI_IMG[k] === UNI_IMG['hi-' + k];
-    loadImg(src, im => { try { upload(k, t, fitTex(im)); } catch (e) { T.err = true; return; } T.ok = true; T.hi = one; if (cur && cur.img === k) root.classList.remove('loading'); kick();
+    loadImg(src, im => { try { upload(k, t, fitTex(im)); } catch (e) { T.err = true; if (cur && cur.img === k) { glOK = false; fallback(); } return; } T.ok = true; T.hi = one; if (cur && cur.img === k) root.classList.remove('loading'); kick();
       // v0.9: then the sharp picture, swapped into the same texture once it is decoded
       if (!one && maxTex >= 4096 && HI.has(k)) setTimeout(() => { if (!alive || !gl) return; const hs = imgURL('hi-' + k); if (!hs) return;
         loadImg(hs, hm => { try { upload(k, t, fitTex(hm)); T.hi = true; kick(); } catch (e) {} }, () => {}); }, cur && cur.img === k ? 30 : 400); },
@@ -127,13 +128,13 @@ const VUNI = (() => {
   function paintCard() {
     const n = cur, srcs = n.src.map(k => SRC[k]).filter(Boolean);
     const chips = typeof xsecChipsHTML === 'function' ? xsecChipsHTML([...n.rel, ...(typeof xsecBack === 'function' ? xsecBack('uni', n.id) : [])]) : '';
-    card.innerHTML = `<button class="ux" aria-label="Close">✕</button><div class="ukick" style="color:${CC[n.s]}"><i class="ud" style="background:${CC[n.s]}"></i>${CN[n.s]} · stop ${i0 + 1} of ${UNI.length}</div>
-      <h3 id="uTitle">${esc(n.name)}</h3><p class="usub">${esc(n.sub)}</p><p>${esc(n.a)}</p>${n.b.map(([h, t]) => `<h4>${esc(h)}</h4><p>${esc(t)}</p>`).join('')}
-      <p class="ucredit">📷 Image: ${esc(n.credit)}</p><h4>Sources</h4><ol class="usrc">${srcs.map(s => `<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a></li>`).join('')}</ol>${chips}`;
+    card.innerHTML = CB({ x: '<button class="ux" aria-label="Close">✕</button>', kick: `stop ${i0 + 1} of ${UNI.length}`, t: esc(n.name), tid: 'uTitle', sub: esc(n.sub), c: CC[n.s], w: esc(CN[n.s]),
+      q: `<p>${esc(n.a)}</p><p class="ucredit">📷 Image: ${esc(n.credit)}</p>`, m: n.b.map(([h, t]) => `<h4>${esc(h)}</h4><p>${esc(t)}</p>`).join(''), d: chips,
+      s: `<ol class="usrc">${srcs.map(s => `<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a></li>`).join('')}</ol>` });
   }
   function openCard(on) { cardOn = on; card.hidden = !on; root.classList.toggle('carded', on); root.querySelector('.uinfo').setAttribute('aria-expanded', on); if (on) card.scrollTop = 0; }
   function hashSet() { if (!alive) return; const h = i0 === 0 && !opts._moved ? '#universe=1' : '#u=' + encodeURIComponent(cur.id); if (location.hash !== h) history.replaceState(null, '', location.pathname + location.search + h); }
-  function fallback() { const f = root.querySelector('.ufall'); f.hidden = false; f.innerHTML = `<img src="${imgURL(cur.img)}" alt="${esc(cur.name)}"><p>3D needs WebGL, which is off in this browser. Here is the real picture.</p>`; }
+  function fallback() { if (!root) return; const f = root.querySelector('.ufall'); root.classList.remove('loading'); root.classList.add('flat'); f.hidden = false; f.innerHTML = `<img src="${imgURL('hi-' + cur.img) || imgURL(cur.img)}" onerror="this.onerror=null;this.src='${imgURL(cur.img)}'" alt="${esc(cur.name)}"><p>3D needs WebGL, which is off or not working in this browser. Here is the real picture, flat.</p>`; }
 
   /* ---------- input ---------- */
   // v0.9: zoom stays inside this scale. Globe and shell zoom by height above the surface, so the last steps near the ground are fine-grained.
@@ -175,12 +176,15 @@ const VUNI = (() => {
       else if (e.key === 'Escape' && cardOn) { openCard(false); e.stopPropagation(); } };
     addEventListener('keydown', onKey); onResize = () => kick(); addEventListener('resize', onResize);
     const f = o.focus && UNI_BY_ID[o.focus] ? UNI.indexOf(UNI_BY_ID[o.focus]) : 0; if (o.focus) opts._moved = 1;
-    select(f, 0); if (o.focus) openCard(true);
+    try { select(f, 0); } catch (e) { glOK = false; try { paintCard(); fallback(); } catch (_) {} }
+    if (o.focus) openCard(true);
+    // v1.0: if the 3D picture has not appeared after 8 s, show the flat picture as well
+    setTimeout(() => { if (alive && root && root.classList.contains('loading')) { glOK = false; fallback(); } }, 8000);
     return root;
   }
   function destroy() { alive = false; cancelAnimationFrame(raf); raf = 0; if (onKey) removeEventListener('keydown', onKey); if (onResize) removeEventListener('resize', onResize);
     try { const x = gl && gl.getExtension('WEBGL_lose_context'); x && x.loseContext(); } catch (e) {} gl = null; tex = {}; ptrs.clear(); if (root) root.remove(); root = null; }
-  return { init, destroy, isOpen: () => alive, go: i => go(i, 0), get state() { return cur ? { stop: cur.id, i: i0, kind: cur.kind, dist: +dist.toFixed(3), yaw: +yaw.toFixed(3), pitch: +pitch.toFixed(3), gl: glOK, loaded: !!(tex[cur.img] && tex[cur.img].ok), hi: !!(tex[cur.img] && tex[cur.img].hi), min: LIM[cur.kind][0], max: LIM[cur.kind][1], fading: !!fadeDir, card: cardOn } : null; },
+  return { init, destroy, isOpen: () => alive, go: i => go(i, 0), getView: () => cur ? { stop: cur.id, dist, yaw, pitch } : null, setView: v => { if (!alive || !v || !cur || v.stop !== cur.id) return; dist = v.dist; yaw = v.yaw; pitch = v.pitch; spin = false; kick(); }, get state() { return cur ? { stop: cur.id, i: i0, kind: cur.kind, dist: +dist.toFixed(3), yaw: +yaw.toFixed(3), pitch: +pitch.toFixed(3), gl: glOK, loaded: !!(tex[cur.img] && tex[cur.img].ok), hi: !!(tex[cur.img] && tex[cur.img].hi), min: LIM[cur.kind][0], max: LIM[cur.kind][1], fading: !!fadeDir, card: cardOn } : null; },
     zoom: f => zoomBy(f), open: id => { const n = UNI_BY_ID[id]; if (n) { go(UNI.indexOf(n), 0); openCard(true); } } };
 })();
 window.VUNI = VUNI;

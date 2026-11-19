@@ -4,7 +4,7 @@
    (both already in the data, rivals.js). Nothing new is written here; each entry opens the real card. #gaps=1 */
 const VGAPS = (() => {
   const CC = { u: '#ff4d5e', t: '#ffa53d' }, CN = { u: 'unknown', t: 'we think' };
-  const SEC = [['fntu', 'From Nothing to Us', '✦', '#ffd36b'], ['tl', 'Big Bang to Today', '⏳', '#e79cff'], ['ph', 'Physics', '⚛', '#e79cff'], ['bio', 'Biology', '🌿', '#5cf0a0'], ['maths', 'Maths', '∑', '#4ff3e3']];
+  const SEC = [['fntu', 'From Nothing to Us', '✦', '#ffd36b'], ['tl', 'Big Bang to Today', '⏳', '#e79cff'], ['ph', 'Physics', '⚛', '#e79cff'], ['bio', 'Biology', '🌿', '#5cf0a0'], ['cell', 'Virtual Cell', '🧬', '#5cf0a0'], ['maths', 'Maths', '∑', '#4ff3e3']];
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   let root, alive = false, opts = {}, fCol = 'all', fSec = 'all', onKey, list = [];
   const S = (k, map) => { const r = (map || SRC)[k]; return r ? { t: r[0], u: r[1] } : null; };
@@ -16,6 +16,7 @@ const VGAPS = (() => {
     for (const e of TL) push('tl', e.id, e.s, e.name, e.when, e.a, (e.src || []).map(k => S(k)));
     for (const n of PHYS) push('ph', n.id, n.s, n.name, n.sub, n.a, (n.src || []).map(k => S(k)));
     if (typeof BIO !== 'undefined') for (const n of BIO) push('bio', n.id, n.s, n.name, n.sub, n.a, (n.src || []).map(k => S(k)));
+    if (typeof CELL_P !== 'undefined') for (const [id, p] of Object.entries(CELL_P)) push('cell', id, p.s, String(p.n).replace(/<[^>]+>/g, ''), 'Virtual Cell', (p.a || []).join(' ').replace(/<[^>]+>/g, ''), (p.src || []).map(([t, u]) => ({ t, u })));
     if (typeof MATH !== 'undefined') for (const n of MATH) push('maths', n.id, n.s, n.name, n.sub, n.summ, (n.sources || []).map(k => S(k, typeof MATH_SRC !== 'undefined' ? MATH_SRC : SRC)));
     return L;
   }
@@ -40,19 +41,22 @@ const VGAPS = (() => {
     if (alive) destroy(); opts = o; alive = true; list = gather();
     const hp = new URLSearchParams(location.hash.slice(1)); fCol = ['u', 't'].includes(hp.get('c')) ? hp.get('c') : 'all'; fSec = SEC.some(s => s[0] === hp.get('in')) ? hp.get('in') : 'all';
     root = document.createElement('div'); root.id = 'vgaps'; root.setAttribute('role', 'dialog'); root.setAttribute('aria-label', 'Open questions: the gaps in what we know');
-    root.innerHTML = `<div class="vcbar"><button class="vback" aria-label="Back">← Back</button><b class="vtit">❓ Open questions <small>the gaps in what we know · red and orange cards</small></b></div>
+    root.innerHTML = `<div class="vcbar"><button class="vback" aria-label="Back">← Back</button><b class="vtit">❓ Open questions <small>the gaps in what we know · red and orange cards</small></b><button class="gx" aria-label="Close Open questions" title="Close (Esc)">×</button></div>
       <div class="gwrap"><p class="gintro">Every card in Echo Atlas has a colour. These are the <b style="color:${CC.u}">red</b> ones (nobody knows yet) and the <b style="color:${CC.t}">orange</b> ones (a leading idea, not settled), with the rival ideas and the tests that could decide them. Tap a card to open it where it lives.</p>
       <div class="gfil" role="toolbar" aria-label="Filters"><span class="glab">Colour</span><button data-fc="all">All</button><button data-fc="u"><i class="gd" style="background:${CC.u}"></i>Red · unknown</button><button data-fc="t"><i class="gd" style="background:${CC.t}"></i>Orange · we think</button></div>
       <div class="gfil" role="toolbar" aria-label="Sections"><span class="glab">Section</span><button data-fs="all">All</button>${SEC.map(s => `<button data-fs="${s[0]}">${s[2]} ${esc(s[1])}</button>`).join('')}</div>
       <p class="gcount" aria-live="polite"></p><div class="glist"></div></div>`;
     host.appendChild(root);
-    root.querySelector('.vback').onclick = () => { const c = opts.onClose; destroy(); c && c(); };
+    const shut = () => { const c = opts.onClose; destroy(); c && c(); };
+    root.querySelector('.vback').onclick = shut; root.querySelector('.gx').onclick = shut;
+    onKey = e => { if (!alive || e.key !== 'Escape') return; const m = document.getElementById('xmenu'); if (m && m.classList.contains('on')) return; e.preventDefault(); e.stopPropagation(); shut(); };
+    addEventListener('keydown', onKey);
     root.addEventListener('click', e => { const c = e.target.closest('[data-fc]'), s = e.target.closest('[data-fs]'), x = e.target.closest('[data-xgo]');
       if (c) { fCol = c.dataset.fc; paint(); } else if (s) { fSec = s.dataset.fs; paint(); } else if (x) { e.preventDefault(); const h = x.dataset.xgo; xsecGo(h); } });
     root.querySelector('.gwrap').addEventListener('wheel', e => e.stopPropagation(), { passive: true });
     paint(); return root;
   }
-  function destroy() { alive = false; if (root) root.remove(); root = null; }
+  function destroy() { alive = false; if (onKey) removeEventListener('keydown', onKey); onKey = null; if (root) root.remove(); root = null; }
   return { init, destroy, isOpen: () => alive, get state() { return { total: list.length, red: list.filter(q => q.s === 'u').length, orange: list.filter(q => q.s === 't').length, shown: root ? root.querySelectorAll('.gq').length : 0, col: fCol, sec: fSec }; } };
 })();
 window.VGAPS = VGAPS;

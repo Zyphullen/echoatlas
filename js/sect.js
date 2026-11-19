@@ -141,18 +141,54 @@ const VSECT = (() => {
     h += `<text y="-6" text-anchor="middle" class="vsrc1" fill="${col}">${ic} ${esc(nm.toUpperCase())}</text><text y="22" text-anchor="middle" class="vsrc2">${ns.length} ideas · ${E.length} links</text>`;
     wg.innerHTML = h; const W = R + 330; return [-W, -R - 330, W, R + 330];
   }
+  /* v1.0: History for all four sections, in the same columns. Each column has a plain border and a time-range box on top;
+     the colour is only on the event boxes (green known / published, orange proposed or estimated, red still open). */
+  const YR = 3.156e7, AGE = typeof TL_AGE !== 'undefined' ? TL_AGE : 13.787e9;
+  const FNTU_COLS = [   // v1.0b: six shorter groups (6 events or fewer each)
+    { name: 'The first second', sub: '13.8 billion years ago · the first second', note: 'from the very start to 1 second', to: 1.5 / YR },
+    { name: 'The first atoms', sub: '3 minutes → 380,000 years', note: 'the first nuclei, then the first atoms', to: 380000 },
+    { name: 'Cosmic dawn', sub: '13.8 → 12.8 billion years ago', note: 'first stars and galaxies', to: 1e9 },
+    { name: 'Galaxies and the Sun', sub: '12.8 → 4.6 billion years ago', note: 'the universe fills with galaxies', to: AGE - 4.6e9 },
+    { name: 'Earth and first life', sub: '4.6 → 3.5 billion years ago', note: 'our planet, water and the first life', to: AGE - 3e9 },
+    { name: 'Oxygen to us', sub: '2.4 billion years ago → today', note: 'oxygen, animals, primates and people', to: Infinity }];
+  let HIST = null;
+  function hist(sec) {
+    if (sec === 'physics' || sec === 'biology') {
+      const H = sec === 'physics' ? PHYS_HIST : BIO_HIST, ERAS = sec === 'physics' ? PHYS_ERAS : BIO_ERAS, A = sec === 'physics' ? PHYS : BIO, by = {}; A.forEach(n => by[n.id] = n);
+      const col = e => ERAS.find(E => E.open ? e.k === 'open' : e.k !== 'open' && e.y >= E.from && e.y < E.to);
+      const ev = {}, all = []; for (const [id, e] of Object.entries(H)) { const n = by[id]; all.push(ev[id] = { id, node: id, when: e.when, name: n.name, t: e.t, y: e.y, s: e.k === 'open' ? 'u' : e.k === 'idea' ? 't' : n.s, era: col(e) }); }
+      for (const r of (typeof HIST_RECENT !== 'undefined' && HIST_RECENT[sec]) || []) all.push(ev[r.id] = { id: r.id, node: r.node, when: r.when, name: r.name, t: r.t, y: r.y, s: r.s, recent: r, era: col({ y: r.y, k: 'fact' }) });
+      return { ev, n: all.length, what: 'one for every card, plus progress since 2003', key: ['Published / measured', 'Proposed idea', 'Still open'],
+        cols: split(ERAS.map(E => ({ name: E.open ? E.name : E.sub, note: E.open ? 'no answer yet' : E.name, open: !!E.open, ev: all.filter(e => e.era === E).sort((a, b) => a.y - b.y || a.name.localeCompare(b.name)) }))) };
+    }
+    if (sec === 'fntu') {
+      const ev = {}, L = TL.map(e => { const yrs = e.t != null ? e.t / YR : AGE - e.ago; return ev[e.id] = { id: e.id, when: e.when, name: e.name, t: e.a, y: yrs, s: e.s, raw: e }; });
+      return { ev, n: L.length, what: 'Big Bang to Today', key: ['Known', 'Leading idea / estimate', 'Unknown'],
+        cols: split(FNTU_COLS.map((C, k) => ({ name: C.sub, note: C.name + ' · ' + C.note, fntu: true, ev: L.filter(e => e.y <= C.to && (k === 0 || e.y > FNTU_COLS[k - 1].to)).sort((a, b) => a.y - b.y) }))) };
+    }
+    const ev = {}, L = [];
+    for (const [id, arr] of Object.entries(typeof MATH_HISTORY !== 'undefined' ? MATH_HISTORY : {})) { const n = MATH_BY_ID[id]; if (!n) continue;
+      arr.forEach((e, i) => { const k = id + '-' + i, s = e.kind === 'idea' ? (n.s === 'u' ? 'u' : 't') : 'k'; L.push(ev[k] = { id: k, node: id, idx: i, when: (e.certainty === 'approximate' ? '≈ ' : '') + e.label, name: n.name, t: e.text, y: e.year, s, raw: e }); }); }
+    for (const r of (typeof HIST_RECENT !== 'undefined' && HIST_RECENT.maths) || []) if (MATH_BY_ID[r.node]) L.push(ev[r.id] = { id: r.id, node: r.node, when: r.when, name: r.name, t: r.t, y: r.y, s: r.s, recent: r });
+    return { ev, n: L.length, what: 'from every Maths card', key: ['Published / proved', 'Proposed idea', 'Proposed, still open'],
+      cols: split(MATH_ERAS.map(E => ({ name: E.sub, note: E.label, ev: L.filter(e => e.y >= E.start && (e.y < E.end || (E.end >= 2027 && e.y <= E.end))).sort((a, b) => a.y - b.y || a.name.localeCompare(b.name)) }))) };
+  }
+  /* v1.0b: long eras are split into shorter groups (6 events or fewer), each with its own range box */
+  const yl = y => y < 0 ? Math.round(-y).toLocaleString('en-GB') + ' BCE' : String(Math.floor(y));
+  function split(cols) { const out = [];
+    for (const C of cols) { const n = C.ev.length; if (n <= 6) { out.push(C); continue; }
+      const k = Math.ceil(n / 6), size = Math.ceil(n / k);
+      for (let i = 0; i < n; i += size) { const E = C.ev.slice(i, i + size), a = E[0], b = E[E.length - 1];
+        const name = C.open ? C.name : C.fntu ? (a.when === b.when ? a.when : a.when + ' → ' + b.when) : (yl(a.y) === yl(b.y) ? yl(a.y) : yl(a.y) + ' → ' + yl(b.y));
+        out.push({ name, note: C.note, ev: E, open: C.open }); } }
+    return out; }
   function drawHistory() {
-    const H = sec === 'physics' ? PHYS_HIST : BIO_HIST, ERAS = sec === 'physics' ? PHYS_ERAS : BIO_ERAS, A = sec === 'physics' ? PHYS : BIO, C = sec === 'physics' ? PHYS_CATS : BIO_CATS;
-    const by = {}; A.forEach(n => by[n.id] = n);
-    const col = e => ERAS.find(E => E.open ? e.k === 'open' : e.k !== 'open' && e.y >= E.from && e.y < E.to);
-    const cols = ERAS.map(E => ({ E, ev: Object.entries(H).filter(([, e]) => col(e) === E).map(([id, e]) => ({ id, ...e })).sort((a, b) => a.y - b.y || by[a.id].name.localeCompare(by[b.id].name)) }));
-    const [ic, nm] = SEC[sec];
-    const html = `<div class="vhhead"><b>${ic} ${esc(nm)} History</b><span>${Object.keys(H).length} dated landmarks · one for every card · read each column top to bottom</span>
-      <span class="vhkey"><i class="d k"></i>Published / measured <i class="d t"></i>Proposed idea <i class="d u"></i>Still open</span></div>
-      <div class="vhcols" style="--n:${cols.length}">${cols.map(({ E, ev }) => `<section class="vhcol" style="--c:${E.col}"><header><b>${esc(E.name)}</b><small>${esc(E.sub)} · ${ev.length}</small></header>
-        ${ev.map(e => { const n = by[e.id], s = e.k === 'open' ? 'u' : e.k === 'idea' ? 't' : n.s; return `<button class="vhev s-${s}" data-id="${esc(e.id)}" style="--g:${C[n.cat].col}"><span class="vhy">${esc(e.when)}</span><b>${esc(n.name)}</b><span class="vht">${esc(e.t)}</span></button>`; }).join('')}</section>`).join('')}</div>
-      <p class="vhnote">A publication date is not always a discovery date, and several people often got there together. Sources are on each card.</p>`;
-    return html;
+    HIST = hist(sec); const [ic, nm] = SEC[sec], K = HIST.key;
+    return `<div class="vhhead"><b>${ic} ${esc(nm)} History</b><span>${HIST.n} dated landmarks · ${esc(HIST.what)} · read from top to bottom</span>
+      <span class="vhkey"><i class="d k"></i>${K[0]} <i class="d t"></i>${K[1]} <i class="d u"></i>${K[2]}</span></div>
+      <div class="vhcols vhbands">${HIST.cols.map(C => `<section class="vhcol"><div class="vhhd"><b>${esc(C.name)}</b><small>${esc(C.note)} · ${C.ev.length}</small></div><div class="vhgrid">
+        ${C.ev.map(e => `<button class="vhev s-${e.s}" data-id="${esc(e.id)}"><span class="vhy">${esc(e.when)}</span><b>${esc(e.name)}</b><span class="vht">${esc(e.t)}</span></button>`).join('')}</div></section>`).join('')}</div>
+      <p class="vhnote">A publication date is not always a discovery date, and several people often got there together.${sec === 'fntu' ? ' Early times are counted from the Big Bang (13.8 billion years ago).' : ''} Sources are on each card.</p>`;
   }
   /* ---------- camera ---------- */
   let box = [0, 0, 1, 1];
@@ -161,13 +197,13 @@ const VSECT = (() => {
       // v0.9b: section names stay readable on screen at every zoom (clamped px), but a Ring name never outgrows its own arc
       root.style.setProperty('--gf', (Math.max(13, Math.min(28, 15 * cam.s)) / cam.s).toFixed(2) + 'px');
       if (mode === 'ring') for (const t of root.querySelectorAll('.vsarcl')) t.style.fontSize = Math.min(Math.max(14, Math.min(28, 13 * cam.s)) / cam.s, +t.dataset.fm).toFixed(2) + 'px'; } }
-  const cardW = () => card && !card.hidden && vw() > 600 ? 412 : 0;
+  const cardW = () => card && !card.hidden && vw() > 600 ? 442 : 0;
   function fitCam() { const [x0, y0, x1, y1] = box, W = vw() - cardW(), Hh = vh(), s = Math.min(W / (x1 - x0), Hh / (y1 - y0)) * .96;
     return [s, W / 2 - (x0 + x1) / 2 * s, Hh / 2 - (y0 + y1) / 2 * s]; }
   function animTo(s2, x2, y2, ms = 420) { cancelAnimationFrame(anim); const s0 = cam.s, a0 = cam.tx, b0 = cam.ty, t0 = performance.now();
     const st = now => { const k = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - k, 3); cam.s = s0 + (s2 - s0) * e; cam.tx = a0 + (x2 - a0) * e; cam.ty = b0 + (y2 - b0) * e; apply(); if (k < 1) anim = requestAnimationFrame(st); }; anim = requestAnimationFrame(st); }
   function zoomAt(f, px, py) { const s2 = Math.max(mode === 'ring' ? fitCam()[0] * .5 : .12, Math.min(3.2, cam.s * f)), k = s2 / cam.s; cam.tx = px - (px - cam.tx) * k; cam.ty = py - (py - cam.ty) * k; cam.s = s2; apply(); }
-  function centreOn(id) { const n = L && L.by[id]; if (!n) return; const W = vw() - (vw() > 600 ? 412 : 0), s = Math.max(cam.s, .8); animTo(s, W / 2 - n.x * s, vh() / 2 - n.y * s); }
+  function centreOn(id) { const n = L && L.by[id]; if (!n) return; const W = vw() - (vw() > 600 ? 442 : 0), s = Math.max(cam.s, .8); animTo(s, W / 2 - n.x * s, vh() / 2 - n.y * s); }
   /* ---------- light up a card and its neighbours ---------- */
   function light(id) { if (mode === 'history') { root.querySelectorAll('.vhev').forEach(b => b.classList.toggle('on', b.dataset.id === id)); return; }
     const nb = id ? new Set([id]) : null;
@@ -180,23 +216,42 @@ const VSECT = (() => {
   /* ---------- card (same look as the Physics and Biology cards) ---------- */
   function srcList(keys) { return keys.map(k => SRC[k] || (typeof MATH_SRC !== 'undefined' && MATH_SRC[k])).filter(Boolean).map(([t, u]) => srcItemHTML(t, u)).join(''); }
   const share = () => typeof SITE !== 'undefined' ? SITE : 'https://zyphullen.github.io/echoatlas/';
-  function render(id) { const D = data(sec), n = D.nodes.find(q => q.id === id), raw = D.raw(id); if (!n || !raw) return '';
+  const chipsOf = L => typeof xsecChipsHTML === 'function' ? xsecChipsHTML(L) : '';
+  function renderEvent(e) { const c = SCOL[e.s], close = '<button class="phx" aria-label="Close card">×</button>';
+    if (sec === 'fntu') { const r = e.raw, L = HIST.cols.flatMap(C => C.ev), i = L.indexOf(e), link = '#t=' + encodeURIComponent(e.id);
+      const nb = `<div class="phrel">${i > 0 ? `<button class="phgo" data-go="${esc(L[i - 1].id)}">← ${esc(L[i - 1].name)}</button>` : ''}${i < L.length - 1 ? `<button class="phgo" data-go="${esc(L[i + 1].id)}">${esc(L[i + 1].name)} →</button>` : ''}</div>`;
+      return CB({ x: close, t: esc(e.name), tid: 'vsTitle', sub: esc(e.when), c, w: WORD[e.s], q: `<p class="pha">${esc(r.a)}</p>`, m: `<h4>Before and after</h4>${nb}`,
+        d: chipsOf(uniq([...(r.rel || []), ...xsecBack('tl', r.id)])), s: `<ul class="srcl">${srcList(r.src || [])}</ul>`,
+        a: `<button class="vsbook" data-xgo="${esc(link)}">⏳ Open on the Big Bang to Today timeline</button>${copyBtnHTML(share() + link)}${fixBtnHTML('Big Bang to Today', e.name, 'timeline/' + e.id, share() + link)}` }); }
+    const n = MATH_BY_ID[e.node], r = e.raw, same = MATH_HISTORY[e.node] || [], link = '#m=' + encodeURIComponent(e.node);
+    const seq = same.length > 1 ? `<h4>Proposal → proof / formal problem</h4><div class="phrel">${same.map((s, k) => `<button class="phgo" data-go="${esc(e.node + '-' + k)}">${s.kind === 'idea' ? '◇' : '●'} ${esc(s.label)}</button>`).join('')}</div>` : '';
+    return CB({ x: close, t: esc(n.name), tid: 'vsTitle', sub: esc(e.when + ' · ' + (MATH_DOMAIN_NAMES[n.col] || [''])[0]), c, w: r.kind === 'idea' ? 'PROPOSED IDEA' + (n.s === 'u' ? ' · still open' : '') : 'PUBLICATION / PROOF LANDMARK',
+      q: `<p class="pha">${esc(e.t)}</p>`, m: `<p class="pha">${esc(n.summ)}</p><p class="pha"><b>${esc(n.tag || '')}</b> ${esc(n.date || '')}</p>${seq}`, d: `<p class="pha">${esc(MATH_HISTORY_NOTE)}</p>`,
+      s: `<ul class="srcl">${srcList(r.src || [])}</ul>`, a: `<button class="vsbook" data-xgo="${esc(link)}">∑ Read the full Maths card</button>${copyBtnHTML(share() + '#sv=maths-history&c=' + encodeURIComponent(e.id))}${fixBtnHTML('Maths History', n.name + ' · ' + r.label, 'history/' + e.id, share() + '#sv=maths-history')}` });
+  }
+  function renderRecent(e) { const r = e.recent, c = SCOL[r.s], A = sec === 'maths' ? null : data(sec).nodes, nn = sec === 'maths' ? MATH_BY_ID[r.node].name : (A.find(q => q.id === r.node) || {}).name || '';
+    const link = (sec === 'maths' ? '#m=' : sec === 'physics' ? '#p=' : '#b=') + encodeURIComponent(r.node), L = HIST.cols.flatMap(C => C.ev), i = L.indexOf(e);
+    const nb = `<div class="phrel">${i > 0 ? `<button class="phgo" data-go="${esc(L[i - 1].id)}">← ${esc(L[i - 1].name)}</button>` : ''}${i < L.length - 1 ? `<button class="phgo" data-go="${esc(L[i + 1].id)}">${esc(L[i + 1].name)} →</button>` : ''}</div>`;
+    const sh = share() + '#sv=' + sec + '-history&c=' + encodeURIComponent(r.id);
+    return CB({ x: '<button class="phx" aria-label="Close card">×</button>', t: esc(r.name), tid: 'vsTitle', sub: esc(r.when + ' · ' + nn), c, w: WORD[r.s], q: `<p class="pha">${esc(r.t)}</p>`,
+      m: `<h4>Before and after</h4>${nb}`, s: `<ul class="srcl">${srcList(r.src)}</ul>`,
+      a: `<button class="vsbook" data-xgo="${esc(link)}">📖 Open the ${esc(nn)} card</button>${copyBtnHTML(sh)}${fixBtnHTML(SEC[sec][1] + ' History', r.name, sec + '-history/' + r.id, sh)}` }); }
+  function render(id) { if (mode === 'history' && HIST && HIST.ev[id] && HIST.ev[id].recent) return renderRecent(HIST.ev[id]);
+    if (mode === 'history' && HIST && (sec === 'fntu' || sec === 'maths')) { const e = HIST.ev[id]; return e ? renderEvent(e) : ''; }
+    const D = data(sec), n = D.nodes.find(q => q.id === id), raw = D.raw(id); if (!n || !raw) return '';
     const c = SCOL[n.s], [gname, gcol] = D.groups[n.g] || ['', '#9fb4d0'], by = {}; D.nodes.forEach(q => by[q.id] = q);
     const kids = D.nodes.filter(q => q.p.includes(id)), parents = n.p.filter(p => by[p]);
-    let body = '', link = '', bookLabel = 'Open in Book';
-    if (sec === 'physics' || sec === 'biology') { body = raw.a.map(t => `<p class="pha">${esc(t)}</p>`).join('') + `<div class="phb">${raw.b.map(([h, t]) => `<div><b>${esc(h)}</b><span>${esc(t)}</span></div>`).join('')}</div>`;
-      const HH = (sec === 'physics' ? PHYS_HIST : BIO_HIST)[id]; if (HH) body += `<div class="vhwhen" style="--c:${gcol}"><b>${esc(HH.when)}</b><span>${esc(HH.t)}</span></div>`;
+    let q = '', m = '', link = '', bookLabel = 'Open in Book';
+    if (sec === 'physics' || sec === 'biology') { q = raw.a.map(t => `<p class="pha">${esc(t)}</p>`).join(''); m = `<div class="phb">${raw.b.map(([h, t]) => `<div><b>${esc(h)}</b><span>${esc(t)}</span></div>`).join('')}</div>`;
+      const HH = (sec === 'physics' ? PHYS_HIST : BIO_HIST)[id]; if (HH) m += `<div class="vhwhen" style="--c:${gcol}"><b>${esc(HH.when)}</b><span>${esc(HH.t)}</span></div>`;
       link = (sec === 'physics' ? '#p=' : '#b=') + encodeURIComponent(id); }
-    else { const info = (raw.info || []).filter(Boolean); body = info.map(t => `<p class="pha">${esc(t)}</p>`).join('');
+    else { const info = (raw.info || (raw.summ ? [raw.summ] : [])).filter(Boolean); q = info.map(t => `<p class="pha">${esc(t)}</p>`).join('');
       const L2 = raw.L2 || [], parts = []; let cur = null; for (const l of L2) { if (l.startsWith('## ')) { cur = [l.slice(3), []]; parts.push(cur); } else if (cur) cur[1].push(l); else parts.push(['', [l]]); }
-      if (parts.length) body += `<div class="phb">${parts.slice(0, 4).map(([h, t]) => `<div>${h ? `<b>${esc(h)}</b>` : ''}<span>${esc(t.join(' '))}</span></div>`).join('')}</div>`;
-      link = (sec === 'maths' ? '#m=' : '#n=') + encodeURIComponent(id); bookLabel = 'Open in Book (all layers)'; }
-    const chips = typeof xsecChipsHTML === 'function' ? xsecChipsHTML(n.out) : '';
-    return `<button class="phx" aria-label="Close card">×</button><div class="phst" style="--c:${c}">${n.s === 'u' ? '✕' : '●'} ${WORD[n.s]}</div>
-      <h3 id="vsTitle">${esc(n.name)}</h3><div class="phwhere" style="--c:${gcol}">${esc(gname)}${n.sub ? ' · ' + esc(n.sub) : ''}</div>${body}
-      ${parents.length || kids.length ? `<h4>Connected here</h4><div class="phrel">${parents.map(p => `<button class="phgo" data-go="${esc(p)}">← ${esc(by[p].name)}</button>`).join('')}${kids.map(k => `<button class="phgo" data-go="${esc(k.id)}">${esc(k.name)} →</button>`).join('')}</div>` : ''}
-      ${chips}<h4>Sources</h4><ul class="srcl">${srcList(raw.src || [])}</ul>
-      <div class="phact"><button class="vsbook" data-xgo="${esc(link)}">📖 ${bookLabel}</button>${copyBtnHTML(share() + link)}${fixBtnHTML(SEC[sec][1], n.name, sec + '/' + id, share() + link)}</div>`; }
+      if (parts.length) m = `<div class="phb">${parts.slice(0, 4).map(([h, t]) => `<div>${h ? `<b>${esc(h)}</b>` : ''}<span>${esc(t.join(' '))}</span></div>`).join('')}</div>`;
+      link = (sec === 'maths' ? '#m=' : '#n=') + encodeURIComponent(id); bookLabel = 'Open in Book (every detail)'; }
+    const d = (parents.length || kids.length ? `<h4>Connected here</h4><div class="phrel">${parents.map(p => `<button class="phgo" data-go="${esc(p)}">← ${esc(by[p].name)}</button>`).join('')}${kids.map(k => `<button class="phgo" data-go="${esc(k.id)}">${esc(k.name)} →</button>`).join('')}</div>` : '') + chipsOf(n.out);
+    return CB({ x: '<button class="phx" aria-label="Close card">×</button>', t: esc(n.name), tid: 'vsTitle', sub: esc(gname + (n.sub ? ' · ' + n.sub : '')), c, w: raw.cw ? esc(raw.cw) : WORD[n.s], q, m, d,
+      s: `<ul class="srcl">${srcList(raw.src || [])}</ul>`, a: `<button class="vsbook" data-xgo="${esc(link)}">📖 ${bookLabel}</button>${copyBtnHTML(share() + link)}${fixBtnHTML(SEC[sec][1], n.name, sec + '/' + id, share() + link)}` }); }
   function open(id, keepCam) { const h = render(id); if (!h) return; sel = id; card.innerHTML = h; card.hidden = false; card.scrollTop = 0; root.classList.add('carded'); light(id); hashSet();
     if (!keepCam && mode !== 'history') { const n = L && L.by[id]; if (n) { const s = cam.s, sx = n.x * s + cam.tx, sy = n.y * s + cam.ty; if (sx > vw() - 430 || sx < 40 || sy < 40 || sy > vh() - 40) centreOn(id); } } }
   function closeCard() { if (!sel) return; sel = null; card.hidden = true; root.classList.remove('carded'); light(hov); hashSet(); }
@@ -220,7 +275,7 @@ const VSECT = (() => {
   const KEY = `<div class="vskey"><div><i class="d k"></i>Known</div><div><i class="d t"></i>We think so</div><div><i class="d u"></i>Unknown</div><div><i class="ln"></i>builds on</div><div class="vsk-map"><i class="pill"></i>another section</div></div>`;
   function init(host = document.body, o = {}) {
     if (alive) destroy(); opts = o; alive = true; sec = SEC[o.sec] ? o.sec : 'physics'; mode = ['map', 'ring', 'history'].includes(o.mode) ? o.mode : 'map';
-    if (mode !== 'map' && sec !== 'physics' && sec !== 'biology') mode = 'map';
+    if (mode === 'ring' && sec !== 'physics' && sec !== 'biology') mode = 'map';
     root = document.createElement('div'); root.id = 'vsect'; root.className = 'vs-' + mode; root.dataset.sec = sec; root.setAttribute('role', 'region');
     const [ic, nm, col] = SEC[sec], what = { map: 'Map · how the ideas connect', ring: 'Ring · every idea round one circle', history: 'History · when each idea arrived' }[mode];
     root.setAttribute('aria-label', nm + ' ' + what); root.style.setProperty('--sc', col);
@@ -244,12 +299,12 @@ const VSECT = (() => {
       if (e.key === '+' || e.key === '=') zoomAt(1.25, vw() / 2, vh() / 2); else if (e.key === '-') zoomAt(.8, vw() / 2, vh() / 2); else if (e.key === 'Home') animTo(...fitCam());
       else if (e.key.startsWith('Arrow')) { const d = 60; cam.tx += e.key === 'ArrowLeft' ? d : e.key === 'ArrowRight' ? -d : 0; cam.ty += e.key === 'ArrowUp' ? d : e.key === 'ArrowDown' ? -d : 0; apply(); } };
     addEventListener('keydown', onKey); onResize = () => { if (mode !== 'history') apply(); }; addEventListener('resize', onResize);
-    if (o.focus && data(sec).nodes.some(n => n.id === o.focus)) open(o.focus); else hashSet();
+    if (o.focus && (mode === 'history' && HIST ? HIST.ev[o.focus] : data(sec).nodes.some(n => n.id === o.focus))) open(o.focus); else hashSet();
     return root;
   }
   function destroy() { alive = false; cancelAnimationFrame(anim); removeEventListener('keydown', onKey); removeEventListener('resize', onResize); removeEventListener('pointermove', onMove); removeEventListener('pointerup', onUp); removeEventListener('pointercancel', onUp);
     pts.clear(); drag = null; if (root) root.remove(); root = null; sel = null; hov = null; }
-  return { init, destroy, isOpen: () => alive, open: id => open(id), close: closeCard, get sec() { return sec; }, get mode() { return mode; },
+  return { init, destroy, isOpen: () => alive, open: id => open(id), close: closeCard, setCam: c => { if (!alive || mode === 'history' || !c) return; cancelAnimationFrame(anim); cam.s = c.s; cam.tx = c.tx; cam.ty = c.ty; apply(); }, get sec() { return sec; }, get mode() { return mode; },
     get state() { return alive ? { sec, mode, sel, cam: { ...cam }, nodes: root.querySelectorAll('.vsn,.vhev').length, hubs: root.querySelectorAll('.vshub').length, edges: root.querySelectorAll('.vse').length } : null; },
     w2s: (x, y) => [x * cam.s + cam.tx, y * cam.s + cam.ty], node: id => { const n = L && L.by[id]; return n ? { x: n.x, y: n.y } : null; } };
 })();

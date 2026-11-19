@@ -1,5 +1,35 @@
 # Changelog
 
+## v1.0 (19 Nov 2026)
+1. 🗂️ Every card uses one layout: title, subtitle, a certainty pill, then Quick · More · Deeper · Sources tabs
+2. ⬅️➡️ Back and Forward buttons next to Home. They remember each step, including the open card and where you were looking. The browser's own back button works too
+3. 🟠 New orange card: Cosmological Pangaea (an idea from C. Rich Walker, @RichWalker75382), linked to Before the Big Bang? and Quantum gravity, and listed in Open questions
+4. 🏛️ From Nothing to Us History and Maths History use the same columns as Physics and Biology: a neutral border, colour only on the events, and a time-range box on top of each column
+5. 🌍 Universe shows a flat picture and a full About card when 3D (WebGL) is off
+6. ❓ Open questions has a visible × and closes with Escape. It now lists the Virtual Cell's orange and red parts too
+7. ⚗️ Elements: each tile is a button, the card has a ×, and Escape closes the card first, then the table
+8. 🔗 The link in the address bar follows what is open: cards, Elements, Body, Cell and each section's view
+9. 🫀 Human Body: clicking the Heart label opens the Heart, not the mammary glands
+10. 📐 Physics and Biology maps fit the screen, and the Key folds itself away so it doesn't cover cards
+11. 🧭 Explore lists Big Bang to Today and Maths History; the timeline tab is called “Big Bang to Today” and no longer jumps when you pick an event
+12. 🔭 Euclid: DR1-Foundation is out in Nov 2026, with lensing products in June 2027
+13. 🧾 Fact fixes from the review: twin primes, the Yang–Mills claim check, Navier–Stokes wording, LZ dark matter, the eukaryote origin, 6,470 exoplanets (12 Nov 2026), Elements origins and smaller number fixes
+14. 🧹 Duplicate Clay sources merged; old audit files and old share cards dropped from the publish set
+15. 🔘 Card tabs are pill buttons in one row; card panels are a little wider
+16. 🔎 Physics and Biology maps keep readable text (zoom 0.6 or more) and pan sideways; the Key starts folded
+17. ↩️ Back and Forward also restore the zoom and position on Physics, Biology, the section Rings and Maps, Human Body, Virtual Cell and Universe, and the scroll on history pages and Elements
+18. 🖼️ Sharper Home pictures, taken from the v1.0 pages at 2× resolution
+19. 🧭 Top bar reads ← Home →, and it fits every screen from phones to 1440 px without cutting the v1.0 badge
+20. ☰ Explore no longer lists Big Bang to Today and Maths History; the History button opens them
+21. 🗓️ History pages read top-down in shorter groups (6 events or fewer), each with its own time-range box
+22. 🆕 Progress since 2003 on the Maths, Physics and Biology histories, each event with its own sources
+23. 🟠 Cosmological Pangaea card rewritten; its pill reads "New idea, not tested yet"
+24. 🧾 Every card keeps the same tabs; the "Why red / Why orange" headings are gone (the colour pill says it)
+25. 🖼️ Crisper Home pictures, framed on readable parts of each page
+26. ⌂ Home is an icon at every screen size
+27. 🏷️ Zoomed-out Book views put each band name outside its box, so names never cover cards
+28. 📦 The test file is smaller (lighter Universe pictures and music files)
+
 ## v0.9 (13 Nov 2026)
 1. ⚡ Universe opens faster, with a loading spinner
 2. 🔭 Sharper Universe pictures (8K Earth) that stay crisp when you zoom in
