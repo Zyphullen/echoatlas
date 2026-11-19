@@ -1,29 +1,29 @@
-# AUDIT v0.9 · Echo Atlas by Zyphullen
-Data hash `49e748a9f816` · generated 2026-11-13 by src/audit.py from facts.json.
+# AUDIT v1.0 · Echo Atlas by Zyphullen
+Data hash `3ce61451675c` · generated 2026-11-19 by src/audit.py from facts.json.
 
 > 🤖 **These are automatic checks, not a science review.** A script checks structure: colours, sources, links, share links, counts, data hash and that source URLs answer. It does not read the science, so passing does not mean a claim is right. 🔬 **Science review: no formal peer review yet.** Please check claims against their sources and use Suggest a fix.
 
-**Result:** ✅ no hard problems · 38 notes.
+**Result:** ✅ no hard problems · 56 notes.
 
 | Check | Count |
 |---|---|
-| nodes | 93 |
-| links | 145 |
+| nodes | 94 |
+| links | 147 |
 | cell | 37 |
 | body | 72 |
 | elements | 118 |
 | math_nodes | 86 |
 | math_links | 143 |
 | universe_stops | 6 |
-| open_questions | 57 |
+| open_questions | 60 |
 | physics_nodes | 32 |
 | biology_nodes | 33 |
 | timeline_events | 22 |
 | section_links | 193 |
 | crosslinks | 25 |
-| sources | 588 |
+| sources | 614 |
 | history_nodes | 86 |
-| history_events | 92 |
+| history_events | 93 |
 
 - ✅ Universe stops with no sources: none
 - ✅ Universe stops with no certainty colour: none
@@ -84,7 +84,7 @@ Data hash `49e748a9f816` · generated 2026-11-13 by src/audit.py from facts.json
 
 **Audit review:** The 40 initially reported notes included 32 references actually used by historical events; those are now counted as used. Eight additional original/foundational references are intentionally retained as optional bibliography for future reading—not as card/event evidence. Retaining them cannot hide a missing citation: all card, relationship and event evidence is checked above.
 
-## ℹ️ Sources reserved but not linked on a card or event (info) (34)
+## ℹ️ Sources reserved but not linked on a card or event (info) (52)
 - babylon
 - kolmogorov
 - turing
@@ -119,6 +119,24 @@ Data hash `49e748a9f816` · generated 2026-11-13 by src/audit.py from facts.json
 - ph_os_conservation
 - ph_os_bigbang
 - ph_w_hubble_s_law
+- greenTao2008
+- gonthier2008
+- zhang2014
+- viazovska2017
+- sphere24_2017
+- lte2022
+- alphaproof2024
+- langlands2024
+- ehtM87
+- fnalG2_2025
+- g2theory2025
+- hgp2003
+- yamanaka2006
+- jinek2012
+- alphafold2021
+- neandertal2010
+- imachi2020
+- gibson2010
 
 ## ℹ️ Source links to recheck (check) (4)
 - 30 × site down on check day (HTTP 502); page confirmed in Web Archive

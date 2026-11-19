@@ -423,7 +423,7 @@ const VCELL = (() => {
     for (let k = 0; k < n; k++) { const rr = Rn * Math.sqrt((k + .5) / n), an = k * 2.39996; const x = sx + Math.cos(an) * rr, y = sy + Math.sin(an) * rr, kk = ns * SK;
       cx.drawImage(sphereS((k * 7) % n < e.p ? '#ff7a5a' : '#9fb3c8'), x - kk, y - kk, kk * 2, kk * 2); }
     if (R > 260) { cx.globalAlpha = al * .85; cx.font = '600 12px system-ui,sans-serif'; cx.textAlign = 'center'; cx.fillStyle = '#e8f4ff'; cx.fillText(`${e.nm} nucleus · ${e.p} proton${e.p > 1 ? 's' : ''}${e.n ? ', ' + e.n + ' neutrons' : ''}`, sx, sy + Rn + ns + 18);
-      cx.fillStyle = '#a8b9d2'; cx.fillText('(really ~100,000× smaller than the atom)', sx, sy + Rn + ns + 34); }
+      cx.fillStyle = '#a8b9d2'; cx.fillText('(really ~25,000–60,000× smaller than the atom)', sx, sy + Rn + ns + 34); }
     cx.globalAlpha = 1; }
   function deepLabels() { const z = cam.z; if (z < 200 || z > 1400) return; const apx = A * z, [ci, cj] = [Math.floor(cam.x / TILE), Math.floor(cam.y / TILE)], ms = [];
     for (let i = ci - 2; i <= ci + 2; i++) for (let j = cj - 2; j <= cj + 2; j++) { const m = mol(i, j); if (m) ms.push(m); }
@@ -644,16 +644,15 @@ const VCELL = (() => {
     animTo(x, y, (box * .42) / r);
   }
   function showPop() {
+    { const hh = '#cell=' + (sel ? encodeURIComponent(sel) : '1'); if (alive && location.hash !== hh && /^#cell=/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search + hh); }
     if (!sel) { pop.style.display = 'none'; hint.style.display = ''; return; }
     const p = P[sel]; hint.style.display = 'none';
-    pop.innerHTML = `<button class="x" aria-label="close">×</button><b class="t1">${p.n}</b><div class="chip"><i style="background:${SCOL[p.s]}"></i>${SNAME[p.s]}</div>` +
-      p.a.map(s => `<p>${s}</p>`).join('') +
-      (layer > 1 ? `<div class="lay">${p.b.map(s => `<p>${s}</p>`).join('')}<p class="src">Sources: ${p.src.map(([n, u]) => srcInlineHTML(n, u)).join('')}</p></div>` : '') +
-      `<div class="pact">${layer < 2 ? '<button class="more">Read more ▾</button>' : '<button class="more">Less ▴</button>'}<span class="lv">Layer ${layer} of 2</span>${copyBtnHTML(SITE + '#cell=' + encodeURIComponent(sel))}${fixBtnHTML('Virtual Cell', p.n, 'cell/' + sel, SITE + '#cell=' + encodeURIComponent(sel))}</div>` +
-      (p.map && opts.onMapLink ? `<button class="vmap">${p.map === 'atoms' ? atomSVG() + ' Atoms on the map' : '🗺️ See it on the map'}</button>` : '');
+    const lk = SITE + '#cell=' + encodeURIComponent(sel);
+    pop.innerHTML = CB({ x: '<button class="x" aria-label="close">×</button>', t: p.n, tcls: 't1', sub: 'Virtual Cell', c: SCOL[p.s], w: SNAME[p.s], q: p.a.map(s => `<p>${s}</p>`).join(''), m: p.b.map(s => `<p>${s}</p>`).join(''),
+      d: p.map && opts.onMapLink ? `<button class="vmap">${p.map === 'atoms' ? atomSVG() + ' Atoms on the map' : '🗺️ See it on the map'}</button>` : '',
+      s: `<ul class="srcl">${p.src.map(([n, u]) => srcItemHTML(n, u)).join('')}</ul>`, a: copyBtnHTML(lk) + fixBtnHTML('Virtual Cell', p.n, 'cell/' + sel, lk) });
     pop.style.display = 'block';
     pop.querySelector('.x').onclick = () => { sel = null; showPop(); };
-    pop.querySelector('.more').onclick = () => { layer = layer < 2 ? 2 : 1; showPop(); };
     const mb = pop.querySelector('.vmap'); if (mb) mb.onclick = () => { const f = opts.onMapLink, id = p.map; destroy(); f(id); };
   }
   // ---------- input ----------
@@ -722,6 +721,7 @@ const VCELL = (() => {
     crumb: () => crumbTxt, go: (x, y, z) => { anim = null; sel = null; showPop(); cam = { x, y, z: clampZ(z) }; offs = centreOff(); },
     speed: s => { if (s != null) setSpeed(s); return speed; }, sim: () => ({ simT, speed, paused, mtLen: D.mts.reduce((a, m) => a + m.len, 0) / D.mts.length / W2UM, ves: D.ves.filter(v => v.mt >= 0).length }),
     debug: () => ({ cam: { ...cam }, sel, layer, fps, t, simT, speed, paused, Q, chromN: CHN, helixN: HXN, animating:!!anim }) };
+  api.getCam = () => ({ ...cam }); api.setCam = c => { if (!alive || !c) return; anim = null; cam = { x: c.x, y: c.y, z: clampZ(c.z) }; offs = centreOff(); };
   return api;
 })();
 window.VCELL = VCELL;

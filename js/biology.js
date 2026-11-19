@@ -94,7 +94,12 @@ const VBIO = (() => {
     cam.ty = Math.min(Math.max(cam.ty, cy - HH * cam.s), cy); }
   // category names grow when zoomed out (target ~16 px on screen); node names keep their size
   function catScale() { const s = cam.s, S0 = .5, u = Math.max(0, Math.min(1, (S0 - s) / (S0 * .5)));
-    for (const el of catEls) { const f = 1 + u * (Math.max(1, Math.min(7, el._t / (el._b * s))) - 1), k = f.toFixed(2); if (el._k !== k) { el._k = k; el.style.fontSize = (el._b * f).toFixed(1) + 'px'; } } }
+    // v1.0b: zoomed out, each category name moves OUTSIDE its band, right-aligned against the band's left edge and centred on it,
+    // sized to fit the room on the left and never taller than the band; with no room it stays inside at its normal size
+    for (const el of catEls) { const r = el._r || (el._r = el.parentNode.querySelector('rect')); if (el._w == null) { el.style.removeProperty('font-size'); el._w = el.getBBox().width / el._b; el._sub = el.parentNode.querySelector('.phcatsub'); }
+      const ry = +r.getAttribute('y'), rh = +r.getAttribute('height'), room = cam.tx - 22, px = Math.min(18, rh * s * .45, room / el._w), out = u > 0 && px >= 11, k = out ? 'o' + px.toFixed(1) : 'i'; if (el._k === k) continue; el._k = k;
+      if (out) { const fw = px / s; el.setAttribute('x', (-16 / s).toFixed(1)); el.setAttribute('text-anchor', 'end'); el.setAttribute('y', (ry + rh / 2 + fw * .35).toFixed(1)); el.style.fontSize = fw.toFixed(1) + 'px'; if (el._sub) el._sub.style.display = 'none'; }
+      else { el.setAttribute('x', '40'); el.removeAttribute('text-anchor'); el.setAttribute('y', (ry + 58).toFixed(1)); el.style.removeProperty('font-size'); if (el._sub) el._sub.style.removeProperty('display'); } } }
   function apply() { clamp(); wg.setAttribute('transform', `translate(${cam.tx.toFixed(2)} ${cam.ty.toFixed(2)}) scale(${cam.s.toFixed(4)})`); catScale(); root.classList.toggle('far', cam.s < .42); if (mm) mm.update(); placeCard(); }
   function zoomAt(f, x, y) { const ns = Math.min(MAXS, Math.max(minS(), cam.s * f));
     // v0.5c: past the map's edge, zoom on the nearest point of the map, so clamp never has to yank the view (no jump, no new wall)
@@ -103,8 +108,8 @@ const VBIO = (() => {
   function animTo(s2, tx2, ty2, ms = 450) { cancelAnimationFrame(anim); const s0 = cam.s, x0 = cam.tx, y0 = cam.ty, t0 = performance.now();
     const st = now => { const k = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - k, 3); cam.s = s0 + (s2 - s0) * e; cam.tx = x0 + (tx2 - x0) * e; cam.ty = y0 + (ty2 - y0) * e; apply(); if (k < 1) anim = requestAnimationFrame(st); }; anim = requestAnimationFrame(st); }
   const fit = () => { const s = minS() / .9; return [s, vw() / 2 - WW * s / 2, TOP + (vh() - TOP) / 2 - HH * s / 2]; };
-  const home = () => { const s = vw() <= 600 ? .62 : .78, n = BY['chnops']; return [s, Math.min(60, vw() / 2 - n.px * s) + (vw() <= 600 ? 0 : 40), TOP + 30 - rows[0].y0 * s]; };
-  function centreOn(id, now) { const n = BY[id], W = vw(), s = Math.max(cam.s, W <= 600 ? .62 : .8), cx = W <= 600 ? W / 2 : (W - (card && !card.hidden ? 400 : 0)) / 2, cy = W <= 600 ? TOP + (vh() * .45 - TOP) / 2 + 40 : TOP + (vh() - TOP) / 2;
+  const home = () => { const s = vw() <= 600 ? .62 : Math.max(.6, Math.min(.78, (vw() - 90) / WW)), n = BY['chnops']; return [s, vw() <= 600 ? Math.min(60, vw() / 2 - n.px * s) : Math.max(64, (vw() - WW * s) / 2 + 22), TOP + 30 - rows[0].y0 * s]; };
+  function centreOn(id, now) { const n = BY[id], W = vw(), s = Math.max(cam.s, W <= 600 ? .62 : .8), cx = W <= 600 ? W / 2 : (W - (card && !card.hidden ? 430 : 0)) / 2, cy = W <= 600 ? TOP + (vh() * .45 - TOP) / 2 + 40 : TOP + (vh() - TOP) / 2;
     const t = [s, cx - n.px * s, cy - n.py * s]; if (now) { [cam.s, cam.tx, cam.ty] = t; apply(); } else animTo(...t); }
   /* ---------- card ---------- */
   const SITE_ = typeof SITE !== 'undefined' ? SITE : 'https://zyphullen.github.io/echoatlas/';
@@ -113,14 +118,11 @@ const VBIO = (() => {
     return `<button class="xchip" data-xgo="${esc(t.hash)}" style="--c:${col}" title="${esc(label || '')}"><i>${g}</i><span><small>${esc(sec)}</small>${esc(t.title)}</span></button>`; }
   function render() { const n = BY[sel], c = SCOL[n.s], kids = BIO.filter(k => k.p.includes(n.id));
     const srcs = n.src.map(k => SRC[k]).filter(Boolean).map(([t, u]) => srcItemHTML(t, u)).join('');
-    card.innerHTML = `<button class="phx" aria-label="Close card">×</button><div class="phst" style="--c:${c}">${n.s === 'u' ? '✕' : '●'} ${WORD[n.s]}</div>
-      <h3 id="phTitle">${esc(n.name)}</h3><div class="phwhere" style="--c:${BIO_CATS[n.cat].col}">${esc(BIO_CATS[n.cat].name)} · ${esc(n.sub)}</div>
-      ${n.a.map(t => `<p class="pha">${esc(t)}</p>`).join('')}
-      <div class="phb">${n.b.map(([h, t]) => `<div><b>${esc(h)}</b><span>${esc(t)}</span></div>`).join('')}</div>
-      ${n.p.length || kids.length ? `<h4>On this map</h4><div class="phrel">${n.p.map(p => `<button class="phgo" data-go="${p}">← ${esc(BY[p].name)}</button>`).join('')}${kids.map(k => `<button class="phgo" data-go="${k.id}">${esc(k.name)} →</button>`).join('')}</div>` : ''}
-      ${(() => { const L = [...n.rel, ...xsecBack('bio', n.id)].filter((r, i, a) => a.findIndex(q => q[0] === r[0] && q[1] === r[1]) === i); return L.length ? `<h4>In other sections</h4><div class="xchips">${L.map(([k, id, l]) => chip(k, id, l)).join('')}</div>` : ''; })()}
-      <h4>Sources</h4><ul class="srcl">${srcs}</ul>
-      <div class="phact">${copyBtnHTML(SITE_ + '#b=' + encodeURIComponent(n.id))}${fixBtnHTML('Biology', n.name, 'biology/' + n.id, SITE_ + '#b=' + encodeURIComponent(n.id))}</div>`;
+    const lk = SITE_ + '#b=' + encodeURIComponent(n.id), rel = (() => { const L = [...n.rel, ...xsecBack('bio', n.id)].filter((r, i, a) => a.findIndex(q => q[0] === r[0] && q[1] === r[1]) === i); return L.length ? `<h4>In other sections</h4><div class="xchips">${L.map(([k, id, l]) => chip(k, id, l)).join('')}</div>` : ''; })();
+    card.innerHTML = CB({ x: '<button class="phx" aria-label="Close card">×</button>', t: esc(n.name), tid: 'phTitle', sub: esc(BIO_CATS[n.cat].name + ' · ' + n.sub), c, w: WORD[n.s],
+      q: n.a.map(t => `<p class="pha">${esc(t)}</p>`).join(''), m: `<div class="phb">${n.b.map(([h, t]) => `<div><b>${esc(h)}</b><span>${esc(t)}</span></div>`).join('')}</div>`,
+      d: (n.p.length || kids.length ? `<h4>On this map</h4><div class="phrel">${n.p.map(p => `<button class="phgo" data-go="${p}">← ${esc(BY[p].name)}</button>`).join('')}${kids.map(k => `<button class="phgo" data-go="${k.id}">${esc(k.name)} →</button>`).join('')}</div>` : '') + rel,
+      s: `<ul class="srcl">${srcs}</ul>`, a: copyBtnHTML(lk) + fixBtnHTML('Biology', n.name, 'biology/' + n.id, lk) });
   }
   function open(id, keepCam) { if (!BY[id]) return; sel = id; render(); card.hidden = false; card.scrollTop = 0; light(id); root.classList.add('carded');
     history.replaceState(null, '', location.pathname + location.search + '#b=' + encodeURIComponent(id)); if (!keepCam) centreOn(id); if (mm) mm.update(); try { EF.bonus && 0; } catch (e) {} }
@@ -142,8 +144,8 @@ const VBIO = (() => {
     </div><button class="kchip" aria-label="Show colour key">Key</button>`;
   function keyInit() { const k = root.querySelector('.phkey'), get = () => { try { return localStorage.getItem('fntu-key'); } catch (e) { return null; } };
     let seen = null; try { seen = localStorage.getItem('ea-key-seen-biology'); } catch (e) {}
-    if (!seen) { try { localStorage.setItem('ea-key-seen-biology', '1'); } catch (e) {} k.classList.remove('min'); keyAuto = vw() <= 600; k.classList.toggle('kfirst', keyAuto); if (keyAuto) keyT = setTimeout(keyFold, 12000); }
-    else k.classList.toggle('min', get() ? get() === 'min' : vw() <= 600);
+    if (!seen) { try { localStorage.setItem('ea-key-seen-biology', '1'); } catch (e) {} k.classList.remove('min'); k.classList.add('min'); keyAuto = false; }
+    else k.classList.toggle('min', get() !== 'open');
     k.querySelector('.kc').onclick = () => { keyAuto = false; k.classList.add('min'); k.classList.remove('kfirst'); try { localStorage.setItem('fntu-key', 'min'); } catch (e) {} mmSync(); };
     k.querySelector('.kchip').onclick = () => { k.classList.remove('min'); try { localStorage.setItem('fntu-key', 'open'); } catch (e) {} mmSync(); };
     k.addEventListener('wheel', e => e.stopPropagation(), { passive: true }); }
@@ -198,7 +200,7 @@ const VBIO = (() => {
     return root;
   }
   function destroy() { alive = false; cancelAnimationFrame(anim); clearTimeout(keyT); removeEventListener('keydown', onKey); removeEventListener('resize', onResize); if (mm) mm.destroy(); mm = null; pts.clear(); if (root) root.remove(); root = null; sel = null; }
-  return { init, destroy, isOpen: () => alive, open: id => open(id), close: closeCard, get cam() { return { ...cam }; }, w2s: (x, y) => [x * cam.s + cam.tx, y * cam.s + cam.ty],
+  return { init, destroy, isOpen: () => alive, open: id => open(id), close: closeCard, get cam() { return { ...cam }; }, setCam: c => { if (!alive || !c) return; cancelAnimationFrame(anim); cam.s = c.s; cam.tx = c.tx; cam.ty = c.ty; apply(); }, w2s: (x, y) => [x * cam.s + cam.tx, y * cam.s + cam.ty],
     debug: () => ({ nodes: BIO.length, edges: EDGES.length, W: WW, H: HH, sel, cam: { ...cam }, cats: catEls.map(el => +getComputedStyle(el).fontSize.replace('px', '')), names: [...root.querySelectorAll('.phname')].slice(0, 3).map(el => getComputedStyle(el).fontSize) }) };
 })();
 window.VBIO = VBIO;

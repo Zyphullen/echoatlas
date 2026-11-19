@@ -2,7 +2,7 @@
  "name": "Echo Atlas",
  "full_name": "Echo Atlas by Zyphullen",
  "tagline": "Explore the known. Map the unknown.",
- "version": "0.8",
+ "version": "1.0",
  "sections": [
   "From Nothing to Us",
   "Big Bang to Today",
@@ -16,35 +16,35 @@
   "All the Elements"
  ],
  "author": "Zyphullen",
- "data_hash": "49e748a9f816",
- "generated": "2026-11-13",
+ "data_hash": "3ce61451675c",
+ "generated": "2026-11-19",
  "key": {
   "green": "known",
   "orange": "we think (leading idea / hypothesis)",
   "red": "unknown"
  },
  "counts": {
-  "nodes": 93,
-  "links": 145,
+  "nodes": 94,
+  "links": 147,
   "math_nodes": 86,
   "math_links": 143,
   "history_nodes": 86,
-  "history_events": 92,
+  "history_events": 93,
   "crosslinks": 25,
   "cell": 37,
   "body": 72,
   "elements": 118,
-  "sources": 588,
+  "sources": 614,
   "physics_nodes": 32,
   "physics_links": 41,
   "biology_nodes": 33,
   "biology_links": 42,
   "timeline_events": 22,
   "universe_stops": 6,
-  "open_questions": 57,
+  "open_questions": 60,
   "section_links": 193,
-  "link_reasons": 313,
-  "source_urls": 793
+  "link_reasons": 315,
+  "source_urls": 823
  },
  "nodes": [
   {
@@ -72,7 +72,7 @@
     "Why these laws? Why these numbers?",
     "Chain Theory says only pairs of qudits exist. It does not say where they came from.",
     "## How we would know",
-    "Gravity waves from the first instant (B-modes): best limit r < 0.034. The big US CMB-S4 was cancelled (2025); Simons Observatory and LiteBIRD (~2036) carry on."
+    "Gravity waves from the first instant (B-modes): best limit r < 0.036. The big US CMB-S4 was cancelled (2025); Simons Observatory and LiteBIRD (~2036) carry on."
    ],
    "parents": [],
    "sources": [
@@ -108,7 +108,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -516,10 +516,9 @@
     "At the Planck scale (~10⁻³⁵ m) both gravity and quantum effects are strong.",
     "Our two best theories then disagree.",
     "## Candidates",
-    "String theory, loop quantum gravity, causal sets, \"spacetime from entanglement\", Chain Theory."
+    "String theory, loop quantum gravity, causal sets, \"spacetime from entanglement\", Chain Theory, Cosmological Pangaea (a finite start)."
    ],
    "deeper": [
-    "## Why red",
     "No idea is tested, and none leads by evidence.",
     "## How we would know",
     "Lab tests of \"gravity-made entanglement\" (tiny diamonds, atoms) are being designed; none done yet. LISA (2035) will listen to black holes merging.",
@@ -722,6 +721,65 @@
      ]
     }
    ]
+  },
+  {
+   "id": "pangaea",
+   "title": "Cosmological Pangaea",
+   "share_url": "https://zyphullen.github.io/echoatlas/#n=pangaea",
+   "subtitle": "A finite start instead of a singularity?",
+   "certainty": "orange",
+   "certainty_word": "we think",
+   "size": "Whole universe, at the very start",
+   "log10_metres": null,
+   "summary": [
+    "A maths model of a finite starting object, instead of a singularity.",
+    "Whether it explains our universe is still an open question.",
+    "By C. Rich Walker (@RichWalker75382, 2026)."
+   ],
+   "details": [
+    "## The idea",
+    "\"The Garden\" is a 12-stage process that constructs the object.",
+    "The \"GR-Razor\": it uses only general relativity plus thermodynamics, with no new particles or fields.",
+    "Inspired by Lemaître's \"primeval atom\", and named after Earth's Pangaea supercontinent."
+   ],
+   "deeper": [
+    "## What it aims to do",
+    "It aims to address the horizon problem without inflation.",
+    "Some versions use the regular 4D shape called the 24-cell.",
+    "## How we would know",
+    "The author says it is falsifiable in principle, with possible signs in the CMB, cosmic structure and the expansion history.",
+    "Its links to time, expansion and structure are unproven.",
+    "## Compared with Chain Theory",
+    "Both replace a singular start. Chain Theory starts from quantum pairs; Pangaea from a finite geometric object."
+   ],
+   "parents": [
+    "nothing",
+    "qgrav"
+   ],
+   "sources": [
+    {
+     "key": "pangaea1",
+     "title": "C. Rich Walker on X (@RichWalker75382): Cosmological Pangaea",
+     "url": "https://x.com/RichWalker75382/status/2122028384394137738",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "pangaea2",
+     "title": "Card summary by the author (C. Rich Walker on X)",
+     "url": "https://x.com/RichWalker75382/status/2122019818471899189",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    }
+   ],
+   "rivals": [],
+   "tests": []
   },
   {
    "id": "qudits",
@@ -953,7 +1011,7 @@
    ],
    "deeper": [
     "## Open",
-    "What field? Was it really inflation? No \"B-mode\" gravity-wave sign yet: r < 0.034.",
+    "What field? Was it really inflation? No \"B-mode\" gravity-wave sign yet: r < 0.036.",
     "Newest data (with DESI) lean away from the simplest (Starobinsky) model. Not settled.",
     "Rivals: bouncing universes, other early phases.",
     "## Next",
@@ -976,7 +1034,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -1567,20 +1625,19 @@
      ]
     },
     {
-     "summary": "Euclid maps (DR1 expected 2027): tiny \"non-Gaussian\" fingerprints.",
+     "summary": "Euclid maps (DR1-Foundation out Nov 2026, lensing products June 2027): tiny \"non-Gaussian\" fingerprints.",
      "chain_theory_test": false,
      "source_note": null,
      "sources": [
       {
        "key": "euclid",
-       "title": "ESA Euclid: data release timeline",
-       "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+       "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+       "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
        "type": "agency / lab",
-       "year": null,
-       "year_note": "living page (no single publication year)",
-       "last_checked": "2026-11-11",
-       "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-       "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     }
@@ -1969,7 +2026,7 @@
    "size": "—",
    "log10_metres": null,
    "summary": [
-    "Chain Theory's maths is checked.",
+    "Chain Theory's maths has only been checked by its author (in Lean). No independent review yet.",
     "That it IS our real particles is not shown.",
     "This is the biggest gap at the base."
    ],
@@ -1982,7 +2039,6 @@
     "5. New α measurements agreeing with 137.035999190."
    ],
    "deeper": [
-    "## Why red",
     "Alex himself grades the particle identifications as conjectures. Nobody outside has confirmed them.",
     "## Our approach in this map",
     "Below this line we use the tested Standard Model, and mark where Chain Theory offers a different story."
@@ -2635,7 +2691,7 @@
      ]
     },
     {
-     "summary": "Axion hunts: ADMX now, MADMAX prototype runs 2027–29.",
+     "summary": "Axion hunts: ADMX now, MADMAX prototype runs 2028–29.",
      "chain_theory_test": false,
      "source_note": null,
      "sources": [
@@ -2652,20 +2708,19 @@
      ]
     },
     {
-     "summary": "Euclid DR1 (expected 2027): biggest dark-matter lensing map.",
+     "summary": "Euclid: DR1-Foundation out Nov 2026, lensing products June 2027: biggest dark-matter lensing map.",
      "chain_theory_test": false,
      "source_note": null,
      "sources": [
       {
        "key": "euclid",
-       "title": "ESA Euclid: data release timeline",
-       "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+       "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+       "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
        "type": "agency / lab",
-       "year": null,
-       "year_note": "living page (no single publication year)",
-       "last_checked": "2026-11-11",
-       "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-       "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     },
@@ -2712,7 +2767,7 @@
     "## New",
     "DESI (2025) hints it may weaken over time (2.8–4.2σ, depending on the supernova set).",
     "Others argue supernova errors or a data mismatch explain it.",
-    "Euclid (first big data release expected 2027) and Roman (launched 2026) will check.",
+    "Euclid (DR1-Foundation out Nov 2026, lensing products June 2027) and Roman (launched 2026) will check.",
     "## Chain Theory",
     "Alex writes a \"cosmological term at the depth exponent\" (conditional). Its size is not compared with observation."
    ],
@@ -2772,14 +2827,13 @@
     },
     {
      "key": "euclid",
-     "title": "ESA Euclid: data release timeline",
-     "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+     "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+     "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
      "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-     "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "roman",
@@ -2847,20 +2901,19 @@
      ]
     },
     {
-     "summary": "Euclid DR1 (expected 2027).",
+     "summary": "Euclid: DR1-Foundation out Nov 2026, lensing products June 2027.",
      "chain_theory_test": false,
      "source_note": null,
      "sources": [
       {
        "key": "euclid",
-       "title": "ESA Euclid: data release timeline",
-       "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+       "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+       "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
        "type": "agency / lab",
-       "year": null,
-       "year_note": "living page (no single publication year)",
-       "last_checked": "2026-11-11",
-       "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-       "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     },
@@ -2975,7 +3028,6 @@
     "\"Baryogenesis\", \"leptogenesis\" from heavy neutrinos."
    ],
    "deeper": [
-    "## Why red",
     "Known physics does not make enough of an imbalance.",
     "## New",
     "2025: CP violation seen in baryons for the first time (LHCb, 5.2σ). But it is the small, expected kind.",
@@ -3299,13 +3351,12 @@
    ],
    "details": [
     "## The numbers",
-    "Nearby stars and supernovae (2025 network): H₀ = 73.50 ± 0.81 km/s per megaparsec.",
+    "Nearby stars and supernovae (H0 Distance Network, published 2026): H₀ = 73.50 ± 0.81 km/s per megaparsec.",
     "Early-universe light (Planck): ~67.4.",
     "## Gap",
     "7.1σ apart (vs Planck + SPT + ACT)."
    ],
    "deeper": [
-    "## Why red",
     "Nobody knows if it is new physics (e.g. early dark energy) or a hidden measurement error.",
     "## How we would know",
     "More distance ladders that agree, gravitational-wave \"sirens\", and Euclid / Roman maps."
@@ -3316,7 +3367,7 @@
    "sources": [
     {
      "key": "h0dn",
-     "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+     "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
      "url": "https://arxiv.org/abs/2510.23823",
      "type": "preprint",
      "year": 2025,
@@ -3336,14 +3387,13 @@
     },
     {
      "key": "euclid",
-     "title": "ESA Euclid: data release timeline",
-     "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+     "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+     "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
      "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-     "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "roman",
@@ -3382,7 +3432,7 @@
      "sources": [
       {
        "key": "h0dn",
-       "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+       "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
        "url": "https://arxiv.org/abs/2510.23823",
        "type": "preprint",
        "year": 2025,
@@ -3432,7 +3482,6 @@
     "DESI + CMB (2025): all three together < 0.064 eV (95%), in the standard model of cosmology."
    ],
    "deeper": [
-    "## Why red",
     "The Standard Model gives no mass to neutrinos. Where it comes from is unknown.",
     "## Open",
     "Are they their own antiparticle? Which one is heaviest?"
@@ -3634,20 +3683,19 @@
    "rivals": [],
    "tests": [
     {
-     "summary": "Euclid DR1 lensing (expected 2027).",
+     "summary": "Euclid DR1 lensing (June 2027; DR1-Foundation came out Nov 2026).",
      "chain_theory_test": false,
      "source_note": null,
      "sources": [
       {
        "key": "euclid",
-       "title": "ESA Euclid: data release timeline",
-       "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+       "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+       "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
        "type": "agency / lab",
-       "year": null,
-       "year_note": "living page (no single publication year)",
-       "last_checked": "2026-11-11",
-       "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-       "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     },
@@ -4282,13 +4330,13 @@
     "## Known",
     "They exist (stars orbiting Sgr A*, Nobel 2020; EHT images).",
     "## New (2025–26)",
-    "JWST \"little red dots\": in one (QSO1, seen ~13 billion years ago) the black hole outweighs all its stars, over 2×. This points to heavy seeds from collapsing gas.",
+    "JWST \"little red dots\": in one (QSO1, seen ~13 billion years ago) the black hole outweighs all its stars, over 2×. The paper finds that seeds from collapsing gas fall short of explaining it, and leans towards a primordial black hole. Not settled.",
     "## Still open",
     "Heavy seeds, or light seeds (first stars) growing very fast, or primordial black holes. A 2026 simulation finds light seeds grow slowly."
    ],
    "deeper": [
     "## Colour",
-    "Orange: heavy \"direct-collapse\" seeds now have supporting evidence, but are not proven.",
+    "Orange: black holes that start heavy are a leading idea, but how (collapsing gas or primordial black holes) is not settled.",
     "## How we would know",
     "More direct black-hole masses (JWST, ALMA). LISA (launch planned 2035) could hear seed black holes merge."
    ],
@@ -5196,19 +5244,19 @@
    "id": "exo",
    "title": "Other worlds",
    "share_url": "https://zyphullen.github.io/echoatlas/#n=exo",
-   "subtitle": "6,451 found so far",
+   "subtitle": "6,470 found so far",
    "certainty": "green",
    "certainty_word": "known",
    "size": "Earth- to Jupiter-size",
    "log10_metres": 7,
    "summary": [
-    "6,451 planets around other stars.",
+    "6,470 planets around other stars.",
     "Most stars have planets.",
     "Some are in the \"liquid water\" zone."
    ],
    "details": [
     "## How many",
-    "NASA count: 6,451 confirmed (Oct 2026)."
+    "NASA count: 6,470 confirmed (12 Nov 2026)."
    ],
    "deeper": [
     "## How we know",
@@ -5222,7 +5270,7 @@
    "sources": [
     {
      "key": "exo",
-     "title": "NASA Exoplanet Archive (6,451 confirmed, Oct 2026)",
+     "title": "NASA Exoplanet Archive (6,470 confirmed, 12 Nov 2026)",
      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html",
      "type": "agency / lab",
      "year": null,
@@ -5417,7 +5465,6 @@
     "Leading ideas, not settled."
    ],
    "details": [
-    "## Why orange",
     "The chemistry is real, but which setting started life is unproven.",
     "## Recipe",
     "Simple molecules (H₂O, CO₂, HCN, NH₃…) + energy (heat, UV, lightning) + minerals."
@@ -5608,7 +5655,6 @@
     "1 base (A, G, C, U/T) + 1 sugar (ribose) + 1 phosphate."
    ],
    "deeper": [
-    "## Why orange",
     "Lab routes exist (Powner, Gerland & Sutherland 2009), but they need special steps in a set order.",
     "## How we know",
     "Bennu had all 5 bases (A, G, C, T, U) and phosphate; ribose (the RNA sugar) was found in Dec 2025 (Nature Geoscience). No deoxyribose (DNA sugar) was found.",
@@ -6200,7 +6246,6 @@
     "A lab protocell that copies, evolves and runs a metabolism on its own."
    ],
    "deeper": [
-    "## Why red",
     "No accepted step-by-step path from chemistry to the first living cell."
    ],
    "parents": [
@@ -6259,7 +6304,7 @@
     {
      "title": "Metabolism first (vents)",
      "certainty": "orange",
-     "summary": "Chemical cycles at vents first, genes later. A 2026 review doubts vents.",
+     "summary": "Chemical cycles at vents first, genes later. A 2026 PNAS paper doubts vents.",
      "sources": [
       {
        "key": "vents08",
@@ -6270,6 +6315,16 @@
        "year_note": "Crossref",
        "last_checked": "2026-11-11",
        "link_status": "ok"
+      },
+      {
+       "key": "vents26",
+       "title": "PNAS 2026: rethinking ancient hydrothermal vents",
+       "url": "https://www.pnas.org/doi/10.1073/pnas.2613108123",
+       "type": "paper",
+       "year": 2026,
+       "year_note": "Crossref",
+       "last_checked": "2026-11-11",
+       "link_status": "ok (DOI registered; publisher blocks automatic checks)"
       }
      ]
     },
@@ -6367,8 +6422,8 @@
    "title": "LUCA",
    "share_url": "https://zyphullen.github.io/echoatlas/#n=luca",
    "subtitle": "Last universal common ancestor",
-   "certainty": "green",
-   "certainty_word": "known",
+   "certainty": "orange",
+   "certainty_word": "we think",
    "size": "~1–2 µm",
    "log10_metres": -6,
    "summary": [
@@ -7314,7 +7369,6 @@
     "Global workspace, integrated information, higher-order and others."
    ],
    "deeper": [
-    "## Why red",
     "No test yet tells which theory, if any, is right.",
     "The 2025 \"Cogitate\" head-to-head test (256 people): results challenged both big theories; neither won."
    ],
@@ -7490,7 +7544,6 @@
     "The biggest quantum-gravity programme. It gave holography (AdS/CFT), a key tool. But it allows a huge number of possible universes, so it has not picked out ours."
    ],
    "deeper": [
-    "## Why red",
     "No experiment has seen strings, extra dimensions or supersymmetry (LHC so far).",
     "## Compared with Chain Theory",
     "Strings start from objects in space; Chain Theory starts from links with no space at all."
@@ -7607,7 +7660,6 @@
     "A smaller programme than strings. Hard part: showing the smooth space we see comes back at large scales."
    ],
    "deeper": [
-    "## Why red",
     "No measured effect yet. Some versions predict a \"bounce\" instead of a Big Bang start.",
     "## Compared with Chain Theory",
     "Closest in spirit: both build space from a network. Loops carry geometry; Chain Theory's links carry entanglement."
@@ -7888,6 +7940,102 @@
    "sources_note": ""
   },
   {
+   "from": "nothing",
+   "to": "pangaea",
+   "label": "a finite start? (idea)",
+   "certainty": "red",
+   "reason": "Cosmological Pangaea comes from Before the Big Bang?: a finite start? (idea)",
+   "reason_certainty_note": "Unknown: at least one side of this link is still an open question.",
+   "reason_sources": [
+    {
+     "key": "pangaea1",
+     "title": "C. Rich Walker on X (@RichWalker75382): Cosmological Pangaea",
+     "url": "https://x.com/RichWalker75382/status/2122028384394137738",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "pangaea2",
+     "title": "Card summary by the author (C. Rich Walker on X)",
+     "url": "https://x.com/RichWalker75382/status/2122019818471899189",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    }
+   ],
+   "sources": [
+    {
+     "key": "pangaea1",
+     "title": "C. Rich Walker on X (@RichWalker75382): Cosmological Pangaea",
+     "url": "https://x.com/RichWalker75382/status/2122028384394137738",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "pangaea2",
+     "title": "Card summary by the author (C. Rich Walker on X)",
+     "url": "https://x.com/RichWalker75382/status/2122019818471899189",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    }
+   ],
+   "sources_note": "Cosmological Pangaea: an independent, untested idea about the start; only its author’s posts are cited."
+  },
+  {
+   "from": "qgrav",
+   "to": "pangaea",
+   "label": "needs a quantum start",
+   "certainty": "red",
+   "reason": "Cosmological Pangaea comes from Quantum gravity: needs a quantum start.",
+   "reason_certainty_note": "Unknown: at least one side of this link is still an open question.",
+   "reason_sources": [
+    {
+     "key": "pangaea1",
+     "title": "C. Rich Walker on X (@RichWalker75382): Cosmological Pangaea",
+     "url": "https://x.com/RichWalker75382/status/2122028384394137738",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "pangaea2",
+     "title": "Card summary by the author (C. Rich Walker on X)",
+     "url": "https://x.com/RichWalker75382/status/2122019818471899189",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    }
+   ],
+   "sources": [
+    {
+     "key": "pangaea1",
+     "title": "C. Rich Walker on X (@RichWalker75382): Cosmological Pangaea",
+     "url": "https://x.com/RichWalker75382/status/2122028384394137738",
+     "type": "author post",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    }
+   ],
+   "sources_note": "A finite start would still need quantum gravity to describe it; this step is the author’s idea, not tested."
+  },
+  {
    "from": "axiom",
    "to": "qudits",
    "label": "the only ingredient",
@@ -8015,7 +8163,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -8098,7 +8246,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -9457,14 +9605,13 @@
     },
     {
      "key": "euclid",
-     "title": "ESA Euclid: data release timeline",
-     "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+     "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+     "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
      "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-     "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "roman",
@@ -9787,7 +9934,7 @@
    "reason_sources": [
     {
      "key": "h0dn",
-     "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+     "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
      "url": "https://arxiv.org/abs/2510.23823",
      "type": "preprint",
      "year": 2025,
@@ -9807,14 +9954,13 @@
     },
     {
      "key": "euclid",
-     "title": "ESA Euclid: data release timeline",
-     "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+     "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+     "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
      "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-     "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "roman",
@@ -9830,7 +9976,7 @@
    "sources": [
     {
      "key": "h0dn",
-     "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+     "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
      "url": "https://arxiv.org/abs/2510.23823",
      "type": "preprint",
      "year": 2025,
@@ -12660,14 +12806,14 @@
   {
    "from": "planets",
    "to": "exo",
-   "label": "6,451 found",
+   "label": "6,470 found",
    "certainty": "green",
-   "reason": "Other worlds comes from Planets: 6,451 found.",
+   "reason": "Other worlds comes from Planets: 6,470 found.",
    "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
    "reason_sources": [
     {
      "key": "exo",
-     "title": "NASA Exoplanet Archive (6,451 confirmed, Oct 2026)",
+     "title": "NASA Exoplanet Archive (6,470 confirmed, 12 Nov 2026)",
      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html",
      "type": "agency / lab",
      "year": null,
@@ -12680,7 +12826,7 @@
    "sources": [
     {
      "key": "exo",
-     "title": "NASA Exoplanet Archive (6,451 confirmed, Oct 2026)",
+     "title": "NASA Exoplanet Archive (6,470 confirmed, 12 Nov 2026)",
      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html",
      "type": "agency / lab",
      "year": null,
@@ -13742,9 +13888,9 @@
    "from": "luca",
    "to": "proteins",
    "label": "~2,600 protein families (est. 2024)",
-   "certainty": "green",
+   "certainty": "orange",
    "reason": "Proteins comes from LUCA: ~2,600 protein families (est. 2024)",
-   "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
+   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
      "key": "titin",
@@ -13848,9 +13994,9 @@
    "from": "luca",
    "to": "code",
    "label": "64 codons → 20 amino acids",
-   "certainty": "green",
+   "certainty": "orange",
    "reason": "Genetic code comes from LUCA: 64 codons → 20 amino acids.",
-   "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
+   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
      "key": "code",
@@ -13901,9 +14047,9 @@
    "from": "luca",
    "to": "dna",
    "label": "2 strands, 4 letters",
-   "certainty": "green",
+   "certainty": "orange",
    "reason": "DNA comes from LUCA: 2 strands, 4 letters.",
-   "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
+   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
      "key": "t2t",
@@ -13967,9 +14113,9 @@
    "from": "luca",
    "to": "prok",
    "label": "splits: bacteria + archaea",
-   "certainty": "green",
+   "certainty": "orange",
    "reason": "Bacteria & archaea comes from LUCA: splits: bacteria + archaea.",
-   "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
+   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
      "key": "dresser",
@@ -17662,8 +17808,9 @@
     "Are there infinitely many pairs of primes that differ by exactly 2? No accepted proof or disproof exists."
    ],
    "details": [
-    "Real partial progress: Zhang proved bounded prime gaps in 2013; Maynard, Tao and the Polymath8 collaboration reduced a proven bound to 246.",
-    "Do not blur the gap: A bounded gap of 246 is not a gap of 2. The twin-prime statement remains open."
+    "Real partial progress: Zhang proved bounded prime gaps in 2013; Maynard, Tao and Polymath8 brought the proven bound to 246.",
+    "New preprints (2026): Stadlmann (Aug 2026) claims 240. Later preprints claim 212 (Axiom, checked in Lean) and 186 (OpenAI). None is peer reviewed yet.",
+    "Do not blur the gap: Even 186 is not a gap of 2. The twin prime conjecture is still open."
    ],
    "parents": [
     "m_primes"
@@ -17689,6 +17836,26 @@
      "last_checked": "2026-11-11",
      "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive)",
      "archived_copy": "https://web.archive.org/web/20250826210210/https://www.ams.org/journals/bull/2015-52-02/S0273-0979-2015-01480-1/"
+    },
+    {
+     "key": "stadlmann2026",
+     "title": "Stadlmann (preprint, 31 Aug 2026): Bounded gaps between primes, H1 ≤ 240 (arXiv 2608.31126)",
+     "url": "https://arxiv.org/abs/2608.31126",
+     "type": "preprint",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "mwBoundedGaps",
+     "title": "MathWorld: Bounded Gaps Between Primes (table of 2026 claimed bounds: 240, 212, 186)",
+     "url": "https://mathworld.wolfram.com/BoundedGapsBetweenPrimes.html",
+     "type": "encyclopedia",
+     "year": 2026,
+     "year_note": "living page: last-revised year",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     }
    ],
    "links": [
@@ -17720,6 +17887,26 @@
        "last_checked": "2026-11-11",
        "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive)",
        "archived_copy": "https://web.archive.org/web/20250826210210/https://www.ams.org/journals/bull/2015-52-02/S0273-0979-2015-01480-1/"
+      },
+      {
+       "key": "stadlmann2026",
+       "title": "Stadlmann (preprint, 31 Aug 2026): Bounded gaps between primes, H1 ≤ 240 (arXiv 2608.31126)",
+       "url": "https://arxiv.org/abs/2608.31126",
+       "type": "preprint",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
+      },
+      {
+       "key": "mwBoundedGaps",
+       "title": "MathWorld: Bounded Gaps Between Primes (table of 2026 claimed bounds: 240, 212, 186)",
+       "url": "https://mathworld.wolfram.com/BoundedGapsBetweenPrimes.html",
+       "type": "encyclopedia",
+       "year": 2026,
+       "year_note": "living page: last-revised year",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     }
@@ -23098,7 +23285,8 @@
    ],
    "details": [
     "Physics vs mathematics: Quantum gauge theories are enormously successful physics. That does not amount to the rigorous construction required by this mathematical problem.",
-    "Status: Clay lists Yang–Mills & the Mass Gap as unsolved, checked 6 Nov 2026."
+    "New claim (Oct 2026): OpenAI claimed the existence half on 26 Oct 2026. A panel chaired by David Gross confirmed on 10 Nov that the Lean proof checks. It does not prove a mass gap.",
+    "Status: The mass gap is still unproved, and Clay still lists the problem as open (checked 19 Nov 2026)."
    ],
    "parents": [
     "m_group",
@@ -23124,6 +23312,26 @@
      "year": null,
      "year_note": "living page (no single publication year)",
      "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "ymValidation2026",
+     "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+     "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+     "type": "report",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "ymKitp2026",
+     "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+     "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+     "type": "agency / lab",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
      "link_status": "ok"
     }
    ],
@@ -23155,6 +23363,26 @@
        "year_note": "living page (no single publication year)",
        "last_checked": "2026-11-11",
        "link_status": "ok"
+      },
+      {
+       "key": "ymValidation2026",
+       "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+       "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+       "type": "report",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
+      },
+      {
+       "key": "ymKitp2026",
+       "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+       "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+       "type": "agency / lab",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     },
@@ -23184,6 +23412,26 @@
        "year": null,
        "year_note": "living page (no single publication year)",
        "last_checked": "2026-11-11",
+       "link_status": "ok"
+      },
+      {
+       "key": "ymValidation2026",
+       "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+       "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+       "type": "report",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
+      },
+      {
+       "key": "ymKitp2026",
+       "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+       "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+       "type": "agency / lab",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
        "link_status": "ok"
       }
      ]
@@ -23215,6 +23463,26 @@
        "year_note": "living page (no single publication year)",
        "last_checked": "2026-11-11",
        "link_status": "ok"
+      },
+      {
+       "key": "ymValidation2026",
+       "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+       "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+       "type": "report",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
+      },
+      {
+       "key": "ymKitp2026",
+       "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+       "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+       "type": "agency / lab",
+       "year": 2026,
+       "year_note": "publication year (living pages: last revised)",
+       "last_checked": "2026-11-19",
+       "link_status": "ok"
       }
      ]
     }
@@ -23233,9 +23501,7 @@
     "The general Millennium problem concerns existence, uniqueness and smoothness or breakdown of 3D Navier–Stokes solutions under precise formulations."
    ],
    "details": [
-    "New claim: An AI-generated proof was announced on 8 Sep 2026, claiming singular behaviour in a particular forced formulation. Clay described the problem on 11 Sep as \"apparently settled\" and said the assessment would be unhurried.",
-    "Why not green: Later expert reporting and a preprint question whether the Lean formalisation faithfully represents the natural-language proof. The announcement is not treated here as independent confirmation of the full original problem.",
-    "Orange = provisional: This node records an important claimed result under scrutiny, not a settled solution or a settled failure. No prize or certainty is inferred."
+    "New claim: An AI-generated proof was announced on 8 Sep 2026, claiming blow-up (a solution that breaks down) under Clay’s own statement (C) of the problem. Clay described the problem on 11 Sep as \"apparently settled\" and said the assessment would be unhurried. Later expert reporting and a preprint question whether the Lean formalisation faithfully represents the natural-language proof. The announcement is not treated here as independent confirmation of the full original problem. This node records an important claimed result under scrutiny, not a settled solution or a settled failure. No prize or certainty is inferred."
    ],
    "parents": [
     "m_pde",
@@ -23495,6 +23761,717 @@
    ]
   }
  ],
+ "recent_history": {
+  "maths": [
+   {
+    "id": "r-greentao",
+    "card": "m_primes",
+    "year": 2004,
+    "when": "2004 (published 2008)",
+    "title": "Green–Tao theorem",
+    "text": "Ben Green and Terence Tao prove that the primes contain arithmetic progressions of every length.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Green & Tao: The primes contain arbitrarily long arithmetic progressions (Annals of Mathematics, 2008)",
+      "url": "https://annals.math.princeton.edu/2008/167-2/p03",
+      "type": "paper",
+      "year": 2008,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-4colour-coq",
+    "card": "m_fourColour",
+    "year": 2005,
+    "when": "2005 (paper 2008)",
+    "title": "Four Colour Theorem checked by computer",
+    "text": "Georges Gonthier’s team checks the whole proof in the Coq proof assistant.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Gonthier: Formal proof — the Four-Color Theorem (Notices of the AMS, 2008)",
+      "url": "https://www.ams.org/notices/200811/tx081101382p.pdf",
+      "type": "paper",
+      "year": 2008,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-perelman",
+    "card": "m_poincare",
+    "year": 2006,
+    "when": "2006",
+    "title": "Poincaré proof accepted",
+    "text": "Experts accept Grigori Perelman’s proof. He declines the Fields Medal (2006) and the Clay prize (2010).",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Clay: Poincaré Conjecture (solved)",
+      "url": "https://www.claymath.org/millennium/poincare-conjecture/",
+      "type": "institute",
+      "year": null,
+      "year_note": "living page (no single publication year)",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     },
+     {
+      "title": "Perelman: The entropy formula for the Ricci flow (2002)",
+      "url": "https://arxiv.org/abs/math/0211159",
+      "type": "preprint",
+      "year": 2002,
+      "year_note": "arXiv id",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-zhang",
+    "card": "m_twin",
+    "year": 2013,
+    "when": "2013 (published 2014)",
+    "title": "Bounded prime gaps",
+    "text": "Yitang Zhang proves that some gap under 70 million between primes happens infinitely often.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Zhang: Bounded gaps between primes (Annals of Mathematics, 2014)",
+      "url": "https://annals.math.princeton.edu/2014/179-3/p07",
+      "type": "paper",
+      "year": 2014,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-maynard",
+    "card": "m_twin",
+    "year": 2013,
+    "when": "Nov 2013 (published 2015)",
+    "title": "Gaps of 600, then 246",
+    "text": "James Maynard’s new method brings the bound down to 600; the Polymath project later reaches 246. The twin prime conjecture (gap 2) stays open.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Maynard: Small gaps between primes (Annals of Mathematics, 2015)",
+      "url": "https://annals.math.princeton.edu/2015/181-1/p07",
+      "type": "paper",
+      "year": 2015,
+      "year_note": "title",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     },
+     {
+      "title": "AMS: small and bounded prime gaps (survey)",
+      "url": "https://www.ams.org/journals/bull/2015-52-02/S0273-0979-2015-01480-1/",
+      "type": "paper",
+      "year": null,
+      "year_note": "year not stated",
+      "last_checked": "2026-11-11",
+      "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive)",
+      "archived_copy": "https://web.archive.org/web/20250826210210/https://www.ams.org/journals/bull/2015-52-02/S0273-0979-2015-01480-1/"
+     }
+    ]
+   },
+   {
+    "id": "r-flyspeck",
+    "card": "m_kepler",
+    "year": 2014,
+    "when": "2014 (published 2017)",
+    "title": "Kepler proof checked by computer",
+    "text": "The Flyspeck project finishes a computer-checked formal proof of the Kepler conjecture.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Hales et al.: A formal proof of the Kepler conjecture (2017)",
+      "url": "https://doi.org/10.1017/fmp.2017.1",
+      "type": "paper",
+      "year": 2017,
+      "year_note": "Crossref",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-viazovska",
+    "card": "m_kepler",
+    "year": 2016,
+    "when": "2016 (published 2017)",
+    "title": "Best sphere packing in 8 and 24 dimensions",
+    "text": "Maryna Viazovska solves sphere packing in 8 dimensions, and with Cohn, Kumar, Miller and Radchenko in 24 dimensions. Fields Medal 2022.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Viazovska: The sphere packing problem in dimension 8 (Annals of Mathematics, 2017)",
+      "url": "https://annals.math.princeton.edu/2017/185-3/p07",
+      "type": "paper",
+      "year": 2017,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "title": "Cohn, Kumar, Miller, Radchenko & Viazovska: The sphere packing problem in dimension 24 (Annals of Mathematics, 2017)",
+      "url": "https://annals.math.princeton.edu/2017/185-3/p08",
+      "type": "paper",
+      "year": 2017,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-lte",
+    "card": "m_proofs",
+    "year": 2022,
+    "when": "2022",
+    "title": "Liquid Tensor Experiment",
+    "text": "Mathematicians using the Lean proof assistant finish checking a hard new theorem of Clausen and Scholze.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Lean community: Completion of the Liquid Tensor Experiment (2022)",
+      "url": "https://leanprover-community.github.io/blog/posts/lte-final/",
+      "type": "project page",
+      "year": 2022,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-alphaproof",
+    "card": "m_proofs",
+    "year": 2024,
+    "when": "Jul 2024",
+    "title": "AI at Maths Olympiad level",
+    "text": "Google DeepMind’s AlphaProof and AlphaGeometry 2 solve 4 of 6 Olympiad problems (silver-medal level); AlphaProof’s proofs are checked in Lean.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Google DeepMind: AI achieves silver-medal standard solving International Mathematical Olympiad problems (2024)",
+      "url": "https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/",
+      "type": "company blog",
+      "year": 2024,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-langlands",
+    "card": "m_algebraicGeo",
+    "year": 2024,
+    "when": "2024",
+    "title": "Geometric Langlands proof",
+    "text": "Dennis Gaitsgory, Sam Raskin and colleagues post a proof of the geometric Langlands conjecture in five papers (about 800 pages). It is still being refereed.",
+    "certainty": "we think so",
+    "sources": [
+     {
+      "title": "Quanta Magazine: Monumental proof settles geometric Langlands conjecture (19 Jul 2024)",
+      "url": "https://www.quantamagazine.org/monumental-proof-settles-geometric-langlands-conjecture-20240719/",
+      "type": "news / magazine",
+      "year": 2024,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-twin2026",
+    "card": "m_twin",
+    "year": 2026,
+    "when": "Aug–Nov 2026",
+    "title": "Smaller prime-gap claims",
+    "text": "Preprints claim gaps of 240, 212 and 186. They are not yet refereed, and the twin prime conjecture is still open.",
+    "certainty": "unknown",
+    "sources": [
+     {
+      "title": "Stadlmann (preprint, 31 Aug 2026): Bounded gaps between primes, H1 ≤ 240 (arXiv 2608.31126)",
+      "url": "https://arxiv.org/abs/2608.31126",
+      "type": "preprint",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "title": "MathWorld: Bounded Gaps Between Primes (table of 2026 claimed bounds: 240, 212, 186)",
+      "url": "https://mathworld.wolfram.com/BoundedGapsBetweenPrimes.html",
+      "type": "encyclopedia",
+      "year": 2026,
+      "year_note": "living page: last-revised year",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-ns2026",
+    "card": "m_ns",
+    "year": 2026,
+    "when": "8 Sep 2026",
+    "title": "Navier–Stokes blow-up claim",
+    "text": "An AI-generated proof claims blow-up under Clay’s statement (C). Experts question its Lean formalisation; it is not independently confirmed.",
+    "certainty": "unknown",
+    "sources": [
+     {
+      "title": "OpenAI: On the Navier–Stokes Millennium Prize Problem (8 Sep 2026; announcement, not independent validation)",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "type": "news / announcement",
+      "year": 2026,
+      "year_note": "title",
+      "last_checked": "2026-11-11",
+      "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive, snapshot 2026-11-04)",
+      "archived_copy": "https://web.archive.org/web/20261104032213/https://openai.com/index/navier-stokes-solution/"
+     },
+     {
+      "title": "Clay: Navier–Stokes announcement (11 Sep 2026)",
+      "url": "https://www.claymath.org/news/navier-stokes-announcement/",
+      "type": "institute",
+      "year": null,
+      "year_note": "living page (no single publication year)",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     },
+     {
+      "title": "King’s College London: questions about the announced Navier–Stokes proof and its formalisation",
+      "url": "https://www.kcl.ac.uk/news/openais-navier-stokes-proof-called-into-question",
+      "type": "news / announcement",
+      "year": 2026,
+      "year_note": "published 27 Oct 2026 (page metadata)",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-ym2026",
+    "card": "m_mathsGap",
+    "year": 2026,
+    "when": "10 Nov 2026",
+    "title": "Yang–Mills construction checked",
+    "text": "An expert panel checks an AI-built Yang–Mills construction in Lean. It claims no mass gap, so the Millennium problem is still open.",
+    "certainty": "unknown",
+    "sources": [
+     {
+      "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+      "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+      "type": "report",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+      "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+      "type": "agency / lab",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   }
+  ],
+  "physics": [
+   {
+    "id": "r-gw170817",
+    "card": "gravitational-waves",
+    "year": 2017,
+    "when": "17 Aug 2017",
+    "title": "Neutron stars collide",
+    "text": "LIGO and Virgo catch two neutron stars merging, and telescopes see the same event in light: gravity travels at the speed of light.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "LIGO/Virgo 2017: GW170817 neutron-star merger + kilonova",
+      "url": "https://arxiv.org/abs/1710.05832",
+      "type": "preprint",
+      "year": 2017,
+      "year_note": "arXiv id",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-planck2018",
+    "card": "cmb",
+    "year": 2018,
+    "when": "2018",
+    "title": "Planck’s final map",
+    "text": "Planck’s final results pin down the age of the universe (13.8 billion years) and what it is made of.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Planck 2018 results VI: cosmological parameters",
+      "url": "https://arxiv.org/abs/1807.06209",
+      "type": "preprint",
+      "year": 2018,
+      "year_note": "arXiv id",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-eht",
+    "card": "general-relativity",
+    "year": 2019,
+    "when": "Apr 2019",
+    "title": "First image of a black hole",
+    "text": "The Event Horizon Telescope shows the shadow of the black hole in galaxy M87, as general relativity predicts.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Event Horizon Telescope Collaboration: First M87 Event Horizon Telescope Results. I (ApJ Letters, 2019)",
+      "url": "https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7",
+      "type": "paper",
+      "year": 2019,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-katrin",
+    "card": "neutrino-mass",
+    "year": 2025,
+    "when": "2025",
+    "title": "Neutrino mass below 0.45 eV",
+    "text": "KATRIN shows the neutrino’s mass is below 0.45 eV. The exact mass is still unknown.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "KATRIN, Science 2025: neutrino mass below 0.45 eV",
+      "url": "https://doi.org/10.1126/science.adq9592",
+      "type": "paper",
+      "year": 2025,
+      "year_note": "Crossref",
+      "last_checked": "2026-11-11",
+      "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+     }
+    ]
+   },
+   {
+    "id": "r-g2",
+    "card": "standard-model",
+    "year": 2025,
+    "when": "Jun 2025",
+    "title": "Muon g−2 final result",
+    "text": "Fermilab’s final, most precise measurement agrees with the newest Standard Model prediction; the earlier hint of new physics faded.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Fermilab: Muon g−2 announces most precise measurement of the magnetic anomaly of the muon (3 Jun 2025)",
+      "url": "https://news.fnal.gov/2025/06/muon-g-2-most-precise-measurement-of-muon-magnetic-anomaly/",
+      "type": "agency / lab",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "title": "Muon g−2 Theory Initiative: The anomalous magnetic moment of the muon in the Standard Model: an update (2025)",
+      "url": "https://arxiv.org/abs/2505.21476",
+      "type": "preprint",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-hubble",
+    "card": "cmb",
+    "year": 2026,
+    "when": "2019 → 2026",
+    "title": "Hubble tension",
+    "text": "The expansion rate measured nearby (about 73) disagrees with the early-universe value (about 67); a 2026 study puts the gap at 7.1σ. The cause is unknown.",
+    "certainty": "unknown",
+    "sources": [
+     {
+      "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+      "url": "https://arxiv.org/abs/2510.23823",
+      "type": "preprint",
+      "year": 2025,
+      "year_note": "arXiv id",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     },
+     {
+      "title": "Planck 2018 results VI: cosmological parameters",
+      "url": "https://arxiv.org/abs/1807.06209",
+      "type": "preprint",
+      "year": 2018,
+      "year_note": "arXiv id",
+      "last_checked": "2026-11-11",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-lz2026",
+    "card": "dark-matter",
+    "year": 2026,
+    "when": "Sep 2026",
+    "title": "LZ: one unexplained event",
+    "text": "The LZ detector reports one unexplained event (2.6σ). This is not a discovery: dark matter is still not detected directly.",
+    "certainty": "unknown",
+    "sources": [
+     {
+      "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+      "url": "https://arxiv.org/abs/2609.02823",
+      "type": "preprint",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-euclid",
+    "card": "dark-matter",
+    "year": 2026,
+    "when": "12 Nov 2026",
+    "title": "Euclid DR1-Foundation",
+    "text": "ESA’s Euclid releases its first big data set; its lensing products, which map dark matter, follow in June 2027.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+      "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
+      "type": "agency / lab",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   }
+  ],
+  "biology": [
+   {
+    "id": "r-hgp",
+    "card": "dna",
+    "year": 2003,
+    "when": "Apr 2003",
+    "title": "Human Genome Project complete",
+    "text": "The Human Genome Project is declared complete, covering about 92% of our DNA.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "NHGRI: The Human Genome Project",
+      "url": "https://www.genome.gov/human-genome-project",
+      "type": "agency / lab",
+      "year": 2003,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-ips",
+    "card": "cell-types",
+    "year": 2006,
+    "when": "2006",
+    "title": "Adult cells made into stem cells",
+    "text": "Shinya Yamanaka’s team turns mouse skin cells back into stem cells with four genes. Nobel Prize 2012.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Takahashi & Yamanaka: Induction of pluripotent stem cells from mouse fibroblasts (Cell, 2006)",
+      "url": "https://doi.org/10.1016/j.cell.2006.07.024",
+      "type": "paper",
+      "year": 2006,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-neandertal",
+    "card": "human-evolution",
+    "year": 2010,
+    "when": "May 2010",
+    "title": "Neanderthal genome",
+    "text": "The first draft Neanderthal genome shows that many people today carry a little Neanderthal DNA.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Green et al.: A draft sequence of the Neandertal genome (Science, 2010)",
+      "url": "https://www.science.org/doi/10.1126/science.1188021",
+      "type": "paper",
+      "year": 2010,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+     }
+    ]
+   },
+   {
+    "id": "r-synthetic",
+    "card": "cell-theory",
+    "year": 2010,
+    "when": "Jul 2010",
+    "title": "Cell run by a lab-made genome",
+    "text": "A team at the J. Craig Venter Institute boots up a bacterial cell controlled by a chemically made genome.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Gibson et al.: Creation of a bacterial cell controlled by a chemically synthesized genome (Science, 2010)",
+      "url": "https://www.science.org/doi/10.1126/science.1190719",
+      "type": "paper",
+      "year": 2010,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+     }
+    ]
+   },
+   {
+    "id": "r-crispr",
+    "card": "genetic-code",
+    "year": 2012,
+    "when": "Aug 2012",
+    "title": "CRISPR gene editing",
+    "text": "Jennifer Doudna and Emmanuelle Charpentier show CRISPR–Cas9 can cut DNA at a chosen spot. Nobel Prize 2020.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Jinek et al.: A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity (Science, 2012)",
+      "url": "https://www.science.org/doi/10.1126/science.1225829",
+      "type": "paper",
+      "year": 2012,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+     }
+    ]
+   },
+   {
+    "id": "r-asgard2020",
+    "card": "eukaryote-origin",
+    "year": 2020,
+    "when": "Jan 2020",
+    "title": "First Asgard archaeon grown",
+    "text": "After 12 years of work, a Japanese team grows the first Asgard archaeon in the lab, a close relative of our own cells’ ancestor.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Imachi et al.: Isolation of an archaeon at the prokaryote–eukaryote interface (Nature, 2020)",
+      "url": "https://www.nature.com/articles/s41586-019-1916-6",
+      "type": "paper",
+      "year": 2020,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-alphafold",
+    "card": "enzymes",
+    "year": 2021,
+    "when": "2020–2021",
+    "title": "AlphaFold predicts protein shapes",
+    "text": "AlphaFold predicts protein shapes close to lab accuracy. Nobel Prize in Chemistry 2024.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Jumper et al.: Highly accurate protein structure prediction with AlphaFold (Nature, 2021)",
+      "url": "https://www.nature.com/articles/s41586-021-03819-2",
+      "type": "paper",
+      "year": 2021,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-t2t",
+    "card": "dna",
+    "year": 2022,
+    "when": "Mar 2022",
+    "title": "Complete human genome",
+    "text": "The T2T Consortium publishes the first truly complete, gap-free human genome sequence.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Nurk et al. 2022: the complete human genome (Science)",
+      "url": "https://www.science.org/doi/10.1126/science.abj6987",
+      "type": "paper",
+      "year": 2022,
+      "year_note": "Crossref",
+      "last_checked": "2026-11-11",
+      "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+     }
+    ]
+   },
+   {
+    "id": "r-asgard2025",
+    "card": "eukaryote-origin",
+    "year": 2025,
+    "when": "2025",
+    "title": "Where eukaryotes branch off",
+    "text": "A 223-genome study places the origin of eukaryotes deep within Asgard archaea, outside Heimdallarchaeia. Still debated.",
+    "certainty": "we think so",
+    "sources": [
+     {
+      "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+      "url": "https://www.nature.com/articles/s41586-025-08955-7",
+      "type": "paper",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   },
+   {
+    "id": "r-heimdall2026",
+    "card": "eukaryote-origin",
+    "year": 2026,
+    "when": "28 Oct 2026",
+    "title": "Heimdallarchaeia grown in the lab",
+    "text": "The first Heimdallarchaeia are grown in culture, so this group can now be studied alive.",
+    "certainty": "known",
+    "sources": [
+     {
+      "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+      "url": "https://www.nature.com/articles/s41586-026-11170-7",
+      "type": "paper",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     }
+    ]
+   }
+  ]
+ },
  "maths_history": {
   "note": "A selected dated landmark for every map node. A publication date is not always an invention or discovery date. Broad subjects retain a landmark or approximate range; the chart does not measure completeness or certify priority between simultaneous contributors.",
   "eras": [
@@ -23771,8 +24748,8 @@
       "year": 1858,
       "end_year": null,
       "label": "1858",
-      "kind": "fact",
-      "text": "Cayley’s matrix memoir includes the characteristic-equation result named for Cayley and Hamilton.",
+      "kind": "idea",
+      "text": "Cayley’s matrix memoir states the characteristic-equation result named for Cayley and Hamilton (checked only for small matrices).",
       "certainty": "documented",
       "sources": [
        {
@@ -23783,6 +24760,37 @@
         "year": 2024,
         "year_note": "4th edition, © 2024 on the title page",
         "last_checked": "2026-11-11",
+        "link_status": "ok"
+       },
+       {
+        "key": "wCayleyHamilton",
+        "title": "Wikipedia: Cayley–Hamilton theorem (Cayley 1858, Frobenius general proof 1878)",
+        "url": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+        "type": "encyclopedia",
+        "year": 2026,
+        "year_note": "living page: last-revised year",
+        "last_checked": "2026-11-19",
+        "link_status": "ok"
+       }
+      ]
+     },
+     {
+      "index": 1,
+      "year": 1878,
+      "end_year": null,
+      "label": "1878",
+      "kind": "fact",
+      "text": "Frobenius gives the general proof.",
+      "certainty": "documented",
+      "sources": [
+       {
+        "key": "wCayleyHamilton",
+        "title": "Wikipedia: Cayley–Hamilton theorem (Cayley 1858, Frobenius general proof 1878)",
+        "url": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+        "type": "encyclopedia",
+        "year": 2026,
+        "year_note": "living page: last-revised year",
+        "last_checked": "2026-11-19",
         "link_status": "ok"
        }
       ]
@@ -23795,7 +24803,7 @@
     "events": [
      {
       "index": 0,
-      "year": 1906,
+      "year": 1904,
       "end_year": 1910,
       "label": "1904–1910",
       "kind": "fact",
@@ -24432,7 +25440,7 @@
     "events": [
      {
       "index": 0,
-      "year": 1827,
+      "year": 1825,
       "end_year": 1828,
       "label": "1825–1828 survey; 1854 Riemann follows",
       "kind": "fact",
@@ -24480,7 +25488,7 @@
      },
      {
       "index": 1,
-      "year": 2005,
+      "year": 1998,
       "end_year": 2006,
       "label": "1998 announced · 2005–2006 publication",
       "kind": "fact",
@@ -24585,9 +25593,9 @@
       "certainty": "documented",
       "sources": [
        {
-        "key": "poincareClay",
-        "title": "Poincaré conjecture: 1904 proposal; 2002–03 announcement — Clay",
-        "url": "https://www.claymath.org/millennium-problems/poincare-conjecture/",
+        "key": "clayPoincare",
+        "title": "Clay: Poincaré Conjecture (solved)",
+        "url": "https://www.claymath.org/millennium/poincare-conjecture/",
         "type": "institute",
         "year": null,
         "year_note": "living page (no single publication year)",
@@ -24606,9 +25614,9 @@
       "certainty": "documented",
       "sources": [
        {
-        "key": "poincareClay",
-        "title": "Poincaré conjecture: 1904 proposal; 2002–03 announcement — Clay",
-        "url": "https://www.claymath.org/millennium-problems/poincare-conjecture/",
+        "key": "clayPoincare",
+        "title": "Clay: Poincaré Conjecture (solved)",
+        "url": "https://www.claymath.org/millennium/poincare-conjecture/",
         "type": "institute",
         "year": null,
         "year_note": "living page (no single publication year)",
@@ -24671,9 +25679,9 @@
       "certainty": "documented",
       "sources": [
        {
-        "key": "poincareClay",
-        "title": "Poincaré conjecture: 1904 proposal; 2002–03 announcement — Clay",
-        "url": "https://www.claymath.org/millennium-problems/poincare-conjecture/",
+        "key": "clayPoincare",
+        "title": "Clay: Poincaré Conjecture (solved)",
+        "url": "https://www.claymath.org/millennium/poincare-conjecture/",
         "type": "institute",
         "year": null,
         "year_note": "living page (no single publication year)",
@@ -25280,7 +26288,7 @@
     "events": [
      {
       "index": 0,
-      "year": 1837,
+      "year": 1737,
       "end_year": 1859,
       "label": "1737 → 1837 → 1859",
       "kind": "fact",
@@ -25335,9 +26343,9 @@
         "link_status": "ok"
        },
        {
-        "key": "riemannClay",
-        "title": "Riemann hypothesis — Clay Mathematics Institute",
-        "url": "https://www.claymath.org/millennium-problems/riemann-hypothesis/",
+        "key": "clayRiemann",
+        "title": "Clay: Riemann Hypothesis (unsolved)",
+        "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
         "type": "institute",
         "year": null,
         "year_note": "living page (no single publication year)",
@@ -25362,8 +26370,8 @@
       "certainty": "documented",
       "sources": [
        {
-        "key": "pnpClay",
-        "title": "P versus NP problem — Clay Mathematics Institute",
+        "key": "clayPNP",
+        "title": "Clay: P versus NP (unsolved)",
         "url": "https://www.claymath.org/millennium/p-vs-np/",
         "type": "institute",
         "year": null,
@@ -25484,7 +26492,7 @@
     "events": [
      {
       "index": 0,
-      "year": 1650,
+      "year": 1500,
       "end_year": 1700,
       "label": "16th–17th-century notation · arithmetic older",
       "kind": "fact",
@@ -25575,7 +26583,7 @@
     "events": [
      {
       "index": 0,
-      "year": 1906,
+      "year": 1904,
       "end_year": 1910,
       "label": "1904–1910",
       "kind": "fact",
@@ -25839,21 +26847,21 @@
     "events": [
      {
       "index": 0,
-      "year": 1747,
+      "year": 1695,
       "end_year": null,
-      "label": "1747",
+      "label": "1695",
       "kind": "fact",
-      "text": "D’Alembert’s vibrating-string work is a dated differential-equation example. Ordinary differential equations arose through wider calculus work.",
+      "text": "Jacob Bernoulli poses the equation now named after him, a dated ordinary differential equation landmark. ODEs grew out of wider calculus work.",
       "certainty": "documented",
       "sources": [
        {
-        "key": "dalembert",
-        "title": "MacTutor: Jean d’Alembert (1747 vibrating-string work)",
-        "url": "https://mathshistory.st-andrews.ac.uk/Biographies/DAlembert/",
-        "type": "history reference",
-        "year": 1998,
-        "year_note": "living page; last updated October 1998 (stated on the page)",
-        "last_checked": "2026-11-11",
+        "key": "wBernoulliODE",
+        "title": "Wikipedia: Bernoulli differential equation (Jacob Bernoulli, 1695)",
+        "url": "https://en.wikipedia.org/wiki/Bernoulli_differential_equation",
+        "type": "encyclopedia",
+        "year": 2026,
+        "year_note": "living page: last-revised year",
+        "last_checked": "2026-11-19",
         "link_status": "ok"
        },
        {
@@ -26204,8 +27212,8 @@
         "link_status": "ok (DOI registered; publisher blocks automatic checks)"
        },
        {
-        "key": "pnpClay",
-        "title": "P versus NP problem — Clay Mathematics Institute",
+        "key": "clayPNP",
+        "title": "Clay: P versus NP (unsolved)",
         "url": "https://www.claymath.org/millennium/p-vs-np/",
         "type": "institute",
         "year": null,
@@ -26844,7 +27852,7 @@
   {
    "from": "m_ns",
    "to": "gas",
-   "label": "claimed fluid regularity / scrutiny",
+   "label": "claimed fluid blow-up / scrutiny",
    "certainty": "orange",
    "note": "A mathematical use or context, not a claim that mathematics alone proves a physical theory.",
    "sources": [
@@ -26910,7 +27918,7 @@
      "link_status": "ok"
     }
    ],
-   "reason": "Navier–Stokes: 3D smoothness is maths used to describe Gas clouds: claimed fluid regularity / scrutiny. Using a piece of maths does not by itself prove the physics.",
+   "reason": "Navier–Stokes: 3D smoothness is maths used to describe Gas clouds: claimed fluid blow-up / scrutiny. Using a piece of maths does not by itself prove the physics.",
    "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
@@ -28080,7 +29088,7 @@
    "from": "m_cryptography",
    "to": "qudits",
    "label": "quantum cryptographic context",
-   "certainty": "green",
+   "certainty": "orange",
    "note": "A mathematical use or context, not a claim that mathematics alone proves a physical theory.",
    "sources": [
     {
@@ -28135,7 +29143,7 @@
     }
    ],
    "reason": "Cryptography is maths used to describe Qudits & pairs: quantum cryptographic context. Using a piece of maths does not by itself prove the physics.",
-   "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
+   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
      "key": "katzLindell",
@@ -28193,7 +29201,7 @@
    "from": "m_quantumInfo",
    "to": "qudits",
    "label": "qubits & entanglement",
-   "certainty": "green",
+   "certainty": "orange",
    "note": "A mathematical use or context, not a claim that mathematics alone proves a physical theory.",
    "sources": [
     {
@@ -28239,7 +29247,7 @@
     }
    ],
    "reason": "Quantum information is maths used to describe Qudits & pairs: qubits & entanglement. Using a piece of maths does not by itself prove the physics.",
-   "reason_certainty_note": "Known: the step is well supported by the sources on these cards.",
+   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
    "reason_sources": [
     {
      "key": "nielsenChuang",
@@ -28611,7 +29619,7 @@
    "from": "m_topology",
    "to": "qgrav",
    "label": "possible geometric frameworks",
-   "certainty": "orange",
+   "certainty": "red",
    "note": "A mathematical use or context, not a claim that mathematics alone proves a physical theory.",
    "sources": [
     {
@@ -28687,7 +29695,7 @@
     }
    ],
    "reason": "Topology is maths used to describe Quantum gravity: possible geometric frameworks. Using a piece of maths does not by itself prove the physics.",
-   "reason_certainty_note": "We think: a leading idea or a partly tested step, not settled.",
+   "reason_certainty_note": "Unknown: at least one side of this link is still an open question.",
    "reason_sources": [
     {
      "key": "eomTopology",
@@ -28895,7 +29903,7 @@
     "It lets some things in and keeps others out."
    ],
    "details": [
-    "Made of roughly a billion lipid molecules, with proteins floating in it.",
+    "Made of about 5 billion lipid molecules, with proteins floating in it.",
     "In cells that crawl, the front edge ruffles and moves forward a few µm per minute (a lamellipodium).",
     "Zoom right in to see the two layers of lipids."
    ],
@@ -29518,7 +30526,7 @@
    "certainty": "green",
    "certainty_word": "known",
    "summary": [
-    "A small bag (0.1–0.5 µm) that burns fats.",
+    "A small bag (0.1–1 µm) that burns fats.",
     "It makes and destroys hydrogen peroxide."
    ],
    "details": [
@@ -29812,8 +30820,8 @@
   {
    "id": "vault",
    "title": "Vault",
-   "certainty": "orange",
-   "certainty_word": "we think",
+   "certainty": "red",
+   "certainty_word": "unknown",
    "summary": [
     "A hollow barrel of protein and RNA, about 40 × 70 nm.",
     "What it does is still not clear."
@@ -30380,7 +31388,7 @@
     "It holds over 99.9% of the atom’s mass."
    ],
    "details": [
-    "Really about 100,000 times smaller than the atom; drawn far too big here.",
+    "Really about 25,000–60,000 times smaller across than the atom; drawn far too big here.",
     "Protons and neutrons are made of quarks."
    ],
    "drawing_note": null,
@@ -32721,7 +33729,7 @@
    ],
    "details": [
     "Blood in the aorta moves on average about 20 cm/s; the moving dots use that speed.",
-    "All arteries together are roughly 9,000–19,000 km long (newer estimates); the old \"100,000 km\" figure counts every vessel and is too high."
+    "The often-quoted \"100,000 km\" of blood vessels is mostly capillaries; a 2021 estimate puts the capillaries alone at about 9,000–19,000 km. Arteries are a small part of that length."
    ],
    "drawing_note": "Main arteries are mapped; the small branches that appear as you zoom are a generated pattern, not a map.",
    "map_node": null,
@@ -34863,9 +35871,9 @@
     ],
     "name": "Palladium",
     "group": "Transition metal",
-    "main_origin": "Dying low-mass stars",
+    "main_origin": "Merging neutron stars",
     "also_from": [
-     "Merging neutron stars"
+     "Dying low-mass stars"
     ]
    },
    {
@@ -34992,7 +36000,9 @@
     "name": "Tin",
     "group": "Post-transition metal",
     "main_origin": "Dying low-mass stars",
-    "also_from": []
+    "also_from": [
+     "Merging neutron stars"
+    ]
    },
    {
     "z": 51,
@@ -35054,7 +36064,9 @@
     "name": "Tellurium",
     "group": "Metalloid",
     "main_origin": "Merging neutron stars",
-    "also_from": []
+    "also_from": [
+     "Dying low-mass stars"
+    ]
    },
    {
     "z": 53,
@@ -35206,7 +36218,9 @@
     "name": "Lanthanum",
     "group": "Lanthanide",
     "main_origin": "Dying low-mass stars",
-    "also_from": []
+    "also_from": [
+     "Merging neutron stars"
+    ]
    },
    {
     "z": 58,
@@ -35910,7 +36924,9 @@
     "name": "Mercury",
     "group": "Transition metal",
     "main_origin": "Dying low-mass stars",
-    "also_from": []
+    "also_from": [
+     "Merging neutron stars"
+    ]
    },
    {
     "z": 81,
@@ -36331,8 +37347,10 @@
     ],
     "name": "Plutonium",
     "group": "Actinide",
-    "main_origin": "Human-made",
-    "also_from": []
+    "main_origin": "Merging neutron stars",
+    "also_from": [
+     "Human-made"
+    ]
    },
    {
     "z": 95,
@@ -37543,8 +38561,28 @@
    "link_status": "ok"
   },
   {
+   "key": "pangaea1",
+   "title": "C. Rich Walker on X (@RichWalker75382): Cosmological Pangaea",
+   "url": "https://x.com/RichWalker75382/status/2122028384394137738",
+   "type": "author post",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "pangaea2",
+   "title": "Card summary by the author (C. Rich Walker on X)",
+   "url": "https://x.com/RichWalker75382/status/2122019818471899189",
+   "type": "author post",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
    "key": "exo",
-   "title": "NASA Exoplanet Archive (6,451 confirmed, Oct 2026)",
+   "title": "NASA Exoplanet Archive (6,470 confirmed, 12 Nov 2026)",
    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html",
    "type": "agency / lab",
    "year": null,
@@ -38015,14 +39053,13 @@
   },
   {
    "key": "euclid",
-   "title": "ESA Euclid: data release timeline",
-   "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+   "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+   "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
    "type": "agency / lab",
-   "year": null,
-   "year_note": "living page (no single publication year)",
-   "last_checked": "2026-11-11",
-   "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-   "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
   },
   {
    "key": "roman",
@@ -38107,7 +39144,7 @@
   },
   {
    "key": "bk18",
-   "title": "BICEP/Keck + others: r < 0.034",
+   "title": "BICEP/Keck + others: r < 0.036",
    "url": "https://arxiv.org/abs/2405.19469",
    "type": "preprint",
    "year": 2024,
@@ -38227,7 +39264,7 @@
   },
   {
    "key": "h0dn",
-   "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+   "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
    "url": "https://arxiv.org/abs/2510.23823",
    "type": "preprint",
    "year": 2025,
@@ -39481,6 +40518,66 @@
    "link_status": "ok"
   },
   {
+   "key": "stadlmann2026",
+   "title": "Stadlmann (preprint, 31 Aug 2026): Bounded gaps between primes, H1 ≤ 240 (arXiv 2608.31126)",
+   "url": "https://arxiv.org/abs/2608.31126",
+   "type": "preprint",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "mwBoundedGaps",
+   "title": "MathWorld: Bounded Gaps Between Primes (table of 2026 claimed bounds: 240, 212, 186)",
+   "url": "https://mathworld.wolfram.com/BoundedGapsBetweenPrimes.html",
+   "type": "encyclopedia",
+   "year": 2026,
+   "year_note": "living page: last-revised year",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "ymValidation2026",
+   "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+   "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+   "type": "report",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "ymKitp2026",
+   "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+   "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+   "type": "agency / lab",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "wCayleyHamilton",
+   "title": "Wikipedia: Cayley–Hamilton theorem (Cayley 1858, Frobenius general proof 1878)",
+   "url": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+   "type": "encyclopedia",
+   "year": 2026,
+   "year_note": "living page: last-revised year",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "wBernoulliODE",
+   "title": "Wikipedia: Bernoulli differential equation (Jacob Bernoulli, 1695)",
+   "url": "https://en.wikipedia.org/wiki/Bernoulli_differential_equation",
+   "type": "encyclopedia",
+   "year": 2026,
+   "year_note": "living page: last-revised year",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
    "key": "clayNS2026",
    "title": "Clay: Navier–Stokes announcement (11 Sep 2026)",
    "url": "https://www.claymath.org/news/navier-stokes-announcement/",
@@ -39789,36 +40886,6 @@
    "type": "paper",
    "year": 1995,
    "year_note": "Crossref",
-   "last_checked": "2026-11-11",
-   "link_status": "ok"
-  },
-  {
-   "key": "poincareClay",
-   "title": "Poincaré conjecture: 1904 proposal; 2002–03 announcement — Clay",
-   "url": "https://www.claymath.org/millennium-problems/poincare-conjecture/",
-   "type": "institute",
-   "year": null,
-   "year_note": "living page (no single publication year)",
-   "last_checked": "2026-11-11",
-   "link_status": "ok"
-  },
-  {
-   "key": "riemannClay",
-   "title": "Riemann hypothesis — Clay Mathematics Institute",
-   "url": "https://www.claymath.org/millennium-problems/riemann-hypothesis/",
-   "type": "institute",
-   "year": null,
-   "year_note": "living page (no single publication year)",
-   "last_checked": "2026-11-11",
-   "link_status": "ok"
-  },
-  {
-   "key": "pnpClay",
-   "title": "P versus NP problem — Clay Mathematics Institute",
-   "url": "https://www.claymath.org/millennium/p-vs-np/",
-   "type": "institute",
-   "year": null,
-   "year_note": "living page (no single publication year)",
    "last_checked": "2026-11-11",
    "link_status": "ok"
   },
@@ -41128,6 +42195,16 @@
    "link_status": "ok (DOI registered in Crossref; publisher blocks automatic checks)"
   },
   {
+   "key": "lz2026",
+   "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+   "url": "https://arxiv.org/abs/2609.02823",
+   "type": "preprint",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
    "key": "ph_dirac1928",
    "title": "Dirac 1928: The quantum theory of the electron (Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character)",
    "url": "https://doi.org/10.1098/rspa.1928.0023",
@@ -42015,6 +43092,26 @@
    "year": 2026,
    "year_note": "living page: year of the last revision on the check day",
    "last_checked": "2026-11-12",
+   "link_status": "ok"
+  },
+  {
+   "key": "bi_tamarit2025",
+   "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+   "url": "https://www.nature.com/articles/s41586-025-08955-7",
+   "type": "paper",
+   "year": 2025,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "bi_imachi2026",
+   "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+   "url": "https://www.nature.com/articles/s41586-026-11170-7",
+   "type": "paper",
+   "year": 2026,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
    "link_status": "ok"
   },
   {
@@ -43120,11 +44217,191 @@
    "year_note": "living page: year of the last revision on the check day",
    "last_checked": "2026-11-12",
    "link_status": "ok"
+  },
+  {
+   "key": "greenTao2008",
+   "title": "Green & Tao: The primes contain arbitrarily long arithmetic progressions (Annals of Mathematics, 2008)",
+   "url": "https://annals.math.princeton.edu/2008/167-2/p03",
+   "type": "paper",
+   "year": 2008,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "gonthier2008",
+   "title": "Gonthier: Formal proof — the Four-Color Theorem (Notices of the AMS, 2008)",
+   "url": "https://www.ams.org/notices/200811/tx081101382p.pdf",
+   "type": "paper",
+   "year": 2008,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "zhang2014",
+   "title": "Zhang: Bounded gaps between primes (Annals of Mathematics, 2014)",
+   "url": "https://annals.math.princeton.edu/2014/179-3/p07",
+   "type": "paper",
+   "year": 2014,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "viazovska2017",
+   "title": "Viazovska: The sphere packing problem in dimension 8 (Annals of Mathematics, 2017)",
+   "url": "https://annals.math.princeton.edu/2017/185-3/p07",
+   "type": "paper",
+   "year": 2017,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "sphere24_2017",
+   "title": "Cohn, Kumar, Miller, Radchenko & Viazovska: The sphere packing problem in dimension 24 (Annals of Mathematics, 2017)",
+   "url": "https://annals.math.princeton.edu/2017/185-3/p08",
+   "type": "paper",
+   "year": 2017,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "lte2022",
+   "title": "Lean community: Completion of the Liquid Tensor Experiment (2022)",
+   "url": "https://leanprover-community.github.io/blog/posts/lte-final/",
+   "type": "project page",
+   "year": 2022,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "alphaproof2024",
+   "title": "Google DeepMind: AI achieves silver-medal standard solving International Mathematical Olympiad problems (2024)",
+   "url": "https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/",
+   "type": "company blog",
+   "year": 2024,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "langlands2024",
+   "title": "Quanta Magazine: Monumental proof settles geometric Langlands conjecture (19 Jul 2024)",
+   "url": "https://www.quantamagazine.org/monumental-proof-settles-geometric-langlands-conjecture-20240719/",
+   "type": "news / magazine",
+   "year": 2024,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "ehtM87",
+   "title": "Event Horizon Telescope Collaboration: First M87 Event Horizon Telescope Results. I (ApJ Letters, 2019)",
+   "url": "https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7",
+   "type": "paper",
+   "year": 2019,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "fnalG2_2025",
+   "title": "Fermilab: Muon g−2 announces most precise measurement of the magnetic anomaly of the muon (3 Jun 2025)",
+   "url": "https://news.fnal.gov/2025/06/muon-g-2-most-precise-measurement-of-muon-magnetic-anomaly/",
+   "type": "agency / lab",
+   "year": 2025,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "g2theory2025",
+   "title": "Muon g−2 Theory Initiative: The anomalous magnetic moment of the muon in the Standard Model: an update (2025)",
+   "url": "https://arxiv.org/abs/2505.21476",
+   "type": "preprint",
+   "year": 2025,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "hgp2003",
+   "title": "NHGRI: The Human Genome Project",
+   "url": "https://www.genome.gov/human-genome-project",
+   "type": "agency / lab",
+   "year": 2003,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "yamanaka2006",
+   "title": "Takahashi & Yamanaka: Induction of pluripotent stem cells from mouse fibroblasts (Cell, 2006)",
+   "url": "https://doi.org/10.1016/j.cell.2006.07.024",
+   "type": "paper",
+   "year": 2006,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "jinek2012",
+   "title": "Jinek et al.: A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity (Science, 2012)",
+   "url": "https://www.science.org/doi/10.1126/science.1225829",
+   "type": "paper",
+   "year": 2012,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+  },
+  {
+   "key": "alphafold2021",
+   "title": "Jumper et al.: Highly accurate protein structure prediction with AlphaFold (Nature, 2021)",
+   "url": "https://www.nature.com/articles/s41586-021-03819-2",
+   "type": "paper",
+   "year": 2021,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "neandertal2010",
+   "title": "Green et al.: A draft sequence of the Neandertal genome (Science, 2010)",
+   "url": "https://www.science.org/doi/10.1126/science.1188021",
+   "type": "paper",
+   "year": 2010,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok (DOI registered; publisher blocks automatic checks)"
+  },
+  {
+   "key": "imachi2020",
+   "title": "Imachi et al.: Isolation of an archaeon at the prokaryote–eukaryote interface (Nature, 2020)",
+   "url": "https://www.nature.com/articles/s41586-019-1916-6",
+   "type": "paper",
+   "year": 2020,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok"
+  },
+  {
+   "key": "gibson2010",
+   "title": "Gibson et al.: Creation of a bacterial cell controlled by a chemically synthesized genome (Science, 2010)",
+   "url": "https://www.science.org/doi/10.1126/science.1190719",
+   "type": "paper",
+   "year": 2010,
+   "year_note": "publication year (living pages: last revised)",
+   "last_checked": "2026-11-19",
+   "link_status": "ok (DOI registered; publisher blocks automatic checks)"
   }
  ],
  "quality": {
   "automatic_checks": {
-   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v0.9.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
+   "what": "Structural checks run by a script on every build (src/audit.py, report in AUDIT-v1.0.md): every card has a colour and at least one source, links point at cards that exist, share links are exact, the data hash is the same in every file, counts match, and every source URL was fetched to see that it answers.",
    "not": "They do not read the science. Passing them does not mean a claim is right, only that it is labelled, sourced and linked."
   },
   "science_review": {
@@ -43359,7 +44636,7 @@
     "order": 4,
     "title": "A spiral galaxy like ours (M101)",
     "share_url": "https://zyphullen.github.io/echoatlas/#u=spiral-galaxy",
-    "subtitle": "the Pinwheel Galaxy, 25 million light-years away",
+    "subtitle": "the Pinwheel Galaxy, about 21 million light-years away",
     "certainty": "green",
     "certainty_word": "known",
     "shown_as": "flat photo you can turn",
@@ -43369,7 +44646,7 @@
     ],
     "details": [
      "What the picture is: Hubble's largest galaxy portrait: 51 exposures plus ground-based images (ESA/Hubble, 2006). The photo is flat; real galaxy discs are thin but not flat paper.",
-     "Size and distance: About 170,000 light-years across, nearly twice the Milky Way, and about 25 million light-years away (ESA/Hubble).",
+     "Size and distance: About 170,000 light-years across, nearly twice the Milky Way, and about 21 million light-years away.",
      "Honest note: Our galaxy is a barred spiral; M101 is used here only as a real example of what a spiral galaxy looks like."
     ],
     "image": {
@@ -43569,7 +44846,7 @@
  "open_questions": {
   "note": "Every red (unknown) and orange (we think) card already in the data, gathered in one list. The full card (sources, rival ideas, tests) is in its own section; open it with share_url. Page: https://zyphullen.github.io/echoatlas/#gaps=1",
   "red": 28,
-  "orange": 29,
+  "orange": 32,
   "items": [
    {
     "section": "From Nothing to Us",
@@ -43597,6 +44874,15 @@
     "share_url": "https://zyphullen.github.io/echoatlas/#n=qgrav",
     "rival_ideas": 5,
     "tests": 3
+   },
+   {
+    "section": "From Nothing to Us",
+    "id": "pangaea",
+    "title": "Cosmological Pangaea",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=pangaea",
+    "rival_ideas": 0,
+    "tests": 0
    },
    {
     "section": "From Nothing to Us",
@@ -43825,6 +45111,15 @@
    },
    {
     "section": "From Nothing to Us",
+    "id": "luca",
+    "title": "LUCA",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#n=luca",
+    "rival_ideas": 0,
+    "tests": 0
+   },
+   {
+    "section": "From Nothing to Us",
     "id": "mind",
     "title": "Consciousness",
     "certainty": "red",
@@ -43947,6 +45242,13 @@
     "title": "Last universal common ancestor (LUCA)",
     "certainty": "orange",
     "share_url": "https://zyphullen.github.io/echoatlas/#b=luca"
+   },
+   {
+    "section": "Biology",
+    "id": "three-domains",
+    "title": "Three domains of life",
+    "certainty": "orange",
+    "share_url": "https://zyphullen.github.io/echoatlas/#b=three-domains"
    },
    {
     "section": "Biology",
@@ -45162,7 +46464,7 @@
      "year": 1932,
      "when": "1932",
      "kind": "fact",
-     "text": "Carl Anderson finds the positron, predicted by Paul Dirac in 1928."
+     "text": "Carl Anderson finds the positron, predicted by Paul Dirac in 1931 (his 1928 equation led to it)."
     },
     "share_url": "https://zyphullen.github.io/echoatlas/#p=antimatter",
     "category": "PARTICLES",
@@ -45171,7 +46473,7 @@
     "certainty_word": "known",
     "summary": [
      "Each particle has an antiparticle with the same mass and opposite charge.",
-     "Dirac's 1928 equation predicted it; the positron was found in 1932."
+     "Dirac's 1928 equation led him to predict the positron in 1931; it was found in 1932."
     ],
     "details": [
      "Meeting: A particle and its antiparticle can annihilate into energy (E = mc²).",
@@ -45739,7 +47041,7 @@
     ],
     "details": [
      "Evidence: Galaxy rotation (Rubin and Ford, 1970), the cosmic microwave background (Planck) and gravitational lensing.",
-     "Searches: Detectors such as LZ have not yet found a dark-matter particle."
+     "Searches: No dark-matter particle has been found yet. In Sep 2026 LZ reported one unexplained event (2.6σ global): interesting, but not a discovery."
     ],
     "parents": [
      "general-relativity",
@@ -45776,6 +47078,16 @@
       "last_checked": "2026-11-11",
       "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive, snapshot 2026-08-19)",
       "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
+     },
+     {
+      "key": "lz2026",
+      "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+      "url": "https://arxiv.org/abs/2609.02823",
+      "type": "preprint",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
      },
      {
       "key": "ph_cern_dm",
@@ -48841,6 +50153,16 @@
       "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
      },
      {
+      "key": "lz2026",
+      "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+      "url": "https://arxiv.org/abs/2609.02823",
+      "type": "preprint",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
       "key": "ph_cern_dm",
       "title": "CERN: Dark matter",
       "url": "https://home.cern/science/physics/dark-matter",
@@ -48938,6 +50260,16 @@
       "last_checked": "2026-11-11",
       "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive, snapshot 2026-08-19)",
       "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
+     },
+     {
+      "key": "lz2026",
+      "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+      "url": "https://arxiv.org/abs/2609.02823",
+      "type": "preprint",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
      },
      {
       "key": "ph_cern_dm",
@@ -50924,10 +52256,10 @@
     "share_url": "https://zyphullen.github.io/echoatlas/#b=three-domains",
     "category": "EVOLUTION & ORGANISMS",
     "subtitle": "Bacteria · Archaea · Eukarya",
-    "certainty": "green",
-    "certainty_word": "known",
+    "certainty": "orange",
+    "certainty_word": "we think",
     "summary": [
-     "Comparing ribosomal RNA splits life into three domains: Bacteria, Archaea and Eukarya.",
+     "The standard classification: comparing ribosomal RNA splits life into Bacteria, Archaea and Eukarya.",
      "Archaea look like bacteria but are a separate branch of life."
     ],
     "details": [
@@ -51084,7 +52416,8 @@
     ],
     "details": [
      "When: Clear eukaryote fossils are more than 1.5 billion years old; the exact start is uncertain.",
-     "Recent: A 2023 genome study placed eukaryotes within the Asgard archaea, near the Heimdallarchaeia."
+     "Recent: A 2023 study placed eukaryotes inside the Heimdallarchaeia; a 2025 Nature study of 223 Asgard genomes puts them just outside, so the exact spot is debated.",
+     "New (Oct 2026): Heimdallarchaeia were grown in a lab for the first time. They are simple inside, with no inner membranes."
     ],
     "parents": [
      "endosymbiosis",
@@ -51109,6 +52442,26 @@
       "year": 2023,
       "year_note": "Crossref",
       "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_tamarit2025",
+      "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+      "url": "https://www.nature.com/articles/s41586-025-08955-7",
+      "type": "paper",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_imachi2026",
+      "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+      "url": "https://www.nature.com/articles/s41586-026-11170-7",
+      "type": "paper",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
       "link_status": "ok"
      },
      {
@@ -53463,7 +54816,7 @@
    {
     "from": "cell-types",
     "to": "three-domains",
-    "certainty": "green",
+    "certainty": "orange",
     "reason": "Prokaryotic and eukaryotic cells → Three domains of life: Three domains of life builds on Prokaryotic and eukaryotic cells.",
     "sources": [
      {
@@ -53683,6 +55036,26 @@
       "link_status": "ok"
      },
      {
+      "key": "bi_tamarit2025",
+      "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+      "url": "https://www.nature.com/articles/s41586-025-08955-7",
+      "type": "paper",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_imachi2026",
+      "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+      "url": "https://www.nature.com/articles/s41586-026-11170-7",
+      "type": "paper",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
       "key": "bi_os_eukorigin",
       "title": "OpenStax Biology 2e, 23.1 Eukaryotic Origins",
       "url": "https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins",
@@ -53768,6 +55141,26 @@
       "year": 2023,
       "year_note": "Crossref",
       "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_tamarit2025",
+      "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+      "url": "https://www.nature.com/articles/s41586-025-08955-7",
+      "type": "paper",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_imachi2026",
+      "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+      "url": "https://www.nature.com/articles/s41586-026-11170-7",
+      "type": "paper",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
       "link_status": "ok"
      },
      {
@@ -53970,6 +55363,26 @@
       "year": 2023,
       "year_note": "Crossref",
       "last_checked": "2026-11-12",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_tamarit2025",
+      "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+      "url": "https://www.nature.com/articles/s41586-025-08955-7",
+      "type": "paper",
+      "year": 2025,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
+      "link_status": "ok"
+     },
+     {
+      "key": "bi_imachi2026",
+      "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+      "url": "https://www.nature.com/articles/s41586-026-11170-7",
+      "type": "paper",
+      "year": 2026,
+      "year_note": "publication year (living pages: last revised)",
+      "last_checked": "2026-11-19",
       "link_status": "ok"
      },
      {
@@ -55294,7 +56707,7 @@
      },
      {
       "key": "bk18",
-      "title": "BICEP/Keck + others: r < 0.034",
+      "title": "BICEP/Keck + others: r < 0.036",
       "url": "https://arxiv.org/abs/2405.19469",
       "type": "preprint",
       "year": 2024,
@@ -56199,7 +57612,7 @@
      },
      {
       "key": "h0dn",
-      "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+      "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
       "url": "https://arxiv.org/abs/2510.23823",
       "type": "preprint",
       "year": 2025,
@@ -57397,6 +58810,26 @@
      "year": null,
      "year_note": "living page (no single publication year)",
      "last_checked": "2026-11-11",
+     "link_status": "ok"
+    },
+    {
+     "key": "ymValidation2026",
+     "title": "Yang–Mills group (chair D. Gross), 10 Nov 2026: Validation of the OpenAI Yang–Mills construction (Lean proof; no mass gap claimed)",
+     "url": "https://raw.githubusercontent.com/yang-mills-group/YM/main/docs/assessment-1.pdf",
+     "type": "report",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "ymKitp2026",
+     "title": "KITP: Statement by the Yang–Mills Working Group (9 Nov 2026 update)",
+     "url": "https://www.kitp.ucsb.edu/statement-by-the-yangmills-working-group",
+     "type": "agency / lab",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
      "link_status": "ok"
     }
    ]
@@ -59607,6 +61040,16 @@
      "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
     },
     {
+     "key": "lz2026",
+     "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+     "url": "https://arxiv.org/abs/2609.02823",
+     "type": "preprint",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
      "key": "ph_cern_dm",
      "title": "CERN: Dark matter",
      "url": "https://home.cern/science/physics/dark-matter",
@@ -59713,6 +61156,16 @@
      "last_checked": "2026-11-11",
      "link_status": "ok (site blocks automatic checks; page confirmed in Web Archive, snapshot 2026-08-19)",
      "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
+    },
+    {
+     "key": "lz2026",
+     "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+     "url": "https://arxiv.org/abs/2609.02823",
+     "type": "preprint",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "ph_cern_dm",
@@ -63497,6 +64950,26 @@
      "link_status": "ok"
     },
     {
+     "key": "bi_tamarit2025",
+     "title": "Nature 2025: Deep origin of eukaryotes outside Heimdallarchaeia within Asgardarchaeota",
+     "url": "https://www.nature.com/articles/s41586-025-08955-7",
+     "type": "paper",
+     "year": 2025,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
+     "key": "bi_imachi2026",
+     "title": "Imachi et al., Nature (28 Oct 2026): first cultured Heimdallarchaeia",
+     "url": "https://www.nature.com/articles/s41586-026-11170-7",
+     "type": "paper",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
      "key": "bi_os_eukorigin",
      "title": "OpenStax Biology 2e, 23.1 Eukaryotic Origins",
      "url": "https://openstax.org/books/biology-2e/pages/23-1-eukaryotic-origins",
@@ -64220,7 +65693,7 @@
     },
     {
      "key": "exo",
-     "title": "NASA Exoplanet Archive (6,451 confirmed, Oct 2026)",
+     "title": "NASA Exoplanet Archive (6,470 confirmed, 12 Nov 2026)",
      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html",
      "type": "agency / lab",
      "year": null,
@@ -66089,7 +67562,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -66383,7 +67856,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -66413,7 +67886,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -66489,7 +67962,7 @@
     },
     {
      "key": "bk18",
-     "title": "BICEP/Keck + others: r < 0.034",
+     "title": "BICEP/Keck + others: r < 0.036",
      "url": "https://arxiv.org/abs/2405.19469",
      "type": "preprint",
      "year": 2024,
@@ -67994,14 +69467,13 @@
     },
     {
      "key": "euclid",
-     "title": "ESA Euclid: data release timeline",
-     "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+     "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+     "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
      "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-     "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "roman",
@@ -68725,7 +70197,7 @@
     },
     {
      "key": "h0dn",
-     "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+     "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
      "url": "https://arxiv.org/abs/2510.23823",
      "type": "preprint",
      "year": 2025,
@@ -68771,7 +70243,7 @@
     },
     {
      "key": "h0dn",
-     "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+     "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
      "url": "https://arxiv.org/abs/2510.23823",
      "type": "preprint",
      "year": 2025,
@@ -68781,7 +70253,7 @@
     },
     {
      "key": "h0dn",
-     "title": "H0 Distance Network 2025: H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
+     "title": "H0 Distance Network (preprint 2025, published 2026): H0 = 73.50 ± 0.81, 7.1σ from early-universe value",
      "url": "https://arxiv.org/abs/2510.23823",
      "type": "preprint",
      "year": 2025,
@@ -68801,14 +70273,13 @@
     },
     {
      "key": "euclid",
-     "title": "ESA Euclid: data release timeline",
-     "url": "https://www.cosmos.esa.int/web/euclid/dr1-timeline",
+     "title": "ESA Euclid DR1: DR1-Foundation 12 Nov 2026, DR1 16 June 2027",
+     "url": "https://www.cosmos.esa.int/web/euclid/data-release-dr1",
      "type": "agency / lab",
-     "year": null,
-     "year_note": "living page (no single publication year)",
-     "last_checked": "2026-11-11",
-     "link_status": "site down on check day (HTTP 503); page confirmed in Web Archive, snapshot 2026-10-26",
-     "archived_copy": "https://web.archive.org/web/20261026032703/https://www.cosmos.esa.int/web/euclid/dr1-timeline"
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
     },
     {
      "key": "roman",
@@ -69338,6 +70809,16 @@
      "archived_copy": "https://web.archive.org/web/20260819231050/https://newscenter.lbl.gov/2025/12/08/lz-sets-a-worlds-best-in-the-hunt-for-galactic-dark-matter/"
     },
     {
+     "key": "lz2026",
+     "title": "LZ collaboration (arXiv 2609.02823, Sep 2026): one unexplained event, 2.6σ global, not a discovery",
+     "url": "https://arxiv.org/abs/2609.02823",
+     "type": "preprint",
+     "year": 2026,
+     "year_note": "publication year (living pages: last revised)",
+     "last_checked": "2026-11-19",
+     "link_status": "ok"
+    },
+    {
      "key": "ph_cern_dm",
      "title": "CERN: Dark matter",
      "url": "https://home.cern/science/physics/dark-matter",
@@ -69860,8 +71341,8 @@
   "method": "v0.3: automatic HTTP check of every source URL on 11 Nov 2026 (follows redirects); v0.4: the papers, official pages and textbooks added on 12 Nov 2026 were checked the same way (each DOI resolved in Crossref); DOI links also checked in the DOI registry; years from Crossref, arXiv ids, the URL, the title, or read from the page during this build (year_note says how). Links that failed were rechecked the same day: read from a second network or confirmed in the Web Archive (archived_copy). For living pages (Wikipedia, MacTutor, Stanford Encyclopedia) year is the last-revised year stated on the page or its history, and year_note says so.",
   "summary": {
    "ok (site blocks automatic checks; page confirmed in Web Archive)": 13,
-   "ok": 642,
-   "ok (DOI registered; publisher blocks automatic checks)": 50,
+   "ok": 669,
+   "ok (DOI registered; publisher blocks automatic checks)": 53,
    "ok (DOI registered in Crossref; publisher blocks automatic checks)": 53,
    "ok (rechecked: page read from a second network)": 1,
    "site down on check day (HTTP 502); page confirmed in Web Archive": 30,

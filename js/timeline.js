@@ -42,7 +42,7 @@ const VTIME = (() => {
   const pts = new Map(); let drag = null, pinch = null, moved = false;
   const vw = () => root.clientWidth, vh = () => root.clientHeight, TOP = 132, phone = () => vw() <= 600;
   const minS = () => (vw() - 60) / TOTAL, MAXS = () => minS() * 40;
-  const cardW = () => !phone() && card && !card.hidden ? 400 : 0;
+  const cardW = () => !phone() && card && !card.hidden ? 430 : 0;
   function clamp() { const s = cam.s, w = TOTAL * s, W = vw() - cardW(); cam.tx = Math.min(Math.max(cam.tx, W - w - W * .35), W * .35); }
   const sx = x => cam.tx + x * cam.s;
   function axisY() { const H = vh(), bot = phone() && !card.hidden ? Math.min(H * .52, H - 260) : H; return TOP + (bot - TOP) * .52; }
@@ -93,14 +93,14 @@ const VTIME = (() => {
   function chip(k, id, label) { const [g, sec, col] = XKIND[k] || ['↗', '', '#ffd36b']; const t = typeof xsecTarget === 'function' ? xsecTarget(k, id) : null; if (!t) return '';
     return `<button class="xchip" data-xgo="${esc(t.hash)}" style="--c:${col}" title="${esc(label || '')}"><i>${g}</i><span><small>${esc(sec)}</small>${esc(t.title)}</span></button>`; }
   function render() { const e = BY[sel], c = SCOL[e.s], i = EV.indexOf(e), era = ERA.find(r => e.x >= r.x0 && e.x <= r.x1) || ERA[4];
-    card.innerHTML = `<button class="phx" aria-label="Close card">×</button><div class="phst" style="--c:${c}">${e.s === 'u' ? '✕' : '●'} ${WORD[e.s]}</div>
-      <h3 id="tlTitle">${esc(e.name)}</h3><div class="phwhere" style="--c:${era.col}">${esc(e.when)} · ${esc(era.name)}</div><p class="pha">${esc(e.a)}</p>
-      <div class="phrel">${i > 0 ? `<button class="phgo" data-go="${EV[i - 1].id}">← ${esc(EV[i - 1].name)}</button>` : ''}${i < EV.length - 1 ? `<button class="phgo" data-go="${EV[i + 1].id}">${esc(EV[i + 1].name)} →</button>` : ''}</div>
-      ${(() => { const L = [...(e.rel || []), ...xsecBack('tl', e.id)].filter((r, i, a) => a.findIndex(q => q[0] === r[0] && q[1] === r[1]) === i); return L.length ? `<h4>In other sections</h4><div class="xchips">${L.map(([k, id, l]) => chip(k, id, l)).join('')}</div>` : ''; })()}
-      <h4>Sources</h4><ul class="srcl">${e.src.map(k => SRC[k]).filter(Boolean).map(([t, u]) => srcItemHTML(t, u)).join('')}</ul>
-      <div class="phact">${copyBtnHTML(SITE_ + '#t=' + encodeURIComponent(e.id))}${fixBtnHTML('Big Bang to Today', e.name, 'timeline/' + e.id, SITE_ + '#t=' + encodeURIComponent(e.id))}</div>`; }
+    const lk = SITE_ + '#t=' + encodeURIComponent(e.id), rel = (() => { const L = [...(e.rel || []), ...xsecBack('tl', e.id)].filter((r, i, a) => a.findIndex(q => q[0] === r[0] && q[1] === r[1]) === i); return L.length ? `<h4>In other sections</h4><div class="xchips">${L.map(([k, id, l]) => chip(k, id, l)).join('')}</div>` : ''; })();
+    card.innerHTML = CB({ x: '<button class="phx" aria-label="Close card">×</button>', t: esc(e.name), tid: 'tlTitle', sub: esc(e.when + ' · ' + era.name), c, w: WORD[e.s], q: `<p class="pha">${esc(e.a)}</p>`,
+      m: `<h4>Before and after</h4><div class="phrel">${i > 0 ? `<button class="phgo" data-go="${EV[i - 1].id}">← ${esc(EV[i - 1].name)}</button>` : ''}${i < EV.length - 1 ? `<button class="phgo" data-go="${EV[i + 1].id}">${esc(EV[i + 1].name)} →</button>` : ''}</div>`,
+      d: rel, s: `<ul class="srcl">${e.src.map(k => SRC[k]).filter(Boolean).map(([t, u]) => srcItemHTML(t, u)).join('')}</ul>`, a: copyBtnHTML(lk) + fixBtnHTML('Big Bang to Today', e.name, 'timeline/' + e.id, lk) }); }
   function open(id, keep) { if (!BY[id]) return; sel = id; card.hidden = false; render(); card.scrollTop = 0; root.classList.add('carded');
-    history.replaceState(null, '', location.pathname + location.search + '#t=' + encodeURIComponent(id)); if (!keep) centreOn(id); else apply(); }
+    history.replaceState(null, '', location.pathname + location.search + '#t=' + encodeURIComponent(id));
+    // v1.0: a marker you can already see stays where it is (the view used to jump to centre it); only an off-screen event is scrolled into view
+    const x = BY[id].x * cam.s + cam.tx; if (!keep && (x < 30 || x > vw() - cardW() - 30)) centreOn(id); else apply(); }
   function closeCard() { if (!sel) return; sel = null; card.hidden = true; root.classList.remove('carded'); history.replaceState(null, '', location.pathname + location.search + '#timeline=1'); apply(); }
   /* ---------- Key ---------- */
   const KEYHTML = `<div class="kp"><div class="kh"><b>KEY</b><button class="kc" aria-label="Hide key" title="Hide key">–</button></div>
@@ -163,7 +163,7 @@ const VTIME = (() => {
     return root;
   }
   function destroy() { alive = false; cancelAnimationFrame(anim); clearTimeout(keyT); removeEventListener('keydown', onKey); removeEventListener('resize', onResize); pts.clear(); if (root) root.remove(); root = null; sel = null; }
-  return { init, destroy, isOpen: () => alive, open: id => open(id), close: closeCard,
+  return { init, destroy, isOpen: () => alive, open: id => open(id), close: closeCard, getCam: () => ({ ...cam }), setCam: c => { if (!alive || !c) return; cancelAnimationFrame(anim); cam.s = c.s; cam.tx = c.tx; apply(); },
     debug: () => ({ events: EV.length, total: TOTAL, cam: { ...cam }, sel, order: EV.every((e, i) => !i || e.x >= EV[i - 1].x), labels: root.querySelectorAll('.tlbox').length, xs: EV.map(e => Math.round(e.x)) }) };
 })();
 window.VTIME = VTIME;
